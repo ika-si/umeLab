@@ -19,7 +19,7 @@ document.getElementById("login-btn").onclick = function() {
   firebase.auth().signInWithPopup(provider).then(function(result) {
       login_chack();
   }).catch(function(error) {
-      login_chack();
+      //login_chack();
   });
 };
 
