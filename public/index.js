@@ -1,10 +1,11 @@
 function login_chack(){
   firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
+        alert('loginした');
         window.location.assign('./index2.html');
         //   document.getElementById("login-status").value="login"
       }else{
-          document.getElementById("login-status").value="not logged"
+          //document.getElementById("login-status").value="not logged"
       }
   });            
 }
