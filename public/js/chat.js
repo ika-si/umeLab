@@ -1,57 +1,48 @@
-(function () {
-    var Message;
-    Message = function (arg) {
-        this.text = arg.text, this.message_side = arg.message_side;
-        this.draw = function (_this) {
-            return function () {
-                var $message;
-                $message = $($('.message_template').clone().html());
-                $message.addClass(_this.message_side).find('.text').html(_this.text);
-                $('.messages').append($message);
-                return setTimeout(function () {
-                    return $message.addClass('appeared');
-                }, 0);
-            };
-        }(this);
-        return this;
-    };
-    $(function () {
-        var getMessageText, message_side, sendMessage;
-        message_side = 'right';
-        getMessageText = function () {
-            var $message_input;
-            $message_input = $('.message_input');
-            return $message_input.val();
-        };
-        sendMessage = function (text) {
-            var $messages, message;
-            if (text.trim() === '') {
-                return;
+var db = firebase.firestore();
+
+function getAll() {
+    let collection = db.collection("users").orderBy('createdAt');
+    collection.get().then((querySnapshot) => {
+        $('#list').text('');
+        querySnapshot.forEach((doc) => {
+            if(doc.data()['name'] == "yurika") {
+                $('#list').append('<li class="my">' + doc.data()['createdAt'].toDate() + '<br>' + doc.data()['name'] + '<br>' + doc.data()['msg'] + '</li>');
+            } else {
+                $('#list').append('<li class="your">' + doc.data()['createdAt'].toDate() + '<br>' + doc.data()['name'] + '<br>' + doc.data()['msg'] + '</li>');    
             }
-            $('.message_input').val('');
-            $messages = $('.messages');
-            message_side = message_side === 'left' ? 'right' : 'left';
-            message = new Message({
-                text: text,
-                message_side: message_side
-            });
-            message.draw();
-            return $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 300);
-        };
-        $('.send_message').click(function (e) {
-            return sendMessage(getMessageText());
-        });
-        $('.message_input').keyup(function (e) {
-            if (e.which === 13) {
-                return sendMessage(getMessageText());
-            }
-        });
-        sendMessage('Hello Philip! :)');
-        setTimeout(function () {
-            return sendMessage('Hi Sandy! How are you?');
-        }, 1000);
-        return setTimeout(function () {
-            return sendMessage('I\'m fine, thank you!');
-        }, 2000);
+        })
+    })
+}
+getAll();
+
+function add(){
+    let nameAdd = $("#nameAdd").val();
+    if (nameAdd == "") return;
+
+    let msgAdd = $("#msgAdd").val();
+    if (msgAdd == "") return;
+  
+    db.collection("users").add({
+        createdAt: new Date(),
+        msg: msgAdd,
+        name: nameAdd
+    }).then(function(docRef) {
+        getAll();
+        $("#nameAdd").val('');
+        $("#msgAdd").val('');
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
     });
-}.call(this)); 
+}
+
+let msg_form = document.getElementById('msgAdd');
+msg_form.addEventListener('keypress', test_ivent);
+
+function test_ivent(e) {
+    if (e.keyCode === 13) {
+      add();
+    } 
+    return false;
+}
