@@ -46,3 +46,7 @@ function test_ivent(e) {
     } 
     return false;
 }
+// ２秒に１回リロード
+// setTimeout(function () {
+//     location.reload();
+// }, 2000);
