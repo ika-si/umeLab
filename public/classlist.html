@@ -17,26 +17,48 @@
 
   <title>classlist</title>
   </head>
-  <body>
-  <h1>授業リスト</h1>
 
+<h1>授業リスト</h1>
+<p>選択した講義 <span id="span1"></span></p>
+
+<form name="classCheck">
   <div class="form-check form-switch">
-  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+  <input class="form-check-input" type="checkbox" name="className" value="線形代数" onclick="clickBtn()">
   <label class="form-check-label" for="flexSwitchCheckDefault">線形代数</label>
   </div>
 
   <div class="form-check form-switch">
-  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-  <label class="form-check-label" for="flexSwitchCheckChecked">微分積分</label>
+  <input class="form-check-input" type="checkbox" name="className" value="微分積分" onclick="clickBtn()">
+  <label class="form-check-label" for="flexSwitchCheckDefault">微分積分</label>
   </div>
 
   <div class="form-check form-switch">
-  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
-  <label class="form-check-label" for="flexSwitchCheckDisabled">英語</label>
+  <input class="form-check-input" type="checkbox" name="className" value="英語" onclick="clickBtn()">
+  <label class="form-check-label" for="flexSwitchCheckDefault">英語</label>
   </div>
 
-  <button type="button" class="btn btn-primary" onclick="history.back()">戻る</button>
+</form>
+<button type="button" class="btn btn-primary" onclick="history.back()" >戻る</button>
 
-  </body>
+<script>
+function clickBtn(){
+	const arr1 = [];
+	const className = document.classCheck.className;
 
-  </html>
+	for (let i = 0; i < className.length; i++){
+		if(className[i].checked){ //(className[i].checked === true)と同じ
+			arr1.push(className[i].value);
+		}
+	}
+	document.getElementById("span1").textContent = arr1;
+
+    //データを保存
+    sessionStorage.setItem('loginUser', arr1);
+
+    //データを取得
+    var data = sessionStorage.getItem('loginUser');
+    console.log(data);
+}
+
+
+</script>
