@@ -22,14 +22,13 @@
       <h2>timetable.html</h2>
     </div>
     <div class="col-2">
-      <button type="button" id="logoutbtn" class="btn btn-outline-warning btn-lg">LogOut</button>
+      <button type="button" class="btn btn-primary" id="addBtn" onclick="signOut()">signOut</button>
+      <!-- <button type="button" id="logoutbtn" class="btn btn-outline-warning btn-lg">LogOut</button> -->
     </div>
     <div class="col-2">
       <ul id="nameAccount"></ul>
     </div>
   </div>
-
-  <button type="button" class="btn btn-primary" id="addBtn" onclick="signOut()">signOut</button>
 
   <h1>1年第1ターム</h1>
 
@@ -219,7 +218,7 @@
   </table>
 
   <h2>テスト　chat.htmlへのリンク</h2>
-  <button type="button" class="btn btn-primary" onclick="location.href='chat.html'">chat.htmlへの移動</button>
+  <button type="button" class="btn btn-primary" onclick="userSend()">chat.htmlへの移動</button>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
@@ -255,11 +254,11 @@
 
       <!-- ここまでわからなくてなんとなく読み込んでいるところ -->
 
-    <script src="./js/logout.js"></script>
+    <!-- <script src="./js/logout.js"></script> -->
 
 
     <script src ="./js/timetable1.js"></script>
 
-<script src="js/account.js"></script>
+    <script src="js/account.js"></script>
 
 </html>
