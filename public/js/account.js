@@ -1,9 +1,10 @@
+var userName;
 function show() {
     var query = location.search;
     var value = query.split('=');
-    
-    console.log(decodeURIComponent(value[1]));
-    $('#nameAccount').append('<li>' + value[1] + '</li>');
+    userName = value[1];
+    console.log(decodeURIComponent(userName));
+    $('#nameAccount').append('<li>' + userName + '</li>');
 }
 show();
 
@@ -14,4 +15,8 @@ function signOut() {
       }).catch((error) => {
         // An error happened.
     });
+}
+
+function userSend() {
+    window.location.href ='../chat.html?name=' + encodeURIComponent(userName);
 }
