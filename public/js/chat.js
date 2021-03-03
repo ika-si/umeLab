@@ -5,7 +5,7 @@ function getAll() {
   collection.get().then((querySnapshot) => {
     $('#list').text('');
     querySnapshot.forEach((doc) => {
-      if(doc.data()['name'] == "yurika") {
+      if(doc.data()['name'] == userName) {
         $('#list').append('<li class="my">' + doc.data()['createdAt'].toDate() + '<br>' + doc.data()['name'] + '<br>' + doc.data()['msg'] + '</li>');
       } else {
         $('#list').append('<li class="your">' + doc.data()['createdAt'].toDate() + '<br>' + doc.data()['name'] + '<br>' + doc.data()['msg'] + '</li>');
@@ -17,8 +17,8 @@ getAll();
 
 
 function add(){
-  let nameAdd = $("#nameAdd").val();
-  if (nameAdd == "") return;
+  // let nameAdd = $("#nameAdd").val();
+  // if (nameAdd == "") return;
 
   let msgAdd = $("#msgAdd").val();
   if (msgAdd == "") return;
@@ -26,7 +26,7 @@ function add(){
   db.collection("users").add({
     createdAt: new Date(),
     msg: msgAdd,
-    name: nameAdd
+    name: userName
   }).then(function(docRef) {
     getAll();
     $("#nameAdd").val('');
