@@ -8,8 +8,6 @@ function signInWithEmailPassword() {
     var email = emailAdd;
     var password = passwordAdd;
 
-    // var email = 'yurika@gmail.com';
-    // var password = 'yurika';
     // [START auth_signin_password]
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((user) => {
@@ -59,17 +57,16 @@ function signUpWithEmailPassword() {
     var email = emailAdd;
     var password = passwordAdd;
 
-    // var name = 'y';
-    // var email = 'yurika@gmail.com';
-    // var password = 'yurika';
     // [START auth_signup_password]
     firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
         // Signed in 
         add(name,email);
     }).catch((error) => {
-        console.log('すでにアカウントが存在します');
         var errorCode = error.code;
         var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+        $('#errorMessage').append(errorMessage);
         $("#nameAdd").val('');
         $("#emailAdd").val('');
         $("#passwordAdd").val('');
