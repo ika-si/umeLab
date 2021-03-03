@@ -1,13 +1,13 @@
 .my {
   color: blue;
   background-color: #ffe6cb;
-  float: left;
+  float: right;
   margin-bottom: 20px;
 }
 .your {
   color: black;
   background-color: #F9D1D8;
-  float: right;
+  float: left;
   margin-bottom: 20px;
 }
 
