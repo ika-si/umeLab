@@ -15,8 +15,20 @@
     <link rel="stylesheet" href="./css/chat.css">
   </head>
   <body>
+
+    <div class="row g-5">
+      <div class="col-8">
+        <h2>chat.html</h2>
+      </div>
+      <div class="col-2">
+        <ul id="nameAccount"></ul>
+      </div>
+      <div class="col-2">
+        <button type="button" class="btn btn-primary" onclick="history.back()">戻る</button>
+      </div>
+    </div>
+
     <br>
-    <button type="button" class="btn btn-primary" onclick="history.back()">戻る</button>
 
 <div class="col-sm-8">
     <div class="chat_window">
@@ -61,6 +73,7 @@
     firebase.analytics();
     </script>
 
+    <script src="./js/account.js"></script>
     <script src="./js/chat.js"></script>
 
   </body>
