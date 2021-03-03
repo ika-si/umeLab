@@ -3,7 +3,7 @@ function show() {
     var value = query.split('=');
     
     console.log(decodeURIComponent(value[1]));
-    $('#list').append('<li>'+ value[1] + '</li>');
+    $('#nameAccount').append('<li>' + value[1] + '</li>');
 }
 show();
 

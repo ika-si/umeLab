@@ -1,15 +1,15 @@
 function signInWithEmailPassword() {
-    // let emailAdd = $("#emailAdd").val();
-    // if (emailAdd == "") return;
+    let emailAdd = $("#emailAdd").val();
+    if (emailAdd == "") return;
 
-    // let passwordAdd = $("#passwordAdd").val();
-    // if (passwordAdd == "") return;
+    let passwordAdd = $("#passwordAdd").val();
+    if (passwordAdd == "") return;
 
-    // var email = emailAdd;
-    // var password = passwordAdd;
+    var email = emailAdd;
+    var password = passwordAdd;
 
-    var email = 'yurika.sugai@gmail.com';
-    var password = 'yurika';
+    // var email = 'yurika@gmail.com';
+    // var password = 'yurika';
     // [START auth_signin_password]
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((user) => {
@@ -26,14 +26,13 @@ function signInWithEmailPassword() {
 
 function search(email) {
     var db = firebase.firestore();
-    let collection = db.collection("users");
+    let collection = db.collection("account");
     collection.get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            if(doc.data()['email'] == "yurika.sugai@gmail.com") {
+            if(doc.data()['email'] == email) {
                 console.log('find');
                 var name = doc.data()['name'];
-                $('#list').append('<li>'+ name + '</li>');
-                window.location.href ='../done.html?name=' + encodeURIComponent(name);
+                window.location.href ='../timetable.html?name=' + encodeURIComponent(name);
             }
             // console.log('アカウントがない');
             // window.location.href ='../index.html';
@@ -61,7 +60,7 @@ function signUpWithEmailPassword() {
     var password = passwordAdd;
 
     // var name = 'y';
-    // var email = 'yurika.sugai@gmail.com';
+    // var email = 'yurika@gmail.com';
     // var password = 'yurika';
     // [START auth_signup_password]
     firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
@@ -80,7 +79,7 @@ function signUpWithEmailPassword() {
 
 function add(nameAdd,emailAdd){
     var db = firebase.firestore();
-    db.collection("users").add({
+    db.collection("account").add({
         name: nameAdd,
         email: emailAdd
     }).then(function(docRef) {
