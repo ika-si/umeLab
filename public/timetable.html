@@ -8,6 +8,11 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
+  <!-- jQueryの読み込み -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="css/timetable.css">
+
   <title>timetable</title>
 </head>
 <body>
@@ -17,9 +22,14 @@
       <h2>timetable.html</h2>
     </div>
     <div class="col-2">
-      <button type="button" id="logoutbtn" class="btn btn-outline-warning btn-lg"">LogOut</button>
+      <button type="button" id="logoutbtn" class="btn btn-outline-warning btn-lg">LogOut</button>
+    </div>
+    <div class="col-2">
+      <ul id="nameAccount"></ul>
     </div>
   </div>
+
+  <button type="button" class="btn btn-primary" id="addBtn" onclick="signOut()">signOut</button>
 
   <h1>1年第1ターム</h1>
 
@@ -231,5 +241,7 @@
 
 
 </script>
+
+<script src="js/account.js"></script>
 
 </html>
