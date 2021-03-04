@@ -27,7 +27,7 @@ show();
 var db = firebase.firestore();
 
 function getAll() {
-  let collection = db.collection("users").orderBy('createdAt');
+  let collection = db.collection("rooms").doc("Mon1").collection("classes").doc("english").collection("chat").orderBy('createdAt');
   collection.get().then((querySnapshot) => {
     $('#list').text('');
     querySnapshot.forEach((doc) => {
@@ -49,18 +49,19 @@ function add(){
   let msgAdd = $("#msgAdd").val();
   if (msgAdd == "") return;
 
-  db.collection("users").add({
+  db.collection("rooms").doc("Mon1").collection("classes").doc("english").collection("chat").add({
     createdAt: new Date(),
     msg: msgAdd,
     name: userName
-  }).then(function(docRef) {
+  })
+  .then(() => {
     getAll();
     $("#nameAdd").val('');
     $("#msgAdd").val('');
-    console.log("Document written with ID: ", docRef.id);
+    console.log("Document written with ID: ");
   })
-  .catch(function(error) {
-    console.error("Error adding document: ", error);
+  .catch((error) => {
+    console.error("Error writing document: ", error);
   });
 }
 
