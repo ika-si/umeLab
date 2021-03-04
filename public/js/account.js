@@ -1,4 +1,4 @@
-var uid;
+var uid, userName;
 function show() {
     var query = location.search;
     var value = query.split('=');
@@ -7,14 +7,12 @@ function show() {
 
     var db = firebase.firestore();
     let collection = db.collection("account");
-    var userName;
     collection.get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             if(doc.data()['uid'] == uid) {
                 console.log('find');
-                console.log(doc.data()['name']);
                 userName = doc.data()['name'];
-                console.log(userName);
+                $('#nameAccount').append('<li>' + userName + '</li>');
             }
             // console.log('アカウントがない');
             // window.location.href ='../index.html';
@@ -23,7 +21,6 @@ function show() {
             // $('#list').append('<li>'+ name + '</li>');
         })
     })
-    $('#nameAccount').append('<li>' + userName + '</li>');
 }
 show();
 
@@ -37,5 +34,5 @@ function signOut() {
 }
 
 function userSend() {
-    window.location.href ='../chat.html?name=' + encodeURIComponent(userName);
+    window.location.href ='../chat.html?name=' + encodeURIComponent(uid);
 }
