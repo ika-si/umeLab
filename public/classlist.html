@@ -77,9 +77,6 @@
     <!-- <button type="button" class="btn btn-primary" onclick="history.back()" >決定</button> -->
     <button type="button" class="btn btn-primary" onclick="confirmClass()" >決定</button>
 
-
-    <script src="js/account.js"></script>
-
     <script>
       const db = firebase.firestore();
       // ->URLから時限情報を取得
@@ -198,7 +195,7 @@
           }
         }
         if (window.confirm(msg)) {
-          window.location.href ='timetable.html?name=' + encodeURIComponent(uid);
+          window.location.href = 'timetable.html';
         } else {
 
         }
@@ -206,6 +203,5 @@
 
 
     </script>
-    
   </body>
 </html>
