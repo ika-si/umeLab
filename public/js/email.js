@@ -29,8 +29,8 @@ function search(email) {
         querySnapshot.forEach((doc) => {
             if(doc.data()['email'] == email) {
                 console.log('find');
-                var name = doc.data()['name'];
-                window.location.href ='../timetable.html?name=' + encodeURIComponent(name);
+                var uid = doc.data()['uid'];
+                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
             }
             // console.log('アカウントがない');
             // window.location.href ='../index.html';
@@ -60,7 +60,7 @@ function signUpWithEmailPassword() {
     // [START auth_signup_password]
     firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
         // Signed in 
-        add(name,email);
+        add(name);
     }).catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -74,11 +74,21 @@ function signUpWithEmailPassword() {
     // [END auth_signup_password]
 }
 
-function add(nameAdd,emailAdd){
+function add(nameAdd){
+  var user = firebase.auth().currentUser;
+  var emailAdd,uidAdd;
+  
+  if (user != null) {
+    emailAdd = user.email;
+    uidAdd = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                     // this value to authenticate with your backend server, if
+                     // you have one. Use User.getToken() instead.
+  }
     var db = firebase.firestore();
     db.collection("account").add({
         name: nameAdd,
-        email: emailAdd
+        email: emailAdd,
+        uid: uidAdd
     }).then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);
         window.location.assign('../signin.html');
