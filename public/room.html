@@ -12,21 +12,29 @@
   <!-- jQueryの読み込み -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
+  <link rel="stylesheet" href="css/account.css">
+  <link rel="stylesheet" href="./css/chat.css">
+
   <title>room</title>
 </head>
 <body>
 
   <div class="row g-5">
-    <div class="col-8">
+    <div class="col-6">
       <h2>timetable.html</h2>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-primary" onclick="history.back()">戻る</button>
     </div>
     <div class="col-2">
       <button type="button" class="btn btn-primary" id="addBtn" onclick="signOut()">signOut</button>
       <!-- <button type="button" id="logoutbtn" class="btn btn-outline-warning btn-lg"">LogOut</button> -->
     </div>
+    <div class="col-2">
+      <ul id="nameAccount"></ul>
+    </div>
   </div>
-  <button type="button" class="btn btn-primary" onclick="history.back()">戻る</button>
-    
+      
   <h3>月曜1限 -情報表現-</h3>
   <h4>　　教授名:○○、教室:</h4>
 
@@ -49,38 +57,22 @@
       </div>
     </div>
 
-    <div class="col-sm-8">
-      <div class="chat_window">
-        <div class="top_menu">
-          <div class="buttons">
-            <div class="button close"></div>
-            <div class="button minimize"></div>
-            <div class="button maximize"></div>
-          </div>
-          <div class="title">グループチャット</div>
-        </div>
-        <ul class="messages"></ul>
-        <div class="bottom_wrapper clearfix">
-          <div class="message_input_wrapper">
-            <input class="message_input" placeholder="Type your message here..." />
-          </div>
-          <div class="send_message">
-            <div class="icon"></div>
-            <div class="text">Send</div>
-          </div>
-        </div>
-      </div>
-      <div class="message_template">
-        <li class="message">
-          <div class="avatar"></div>
-          <div class="text_wrapper">
-            <div class="text"></div>
-          </div>
-        </li>
-      </div>
-    </div>
+    <br>
 
-  </div>
+    <div class="col-sm-8">
+        <div class="chat_window">
+          <div class="top_menu">
+            <div class="title">グループチャット</div>
+          </div>
+            <!-- <input type="text" class="form-control"  placeholder="name" id='nameAdd'> -->
+            <input type="text" class="form-control" placeholder="message" id='msgAdd'>
+            <button type="button" class="btn btn-primary" id="addBtn" onclick="add()">Add</button>
+            <br>
+            <br>
+            <ul id="list" class="messages" ></ul>
+
+        </div>
+    </div>
 
   <script src="./js/room.js"></script>
 
@@ -113,8 +105,9 @@
   
       <!-- ここまでわからなくてなんとなく読み込んでいるところ -->
   
-    <script src="./js/logout.js"></script>
+    <!-- <script src="./js/logout.js"></script> -->
     <script src="./js/account.js"></script>
+    <script src="./js/chat.js"></script>
 
 </body>
 
