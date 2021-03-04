@@ -98,17 +98,20 @@ function sendEmailVerification() {
     // [END auth_send_email_verification]
 }
 function sendPasswordReset() {
-    var email = "test@example.com";
-    var password = "hunter2";
-    // [START auth_signin_password]
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((user) => {
-          console.log('signin');
-          window.location.assign('../done.html');
-      })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
+    let email = $("#emailAdd").val();
+    if (email == "") return;
+    
+    // const email = "sam@example.com";
+  // [START auth_send_password_reset]
+  firebase.auth().sendPasswordResetEmail(email)
+    .then(() => {
+      // Password reset email sent!
+      window.location.assign('../signin.html');
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ..
     });
-    // [END auth_signin_password]
+  // [END auth_send_password_reset]
 }
