@@ -1,33 +1,8 @@
-var uid, userName;
-function show() {
-    var query = location.search;
-    var value = query.split('=');
-    uid= value[1];
-    console.log(decodeURIComponent(uid));
-
-    var db = firebase.firestore();
-    let collection = db.collection("account");
-    collection.get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['uid'] == uid) {
-                console.log('find');
-                userName = doc.data()['name'];
-                $('#nameAccount').append('<li>' + userName + '</li>');
-            }
-            // console.log('アカウントがない');
-            // window.location.href ='../index.html';
-            // console.log(doc.data()['name']);
-            // var name = doc.data()['name'];
-            // $('#list').append('<li>'+ name + '</li>');
-        })
-    })
-}
-show();
-
+//firestoreからデータ取得
 var db = firebase.firestore();
 
 function getAll() {
-  let collection = db.collection("users").orderBy('createdAt');
+  let collection = db.collection("rooms").doc("Mon1").collection("classes").doc("english").collection("chat").orderBy('createdAt');
   collection.get().then((querySnapshot) => {
     $('#list').text('');
     querySnapshot.forEach((doc) => {
@@ -41,7 +16,7 @@ function getAll() {
 }
 getAll();
 
-
+// firestoreにデータを送信
 function add(){
   // let nameAdd = $("#nameAdd").val();
   // if (nameAdd == "") return;
@@ -49,18 +24,19 @@ function add(){
   let msgAdd = $("#msgAdd").val();
   if (msgAdd == "") return;
 
-  db.collection("users").add({
+  db.collection("rooms").doc("Mon1").collection("classes").doc("english").collection("chat").add({
     createdAt: new Date(),
     msg: msgAdd,
     name: userName
-  }).then(function(docRef) {
+  })
+  .then(() => {
     getAll();
     $("#nameAdd").val('');
     $("#msgAdd").val('');
-    console.log("Document written with ID: ", docRef.id);
+    console.log("Document written with ID: ");
   })
-  .catch(function(error) {
-    console.error("Error adding document: ", error);
+  .catch((error) => {
+    console.error("Error writing document: ", error);
   });
 }
 
