@@ -5,7 +5,7 @@
     <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
-    
+
     </style>
 
     <!-- Bootstrap CSS -->
@@ -24,21 +24,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
 
 
-    <script>
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      var firebaseConfig = {
-        apiKey: "AIzaSyCMNMM8qaNYRAERqVWTebEHJQY4CZbpvWo",
-        authDomain: "test0301-9d7ae.firebaseapp.com",
-        projectId: "test0301-9d7ae",
-        storageBucket: "test0301-9d7ae.appspot.com",
-        messagingSenderId: "573097455906",
-        appId: "1:573097455906:web:d69b2b56b970dbf634b57b",
-        measurementId: "G-S1EBMJ3TLW"
-        };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
+    <script src="js/config.js"></script>
 
     <title>classlist</title>
 
@@ -47,7 +33,7 @@
         display: table;
         width: 600px;
       }
-      
+
       /* .detail { */
       .form-check.form-switch {
         display: table-cell;
@@ -91,7 +77,7 @@
       let selectedClassName;
       let selectedTeacher;
       displayClass();
-      
+
       function displayClass() {
         const openingPeriod = db.collection("rooms").doc(roomsDocumentId).collection('classes').doc('english'); // 存在するclass名の値を入れないといけないのが難点
         console.log(openingPeriod);
@@ -108,7 +94,7 @@
             console.log("Error getting document:", error);
         });
 
-        
+
 
         db.collection("rooms").doc(roomsDocumentId).collection('classes').orderBy('classId').get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
