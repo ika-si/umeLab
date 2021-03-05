@@ -35,10 +35,10 @@ fileReader.onload = () => {
 
   // 各クラスのデータをcsvファイルをもとに作成する処理
   for (let i=1; i<classData.length; i++) {
-    db.collection("rooms").doc(classData[i][0]).collection("classes").doc(classData[i][1]).set({
+    db.collection("rooms").doc(classData[i][0]).collection("classes").add({
     // ※フィールドに入れる id と同じデータを各クラスのドキュメント名とする(t1m1201等)
       id: classData[i][1],
-      classId: classData[i][2],
+      classId: Number(classData[i][2]),
       name: classData[i][3],
       term: classData[i][4],
       period: classData[i][5],
@@ -51,6 +51,21 @@ fileReader.onload = () => {
     console.error("Error writing document: ", error);
     });
   }
+
+  // for (let i=1; i<classData.length; i++) {
+  //   db.collection("rooms").doc(classData[i][0]).collection("classes").doc(classData[i][1]).update({
+  //     classId: Number(classData[i][2])
+  //   })
+  //   .then(function() {
+  //       console.log("Document successfully updated!");
+  //   })
+  //   .catch(function(error) {
+  //       // The document probably doesn't exist.
+  //       console.error("Error updating document: ", error);
+  //   });
+  // }
+
+
 
   // 各クラスに collection"chat" と　collection"users"　を追加する処理
   const periodData = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];

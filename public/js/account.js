@@ -3,6 +3,9 @@ function show() {
     var query = location.search;
     var value = query.split('=');
     uid= value[1];
+    if (uid.indexOf("?") != -1) {
+        uid = uid.substring(0, uid.indexOf("?"));
+    }
     console.log(decodeURIComponent(uid));
 
     var db = firebase.firestore();
@@ -12,7 +15,7 @@ function show() {
             if(doc.data()['uid'] == uid) {
                 console.log('find');
                 userName = doc.data()['name'];
-                $('#nameAccount').append('<li>' + userName + '</li>');
+                // $('#nameAccount').append('<li>' + userName + '</li>');
             }
             // console.log('アカウントがない');
             // window.location.href ='../index.html';
