@@ -15,7 +15,8 @@ function show() {
             if(doc.data()['uid'] == uid) {
                 console.log('find');
                 userName = doc.data()['name'];
-                // $('#nameAccount').append('<li>' + userName + '</li>');
+                console.log(doc.data()['name']);
+                $('#nameAccount').append('<li>' + userName + '</li>');
             }
             // console.log('アカウントがない');
             // window.location.href ='../index.html';

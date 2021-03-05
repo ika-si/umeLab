@@ -8,6 +8,9 @@
     
     </style>
 
+    <!-- jQueryの読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
@@ -59,8 +62,18 @@
     </style>
   </head>
   <body>
-    <ul id="nameAccount"></ul>
-    <button type="button" class="btn btn-primary" id="addBtn" onclick="signOut()">signOut</button>
+    <div class="row g-5">
+      <div class="col-8">
+        <h2>chat.html</h2>
+      </div>
+      <div class="col-2">
+        <ul id="nameAccount"></ul>
+      </div>
+      <div class="col-2">
+        <button type="button" class="btn btn-primary" id="addBtn" onclick="signOut()">signOut</button>
+      </div>
+    </div>
+    
     <br>
     <h1><span id="openingClass">[開講曜日・時限]</span>授業リスト</h1>
     <!-- <p>選択した講義 <span id="span1"></span></p> -->
@@ -209,5 +222,6 @@
       }
 
     </script>
+    
   </body>
 </html>
