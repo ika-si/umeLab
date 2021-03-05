@@ -68,13 +68,10 @@
     <!-- <div class="classtable"> -->
     <form name="classtable">
       <div class="classDetail">
-        <div class="form-check form-switch">チェックボックス</div>
+        <div class="form-check form-switch"></div>
         <div class="form-check form-switch">ID</div>
         <div class="form-check form-switch">教科名</div>
         <div class="form-check form-switch">教授名</div>
-        <!-- <div class="detail">クラスID</div>
-        <div class="detail">教科名</div>
-        <div class="detail">教授名</div> -->
       </div>
     </form>
     <!-- <button type="button" class="btn btn-primary" onclick="history.back()" >決定</button> -->
@@ -86,37 +83,30 @@
       let query = location.search;
       let value = query.split('=');
       const roomsDocumentId = value[2];
-      console.log("表示する時限 => " + decodeURIComponent(roomsDocumentId));
+      console.log("urlから取得(表示する時限) => " + decodeURIComponent(roomsDocumentId));
       // <-
 
-      let selectedPeriod; // "月曜1限"等の文字列
+      let selectedPeriod; // "月曜1限"とか
       let selectedId;     // t1m1101 とか
-      let selectedClassName; // "哲学"とかの教科名
+      let selectedClassName; // "哲学"とか教科名
       let selectedTeacher;   // 先生の名前
       displayClass();
       
       function displayClass() {
-        const openingPeriod = db.collection("rooms").doc(roomsDocumentId).collection('classes'); // 存在するclass名の値を入れないといけないのが難点
-        console.log(openingPeriod);
-        openingPeriod.get().then((doc) => {
-            if (doc.exists) {
-                document.getElementById("openingClass").textContent = doc.data()['period'];
-                selectedPeriod = doc.data()['period'];
-                console.log("確認　ー　" + selectedPeriod);
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
-        }).catch((error) => {
-            console.log("Error getting document:", error);
+        
+        db.collection("rooms").doc(roomsDocumentId).collection('classes').orderBy('classId').limit(1).get().then((querySnapshot) => { // 良い書き方が思い浮かばなかったがフィールドのperiodの値を取り出している
+          querySnapshot.forEach((doc) => {
+            document.getElementById("openingClass").textContent = doc.data()['period'];
+            selectedPeriod = doc.data()['period'];
+            console.log("[開講曜日・時限]" + selectedPeriod);
+          });
         });
-
         
 
         db.collection("rooms").doc(roomsDocumentId).collection('classes').orderBy('classId').get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
-              console.log(`${doc.id} => ${doc.data()['id']}`);
-              console.log(`${doc.id} => ${doc.data()['name']}`);
+              // console.log(`${doc.id} => ${doc.data()['id']}`);
+              // console.log(`${doc.id} => ${doc.data()['name']}`);
 
               // let parent = document.getElementsByClassName("classtable")[0];
               let parent = document.classtable;
@@ -130,10 +120,9 @@
                   let newCBinput = document.createElement('input');
                   newCBinput.setAttribute('class', 'form-check-input');
                   newCBinput.setAttribute('type', 'checkbox');
-                  newCBinput.setAttribute('id', `checkbox${doc.data()['classId']}`);   // 追加した
+                  newCBinput.setAttribute('id', `checkbox${doc.data()['classId']}`);
                   newCBinput.setAttribute('name', 'className');
                   newCBinput.setAttribute('onclick', `clickBtn(${doc.data()['classId']}, '${doc.data()['id']}', '${doc.data()['name']}', '${doc.data()['teacher']}')`);
-                  // newCBinput.setAttribute('onclick', `clickBtn(${doc.data()['classId']})`);
                   let newCBlabel = document.createElement('label');
                   newCBlabel.setAttribute('class', 'form-check-label');
                   newCBlabel.setAttribute('for', 'flexSwitchCheckDefault');
@@ -143,25 +132,22 @@
                 newRow1.appendChild(newCB);
 
                 let newDetail = document.createElement('div');
-                // newDetail.setAttribute('class', 'detail');
                 newDetail.setAttribute('class', 'form-check form-switch');
                 newDetail.innerText = doc.data()['id'];
                 newRow1.appendChild(newDetail);
 
                 newDetail = document.createElement('div');
-                // newDetail.setAttribute('class', 'detail');
                 newDetail.setAttribute('class', 'form-check form-switch');
                 newDetail.innerText = doc.data()['name'];
                 newRow1.appendChild(newDetail);
 
                 newDetail = document.createElement('div');
-                // newDetail.setAttribute('class', 'detail');
                 newDetail.setAttribute('class', 'form-check form-switch');
                 newDetail.innerText = doc.data()['teacher'];
                 newRow1.appendChild(newDetail);
 
               parent.appendChild(newRow1);
-              console.log(parent);
+              // console.log(parent);
 
           });
         });
@@ -174,9 +160,7 @@
             selectedId = id;
             selectedClassName = name;
             selectedTeacher = teacher;
-            console.log("id -> " + id);
-            console.log("name -> " + name);
-            console.log("teacher -> " + teacher);
+            console.log("now select -> id: " + id + "  name: " + name + "  teacher: " + teacher);
             continue;
           }
           className[i].checked = false;
@@ -205,7 +189,7 @@
           .get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
               if (doc.data()['id'] == selectedId) {
-                doc.collection("users").add({
+                  db.collection("rooms").doc(roomsDocumentId).collection("classes").doc(doc.id).collection("users").add({
                   uid: uid
                 })
                 .then(() => {
@@ -218,7 +202,7 @@
             })
           })
 
-          // window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+          window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
         } else {
 
         }

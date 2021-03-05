@@ -42,7 +42,7 @@ fileReader.onload = () => {
       name: classData[i][3],
       term: classData[i][4],
       period: classData[i][5],
-      teacher: classData[i][6]
+      teacher: classData[i][6].trim()
     })
     .then(() => {
       console.log("Document successfully written!");
@@ -51,19 +51,6 @@ fileReader.onload = () => {
     console.error("Error writing document: ", error);
     });
   }
-
-  // for (let i=1; i<classData.length; i++) {
-  //   db.collection("rooms").doc(classData[i][0]).collection("classes").doc(classData[i][1]).update({
-  //     classId: Number(classData[i][2])
-  //   })
-  //   .then(function() {
-  //       console.log("Document successfully updated!");
-  //   })
-  //   .catch(function(error) {
-  //       // The document probably doesn't exist.
-  //       console.error("Error updating document: ", error);
-  //   });
-  // }
 
 
 
