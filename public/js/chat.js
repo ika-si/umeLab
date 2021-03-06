@@ -1,20 +1,83 @@
 //firestoreからデータ取得
 var db = firebase.firestore();
 
-function getAll() {
-  let collection = db.collection("rooms").doc("Mon1").collection("classes").doc("english").collection("chat").orderBy('createdAt');
-  collection.get().then((querySnapshot) => {
-    $('#list').text('');
-    querySnapshot.forEach((doc) => {
-      if(doc.data()['name'] == userName) {
-        $('#list').append('<li class="my">' + doc.data()['createdAt'].toDate() + '<br>' + doc.data()['name'] + '<br>' + doc.data()['msg'] + '</li>');
-      } else {
-        $('#list').append('<li class="your">' + doc.data()['createdAt'].toDate() + '<br>' + doc.data()['name'] + '<br>' + doc.data()['msg'] + '</li>');
-      }
-    })
-  })
+var messagesRef = db.collection("rooms").doc("Mon1").collection("classes").doc("english").collection("chat");
+
+/**
+ * 同期処理
+ **/
+messagesRef.orderBy("createdAt").limit(20).onSnapshot( (snapshot) => {
+    // $('#list').text('');
+    snapshot.docChanges().forEach((change) => {
+        // 追加
+        if ( change.type === 'added' ) {
+            addLog(change.doc.id, change.doc.data());
+        }
+        // 更新
+        else if( change.type === 'modified' ){
+            modLog(change.doc.id, change.doc.data());
+        }
+        // 削除
+        else if ( change.type === 'removed' ) {
+            removeLog(change.doc.id);
+        }
+    });
+});
+
+
+
+function addLog(id, data){
+    // 追加するHTMLを作成
+    // let log = `${data.name}: ${data.msg} ${data.date}`;
+    // let li  = document.createElement('li');
+    // li.id   = id;
+    // li.appendChild(document.createTextNode(log));
+
+    if(data.name == userName) {
+        $('#list').append('<li class="my">' + data.createdAt.toDate() + '<br>' + data.name + '<br>' + data.msg + '</li>');
+    } else {
+        $('#list').append('<li class="your">' + data.createdAt.toDate() + '<br>' + data.name + '<br>' + data.msg + '</li>');
+    }
+
+    // 表示エリアへ追加
+    // let chatlog = document.getElementById("list");
+    // chatlog.insertBefore(li, chatlog.firstChild);
 }
-getAll();
+
+/**
+ * ログを更新
+ */
+function modLog(id, data){
+    let log = document.getElementById(id);
+    if( log !== null ){
+          log.innerText = `${data.name}: ${data.msg} ${data.date}`;
+    }
+}
+  
+/**
+ * ログを削除
+ **/
+function removeLog(id){
+    let log = document.getElementById(id);
+    if( log !== null ){
+        log.parentNode.removeChild(log);
+    }
+}
+
+// function getAll() {
+//   let collection = db.collection("users").orderBy('createdAt');
+//   collection.get().then((querySnapshot) => {
+//     $('#list').text('');
+//     querySnapshot.forEach((doc) => {
+//       if(doc.data()['name'] == "yurika") {
+//         $('#list').append('<li class="my">' + doc.data()['createdAt'].toDate() + '<br>' + doc.data()['name'] + '<br>' + doc.data()['msg'] + '</li>');
+//       } else {
+//         $('#list').append('<li class="your">' + doc.data()['createdAt'].toDate() + '<br>' + doc.data()['name'] + '<br>' + doc.data()['msg'] + '</li>');
+//       }
+//     })
+//   })
+// }
+// getAll();
 
 // firestoreにデータを送信
 function add(){
@@ -24,13 +87,12 @@ function add(){
   let msgAdd = $("#msgAdd").val();
   if (msgAdd == "") return;
 
-  db.collection("rooms").doc("Mon1").collection("classes").doc("english").collection("chat").add({
+  messagesRef.add({
     createdAt: new Date(),
     msg: msgAdd,
     name: userName
   })
   .then(() => {
-    getAll();
     $("#nameAdd").val('');
     $("#msgAdd").val('');
     console.log("Document written with ID: ");

@@ -6,12 +6,12 @@
     <title>Welcome to Firebase Hosting</title>
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.2.9/firebase-app.js"></script>
+    <!-- <script defer src="/__/firebase/8.2.9/firebase-app.js"></script> -->
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script>
+    <!-- <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script> -->
+    <!-- <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script> -->
 
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- <script defer src="/__/firebase/init.js?useEmulator=true"></script> -->
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -24,7 +24,11 @@
 
     <p>test</p>
     <input type="text" class="form-control" placeholder="email" id='emailAdd'>
-    <input type="text" class="form-control" placeholder="password" id='passwordAdd'>
+
+    <div class="form-group">
+    <input type="password" class="form-control" placeholder="password" id='passwordAdd'>
+  </div>
+
     <button type="button" class="btn btn-primary" id="addBtn" onclick="signInWithEmailPassword()">signIn</button>
     <button type="button" class="btn btn-primary" id="addBtn" onclick="location.href='./reset.html'">PasswordReset</button>
 

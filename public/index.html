@@ -6,18 +6,19 @@
     <title>Welcome to Firebase Hosting</title>
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.2.9/firebase-app.js"></script>
+    <!-- <script defer src="/__/firebase/8.2.9/firebase-app.js"></script> -->
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script>
+    <!-- <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script> -->
+    <!-- <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script> -->
 
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- <script defer src="/__/firebase/init.js?useEmulator=true"></script> -->
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
   </head>
   <body>
+
     <div>
       <!-- <input type="text" id="login-status" readonly="readonly"> -->
 
@@ -26,7 +27,7 @@
           <h2>timetable</h2>
         </div>
         <div class="col-2">
-          <button type="button" id="login-btn" class="btn btn-outline-warning btn-lg">LogIn</button>
+          <!-- <button type="button" id="login-btn" class="btn btn-outline-warning btn-lg">LogIn</button> -->
         </div>
       </div>
 
@@ -37,7 +38,6 @@
 
     </div>
 
-    <!-- わからなくてなんとなく読み込んでいる -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <!--firebase UIの読み込み-->
@@ -52,14 +52,13 @@
 
     </script>
 
-    <!-- ここまでわからなくてなんとなく読み込んでいるところ -->
     <!-- <script src="./js/login.js"></script> -->
 
     <!-- ！！！！！！！以下のコメントアウトを外して実行する時は注意！！！！！！！！！！！ -->
     <!-- FireStore の collection"rooms" の中にたくさんデータを書き込む -->
     <!-- <p>シラバスデータの読み込み（上書き）をできます</p> -->
     <!-- <p>指定フォーマットのcsvファイルをロードしてください</p> -->
-    <!-- <input type="file" id="csvFile"> -->
-    <!-- <script src="./js/getCsv.js"></script> -->
+    <input type="file" id="csvFile">
+    <script src="./js/getCsv.js"></script>
   </body>
 </html>

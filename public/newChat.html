@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FireStore Chat</title>
+  <style>
+    #chatlog{ width:500px; height:300px; border:1px solid gray; overflow-y:scroll; }
+    #uname{ width:80px; float:left; margin-right:10px; padding-top:5px; text-align:center}
+    #msg{ width:330px; height:30px; margin-right:10px; font-size:12pt;}
+    #sbmt{ width:100px; height:30px; }
+  </style>
+  <link rel="stylesheet" href="newChat.css">
+</head>
+<body>
+  <h1>FireStore Chat</h1>
+
+  <!-- 発言が表示される領域 -->
+  <ul id="chatlog"></ul>
+
+  <!-- 入力フォーム -->
+  <form id="form1">
+    <div id="uname"></div>
+    <input type="text" id="msg"><button type="button" id="sbmt">送信</button>
+  </form>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+  <script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+      apiKey: "AIzaSyA4IUMABIg3koI5Gn9--x2igHayBwRdiig",
+      authDomain: "umelab-29c16.firebaseapp.com",
+      projectId: "umelab-29c16",
+      storageBucket: "umelab-29c16.appspot.com",
+      messagingSenderId: "444754040640",
+      appId: "1:444754040640:web:f51272614f01531bc88ca5",
+      measurementId: "G-CZ2P16QHER"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  </script>
+
+  <script>
+    //---------------------------------------
+    // チャット初期処理
+    //---------------------------------------
+    // ユーザー名をランダムに決める
+    var uname = getUName();
+    document.getElementById("uname").innerHTML = uname;
+
+    // テキストボックスにfocus
+    // document.getElementById("msg").focus();
+
+    //---------------------------------------
+    // Firestoreの準備
+    //---------------------------------------
+    // Firestoreのインスタンス作成
+    var db = firebase.firestore();
+
+    // チャットルームのリファレンス取得
+    var messagesRef = db.collection("chatroom1").doc("room1").collection("messages");
+
+    /**
+     * 同期処理
+     **/
+    messagesRef.orderBy("date", "asc").limit(20).onSnapshot( (snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+        // 追加
+        if ( change.type === 'added' ) {
+          addLog(change.doc.id, change.doc.data());
+        }
+        // 更新
+        else if( change.type === 'modified' ){
+          modLog(change.doc.id, change.doc.data());
+        }
+        // 削除
+        else if ( change.type === 'removed' ) {
+          removeLog(change.doc.id);
+        }
+      });
+    });
+
+    /**
+     * 送信ボタン押下
+     **/
+    document.getElementById("sbmt").addEventListener("click", ()=>{
+      let msg = document.getElementById("msg").value;
+
+      if( msg.length === 0 ){
+        return(false);
+      }
+      // メッセージをfirestoreへ送信
+      messagesRef.add({
+        name: uname,
+        msg: msg,
+        date: new Date().getTime()
+      })
+      .then(()=>{
+        let msg = document.getElementById("msg");
+        msg.focus();
+        msg.value = "";
+      })
+    });
+    // submitイベントは（いったん）無視する
+    document.getElementById("form1").addEventListener("submit", (e)=>{
+      e.preventDefault();
+    });
+
+
+    /**
+     * ログに追加
+     */
+    function addLog(id, data){
+      // 追加するHTMLを作成
+      let log = `${data.name}: ${data.msg} (${getStrTime(data.date)})`;
+      let li  = document.createElement('li');
+      li.id   = id;
+      li.appendChild(document.createTextNode(log));
+
+      // 表示エリアへ追加
+      let chatlog = document.getElementById("chatlog");
+      chatlog.insertBefore(li, chatlog.firstChild);
+    }
+
+    /**
+     * ログを更新
+     */
+    function modLog(id, data){
+      let log = document.getElementById(id);
+      if( log !== null ){
+        log.innerText = `${data.name}: ${data.msg} (${getStrTime(data.date)})`;
+      }
+    }
+
+    /**
+     * ログを削除
+     **/
+    function removeLog(id){
+      let log = document.getElementById(id);
+      if( log !== null ){
+        log.parentNode.removeChild(log);
+      }
+    }
+
+
+    /**
+     * ユーザー名をランダムに決定
+     **/
+     function getUName(){
+      let master = ["キティ", "マイメロ", "プリン", "ぐでたま", "烈子", "シナモン", "たあ坊", "キキ", "ララ", "切り身"];
+      let i      = Math.floor( Math.random() * master.length );
+      return( master[i] );
+    }
+
+    /**
+     * UNIX TIME => MM-DD hh:mm
+     **/
+    function getStrTime(time){
+      let t = new Date(time);
+      return(
+        ("0" + (t.getMonth() + 1)).slice(-2) + "-" +
+        ("0" + t.getDate()       ).slice(-2) + " " +
+        ("0" + t.getHours()      ).slice(-2) + ":" +
+        ("0" + t.getMinutes()    ).slice(-2)
+      );
+    }
+  </script>
+
+  <script src="newChat.js"></script>
+  <script src="./js/account.js"></script>
+</body>
+</html>
