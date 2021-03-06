@@ -89,6 +89,7 @@
       let selectedId;     // t1m1101 とか
       let selectedClassName; // "哲学"とか教科名
       let selectedTeacher;   // 先生の名前
+      // let selectedTerm; // タームの１~４の数字
       displayClass();
 
       function displayClass() {
@@ -159,6 +160,7 @@
             selectedId = id;
             selectedClassName = name;
             selectedTeacher = teacher;
+            // selectedTerm = term;
             console.log("now select -> id: " + id + "  name: " + name + "  teacher: " + teacher);
             continue;
           }
@@ -201,7 +203,25 @@
             })
           })
 
-          window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+          db.collection("account")
+          .get().then((querySnapshot) => {
+              querySnapshot.forEach((doc) => {
+                  if(doc.data()['uid'] == uid) {
+                    // myClasses の中には、　Mon1 とかの情報　＋　それぞれのMon1とかに対してどこのroom_hoge.htmlに飛ぶのかに使う引数
+                    db.collection("account").doc(doc.id).collection("myClasses").add({
+                      room: decodeURIComponent(roomsDocumentId),
+                      id: selectedId,
+                      name: selectedClassName,
+                      period: selectedPeriod,
+                      teacher: selectedTeacher
+                      // term: selectedTerm
+                    });
+                    console.log("add myClasses =>" + doc.data());
+                  }
+              });
+          });
+
+          // window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
         } else {
 
         }
