@@ -13,6 +13,7 @@ let selectedClassName;  // "哲学"とか教科名
 let selectedTeacher;    // 先生の名前
 let selectedTerm;       // ターム 1~4のいづれか
 let selectedClassDocId; // rooms/.../classes/各クラスのドキュメントID　と account/.../myClasses/各履修クラスのドキュメントID　とを一致させるために rooms/.../classes/各クラスのドキュメントID を取得
+
 displayClass();
 
 function displayClass() {
