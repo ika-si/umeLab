@@ -2,8 +2,12 @@ function userSendChat() {
   window.location.href ='../chat.html?name=' + encodeURIComponent(uid);
 }
 
-function userSendRoom() {
-  window.location.href ='../room.html?name=' + encodeURIComponent(uid);
+// function userSendRoom() {
+//   window.location.href ='../room.html?name=' + encodeURIComponent(uid);
+// }
+
+function userSendRoom(url) {
+  window.location.href ='../room.html?name=' + encodeURIComponent(uid) + "?classdocid=" + encodeURIComponent(url);
 }
 
 function userSendClasslist(period) {
@@ -35,18 +39,73 @@ for (let i=0; i<weekArr.length; i++) {
     roomBtn.setAttribute('id', `${parent.id}room`);
     roomBtn.setAttribute('class', 'btn btn-outline-primary');
     roomBtn.innerText = "room";
-    roomBtn.setAttribute('onclick', 'userSendRoom()');
+    roomBtn.setAttribute('onclick', `sendRoom('${parent.id}')` );
     parent.appendChild(roomBtn);
   }
 } 
-let isMyClasses = true;
 
-if (isMyClasses) {
-  for (let i=0; i<weekArr.length; i++) {
-    for (let j=1; j<=6; j++) {
-      document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
+for (let i=0; i<weekArr.length; i++) {
+  for (let j=1; j<=6; j++) {
+    document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
+  }
+}
+
+let classDoacId = [
+  {time:"Mon1"},
+  {time:"Mon2"},
+  {time:"Mon3"},
+  {time:"Mon4"},
+  {time:"Mon5"},
+  {time:"Mon6"},
+
+  {time:"Tue1"},
+  {time:"Tue2"},
+  {time:"Tue3"},
+  {time:"Tue4"},
+  {time:"Tue5"},
+  {time:"Tue6"},
+
+  {time:"Wed1"},
+  {time:"Wed2"},
+  {time:"Wed3"},
+  {time:"Wed4"},
+  {time:"Wed5"},
+  {time:"Wed6"},
+
+  {time:"Thu1"},
+  {time:"Thu2"},
+  {time:"Thu3"},
+  {time:"Thu4"},
+  {time:"Thu5"},
+  {time:"Thu6"},
+
+  {time:"Fri1"},
+  {time:"Fri2"},
+  {time:"Fri3"},
+  {time:"Fri4"},
+  {time:"Fri5"},
+  {time:"Fri6"},
+]
+
+let sendurl;
+let time;
+let url;
+
+function urlRegistration(sendurl,time){
+  for(i=0; i < classDoacId.length; i++){
+    if(classDoacId[i].time == time){
+      classDoacId[i].sendurl = sendurl;
     }
   }
+}
+
+function sendRoom(time){
+  for(i=0; i < classDoacId.length; i++){
+    if(classDoacId[i].time == time){
+      url = classDoacId[i].sendurl;
+    }
+  }
+  userSendRoom(url);
 }
 
 // 追加・roomボタンの表示/非表示を設定
@@ -70,6 +129,9 @@ for (let i=0; i<weekArr.length; i++) {
                     document.getElementById(`${document.getElementById(weekArr[i] + j).id}name`).textContent = doc2.data()["name"];
                     // document.write(doc2.data()["name"]);
                     console.log(`${weekArr[i]}${j} : "room" button`);
+                    sendurl = doc2.id;
+                    time = `${weekArr[i]}${j}`;
+                    urlRegistration(sendurl,time);
                     break;
                   } else { //追加 ボタンを表示
                     document.getElementById(`${weekArr[i]}${j}add`).style.display = "block";
@@ -84,91 +146,3 @@ for (let i=0; i<weekArr.length; i++) {
     });
   }
 }
-
-
-
-
-// -> 1
-
-// 追加・roomボタンの表示/非表示を設定
-// for (let i=0; i<weekArr.length; i++) {
-//   for (let j=1; j<=6; j++) {
-//     let isAddedClass = false;
-
-//     // 自分が（uidでFirestoreを検索) Mon1とかごとにクラスを履修していたら addClass にtrueが入る
-//     db.collection("account")
-//     .get().then((querySnapshot) => {
-//         querySnapshot.forEach((doc) => {
-//             if(doc.data()['uid'] == uid) {
-//               db.collection("account").doc(doc.id).collection("myClasses")
-//               .get().then((querySnapshot2) => {
-//                 querySnapshot2.forEach((doc2) => {
-//                     // console.log(doc2.id, " => ", doc2.data());
-//                     if (doc2.data()["room"] == document.getElementById(`${weekArr[i]}${j}`).id) {
-//                       isAddedClass = true;
-//                       console.log("Find room : " + weekArr[i] + j);
-//                     }
-//                 });
-//               });
-//             }
-//         });
-//     });
-//     console.log(isAddedClass);
-
-//     if (isAddedClass) { //myClassesにこのroomのデータが登録されていたら　room ボタンを表示
-//       document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
-//       console.log(`${weekArr[i]}${j} : "room" button`);
-//     } else { //追加 ボタンを表示
-//       document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
-//       console.log(`${weekArr[i]}${j} : "追加" button`);
-//     }
-//   }
-// }
-
-// <- 1
-
-
-// -> 2
-
-// displayBtn();
-
-// async function displayBtn() {
-//   for (let i=0; i<weekArr.length; i++) {
-//     for (let j=1; j<=6; j++) {
-//       let isAddedClass = await serchFBmyclass(i, j);
-
-//       if (isAddedClass) { //myClassesにこのroomのデータが登録されていたら　room ボタンを表示
-//         document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
-//         console.log(`${weekArr[i]}${j} : "room" button`);
-//       } else { //追加 ボタンを表示
-//         document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
-//         console.log(`${weekArr[i]}${j} : "追加" button`);
-//       }
-//     }
-//   }
-// }
-
-// function serchFBmyclass(i, j) {
-//   let result = false;
-//   db.collection("account")
-//     .get().then((querySnapshot) => {
-//       querySnapshot.forEach((doc) => {
-//           if(doc.data()['uid'] == uid) {
-//             db.collection("account").doc(doc.id).collection("myClasses")
-//             .get().then((querySnapshot2) => {
-//               querySnapshot2.forEach((doc2) => {
-//                   // console.log(doc2.id, " => ", doc2.data());
-//                   if (doc2.data()["room"] == document.getElementById(`${weekArr[i]}${j}`).id) {
-//                     result = true;
-//                     console.log("Find room : " + weekArr[i] + j);
-//                   }
-//               });
-//             });
-//           }
-//       });
-//     });
-//     console.log(result);
-//   return result;
-// }
-
-// <- 2
