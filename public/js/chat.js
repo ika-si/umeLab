@@ -1,8 +1,8 @@
 //firestoreからデータ取得
-var db = firebase.firestore();
+// var db = firebase.firestore();
 
-var messagesRef = db.collection("rooms").doc(period).collection("classes").doc(urlClass).collection("chat");
-
+// var messagesRef = db.collection("rooms").doc(period).collection("classes").doc(urlClass).collection("chat");
+// -> room.jsに記述した
 /**
  * 同期処理
  **/

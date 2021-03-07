@@ -6,8 +6,8 @@ function userSendChat() {
 //   window.location.href ='../room.html?name=' + encodeURIComponent(uid);
 // }
 
-function userSendRoom(url,period) {
-  window.location.href ='../room.html?name=' + encodeURIComponent(uid) + "?classdocid=" + encodeURIComponent(url) + "?period=" + encodeURIComponent(period);
+function userSendRoom(url) {
+  window.location.href ='../room.html?name=' + encodeURIComponent(uid) + "?classdocid=" + encodeURIComponent(url);
 }
 
 function userSendClasslist(period) {
@@ -105,7 +105,7 @@ function sendRoom(time){
       url = classDoacId[i].sendurl;
     }
   }
-  userSendRoom(url,time);
+  userSendRoom(url);
 }
 
 // 追加・roomボタンの表示/非表示を設定
