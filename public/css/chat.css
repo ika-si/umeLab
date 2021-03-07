@@ -13,7 +13,7 @@
 
 .chat_window {
   position: absolute;
-  width: calc(100% - 20px);
+  width: calc(50% - 20px);
   max-width: 800px;
   height: 600px;
   border-radius: 10px;
