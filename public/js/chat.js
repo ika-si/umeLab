@@ -1,7 +1,7 @@
 //firestoreからデータ取得
 var db = firebase.firestore();
 
-var messagesRef = db.collection("rooms").doc("Mon1").collection("classes").doc("english").collection("chat");
+var messagesRef = db.collection("rooms").doc(period).collection("classes").doc(urlClass).collection("chat");
 
 /**
  * 同期処理
@@ -32,7 +32,6 @@ function addLog(id, data){
     // let li  = document.createElement('li');
     // li.id   = id;
     // li.appendChild(document.createTextNode(log));
-
     if(data.name == userName) {
         $('#list').append('<li class="my">' + data.createdAt.toDate() + '<br>' + data.name + '<br>' + data.msg + '</li>');
     } else {
