@@ -47,6 +47,7 @@ for (let i=0; i<weekArr.length; i++) {
 for (let i=0; i<weekArr.length; i++) {
   for (let j=1; j<=6; j++) {
     document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
+    document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
   }
 }
 
