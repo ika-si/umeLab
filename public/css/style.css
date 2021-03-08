@@ -19,18 +19,21 @@ body{
   background-color: #2C3F55;
 }
 
+.center{
+  text-align: center;
+}
 
 .sign{
   color:white;
   background-color:#2C3F55;
-  position: center;
   border-style: solid;
   border-width: 0.5px;
   padding: 1px 7px 2px;
   display: inline-block;
-  width: 100px;
+  width: 130px;
   height: 40px;
   border-radius: 15px;
+
 }
 h1{
   color: #2C3F55;
@@ -56,7 +59,7 @@ color:#F5F5F5;
 background-color:#F1907E;
 padding: 5px 5px 5px 5px;
 position: center;
-width:50px;
+width:75px;
 border: solid 3px #F1907E;
 border-radius: 15px;
 }
