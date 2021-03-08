@@ -77,8 +77,11 @@ db.collection("rooms").doc(roomsDocumentId).collection('classes').orderBy('class
 });
 }
 
+let isSomethingSelected = false; // 何かしら選択されているかどうか
+
 function clickBtn(classId, id, name, teacher, term, classDocId){
     const className = document.classtable.className;
+    isSomethingSelected = false;
     for (let i = 0; i < className.length; i++){
         if(className[i].id == "checkbox"+classId){
             selectedId = id;
@@ -86,18 +89,13 @@ function clickBtn(classId, id, name, teacher, term, classDocId){
             selectedTeacher = teacher;
             selectedTerm = term;
             selectedClassDocId = classDocId;
+            isSomethingSelected = className[i].checked;
+            console.log("isSomethingSelected: " + isSomethingSelected);
             console.log("now select -> id: " + id + "  name: " + name + "  teacher: " + teacher);
             continue;
         }
         className[i].checked = false;
     }
-
-    // データを保存
-    sessionStorage.setItem('loginUser', selectedClassName);
-
-    //データを取得
-    var data = sessionStorage.getItem('loginUser');
-    console.log(data);
 }
 
 function confirmClass(){
@@ -113,49 +111,51 @@ function confirmClass(){
     }
     if (window.confirm(msg)) {
     // confirm で ok が押された時の処理
-        // rooms/.../users にuidフィールドを持ったドキュメントを追加  履修者一覧を表示するときに使う
-        db.collection("rooms").doc(roomsDocumentId).collection("classes")
-        .get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                if (doc.data()['id'] == selectedId) {
-                    db.collection("rooms").doc(roomsDocumentId).collection("classes").doc(doc.id).collection("users").add({
-                        uid: uid,
-                        name: userName
-                    })
-                    .then(() => {
-                        console.log("Document written with ID: ");
-                    })
-                    .catch((error) => {
-                        console.error("Error writing document: ", error);
-                    });
-                }
+        if (isSomethingSelected) {
+            // rooms/.../users にuidフィールドを持ったドキュメントを追加  履修者一覧を表示するときに使う
+            db.collection("rooms").doc(roomsDocumentId).collection("classes")
+            .get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    if (doc.data()['id'] == selectedId) {
+                        db.collection("rooms").doc(roomsDocumentId).collection("classes").doc(doc.id).collection("users").add({
+                            uid: uid,
+                            name: userName
+                        })
+                        .then(() => {
+                            console.log("Document written with ID: ");
+                        })
+                        .catch((error) => {
+                            console.error("Error writing document: ", error);
+                        });
+                    }
+                });
             });
-        });
 
-        // rooms/.../classes/各クラスのドキュメント と同じドキュメントを account/.../myClasses/下につくる
-        db.collection("account")
-        .get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                if(doc.data()['uid'] == uid) {
-                    db.collection("account").doc(doc.id).collection("myClasses").doc(selectedClassDocId).set({
-                        room: decodeURIComponent(roomsDocumentId),
-                        id: selectedId,
-                        name: selectedClassName,
-                        period: selectedPeriod,
-                        teacher: selectedTeacher,
-                        term: selectedTerm
-                    })
-                    .then(() => {
-                        console.log("Document written with ID: ");
-                        window.location.href ='../timetable.html?name=' + encodeURIComponent(uid); // 先に処理が進んでしまうのここに書いた
-                    })
-                    .catch((error) => {
-                        console.error("Error writing document: ", error);
-                    });
-                    console.log("add myClasses =>", doc.data());
-                }
+            // rooms/.../classes/各クラスのドキュメント と同じドキュメントを account/.../myClasses/下につくる
+            db.collection("account")
+            .get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    if(doc.data()['uid'] == uid) {
+                        db.collection("account").doc(doc.id).collection("myClasses").doc(selectedClassDocId).set({
+                            room: decodeURIComponent(roomsDocumentId),
+                            id: selectedId,
+                            name: selectedClassName,
+                            period: selectedPeriod,
+                            teacher: selectedTeacher,
+                            term: selectedTerm
+                        })
+                        .then(() => {
+                            console.log("Document written with ID: ");
+                            window.location.href ='../timetable.html?name=' + encodeURIComponent(uid); // 先に処理が進んでしまうのここに書いた
+                        })
+                        .catch((error) => {
+                            console.error("Error writing document: ", error);
+                        });
+                        console.log("add myClasses =>", doc.data());
+                    }
+                });
             });
-        });
+        }
     } else {
 
     }
