@@ -31,9 +31,9 @@
 }
 
 #subjectName{
-  position: absolute;
-  right: 100px;
-  /* background-color: pink; */
+  position: relative;
+  left: -20px;
+  background-color: pink;
 }
 
 #professor{
