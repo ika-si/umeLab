@@ -119,13 +119,16 @@ for (let i=0; i<weekArr.length; i++) {
             if(doc.data()['uid'] == uid) {
               db.collection("account").doc(doc.id).collection("myClasses")
               .get().then((querySnapshot2) => {
+                if (querySnapshot2.docs.length == 0) {
+                  document.getElementById(`${weekArr[i]}${j}add`).style.display = "block";
+                }
 
                 for (var k in querySnapshot2.docs) {
                   const doc2 = querySnapshot2.docs[k];
                   if (doc2.data()["room"] == document.getElementById(`${weekArr[i]}${j}`).id) { //myClassesにこのroomのデータが登録されていたら　room ボタンを表示
                     console.log("Find room : " + weekArr[i] + j + ", " + doc2.data()["name"]);
-                    document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
                     document.getElementById(`${weekArr[i]}${j}room`).style.display = "block";
+                    document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
                     document.getElementById(`${document.getElementById(weekArr[i] + j).id}name`).textContent = doc2.data()["name"];
                     console.log(`${weekArr[i]}${j} : "room" button`);
                     sendurl = doc2.id;
@@ -138,7 +141,6 @@ for (let i=0; i<weekArr.length; i++) {
                     // console.log(`${weekArr[i]}${j} : "追加" button`);
                   }
                 }
-
               });
             }
         });
