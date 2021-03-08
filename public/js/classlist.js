@@ -2,6 +2,7 @@ const db = firebase.firestore();
 
 let period, classdocid;
 let isChangeStatus = false; // add->false, change->true
+getFromURL();
 function getFromURL() {
     // URLから取得
     let query = location.search;
@@ -18,60 +19,18 @@ function getFromURL() {
     console.log(classdocid);
     console.log("クラス変更 ", isChangeStatus);
 }
-getFromURL();
 
-function showLetter() {
-    if (isChangeStatus) {
-        document.getElementById("confirmStatus").innerText = "時間割表から選択済みのクラスを取り消したい場合は右のボタンを押してください　";
-        $('#confirmStatus').append('<button type="button" class="delete" id="deleteBtn" onclick="confirmDelete()">' + "選択取消" + '</button><br><br>');
-        $('#decideBtn').text("変更");
+let isSomethingSelected = false; // 何かしら選択されているかどうか
+$('#decideBtn').prop('disabled', true);
 
 
-    } else {
-        // document.getElementById("confirmStatus").innerText = "時間割に追加したい授業を選択してください";
-    }
+if (isChangeStatus) {
+    document.getElementById("confirmStatus").innerText = "時間割表から選択済みのクラスを取り消したい場合は右のボタンを押してください　";
+    $('#confirmStatus').append('<button type="button" class="delete" id="deleteBtn" onclick="confirmDelete()">' + "選択取消" + '</button><br><br>');
+    $('#decideBtn').text("変更");
+} else {
+    // document.getElementById("confirmStatus").innerText = "時間割に追加したい授業を選択してください";
 }
-showLetter();
-
-function confirmDelete() {
-    if(window.confirm("このクラスを時間割表から取り消しますか？")) { // account/.../myClasses/からドキュメントを消す、rooms/.../classdocid を消す
-    
-        db.collection("account").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                if(doc.data()['uid'] == uid) {
-                    db.collection("account").doc(doc.id).collection("myClasses").doc(classdocid).delete().then(() => {
-                        console.log("Document successfully deleted!");
-                    }).catch((error) => {
-                        console.error("Error removing document: ", error);
-                    });
-                }
-            });
-        });
-
-        db.collection("rooms").doc(period).collection("classes").doc(classdocid).collection("users").where("uid", "==", uid)
-        .get()
-        .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                let docid = doc.id;
-                console.log(docid);
-                db.collection("rooms").doc(period).collection("classes").doc(classdocid).collection("users").doc(docid).delete().then(() => {
-                    console.log("Document successfully deleted!");
-                }).catch((error) => {
-                    console.error("Error removing document: ", error);
-                });
-            });
-        })
-        .catch((error) => {
-            console.log("Error getting documents: ", error);
-        });
-
-
-        // window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-    }
-}
-
-
-
 
 let selectedPeriod;     // "月曜1限"とか
 let selectedId;         // t1m1101 とか
@@ -81,8 +40,7 @@ let selectedTerm;       // ターム 1~4のいづれか
 let selectedClassDocId; // rooms/.../classes/各クラスのドキュメントID　と account/.../myClasses/各履修クラスのドキュメントID　とを一致させるために rooms/.../classes/各クラスのドキュメントID を取得
 
 
-let isSomethingSelected = false; // 何かしら選択されているかどうか
-$('#decideBtn').prop('disabled', true);
+
 
 displayClass();
 
@@ -147,13 +105,44 @@ function displayClass() {
     });
 }
 
+if (isChangeStatus) {
+    lockCheckbox();
+}
+let boxNum;
+function lockCheckbox() {
+    // 変更前のクラスのcheckboxをcheckを入れて変更できないようにする。色も変えたい。
+    db.collection("rooms").doc(period).collection("classes").doc(classdocid).get().then((doc) => {
+        if (doc.exists) {
+            const className = document.classtable.className;
+            className[doc.data()["classId"]].checked = true;
+            className[doc.data()["classId"]].disabled = true;
+            boxNum = doc.data()["classId"];
+            console.log("id=checkbox" + doc.data()["classId"] + " のcheckboxにチェックがはいった");
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+}
+
+
+
+
+
 console.log(document.classtable);
 
 function clickBtn(classId, id, name, teacher, term, classDocId){
+    if (isChangeStatus) {
+        lockCheckbox();
+    }
     const className = document.classtable.className;
     isSomethingSelected = false;
     for (let i = 0; i < className.length; i++){
-        if(className[i].id == "checkbox"+classId){
+        if (isChangeStatus && i == boxNum) {
+            continue;
+        } 
+        if (className[i].id == "checkbox"+classId){
             selectedId = id;
             selectedClassName = name;
             selectedTeacher = teacher;
@@ -190,7 +179,11 @@ function confirmClass(){
     }
     if (window.confirm(msg)) {
     // confirm で ok が押された時の処理
+        if (isChangeStatus) {
+            deleteClassRegistration(true);
+        }
         if (isSomethingSelected) {
+            
             // rooms/.../users にuidフィールドを持ったドキュメントを追加  履修者一覧を表示するときに使う
             db.collection("rooms").doc(period).collection("classes")
             .get().then((querySnapshot) => {
@@ -238,4 +231,51 @@ function confirmClass(){
     } else {
 
     }
+}
+
+
+function confirmDelete() {
+    if(window.confirm("このクラスを時間割表から取り消しますか？")) {
+        deleteClassRegistration(false);
+    }
+}
+
+function deleteClassRegistration(bool) { // account/.../myClasses/からドキュメントを消す、rooms/.../classdocid を消す
+    deleteClassFromMyClasses(bool);
+    // deleteUserFromClassUsers();
+}
+function deleteClassFromMyClasses(bool) {
+    db.collection("account").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            if(doc.data()['uid'] == uid) {
+                db.collection("account").doc(doc.id).collection("myClasses").doc(classdocid).delete().then(() => {
+                    console.log("Document successfully deleted!");
+                    deleteUserFromClassUsers(bool);
+                }).catch((error) => {
+                    console.error("Error removing document: ", error);
+                });
+            }
+        });
+    });
+}
+function deleteUserFromClassUsers(bool) {
+    db.collection("rooms").doc(period).collection("classes").doc(classdocid).collection("users").where("uid", "==", uid)
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            let docid = doc.id;
+            console.log(docid);
+            db.collection("rooms").doc(period).collection("classes").doc(classdocid).collection("users").doc(docid).delete().then(() => {
+                console.log("Document successfully deleted!");
+                if (bool == false) { // 更新ならページ遷移する
+                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                }
+            }).catch((error) => {
+                console.error("Error removing document: ", error);
+            });
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
 }
