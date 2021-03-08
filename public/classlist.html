@@ -33,20 +33,7 @@
 
     <title>classlist</title>
 
-    <style>
-      .classDetail {
-        display: table;
-        width: 600px;
-      }
-
-      /* .detail { */
-      .form-check.form-switch {
-        display: table-cell;
-        /* border: solid 1px #999; */
-        width: 200px;
-      }
-    </style>
-
+    <link rel="stylesheet" href="./css/classlist.css">
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
@@ -69,14 +56,15 @@
     <!-- <div class="classtable"> -->
     <form name="classtable">
       <div class="classDetail">
-        <div class="form-check form-switch"></div>
-        <div class="form-check form-switch">ID</div>
-        <div class="form-check form-switch">教科名</div>
-        <div class="form-check form-switch">教授名</div>
+        <div class="form-check form-switch" id="checkBtn"></div>
+        <div class="form-check form-switch" id="subjectID" >ID</div>
+        <div class="form-check form-switch" id="subjectName">教科名</div>
+        <div class="form-check form-switch" id="professor">教授名</div>
       </div>
     </form>
+
     <!-- <button type="button" class="btn btn-primary" onclick="history.back()" >決定</button> -->
-    <button type="button" class="addRoom" onclick="confirmClass()" >決定</button>
+    <button type="button" class="addRoom" onclick="confirmClass()" style="position: relative; left: 205px;">決定</button>
 
     <script src="js/classlist.js"></script>
 
