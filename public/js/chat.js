@@ -1,5 +1,5 @@
 //firestoreからデータ取得
-var db = firebase.firestore();
+// var db = firebase.firestore();
 
 var messagesRef = db.collection("rooms").doc(period).collection("classes").doc(urlClass).collection("chat");
 

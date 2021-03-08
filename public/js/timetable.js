@@ -123,11 +123,10 @@ for (let i=0; i<weekArr.length; i++) {
                 for (var k in querySnapshot2.docs) {
                   const doc2 = querySnapshot2.docs[k];
                   if (doc2.data()["room"] == document.getElementById(`${weekArr[i]}${j}`).id) { //myClassesにこのroomのデータが登録されていたら　room ボタンを表示
-                    console.log("Find room : " + weekArr[i] + j);
+                    console.log("Find room : " + weekArr[i] + j + ", " + doc2.data()["name"]);
                     document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
                     document.getElementById(`${weekArr[i]}${j}room`).style.display = "block";
                     document.getElementById(`${document.getElementById(weekArr[i] + j).id}name`).textContent = doc2.data()["name"];
-                    // document.write(doc2.data()["name"]);
                     console.log(`${weekArr[i]}${j} : "room" button`);
                     sendurl = doc2.id;
                     time = `${weekArr[i]}${j}`;
