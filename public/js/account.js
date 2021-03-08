@@ -29,7 +29,7 @@ function show() {
 show();
 
 function sendAccount (){
-    window.location.href = 'account.html';
+    window.location.href = '../account.html?name=' + encodeURIComponent(uid);
 }
 
 function signOut() {
