@@ -10,8 +10,11 @@ function userSendRoom(url,period) {
   window.location.href ='../room.html?name=' + encodeURIComponent(uid) + "?classdocid=" + encodeURIComponent(url) + "?period=" + encodeURIComponent(period);
 }
 
-function userSendClasslist(period,status) {
-  window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(period) + "?status=" + encodeURIComponent(status);
+function userSendClasslist(period) {
+  window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(period);
+}
+function userSendClasslistChange(period,url) {
+  window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(period) + "?classdocid=" + encodeURIComponent(url);
 }
 
 const db = firebase.firestore();
@@ -32,7 +35,7 @@ for (let i=0; i<weekArr.length; i++) {
     addBtn.setAttribute('id', `${parent.id}add`);
     addBtn.setAttribute('class', 'addRoom');
     addBtn.innerText = "追加";
-    addBtn.setAttribute('onclick', `userSendClasslist('${parent.id}', 'add')`);
+    addBtn.setAttribute('onclick', `userSendClasslist('${parent.id}')`);
     parent.appendChild(addBtn);
     let roomBtn = document.createElement('button');
     roomBtn.setAttribute('type', 'button');
@@ -46,7 +49,7 @@ for (let i=0; i<weekArr.length; i++) {
     changeBtn.setAttribute('id', `${parent.id}change`);
     changeBtn.setAttribute('class', 'changeroom');
     changeBtn.innerText = "変更";
-    changeBtn.setAttribute('onclick', `userSendClasslist('${parent.id}', 'change')` );
+    changeBtn.setAttribute('onclick', `sendClasslistChange('${parent.id}')` );
     parent.appendChild(changeBtn);
 
   }
@@ -118,6 +121,15 @@ function sendRoom(time){
     }
   }
   userSendRoom(url,time);
+}
+
+function sendClasslistChange(time){
+  for(i=0; i < classDoacId.length; i++){
+    if(classDoacId[i].time == time){
+      url = classDoacId[i].sendurl;
+    }
+  }
+  userSendClasslistChange(time,url);
 }
 
 // 追加・roomボタンの表示/非表示を設定

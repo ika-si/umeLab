@@ -1,6 +1,7 @@
 const db = firebase.firestore();
 
-let period, status;
+let period, classdocid;
+let isChangeStatus = false; // add->false, change->true
 function getFromURL() {
     // URLから取得
     let query = location.search;
@@ -8,24 +9,28 @@ function getFromURL() {
     period = value[2];
     if (period.indexOf("?") != -1) {
         period = period.substring(0, period.indexOf("?"));
+        isChangeStatus = true;
+    } else {
+        // isChangeStatus = false;
     }
-    status = value[3];
-    // console.log(period);
-    // console.log(status);
+    classdocid = value[3];
+    console.log(period);
+    console.log(classdocid);
+    console.log("クラス変更 ", isChangeStatus);
 }
 getFromURL();
 
 function showLetter() {
-    if (status == "add") {
-        // document.getElementById("confirmStatus").innerText = "時間割に追加したい授業を選択してください";
-    } else { // status == change
+    if (isChangeStatus) {
         document.getElementById("confirmStatus").innerText = "時間割表から選択済みのクラスを取り消したい場合は右のボタンを押してください　";
         $('#confirmStatus').append('<button type="button" class="delete" id="deleteBtn" onclick="confirmDelete()">' + "選択取消" + '</button><br><br>');
+    } else {
+        // document.getElementById("confirmStatus").innerText = "時間割に追加したい授業を選択してください";
     }
 }
 function confirmDelete() {
     if(window.confirm("このクラスを時間割表から取り消しますか？")) {
-        
+
     }
 }
 showLetter();
@@ -105,6 +110,8 @@ function displayClass() {
         });
     });
 }
+
+console.log(document.classtable);
 
 function clickBtn(classId, id, name, teacher, term, classDocId){
     const className = document.classtable.className;
