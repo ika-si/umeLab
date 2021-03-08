@@ -10,8 +10,8 @@ function userSendRoom(url,period) {
   window.location.href ='../room.html?name=' + encodeURIComponent(uid) + "?classdocid=" + encodeURIComponent(url) + "?period=" + encodeURIComponent(period);
 }
 
-function userSendClasslist(period) {
-  window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(period);
+function userSendClasslist(period,status) {
+  window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(period) + "?status=" + encodeURIComponent(status);
 }
 
 const db = firebase.firestore();
@@ -32,7 +32,7 @@ for (let i=0; i<weekArr.length; i++) {
     addBtn.setAttribute('id', `${parent.id}add`);
     addBtn.setAttribute('class', 'addRoom');
     addBtn.innerText = "追加";
-    addBtn.setAttribute('onclick', `userSendClasslist('${parent.id}')`);
+    addBtn.setAttribute('onclick', `userSendClasslist('${parent.id}', 'add')`);
     parent.appendChild(addBtn);
     let roomBtn = document.createElement('button');
     roomBtn.setAttribute('type', 'button');
@@ -46,7 +46,7 @@ for (let i=0; i<weekArr.length; i++) {
     changeBtn.setAttribute('id', `${parent.id}change`);
     changeBtn.setAttribute('class', 'changeroom');
     changeBtn.innerText = "変更";
-    changeBtn.setAttribute('onclick', `userSendClasslist('${parent.id}')` );
+    changeBtn.setAttribute('onclick', `userSendClasslist('${parent.id}', 'change')` );
     parent.appendChild(changeBtn);
 
   }

@@ -1,11 +1,36 @@
 const db = firebase.firestore();
 
-// ->URLから時限情報を取得
-let query = location.search;
-let value = query.split('=');
-const roomsDocumentId = value[2];
-console.log("urlから取得(表示する時限) => " + decodeURIComponent(roomsDocumentId));
-// <-
+let period, status;
+function getFromURL() {
+    // URLから取得
+    let query = location.search;
+    let value = query.split('=');
+    period = value[2];
+    if (period.indexOf("?") != -1) {
+        period = period.substring(0, period.indexOf("?"));
+    }
+    status = value[3];
+    // console.log(period);
+    // console.log(status);
+}
+getFromURL();
+
+function showLetter() {
+    if (status == "add") {
+        // document.getElementById("confirmStatus").innerText = "時間割に追加したい授業を選択してください";
+    } else { // status == change
+        document.getElementById("confirmStatus").innerText = "時間割表から選択済みのクラスを取り消したい場合は右のボタンを押してください　";
+        $('#confirmStatus').append('<button type="button" class="delete" id="deleteBtn" onclick="confirmDelete()">' + "選択取消" + '</button><br><br>');
+    }
+}
+function confirmDelete() {
+    if(window.confirm("このクラスを時間割表から取り消しますか？")) {
+        
+    }
+}
+showLetter();
+
+
 
 let selectedPeriod;     // "月曜1限"とか
 let selectedId;         // t1m1101 とか
@@ -22,7 +47,7 @@ displayClass();
 
 function displayClass() {
 
-    db.collection("rooms").doc(roomsDocumentId).collection('classes').orderBy('classId').limit(1).get().then((querySnapshot) => { // 良い書き方が思い浮かばなかったがフィールドのperiodの値を取り出している
+    db.collection("rooms").doc(period).collection('classes').orderBy('classId').limit(1).get().then((querySnapshot) => { // 良い書き方が思い浮かばなかったがフィールドのperiodの値を取り出している
         querySnapshot.forEach((doc) => {
             document.getElementById("openingClass").textContent = doc.data()['period'];
             selectedPeriod = doc.data()['period'];
@@ -31,7 +56,7 @@ function displayClass() {
     });
 
 
-    db.collection("rooms").doc(roomsDocumentId).collection('classes').orderBy('classId').get().then((querySnapshot) => {
+    db.collection("rooms").doc(period).collection('classes').orderBy('classId').get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             // console.log(`${doc.id} => ${doc.data()['id']}`);
             // console.log(`${doc.id} => ${doc.data()['name']}`);
@@ -124,11 +149,11 @@ function confirmClass(){
     // confirm で ok が押された時の処理
         if (isSomethingSelected) {
             // rooms/.../users にuidフィールドを持ったドキュメントを追加  履修者一覧を表示するときに使う
-            db.collection("rooms").doc(roomsDocumentId).collection("classes")
+            db.collection("rooms").doc(period).collection("classes")
             .get().then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     if (doc.data()['id'] == selectedId) {
-                        db.collection("rooms").doc(roomsDocumentId).collection("classes").doc(doc.id).collection("users").add({
+                        db.collection("rooms").doc(period).collection("classes").doc(doc.id).collection("users").add({
                             uid: uid,
                             name: userName
                         })
@@ -148,7 +173,7 @@ function confirmClass(){
                 querySnapshot.forEach((doc) => {
                     if(doc.data()['uid'] == uid) {
                         db.collection("account").doc(doc.id).collection("myClasses").doc(selectedClassDocId).set({
-                            room: decodeURIComponent(roomsDocumentId),
+                            room: decodeURIComponent(period),
                             id: selectedId,
                             name: selectedClassName,
                             period: selectedPeriod,
