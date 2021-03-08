@@ -119,7 +119,8 @@ function confirmClass(){
             querySnapshot.forEach((doc) => {
                 if (doc.data()['id'] == selectedId) {
                     db.collection("rooms").doc(roomsDocumentId).collection("classes").doc(doc.id).collection("users").add({
-                        uid: uid
+                        uid: uid,
+                        name: userName
                     })
                     .then(() => {
                         console.log("Document written with ID: ");
