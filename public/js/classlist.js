@@ -24,16 +24,52 @@ function showLetter() {
     if (isChangeStatus) {
         document.getElementById("confirmStatus").innerText = "時間割表から選択済みのクラスを取り消したい場合は右のボタンを押してください　";
         $('#confirmStatus').append('<button type="button" class="delete" id="deleteBtn" onclick="confirmDelete()">' + "選択取消" + '</button><br><br>');
+        $('#decideBtn').text("変更");
+
+
     } else {
         // document.getElementById("confirmStatus").innerText = "時間割に追加したい授業を選択してください";
     }
 }
-function confirmDelete() {
-    if(window.confirm("このクラスを時間割表から取り消しますか？")) {
+showLetter();
 
+function confirmDelete() {
+    if(window.confirm("このクラスを時間割表から取り消しますか？")) { // account/.../myClasses/からドキュメントを消す、rooms/.../classdocid を消す
+    
+        db.collection("account").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                if(doc.data()['uid'] == uid) {
+                    db.collection("account").doc(doc.id).collection("myClasses").doc(classdocid).delete().then(() => {
+                        console.log("Document successfully deleted!");
+                    }).catch((error) => {
+                        console.error("Error removing document: ", error);
+                    });
+                }
+            });
+        });
+
+        db.collection("rooms").doc(period).collection("classes").doc(classdocid).collection("users").where("uid", "==", uid)
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                let docid = doc.id;
+                console.log(docid);
+                db.collection("rooms").doc(period).collection("classes").doc(classdocid).collection("users").doc(docid).delete().then(() => {
+                    console.log("Document successfully deleted!");
+                }).catch((error) => {
+                    console.error("Error removing document: ", error);
+                });
+            });
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        });
+
+
+        // window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
     }
 }
-showLetter();
+
 
 
 
@@ -56,7 +92,7 @@ function displayClass() {
         querySnapshot.forEach((doc) => {
             document.getElementById("openingClass").textContent = doc.data()['period'];
             selectedPeriod = doc.data()['period'];
-            console.log("[開講曜日・時限]" + selectedPeriod);
+            // console.log("[開講曜日・時限]" + selectedPeriod);
         });
     });
 

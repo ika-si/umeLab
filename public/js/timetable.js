@@ -2,10 +2,6 @@ function userSendChat() {
   window.location.href ='../chat.html?name=' + encodeURIComponent(uid);
 }
 
-// function userSendRoom() {
-//   window.location.href ='../room.html?name=' + encodeURIComponent(uid);
-// }
-
 function userSendRoom(url,period) {
   window.location.href ='../room.html?name=' + encodeURIComponent(uid) + "?classdocid=" + encodeURIComponent(url) + "?period=" + encodeURIComponent(period);
 }
@@ -13,6 +9,7 @@ function userSendRoom(url,period) {
 function userSendClasslist(period) {
   window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(period);
 }
+
 function userSendClasslistChange(period,url) {
   window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(period) + "?classdocid=" + encodeURIComponent(url);
 }
