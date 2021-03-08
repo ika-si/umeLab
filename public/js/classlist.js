@@ -40,6 +40,7 @@ db.collection("rooms").doc(roomsDocumentId).collection('classes').orderBy('class
 
         let newCB = document.createElement('div');
         newCB.setAttribute('class', 'form-check form-switch');
+        newCB.setAttribute('id', 'checkBtn');
 
             let newCBinput = document.createElement('input');
             newCBinput.setAttribute('class', 'form-check-input');
@@ -57,16 +58,19 @@ db.collection("rooms").doc(roomsDocumentId).collection('classes').orderBy('class
 
         let newDetail = document.createElement('div');
         newDetail.setAttribute('class', 'form-check form-switch');
+        newDetail.setAttribute('id', 'subjectID');
         newDetail.innerText = doc.data()['id'];
         newRow1.appendChild(newDetail);
 
         newDetail = document.createElement('div');
         newDetail.setAttribute('class', 'form-check form-switch');
+        newDetail.setAttribute('id', 'subjectName');
         newDetail.innerText = doc.data()['name'];
         newRow1.appendChild(newDetail);
 
         newDetail = document.createElement('div');
         newDetail.setAttribute('class', 'form-check form-switch');
+        newDetail.setAttribute('id', 'professor');
         newDetail.innerText = doc.data()['teacher'];
         newRow1.appendChild(newDetail);
 
@@ -100,7 +104,7 @@ function clickBtn(classId, id, name, teacher, term, classDocId){
     console.log(data);
 }
 
-function confirmClass(){
+ function confirmClass(){
     const className = document.classtable.className;
     let msg = "";
     // confirm表示メッセージの用意
