@@ -1,0 +1,41 @@
+
+.classDetail {
+  display: table;
+  width: 900px;
+  margin: 10px;
+}
+
+/* .detail { */
+.form-check.form-switch {
+  display: table-cell;
+  /* position: -webkit-sticky; */
+  /* position: right; */
+  /* left: 200px; */
+  /* top: 20px; */
+  width: 250px;
+  height: 50px;
+}
+
+#checkBtn{
+  transform:scale(1.5);
+  position: relative;
+  left: 250px;
+  top: 10px;
+
+}
+
+#subjectID{
+  position: relative;
+  left: 20px;
+
+}
+
+#subjectName{
+  position: relative;
+  left: -20px;
+}
+
+#professor{
+  position: relative;
+  left: 30px;
+}

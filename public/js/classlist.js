@@ -101,7 +101,6 @@ function displayClass() {
 
             parent.appendChild(newRow1);
             // console.log(parent);
-
         });
     });
 }
@@ -162,7 +161,7 @@ function checkDecideBtn() {
     }
 }
 
-function confirmClass(){
+ function confirmClass(){
     const className = document.classtable.className;
     let msg = "";
     // confirm表示メッセージの用意
