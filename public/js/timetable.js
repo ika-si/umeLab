@@ -2,16 +2,16 @@ function userSendChat() {
   window.location.href ='../chat.html?name=' + encodeURIComponent(uid);
 }
 
-// function userSendRoom() {
-//   window.location.href ='../room.html?name=' + encodeURIComponent(uid);
-// }
-
 function userSendRoom(url,period) {
   window.location.href ='../room.html?name=' + encodeURIComponent(uid) + "?classdocid=" + encodeURIComponent(url) + "?period=" + encodeURIComponent(period);
 }
 
 function userSendClasslist(period) {
   window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(period);
+}
+
+function userSendClasslistChange(period,url) {
+  window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(period) + "?classdocid=" + encodeURIComponent(url);
 }
 
 const db = firebase.firestore();
@@ -41,13 +41,24 @@ for (let i=0; i<weekArr.length; i++) {
     roomBtn.innerText = "room";
     roomBtn.setAttribute('onclick', `sendRoom('${parent.id}')` );
     parent.appendChild(roomBtn);
+    let changeBtn = document.createElement('button');
+    changeBtn.setAttribute('type', 'button');
+    changeBtn.setAttribute('id', `${parent.id}change`);
+    changeBtn.setAttribute('class', 'changeroom');
+    changeBtn.innerText = "変更";
+    changeBtn.setAttribute('onclick', `sendClasslistChange('${parent.id}')` );
+    parent.appendChild(changeBtn);
+
   }
 }
+
+console.log(document.getElementById('Mon1'));
 
 for (let i=0; i<weekArr.length; i++) {
   for (let j=1; j<=6; j++) {
     document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
     document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
+    document.getElementById(`${weekArr[i]}${j}change`).style.display = "none";
   }
 }
 
@@ -109,6 +120,15 @@ function sendRoom(time){
   userSendRoom(url,time);
 }
 
+function sendClasslistChange(time){
+  for(i=0; i < classDoacId.length; i++){
+    if(classDoacId[i].time == time){
+      url = classDoacId[i].sendurl;
+    }
+  }
+  userSendClasslistChange(time,url);
+}
+
 // 追加・roomボタンの表示/非表示を設定
 for (let i=0; i<weekArr.length; i++) {
   for (let j=1; j<=6; j++) {
@@ -128,8 +148,9 @@ for (let i=0; i<weekArr.length; i++) {
                   const doc2 = querySnapshot2.docs[k];
                   if (doc2.data()["room"] == document.getElementById(`${weekArr[i]}${j}`).id) { //myClassesにこのroomのデータが登録されていたら　room ボタンを表示
                     console.log("Find room : " + weekArr[i] + j + ", " + doc2.data()["name"]);
-                    document.getElementById(`${weekArr[i]}${j}room`).style.display = "block";
                     document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
+                    document.getElementById(`${weekArr[i]}${j}room`).style.display = "block";
+                    document.getElementById(`${weekArr[i]}${j}change`).style.display = "block";
                     document.getElementById(`${document.getElementById(weekArr[i] + j).id}name`).textContent = doc2.data()["name"];
                     console.log(`${weekArr[i]}${j} : "room" button`);
                     sendurl = doc2.id;
@@ -139,6 +160,7 @@ for (let i=0; i<weekArr.length; i++) {
                   } else { //追加 ボタンを表示
                     document.getElementById(`${weekArr[i]}${j}add`).style.display = "block";
                     document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
+                    document.getElementById(`${weekArr[i]}${j}change`).style.display = "none";
                     // console.log(`${weekArr[i]}${j} : "追加" button`);
                   }
                 }
