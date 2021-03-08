@@ -22,6 +22,14 @@ const weekArr = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 // 追加・roomのボタンを作成
 for (let i=0; i<weekArr.length; i++) {
   for (let j=1; j<=6; j++) {
+
+
+
+    // $('#memberlist').append('<a href="#" class="btn btn-primary rounded-pill" id="person">' + doc.data()['name'] + '</a><br><br>');
+    // $(`#${weekArr[i]}${j}`).append(`<span id="${weekArr[i]}${j}"></span>`);
+    // $(`#${weekArr[i]}${j}`).append(`<button type="button" id="${weekArr[i]}${j}add" class="addRoom" onclick="userSendClasslist('${parent.id}')" style="display"`);
+
+
     let parent = document.getElementById(`${weekArr[i]}${j}`);
     // console.log(parent.id);
     let classname = document.createElement('span');
@@ -41,13 +49,24 @@ for (let i=0; i<weekArr.length; i++) {
     roomBtn.innerText = "room";
     roomBtn.setAttribute('onclick', `sendRoom('${parent.id}')` );
     parent.appendChild(roomBtn);
+    let changeBtn = document.createElement('button');
+    changeBtn.setAttribute('type', 'button');
+    changeBtn.setAttribute('id', `${parent.id}change`);
+    changeBtn.setAttribute('class', 'changeroom');
+    changeBtn.innerText = "変更";
+    changeBtn.setAttribute('onclick', `userSendClasslist('${parent.id}')` );
+    parent.appendChild(changeBtn);
+
   }
 }
+
+console.log(document.getElementById('Mon1'));
 
 for (let i=0; i<weekArr.length; i++) {
   for (let j=1; j<=6; j++) {
     document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
     document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
+    document.getElementById(`${weekArr[i]}${j}change`).style.display = "none";
   }
 }
 
@@ -128,8 +147,9 @@ for (let i=0; i<weekArr.length; i++) {
                   const doc2 = querySnapshot2.docs[k];
                   if (doc2.data()["room"] == document.getElementById(`${weekArr[i]}${j}`).id) { //myClassesにこのroomのデータが登録されていたら　room ボタンを表示
                     console.log("Find room : " + weekArr[i] + j + ", " + doc2.data()["name"]);
-                    document.getElementById(`${weekArr[i]}${j}room`).style.display = "block";
                     document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
+                    document.getElementById(`${weekArr[i]}${j}room`).style.display = "block";
+                    document.getElementById(`${weekArr[i]}${j}change`).style.display = "block";
                     document.getElementById(`${document.getElementById(weekArr[i] + j).id}name`).textContent = doc2.data()["name"];
                     console.log(`${weekArr[i]}${j} : "room" button`);
                     sendurl = doc2.id;
@@ -139,6 +159,7 @@ for (let i=0; i<weekArr.length; i++) {
                   } else { //追加 ボタンを表示
                     document.getElementById(`${weekArr[i]}${j}add`).style.display = "block";
                     document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
+                    document.getElementById(`${weekArr[i]}${j}change`).style.display = "none";
                     // console.log(`${weekArr[i]}${j} : "追加" button`);
                   }
                 }

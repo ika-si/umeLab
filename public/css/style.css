@@ -71,6 +71,17 @@ p{
   border: solid 1px #3D92A4;
 }
 
+
+.changeroom{
+  /* .addRoomをコピペしたのでいい感じに色とか大きさとか変更してください */
+  color: #F1907E;
+  background-color: #F5F5F5;
+  padding: 5px 5px 5px 5px;
+  width:50px;
+  border-radius: 15px;
+  border: solid 1px #F1907E;
+}
+
 .account{
 color:#F5F5F5;
 background-color:#F1907E;
