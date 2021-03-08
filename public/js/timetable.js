@@ -53,6 +53,7 @@ for (let i=0; i<weekArr.length; i++) {
 }
 
 console.log(document.getElementById('Mon1'));
+buttonShow();
 
 for (let i=0; i<weekArr.length; i++) {
   for (let j=1; j<=6; j++) {
@@ -60,6 +61,25 @@ for (let i=0; i<weekArr.length; i++) {
     document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
     document.getElementById(`${weekArr[i]}${j}change`).style.display = "none";
   }
+}
+
+let edit = false;
+
+window.onload = function(){
+  document.getElementById("btn2").style.display = "none";
+  document.getElementById("btn1").addEventListener("click", function(){
+    edit = true;
+    document.getElementById("btn1").style.display = "none";
+    document.getElementById("btn2").style.display = "block";
+    buttonShow();
+  });
+
+  document.getElementById("btn2").addEventListener("click", function(){
+    edit = false;
+    document.getElementById("btn1").style.display = "block";
+    document.getElementById("btn2").style.display = "none";
+    buttonShow();
+  });
 }
 
 let classDoacId = [
@@ -129,44 +149,55 @@ function sendClasslistChange(time){
   userSendClasslistChange(time,url);
 }
 
-// 追加・roomボタンの表示/非表示を設定
-for (let i=0; i<weekArr.length; i++) {
-  for (let j=1; j<=6; j++) {
+function buttonShow(){
 
-    // 自分が（uidでFirestoreを検索) Mon1とかごとにクラスを履修していたら addClass にtrueが入る
-    db.collection("account")
-    .get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['uid'] == uid) {
-              db.collection("account").doc(doc.id).collection("myClasses")
-              .get().then((querySnapshot2) => {
-                if (querySnapshot2.docs.length == 0) {
-                  document.getElementById(`${weekArr[i]}${j}add`).style.display = "block";
-                }
+  // 追加・roomボタンの表示/非表示を設定
+  for (let i=0; i<weekArr.length; i++) {
+    for (let j=1; j<=6; j++) {
 
-                for (var k in querySnapshot2.docs) {
-                  const doc2 = querySnapshot2.docs[k];
-                  if (doc2.data()["room"] == document.getElementById(`${weekArr[i]}${j}`).id) { //myClassesにこのroomのデータが登録されていたら　room ボタンを表示
-                    console.log("Find room : " + weekArr[i] + j + ", " + doc2.data()["name"]);
-                    document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
-                    document.getElementById(`${weekArr[i]}${j}room`).style.display = "block";
-                    document.getElementById(`${weekArr[i]}${j}change`).style.display = "block";
-                    document.getElementById(`${document.getElementById(weekArr[i] + j).id}name`).textContent = doc2.data()["name"];
-                    console.log(`${weekArr[i]}${j} : "room" button`);
-                    sendurl = doc2.id;
-                    time = `${weekArr[i]}${j}`;
-                    urlRegistration(sendurl,time);
-                    break;
-                  } else { //追加 ボタンを表示
+      // 自分が（uidでFirestoreを検索) Mon1とかごとにクラスを履修していたら addClass にtrueが入る
+      db.collection("account")
+      .get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+              if(doc.data()['uid'] == uid) {
+                db.collection("account").doc(doc.id).collection("myClasses")
+                .get().then((querySnapshot2) => {
+                  if (querySnapshot2.docs.length == 0) {
                     document.getElementById(`${weekArr[i]}${j}add`).style.display = "block";
-                    document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
-                    document.getElementById(`${weekArr[i]}${j}change`).style.display = "none";
-                    // console.log(`${weekArr[i]}${j} : "追加" button`);
                   }
-                }
-              });
-            }
-        });
-    });
+
+                  for (var k in querySnapshot2.docs) {
+                    const doc2 = querySnapshot2.docs[k];
+                    if (doc2.data()["room"] == document.getElementById(`${weekArr[i]}${j}`).id) { //myClassesにこのroomのデータが登録されていたら　room ボタンを表示
+                      console.log("Find room : " + weekArr[i] + j + ", " + doc2.data()["name"]);
+                      document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
+
+                      if(edit==false){
+                        document.getElementById(`${weekArr[i]}${j}room`).style.display = "block";
+                        document.getElementById(`${weekArr[i]}${j}change`).style.display = "none";
+                      } else {
+                        document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
+                        document.getElementById(`${weekArr[i]}${j}change`).style.display = "block";
+                      }
+                      
+                      document.getElementById(`${document.getElementById(weekArr[i] + j).id}name`).textContent = doc2.data()["name"];
+                      console.log(`${weekArr[i]}${j} : "room" button`);
+                      sendurl = doc2.id;
+                      time = `${weekArr[i]}${j}`;
+                      urlRegistration(sendurl,time);
+                      break;
+                    } else { //追加 ボタンを表示
+                      document.getElementById(`${weekArr[i]}${j}add`).style.display = "block";
+                      document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
+                      document.getElementById(`${weekArr[i]}${j}change`).style.display = "none";
+                      // console.log(`${weekArr[i]}${j} : "追加" button`);
+                    }
+                  }
+                });
+              }
+          });
+      });
+    }
   }
+
 }
