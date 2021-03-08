@@ -1,25 +1,31 @@
 .my {
-  color: blue;
-  background-color: #ffe6cb;
+  color: #F5F5F5;
+  background-color: #F1907E;
   float: right;
   margin-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  padding: 5px 5px 5px 5px;
 }
 .your {
-  color: black;
-  background-color: #F9D1D8;
+  color: #F5F5F5;
+  background-color: #3D92A4;
   float: left;
   margin-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  padding: 5px 5px 5px 5px;
 }
+
+
 
 .chat_window {
   position: absolute;
   width: calc(50% - 20px);
   max-width: 800px;
-  height: 600px;
+  height: 580px;
   border-radius: 10px;
   background-color: #fff;
-  left: 50%;
-  top: 60%;
+  left: 75%;
+  top: 55%;
   transform: translateX(-50%) translateY(-50%);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   background-color: #f8f8f8;
@@ -31,12 +37,14 @@
   width: 100%;
   padding: 20px 0 15px;
   box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+  background-color: #2C3F55;
 }
 
 .top_menu .title {
   text-align: center;
-  color: #000000;
+  color: #F5F5F5;
   font-size: 20px;
+  background-color: #2C3F55;
 }
 
 .messages {
@@ -44,14 +52,24 @@
   list-style: none;
   padding: 20px 10px 0 10px;
   margin: 0;
-  height: 347px;
+  height: 400px;
   overflow: scroll;
 
   display: inline-block;
-  padding: 20px;
+  padding: 5px;
   border-radius: 6px;
-  width: calc(100% - 85px);
+  width: calc(100%);
   min-width: 100px;
-  position: relative;
+}
 
+#addMsgBtn{
+  position: relative;
+  color:#F5F5F5;
+  background-color:#2C3F55;
+  left: 90%;
+}
+
+#person{
+  color: #F5F5F5;
+  background-color: #3D92A4;
 }
