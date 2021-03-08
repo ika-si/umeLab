@@ -46,6 +46,8 @@
         width: 200px;
       }
     </style>
+
+    <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <div class="row g-5">
@@ -56,10 +58,10 @@
         <ul id="nameAccount"></ul>
       </div>
       <div class="col-2">
-        <button type="button" class="btn btn-primary" id="addBtn" onclick="signOut()">signOut</button>
+        <button type="button" class="sign" id="addBtn" onclick="signOut()">signOut</button>
       </div>
     </div>
-    
+
     <br>
     <h1><span id="openingClass">[開講曜日・時限]</span>授業リスト</h1>
     <!-- <p>選択した講義 <span id="span1"></span></p> -->
@@ -74,9 +76,9 @@
       </div>
     </form>
     <!-- <button type="button" class="btn btn-primary" onclick="history.back()" >決定</button> -->
-    <button type="button" class="btn btn-primary" onclick="confirmClass()" >決定</button>
+    <button type="button" class="addRoom" onclick="confirmClass()" >決定</button>
 
     <script src="js/classlist.js"></script>
-    
+
   </body>
 </html>
