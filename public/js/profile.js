@@ -14,10 +14,10 @@ function showProfile(){
               myDepartment = doc.data()['department'];
               myGrade = doc.data()['grade'];
               console.log(userName + " "+ myEmail);
-              $('#MyName').append('<h2>' + userName + '</h2>');
-              $('#MyUndergraduate').append('<h2>' + myUndergraduate + '</h2>');
-              $('#MyDepartment').append('<h2>' + myDepartment + '</h2>');
-              $('#MyGrade').append('<h2>' + myGrade + '</h2>');
+              $('#MyName').append('<h4>名前: ' + userName + '</h4>');
+              $('#MyUndergraduate').append('<h4>学部: ' + myUndergraduate + '</h4>');
+              $('#MyDepartment').append('<h4>学科: ' + myDepartment + '</h4>');
+              $('#MyGrade').append('<h4>学年: ' + myGrade + '</h4>');
           }
           // console.log('アカウントがない');
           // window.location.href ='../index.html';
@@ -66,3 +66,23 @@ function changeProfile(){
       console.error("Error writing document: ", error);
   });
 }
+
+$(function() {
+  $('.signup-show').click(function() {
+    $('#signup-modal').fadeIn();
+  });
+
+  $('.close-modal').click(function() {
+    $('#login-modal').fadeOut();
+    $('#signup-modal').fadeOut();
+  });
+  
+  $('.lesson-hover').hover(
+    function() {
+      $(this).find('.text-contents').addClass('text-active'); 
+    },
+    function() {
+      $(this).find('.text-contents').removeClass('text-active');
+    }
+  );
+});
