@@ -22,14 +22,6 @@ const weekArr = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 // 追加・roomのボタンを作成
 for (let i=0; i<weekArr.length; i++) {
   for (let j=1; j<=6; j++) {
-
-
-
-    // $('#memberlist').append('<a href="#" class="btn btn-primary rounded-pill" id="person">' + doc.data()['name'] + '</a><br><br>');
-    // $(`#${weekArr[i]}${j}`).append(`<span id="${weekArr[i]}${j}"></span>`);
-    // $(`#${weekArr[i]}${j}`).append(`<button type="button" id="${weekArr[i]}${j}add" class="addRoom" onclick="userSendClasslist('${parent.id}')" style="display"`);
-
-
     let parent = document.getElementById(`${weekArr[i]}${j}`);
     // console.log(parent.id);
     let classname = document.createElement('span');
