@@ -12,7 +12,7 @@
   /* position: right; */
   /* left: 200px; */
   /* top: 20px; */
-  width: 100px;
+  width: 250px;
   height: 50px;
 }
 
@@ -21,19 +21,22 @@
   position: relative;
   left: 250px;
   top: 10px;
+
 }
 
 #subjectID{
   position: relative;
-  left: 10px;
+  left: 20px;
+
 }
 
 #subjectName{
-  position: relative;
+  position: absolute;
   right: 100px;
+  /* background-color: pink; */
 }
 
 #professor{
   position: relative;
-  right: 100px;
+  left: 30px;
 }
