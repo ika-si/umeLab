@@ -16,7 +16,7 @@ function show() {
                 console.log('find');
                 userName = doc.data()['name'];
                 console.log(doc.data()['name']);
-                $('#nameAccount').append('<button class="account">' + userName + '</button>');
+                $('#nameAccount').append('<button class="account" onclick="sendAccount()">' + userName + '</button>');
             }
             // console.log('アカウントがない');
             // window.location.href ='../index.html';
@@ -27,6 +27,10 @@ function show() {
     })
 }
 show();
+
+function sendAccount (){
+    window.location.href = 'account.html';
+}
 
 function signOut() {
     firebase.auth().signOut().then(() => {
