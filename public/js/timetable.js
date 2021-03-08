@@ -30,19 +30,19 @@ for (let i=0; i<weekArr.length; i++) {
     let addBtn = document.createElement('button');
     addBtn.setAttribute('type', 'button');
     addBtn.setAttribute('id', `${parent.id}add`);
-    addBtn.setAttribute('class', 'btn btn-outline-warning');
+    addBtn.setAttribute('class', 'addRoom');
     addBtn.innerText = "追加";
     addBtn.setAttribute('onclick', `userSendClasslist('${parent.id}')`);
     parent.appendChild(addBtn);
     let roomBtn = document.createElement('button');
     roomBtn.setAttribute('type', 'button');
     roomBtn.setAttribute('id', `${parent.id}room`);
-    roomBtn.setAttribute('class', 'btn btn-outline-primary');
+    roomBtn.setAttribute('class', 'classroom');
     roomBtn.innerText = "room";
     roomBtn.setAttribute('onclick', `sendRoom('${parent.id}')` );
     parent.appendChild(roomBtn);
   }
-} 
+}
 
 for (let i=0; i<weekArr.length; i++) {
   for (let j=1; j<=6; j++) {

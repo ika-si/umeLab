@@ -33,7 +33,6 @@ body{
   width: 130px;
   height: 40px;
   border-radius: 15px;
-
 }
 h1{
   color: #2C3F55;
@@ -52,6 +51,24 @@ h4{
 }
 p{
   color:#2C3F55;
+}
+
+.addRoom{
+  color: #F1907E;
+  background-color: #F5F5F5;
+  padding: 5px 5px 5px 5px;
+  width:50px;
+  border-radius: 15px;
+  border: solid 1px #F1907E;
+}
+
+.classroom{
+  color: #3D92A4;
+  background-color: #F5F5F5;
+  padding: 5px 5px 5px 5px;
+  width:50px;
+  border-radius: 15px;
+  border: solid 1px #3D92A4;
 }
 
 .account{
