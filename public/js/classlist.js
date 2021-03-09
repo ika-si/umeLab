@@ -37,6 +37,10 @@ let selectedId;         // t1m1101 とか
 let selectedClassName;  // "哲学"とか教科名
 let selectedTeacher;    // 先生の名前
 let selectedTerm;       // ターム 1~4のいづれか
+let selectedStyle;      // オンラインとか //
+let selectedSubjectType; // 選択必修とか  //
+let selectedCredit;     // 単位          //
+let selectedUrl;        // URL           // 
 let selectedClassDocId; // rooms/.../classes/各クラスのドキュメントID　と account/.../myClasses/各履修クラスのドキュメントID　とを一致させるために rooms/.../classes/各クラスのドキュメントID を取得
 
 displayClass();
@@ -72,7 +76,7 @@ function displayClass() {
                 newCBinput.setAttribute('type', 'checkbox');
                 newCBinput.setAttribute('id', `checkbox${doc.data()['classId']}`);
                 newCBinput.setAttribute('name', 'className');
-                newCBinput.setAttribute('onclick', `clickBtn(${doc.data()['classId']}, '${doc.data()['id']}', '${doc.data()['name']}', '${doc.data()['teacher']}', '${doc.data()['term']}', '${doc.id}')`);
+                newCBinput.setAttribute('onclick', `clickBtn(${doc.data()['classId']}, '${doc.data()['id']}', '${doc.data()['name']}', '${doc.data()['teacher']}', '${doc.data()['term']}', '${doc.id}', '${doc.data()['style']}', '${doc.data()['subjectType']}', '${doc.data()['credit']}', '${doc.data()['url']}')`);
                 let newCBlabel = document.createElement('label');
                 newCBlabel.setAttribute('class', 'form-check-label');
                 newCBlabel.setAttribute('for', 'flexSwitchCheckDefault');
@@ -97,6 +101,18 @@ function displayClass() {
             newDetail.setAttribute('class', 'form-check form-switch');
             newDetail.setAttribute('id', 'professor');
             newDetail.innerText = doc.data()['teacher'];
+            newRow1.appendChild(newDetail);
+
+            newDetail = document.createElement('div');
+            newDetail.setAttribute('class', 'form-check form-switch');
+            newDetail.setAttribute('id', 'subjectType');
+            newDetail.innerText = doc.data()['subjectType'];
+            newRow1.appendChild(newDetail);
+
+            newDetail = document.createElement('div');
+            newDetail.setAttribute('class', 'form-check form-switch');
+            newDetail.setAttribute('id', 'style');
+            newDetail.innerText = doc.data()['style'];
             newRow1.appendChild(newDetail);
 
             parent.appendChild(newRow1);
@@ -127,7 +143,7 @@ function lockCheckbox() {
 }
 
 
-function clickBtn(classId, id, name, teacher, term, classDocId){
+function clickBtn(classId, id, name, teacher, term, classDocId, style, subjectType, credit, url){
     if (isChangeStatus) {
         lockCheckbox();
     }
@@ -143,6 +159,10 @@ function clickBtn(classId, id, name, teacher, term, classDocId){
             selectedTeacher = teacher;
             selectedTerm = term;
             selectedClassDocId = classDocId;
+            selectedStyle = style;
+            selectedSubjectType = subjectType;
+            selectedCredit = credit;
+            selectedUrl = url;
             isSomethingSelected = className[i].checked;
             checkDecideBtn(); // $('#decideBtn').prop('disabled', !isSomethingSelected);
             console.log("isSomethingSelected: " + isSomethingSelected);
@@ -161,14 +181,14 @@ function checkDecideBtn() {
     }
 }
 
- function confirmClass(){
+function confirmClass(){
     const className = document.classtable.className;
     let msg = "";
     // confirm表示メッセージの用意
     for (let i = 0; i < className.length; i++){
         if(className[i].checked){
             // console.log(className[i]);
-            msg = `このクラスを選択しますか？\n${selectedPeriod}\n- ID：${selectedId} \n- 教科名：${selectedClassName} \n- 教授名：${selectedTeacher}`;
+            msg = `このクラスを選択しますか？\n${selectedPeriod}\n- ID：${selectedId} \n- 教科名：${selectedClassName} \n- 教授名：${selectedTeacher} \n- 授業区分：${selectedSubjectType} \n- 授業形態：${selectedStyle}`;
             break;
         }
     }
@@ -267,7 +287,11 @@ function addUserToClassUsers() {
                     name: selectedClassName,
                     period: selectedPeriod,
                     teacher: selectedTeacher,
-                    term: selectedTerm
+                    term: selectedTerm,
+                    style: selectedStyle,
+                    subjectType: selectedSubjectType,
+                    url: selectedUrl,
+                    credit: selectedCredit
                 })
                 .then(() => {
                     console.log("Document written with ID: ");
