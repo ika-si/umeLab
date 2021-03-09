@@ -1,5 +1,5 @@
 var db = firebase.firestore();
-let accountDoc, myEmail, myUndergraduate, myDepartment, myGrade;
+let accountDoc, myEmail, myUndergraduate, myDepartment, myGrade ,myDetails;
 
 function showProfile(){
   db.collection("account").get().then((querySnapshot) => {
