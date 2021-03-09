@@ -19,12 +19,18 @@
     <!-- jQueryの読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="./css/style.css">
+
   </head>
   <body>
 
-    <p>test</p>
-    <input type="text" class="form-control" placeholder="email" id='emailAdd'>
-    <button type="button" class="btn btn-primary" id="addBtn" onclick="sendPasswordReset()">reset</button>
+    <div class="center">
+      <h2>時間割</h2>
+      <p>同じ授業をとっている人とつながるアプリ</p>
+      <input type="text" class="form-control" placeholder="email" id='emailAdd'>
+      <br>
+      <button type="button" class="sign" id="addBtn" onclick="sendPasswordReset()">reset</button>
+    </div>
 
     <ul id="errorMessage"></ul>
 

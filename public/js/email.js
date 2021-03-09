@@ -18,6 +18,9 @@ function signInWithEmailPassword() {
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
+        $('#errorMessage').append("Error: "+errorMessage);
+        $("#emailAdd").val('');
+        $("#passwordAdd").val('');
       });
     // [END auth_signin_password]
 }
@@ -66,7 +69,7 @@ function signUpWithEmailPassword() {
         var errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
-        $('#errorMessage').append(errorMessage);
+        $('#errorMessage').append("Error: "+errorMessage);
         $("#nameAdd").val('');
         $("#emailAdd").val('');
         $("#passwordAdd").val('');
