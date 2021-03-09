@@ -39,3 +39,12 @@
   position: relative;
   left: 30px;
 }
+
+.BigcheckBtn{
+  color: #3BAF75;
+  background-color: #F5F5F5;
+  padding: 10px 10px 10px 10px;
+  width:130px;
+  border-radius: 15px;
+  border: solid 1px #3BAF75;
+}
