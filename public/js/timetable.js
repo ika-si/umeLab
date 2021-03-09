@@ -16,6 +16,7 @@ function userSendClasslistChange(period,url) {
 
 const db = firebase.firestore();
 const weekArr = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+let mustCount=0, optionalCount=0, freeCount=0;
 
 {/* <span id="openingClass">[開講曜日・時限]</span> */}
 
@@ -52,7 +53,7 @@ for (let i=0; i<weekArr.length; i++) {
   }
 }
 
-console.log(document.getElementById('Mon1'));
+//console.log(document.getElementById('Mon1'));
 buttonShow();
 
 for (let i=0; i<weekArr.length; i++) {
@@ -168,8 +169,9 @@ function buttonShow(){
 
                   for (var k in querySnapshot2.docs) {
                     const doc2 = querySnapshot2.docs[k];
+
                     if (doc2.data()["room"] == document.getElementById(`${weekArr[i]}${j}`).id) { //myClassesにこのroomのデータが登録されていたら　room ボタンを表示
-                      console.log("Find room : " + weekArr[i] + j + ", " + doc2.data()["name"]);
+                      //console.log("Find room : " + weekArr[i] + j + ", " + doc2.data()["name"]);
                       document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
 
                       if(edit==false){
@@ -181,7 +183,7 @@ function buttonShow(){
                       }
                       
                       document.getElementById(`${document.getElementById(weekArr[i] + j).id}name`).textContent = doc2.data()["name"];
-                      console.log(`${weekArr[i]}${j} : "room" button`);
+                      //console.log(`${weekArr[i]}${j} : "room" button`);
                       sendurl = doc2.id;
                       time = `${weekArr[i]}${j}`;
                       urlRegistration(sendurl,time);
@@ -200,4 +202,43 @@ function buttonShow(){
     }
   }
 
+}
+
+count();
+
+function count(){
+  db.collection("account").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if(doc.data()['uid'] == uid) {
+        db.collection("account").doc(doc.id).collection("myClasses").get().then((querySnapshot2) => {
+          for (var k in querySnapshot2.docs) {
+            const doc2 = querySnapshot2.docs[k];
+
+            if (doc2.data()['subjectType'] == "必修科目") {
+              //mustCount += doc2.data()['credit'];
+              mustCount += 1;
+              console.log(mustCount);
+              db.collection("account").doc(doc.id).update({
+                mustCount:mustCount
+              })
+            } else if (doc2.data()['subjectType'] == "選択必修科目") {
+              //optionalCount += doc2.data()['credit'];
+              optionalCount += 1;
+              console.log(optionalCount);
+              db.collection("account").doc(doc.id).update({
+                optionalCount:optionalCount
+              })
+            } else if (doc2.data()['subjectType'] == "自由科目") {
+              //freeCount += doc2.data()['credit'];
+              freeCount += 1;
+              console.log(freeCount);
+              db.collection("account").doc(doc.id).update({
+                freeCount:freeCount
+              })
+            }
+          }
+        });
+      }
+    });
+  });
 }
