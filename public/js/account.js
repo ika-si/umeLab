@@ -44,3 +44,7 @@ function signOut() {
 function sendChangeProfile() {
     window.location.href ='../changeProfile.html?name=' + encodeURIComponent(uid);
 }
+
+function sendTimeTableUid() {
+    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+}
