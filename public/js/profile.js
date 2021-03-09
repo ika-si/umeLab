@@ -34,7 +34,7 @@ function showNewProfile(){
   $('#MyUndergraduate').innerHTML = myUndergraduate;
   $('#MyDepartment').innerHTML = myDepartment;
   $('#MyGrade').innerHTML = myGrade;
-  document.location.reload();
+  document.location.href = '../account.html?name=' + encodeURIComponent(uid);
 }
 
 function changeProfile(){
@@ -60,29 +60,8 @@ function changeProfile(){
   .then(() => {
       console.log("Document successfully written!");
       showNewProfile();
-
   })
   .catch((error) => {
       console.error("Error writing document: ", error);
   });
 }
-
-$(function() {
-  $('.signup-show').click(function() {
-    $('#signup-modal').fadeIn();
-  });
-
-  $('.close-modal').click(function() {
-    $('#login-modal').fadeOut();
-    $('#signup-modal').fadeOut();
-  });
-  
-  $('.lesson-hover').hover(
-    function() {
-      $(this).find('.text-contents').addClass('text-active'); 
-    },
-    function() {
-      $(this).find('.text-contents').removeClass('text-active');
-    }
-  );
-});

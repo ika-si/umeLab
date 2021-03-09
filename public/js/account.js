@@ -41,6 +41,6 @@ function signOut() {
     });
 }
 
-// function userSend() {
-//     window.location.href ='../chat.html?name=' + encodeURIComponent(uid);
-// }
+function sendChangeProfile() {
+    window.location.href ='../changeProfile.html?name=' + encodeURIComponent(uid);
+}
