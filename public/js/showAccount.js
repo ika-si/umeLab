@@ -27,12 +27,12 @@ function show() {
     // }
     // console.log(decodeURIComponent(uid));
 
-    $('#MyName').append('<h4>名前: ' + array[1] + '</h4>');
-    $('#MyUndergraduate').append('<h4>学部: ' + array[2] + '</h4>');
-    $('#MyDepartment').append('<h4>学科: ' + array[3] + '</h4>');
-    $('#MyGrade').append('<h4>学年: ' + array[4] + '</h4>');
-    $('#MyDetails').append('<h4>コメント: ' + array[5] + '</h4>');
-    $('#MyTwitter').append('<h4>' + array[6] + '</h4>');
-    $('#MyInstagram').append('<h4>' + array[7] + '</h4>');
+    $('#MyName').append('<h4>名前: ' + decodeURI(array[1]) + '</h4>');
+    $('#MyUndergraduate').append('<h4>学部: ' + decodeURI(array[2]) + '</h4>');
+    $('#MyDepartment').append('<h4>学科: ' + decodeURI(array[3]) + '</h4>');
+    $('#MyGrade').append('<h4>学年: ' + decodeURI(array[4]) + '</h4>');
+    $('#MyDetails').append('<h4>コメント: ' + decodeURI(array[5]) + '</h4>');
+    $('#MyTwitter').append('<h4>@' + decodeURI(array[6]) + '</h4>');
+    $('#MyInstagram').append('<h4>' + decodeURI(array[7]) + '</h4>');
 }
 show();
