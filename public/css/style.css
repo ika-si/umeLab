@@ -74,12 +74,22 @@ p{
 
 .changeroom{
   /* .addRoomをコピペしたのでいい感じに色とか大きさとか変更してねー */
-  color: #F1907E;
+  color: #3BAF75;
   background-color: #F5F5F5;
   padding: 5px 5px 5px 5px;
   width:50px;
   border-radius: 15px;
-  border: solid 1px #F1907E;
+  border: solid 1px #3BAF75;
+}
+
+.Bigchangeroom{
+  /* timetable.htmlの履修を変更するボタン */
+  color: #3BAF75;
+  background-color: #F5F5F5;
+  padding: 10px 10px 10px 10px;
+  width:130px;
+  border-radius: 15px;
+  border: solid 1px #3BAF75;
 }
 
 .account{
@@ -90,4 +100,16 @@ position: center;
 width:75px;
 border: solid 3px #F1907E;
 border-radius: 15px;
+}
+
+.BigcheckBtn{
+  /* classlistの決定ボタン */
+  color: #F1907E;
+  background-color: #F5F5F5;
+  padding: 10px 10px 10px 10px;
+  width:130px;
+  border-radius: 15px;
+  border: solid 1px F1907E;
+  position: relative;
+  left: 850px;
 }
