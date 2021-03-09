@@ -32,10 +32,13 @@ function addLog(id, data){
     // let li  = document.createElement('li');
     // li.id   = id;
     // li.appendChild(document.createTextNode(log));
+    var time = data.createdAt.toDate();
+    var str = String(time);
+    var newTime = str.replace("GMT+0900 (日本標準時)", "");
     if(data.name == userName) {
-        $('#list').append('<li class="my">' + data.createdAt.toDate() + '<br>' + data.name + '<br>' + data.msg + '</li>');
+        $('#list').append('<li class="my">' +'<h5>' +  data.name +'</h5>' + data.msg + '<br>' + '<font size="2">' + newTime + '</font>'  + '</li>');
     } else {
-        $('#list').append('<li class="your">' + data.createdAt.toDate() + '<br>' + data.name + '<br>' + data.msg + '</li>');
+        $('#list').append('<li class="your">' +'<h5>'+ data.name +'</h5>' + data.msg + '<br>' + '<font size="2">' + newTime + '</font>' +'</li>');
     }
 
     // 表示エリアへ追加
@@ -52,7 +55,7 @@ function modLog(id, data){
           log.innerText = `${data.name}: ${data.msg} ${data.date}`;
     }
 }
-  
+
 /**
  * ログを削除
  **/
