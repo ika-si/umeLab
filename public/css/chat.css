@@ -2,7 +2,6 @@
   color: #F5F5F5;
   background-color: #F1907E;
   float: right;
-  margin-bottom: 20px;
   border-radius: 10px 10px 10px 10px;
   padding: 5px 5px 5px 5px;
   width: 60%;
@@ -11,13 +10,32 @@
   color: #F5F5F5;
   background-color: #3D92A4;
   float: left;
+  border-radius: 10px 10px 10px 10px;
+  padding: 5px 5px 5px 5px;
+  width: 60%;
+}
+
+.myTime{
+  color: #2C3F55;
+  background-color: #F5F5F5;
+  text-align: right;
+  float: right;
   margin-bottom: 20px;
   border-radius: 10px 10px 10px 10px;
   padding: 5px 5px 5px 5px;
   width: 60%;
 }
 
-
+.yourTime{
+  color: #2C3F55;
+  background-color: #F5F5F5;
+  text-align: right;
+  float: left;
+  margin-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  padding: 5px 5px 5px 5px;
+  width: 60%;
+}
 
 .chat_window {
   position: absolute;
