@@ -36,9 +36,11 @@ function addLog(id, data){
     var str = String(time);
     var newTime = str.replace("GMT+0900 (日本標準時)", "");
     if(data.name == userName) {
-        $('#list').append('<li class="my">' +'<h5>' +  data.name +'</h5>' + data.msg + '<br>' + '<font size="2">' + newTime + '</font>'  + '</li>');
+        $('#list').append('<li class="my">' +'<h5>' +  data.name +'</h5>' + data.msg +  '</li>');
+        $('#list').append('<li class="myTime">' + '<font size="2">' + newTime + '</font>'  + '</li>');
     } else {
-        $('#list').append('<li class="your">' +'<h5>'+ data.name +'</h5>' + data.msg + '<br>' + '<font size="2">' + newTime + '</font>' +'</li>');
+        $('#list').append('<li class="your">' +'<h5>'+ data.name +'</h5>' + data.msg + '</li>');
+        $('#list').append('<li class="yourTime">' + '<font size="2">' + newTime + '</font>'  + '</li>');
     }
 
     // 表示エリアへ追加
