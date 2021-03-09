@@ -1,10 +1,12 @@
 var db = firebase.firestore();
 let accountDoc, myEmail, myUndergraduate, myDepartment, myGrade, myDetails, myTwitter, myInstagram;
+let mustCount, optionalCount, freeCount;
 
 function showProfile(){
   db.collection("account").get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
           if(doc.data()['uid'] == uid) {
+            creditCoutUp(doc.id);
             accountDoc = doc.id;
             console.log(accountDoc);
               console.log('find');
@@ -29,6 +31,33 @@ function showProfile(){
               $('#MyDetails').append('<h4>コメント: ' + myDetails + '</h4>');
               $('#MyTwitter').append('<h4>' + myTwitter + '</h4>');
               $('#MyInstagram').append('<h4>' + myInstagram + '</h4>');
+
+
+              // await creditCoutUp();
+
+              // db.collection("account").doc(doc.id).collection("myClasses").get().then((querySnapshot2) => {
+              //   querySnapshot2.forEach((doc2) => {
+              //     console.log(doc2.data());
+              //     if (doc2.data()['subjectType'] == "必修科目") {
+              //       // mustCount += doc2.data()['credit'];
+              //       mustCount += 1;
+              //       console.log(mustCount);
+              //     } else if (doc2.data()['subjectType'] == "選択必修科目") {
+              //       // optionalCount += doc2.data()['credit'];
+              //       optionalCount += 1;
+              //     } else if (doc2.data()['subjectType'] == "自由科目") {
+              //       // freeCount += doc2.data()['credit'];
+              //       freeCount += 1;
+              //     }
+              //   });
+              // });
+              console.log(mustCount);
+              console.log(optionalCount);
+              console.log(freeCount);
+              $('#MyMustCredits').append('<h4>必修科目単位数: ' + mustCount + '</h4>');
+              $('#MyOptionalMustCredits').append('<h4>選択必修科目単位数: ' + optionalCount + '</h4>');
+              $('#MyFreeCredits').append('<h4>自由科目単位数: ' + freeCount + '</h4>');
+
           }
           // console.log('アカウントがない');
           // window.location.href ='../index.html';
@@ -39,6 +68,30 @@ function showProfile(){
   })
 
 }
+
+function creditCoutUp(id) {
+  db.collection("account").doc(id).collection("myClasses").get().then((querySnapshot2) => {
+    querySnapshot2.forEach((doc2) => {
+      console.log(doc2.data());
+      if (doc2.data()['subjectType'] == "必修科目") {
+        // mustCount += doc2.data()['credit'];
+        mustCount += 1;
+        console.log(mustCount);
+      } else if (doc2.data()['subjectType'] == "選択必修科目") {
+        // optionalCount += doc2.data()['credit'];
+        optionalCount += 1;
+      } else if (doc2.data()['subjectType'] == "自由科目") {
+        // freeCount += doc2.data()['credit'];
+        freeCount += 1;
+      }
+    });
+  });
+  let num = 0;
+  for (let i=0; i<100000000; i++) {
+    num += i;
+  }
+}
+
 showProfile();
 function showNewProfile(){
   $('#MyName').innerHTML = userName;
