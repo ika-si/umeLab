@@ -71,7 +71,6 @@ getStudents();
 
 
 $(document).on("click", ".person", function (event) {
-    alert('hello');
     // var otheruid = event.value;
     var otheruid = $(this).data('uid')
     console.log(otheruid);
