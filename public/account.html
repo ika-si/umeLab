@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <!-- jQueryの読み込み -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <title>account</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/account.css">
+</head>
+<body>
+  <div class="row g-5">
+    <div class="col-8">
+      <h2>Profile</h2>
+    </div>
+    <div class="col-2">
+      <button type="button" class="sign" id="addBtn" onclick="signOut()">signOut</button>
+    </div>
+    <div class="col-2">
+      <div id="nameAccount"></div>
+    </div>
+  </div>
+
+  <div id="MyName"></div>
+  <div id="MyUndergraduate"></div>
+  <div id="MyDepartment"></div>
+  <div id="MyGrade"></div>  
+
+
+  <input type="text" class="form-control" placeholder="学部" id="undergraduate">
+  <input type="text" class="form-control" placeholder="学科" id="department">
+  <input type="text" class="form-control" placeholder="学年" id="grade">
+  <button type="button" class="btn btn-primary" onclick="changeProfile()">change profile</button>
+
+
+  <!-- <h2>テスト　chat.htmlへのリンク</h2>
+  <button type="button" class="btn btn-primary" onclick="userSend()">chat.htmlへの移動</button> -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <!--firebase UIの読み込み-->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+
+
+    <script src="js/config.js"></script>
+    <script src="js/account.js"></script>
+    <script src="js/profile.js"></script>
+
+</html>
