@@ -1,7 +1,6 @@
-
 .classDetail {
   display: table;
-  width: 900px;
+  width: 1200px;
   margin: 10px;
 }
 
@@ -10,34 +9,59 @@
   display: table-cell;
   /* position: -webkit-sticky; */
   /* position: right; */
-  /* left: 200px; */
-  /* top: 20px; */
-  width: 250px;
+  position: relative;
+  left: 200px;
+  width: 1200px;
   height: 50px;
+  /* background-color: pink; */
 }
 
 #checkBtn{
   transform:scale(1.5);
   position: relative;
-  left: 250px;
+  left: 150px;
   top: 10px;
-
+  height: 50px;
+  width: 10px;
+  /* background-color: pink; */
 }
 
 #subjectID{
-  position: relative;
-  left: 20px;
-
+  position: absolute;
+  left: 200px;
+  height: 50px;
+  width: 150px;
+  /* background-color: pink; */
 }
 
 #subjectName{
-  position: relative;
-  left: -20px;
+  position: absolute;
+  left: 300px;
+  height: 50px;
+  width: 240px;
+  /* background-color: pink; */
 }
 
 #professor{
+  position: absolute;
+  left: 550px;
+  height: 50px;
+  width: 400px;
+  /* background-color: pink; */
+}
+
+#subjectType{
   position: relative;
-  left: 30px;
+  left: 800px;
+  height: 50px;
+  /* background-color: pink; */
+}
+
+#style{
+  position: relative;
+  left: 60px;
+  height: 50px;
+  /* background-color: pink; */
 }
 
 .BigcheckBtn{
