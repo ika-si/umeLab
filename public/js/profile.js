@@ -14,11 +14,8 @@ function showProfile(){
               myUndergraduate = doc.data()['undergraduate'];
               myDepartment = doc.data()['department'];
               myGrade = doc.data()['grade'];
-              let mySubGrade;
               if (myGrade == -1) {
-                mySubGrade = "未入力"
-              } else {
-                mySubGrade = myGrade;
+                myGrade = "未入力"
               }
               myDetails = doc.data()['details'];
               myTwitter = doc.data()['twitter'];
@@ -30,9 +27,9 @@ function showProfile(){
               $('#MyName').append('<h4>名前: ' + userName + '</h4>');
               $('#MyUndergraduate').append('<h4>学部: ' + myUndergraduate + '</h4>');
               $('#MyDepartment').append('<h4>学科: ' + myDepartment + '</h4>');
-              $('#MyGrade').append('<h4>学年: ' + mySubGrade + '</h4>');
+              $('#MyGrade').append('<h4>学年: ' + myGrade + '</h4>');
               $('#MyDetails').append('<h4>コメント: ' + myDetails + '</h4>');
-              $('#MyTwitter').append('<h4>' + myTwitter + '</h4>');
+              $('#MyTwitter').append('<h4>@' + myTwitter + '</h4>');
               $('#MyInstagram').append('<h4>' + myInstagram + '</h4>');
               $('#MyMustCredits').append('<h4>必修科目単位数: ' + mustCount + '</h4>');
               $('#MyOptionalMustCredits').append('<h4>選択必修科目単位数: ' + optionalCount + '</h4>');
@@ -65,21 +62,27 @@ function changeProfile(){
   
   let inputUndergraduate = $("#undergraduate").val();
   if (inputUndergraduate == "") inputUndergraduate = "未入力";
+  if (myUndergraduate != "未入力") inputUndergraduate = myUndergraduate;
 
   let inputDepartment = $("#department").val();
   if (inputDepartment == "") inputDepartment = "未入力";
+  if (myDepartment != "未入力") inputDepartment = myDepartment;
 
   let inputGrade = $("#grade").val();
   if (inputGrade == "") inputGrade = -1;
+  if (myGrade != "未入力") inputGrade = myGrade;
 
   let inputDetails = $("#details").val();
   if (inputDetails == "") inputDetails = "未入力";
+  if (myDetails != "未入力") inputDetails = myDetails;
 
   let inputTwitter = $("#twitter").val();
   if (inputTwitter == "") inputTwitter = "未入力";
+  if (myTwitter != "未入力") inputTwitter = myTwitter;
 
   let inputInstagram = $("#instagram").val();
   if (inputInstagram == "") inputInstagram = "未入力";
+  if (myInstagram != "未入力") inputInstagram = myInstagram;
 
   // Add a new document in collection "cities"
   db.collection("account").doc(accountDoc).set({
