@@ -1,5 +1,6 @@
 {
   "projects": {
-    "staging": "umelab-29c16"
+    "staging": "umelab2",
+    "default": "umelab2"
   }
 }
