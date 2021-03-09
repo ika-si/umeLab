@@ -1,5 +1,5 @@
 var db = firebase.firestore();
-let accountDoc, myEmail, myUndergraduate, myDepartment, myGrade ,myDetails;
+let accountDoc, myEmail, myUndergraduate, myDepartment, myGrade, myTwitter, myInstagram;
 
 function showProfile(){
   db.collection("account").get().then((querySnapshot) => {
@@ -13,13 +13,15 @@ function showProfile(){
               myUndergraduate = doc.data()['undergraduate'];
               myDepartment = doc.data()['department'];
               myGrade = doc.data()['grade'];
-              myDetails = doc.data()['details'];
+              myTwitter = doc.data()['twitter'];
+              myInstagram = doc.data()['instagram'];
               console.log(userName + " "+ myEmail);
               $('#MyName').append('<h4>名前: ' + userName + '</h4>');
               $('#MyUndergraduate').append('<h4>学部: ' + myUndergraduate + '</h4>');
               $('#MyDepartment').append('<h4>学科: ' + myDepartment + '</h4>');
               $('#MyGrade').append('<h4>学年: ' + myGrade + '</h4>');
-              $('#MyDetails').append('<h4>コメント: ' + myDetails + '</h4>');
+              $('#MyTwitter').append('<h4>' + myTwitter + '</h4>');
+              $('#MyInstagram').append('<h4>' + myInstagram + '</h4>');
           }
           // console.log('アカウントがない');
           // window.location.href ='../index.html';
@@ -36,23 +38,32 @@ function showNewProfile(){
   $('#MyUndergraduate').innerHTML = myUndergraduate;
   $('#MyDepartment').innerHTML = myDepartment;
   $('#MyGrade').innerHTML = myGrade;
-  $('#MyDetails').innerHTML = myDetails;
+  $('#MyTwitter').innerHTML = myTwitter;
+  $('#MyInstagram').innerHTML = myInstagram;
   document.location.href = '../account.html?name=' + encodeURIComponent(uid);
 }
 
 function changeProfile(){
   //
   let inputUndergraduate = $("#undergraduate").val();
-  if (inputUndergraduate == "") return;
+  // if (myUndergraduate == "undefined") myUndergraduate = "未入力";
+  if (inputUndergraduate == "") inputUndergraduate = "未入力";
 
   let inputDepartment = $("#department").val();
-  if (inputDepartment == "") return;
+  // if (myDepartment == "undefined") myDepartment = "未入力";
+  if (inputDepartment == "") inputDepartment = "未入力";
 
   let inputGrade = $("#grade").val();
-  if (inputGrade == "") return;
+  // if (myGrade == "undefined") myGrade = "未入力";
+  if (inputGrade == "") inputGrade = -1;
 
-  let inputdetails = $("#details").val();
-  if (inputdetails == "") return;
+  let inputTwitter = $("#twitter").val();
+  // if (myTwitter == "undefined") myTwitter = "未入力";
+  if (inputTwitter == "") inputTwitter = "未入力";
+
+  let inputInstagram = $("#instagram").val();
+  // if (myInstagram == "undefined") myInstagram = "未入力";
+  if (inputInstagram == "") inputInstagram = "未入力";
 
   // Add a new document in collection "cities"
   db.collection("account").doc(accountDoc).set({
@@ -62,7 +73,8 @@ function changeProfile(){
       undergraduate: inputUndergraduate,
       department: inputDepartment,
       grade: Number(inputGrade),
-      details: inputdetails
+      twitter: inputTwitter,
+      instagram: inputInstagram
   })
   .then(() => {
       console.log("Document successfully written!");
@@ -70,5 +82,7 @@ function changeProfile(){
   })
   .catch((error) => {
       console.error("Error writing document: ", error);
+      var errorMessage = error.message;
+      $('#errorMessage').append("Error: "+errorMessage);
   });
 }
