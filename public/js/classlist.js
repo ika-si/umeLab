@@ -26,7 +26,7 @@ $('#decideBtn').prop('disabled', true);
 
 if (isChangeStatus) {
     document.getElementById("confirmStatus").innerText = "時間割表から選択済みのクラスを取り消したい場合は右のボタンを押してください　";
-    $('#confirmStatus').append('<button type="button" class="delete" id="deleteBtn" onclick="confirmDelete()">' + "選択取消" + '</button><br><br>');
+    $('#confirmStatus').append('<button type="button" class="delete BigCancelBtn" id="deleteBtn" onclick="confirmDelete()">' + "選択取消" + '</button><br><br>');
     $('#decideBtn').text("変更");
 } else {
     // document.getElementById("confirmStatus").innerText = "時間割に追加したい授業を選択してください";
@@ -136,7 +136,7 @@ function clickBtn(classId, id, name, teacher, term, classDocId){
     for (let i = 0; i < className.length; i++){
         if (isChangeStatus && i == boxNum) {
             continue;
-        } 
+        }
         if (className[i].id == "checkbox"+classId){
             selectedId = id;
             selectedClassName = name;
