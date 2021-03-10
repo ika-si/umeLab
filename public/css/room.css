@@ -193,3 +193,8 @@ body {
 .message_template {
   display: none;
 }
+
+#memberBox{
+  position: relative;
+  left: 130px;
+}
