@@ -236,10 +236,18 @@ function deleteUserFromClassUsers(bool) {
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             let docid = doc.id;
-            console.log(docid);
+            // console.log(docid);
             db.collection("rooms").doc(period).collection("classes").doc(classdocid).collection("users").doc(docid).delete().then(() => {
                 console.log("Document successfully deleted!");
+                // if (bool == false) { // 削除
+                //     reduceCreditToMyCreditField1(); //ページ遷移もする
+                // } else { // 更新
+                //     reduceCreditToMyCreditField2(); //ページ遷移はまだしない
+                // }
                 reduceCreditToMyCreditField(bool);
+                // if (bool == false) { // 削除ならページ遷移する。更新なら追加処理に移る。
+                //     // window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                // }
             }).catch((error) => {
                 console.error("Error removing document: ", error);
             });
@@ -259,56 +267,69 @@ function reduceCreditToMyCreditField(bool) {
 
                 myaccountRef.get().then((doc) => {
                     if (doc.exists) {
-                        // console.log("Document data:", doc.data());
-                        if (selectedSubjectType == "必修科目") {
+                        // ->
+                        db.collection("rooms").doc(period).collection("classes").doc(classdocid).get().then((doc2) => {
+                            if (doc2.exists) {
+                                let sbt = doc2.data()["subjectType"];
+                                if (sbt == "必修科目") {
 
-                            return myaccountRef.update({
-                                mustCount: Number(doc.data()["mustCount"]) - Number(selectedCredit)
-                            })
-                            .then(() => {
-                                console.log("Document successfully updated!");
-                                if (bool == false) { // 更新ならページ遷移する
-                                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                                    return myaccountRef.update({
+                                        // mustCount: Number(doc.data()["mustCount"]) - Number(selectedCredit)
+                                        mustCount: Number(doc.data()["mustCount"]) - Number(doc2.data()["credit"])
+                                    })
+                                    .then(() => {
+                                        console.log("Document successfully updated!");
+                                        if (bool == false) {
+                                            window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                                        }
+                                    })
+                                    .catch((error) => {
+                                        // The document probably doesn't exist.
+                                        console.error("Error updating document: ", error);
+                                    });
+
+                                } else if (sbt == "選択必修科目") {
+
+                                    return myaccountRef.update({
+                                        optionalCount: Number(doc.data()["optionalCount"]) - Number(doc2.data()["credit"])
+                                    })
+                                    .then(() => {
+                                        console.log("Document successfully updated!");
+                                        if (bool == false) {
+                                            window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                                        }
+                                    })
+                                    .catch((error) => {
+                                        // The document probably doesn't exist.
+                                        console.error("Error updating document: ", error);
+                                    });
+
+                                } else if (sbt == "自由科目") {
+
+                                    return myaccountRef.update({
+                                        freeCount: Number(doc.data()["freeCount"]) - Number(doc2.data()["credit"])
+                                    })
+                                    .then(() => {
+                                        console.log("Document successfully updated!");
+                                        if (bool == false) {
+                                            window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                                        }
+                                    })
+                                    .catch((error) => {
+                                        // The document probably doesn't exist.
+                                        console.error("Error updating document: ", error);
+                                    });
+
                                 }
-                            })
-                            .catch((error) => {
-                                // The document probably doesn't exist.
-                                console.error("Error updating document: ", error);
-                            });
 
-                        } else if (selectedSubjectType == "選択必修科目") {
+                            } else {
+                                console.log("No such document!");
+                            }
+                        }).catch((error) => {
+                            console.log("Error getting document:", error);
+                        });
 
-                            return myaccountRef.update({
-                                optionalCount: Number(doc.data()["optionalCount"]) - Number(selectedCredit)
-                            })
-                            .then(() => {
-                                console.log("Document successfully updated!");
-                                if (bool == false) { // 更新ならページ遷移する
-                                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-                                }
-                            })
-                            .catch((error) => {
-                                // The document probably doesn't exist.
-                                console.error("Error updating document: ", error);
-                            });
-
-                        } else if (selectedSubjectType == "自由科目") {
-
-                            return myaccountRef.update({
-                                freeCount: Number(doc.data()["freeCount"]) - Number(selectedCredit)
-                            })
-                            .then(() => {
-                                console.log("Document successfully updated!");
-                                if (bool == false) { // 更新ならページ遷移する
-                                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-                                }
-                            })
-                            .catch((error) => {
-                                // The document probably doesn't exist.
-                                console.error("Error updating document: ", error);
-                            });
-
-                        }
+                        // <-
                     } else {
                         console.log("No such document!");
                     }
@@ -319,7 +340,6 @@ function reduceCreditToMyCreditField(bool) {
         });
     });
 }
-
 
 function addClassToMyClasses() {
     // rooms/.../users にuidフィールドを持ったドキュメントを追加  履修者一覧を表示するときに使う

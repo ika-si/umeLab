@@ -204,7 +204,7 @@ function buttonShow(){
 
 }
 
-count();
+// count();
 
 function count(){
   db.collection("account").get().then((querySnapshot) => {
