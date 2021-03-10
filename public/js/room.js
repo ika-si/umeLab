@@ -23,9 +23,16 @@ function showRoomTitle() {
             let periodName = doc.data()['period'];
             let className = doc.data()['name'];
             let teacherName = doc.data()['teacher'];
+            let classStyle = doc.data()['style'];
+            let classUrl = doc.data()['url'];
             console.log(periodName +" "+ className +" "+ teacherName);
             document.getElementById("roomname").textContent = periodName +" - "+ className +" - ";
-            document.getElementById("teachername").textContent = teacherName;
+            document.getElementById("teachername").textContent = "　　教授名　：" + teacherName;
+            document.getElementById("roomStyle").textContent = "　　授業形態：" + classStyle;
+            if (classStyle == "オンライン" || classStyle == "ハイブリッド") {
+                document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="${classUrl}">${classUrl}</a>`;
+            }
+            // console.log(document.getElementById("roomDetail"));
         } else {
             console.log("No such document!");
         }
