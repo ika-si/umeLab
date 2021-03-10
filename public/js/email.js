@@ -92,6 +92,12 @@ function add(nameAdd){
         name: nameAdd,
         email: emailAdd,
         uid: uidAdd,
+        undergraduate: "",
+        department: "",
+        grade: -1,
+        twitter: "",
+        instagram: "",
+        details: "",
         freeCount: 0,
         mustCount: 0,
         optionalCount: 0

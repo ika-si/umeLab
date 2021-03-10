@@ -14,9 +14,6 @@ function showProfile(){
               myUndergraduate = doc.data()['undergraduate'];
               myDepartment = doc.data()['department'];
               myGrade = doc.data()['grade'];
-              if (myGrade == -1) {
-                myGrade = "未入力"
-              }
               myDetails = doc.data()['details'];
               myTwitter = doc.data()['twitter'];
               myInstagram = doc.data()['instagram'];
@@ -27,7 +24,11 @@ function showProfile(){
               $('#MyName').append('<h4>名　　前　:　' + userName + '</h4>');
               $('#MyUndergraduate').append('<h4>学　　部　:　' + myUndergraduate + '</h4>');
               $('#MyDepartment').append('<h4>学　　科　:　' + myDepartment + '</h4>');
-              $('#MyGrade').append('<h4>学　　年　:　' + myGrade + '</h4>');
+              if (myGrade == -1) {
+                $('#MyGrade').append('<h4>学　　年　:　' + '</h4>');
+              } else {
+                $('#MyGrade').append('<h4>学　　年　:　' + myGrade + '</h4>');
+              }
               $('#MyDetails').append('<h4>コメント　:　' + myDetails + '</h4>');
               $('#MyTwitter').append('<h4>@' + myTwitter + '</h4>');
               $('#MyInstagram').append('<h4>' + myInstagram + '</h4>');
@@ -61,31 +62,26 @@ function showNewProfile(){
 function changeProfile(){
 
   let inputUndergraduate = $("#undergraduate").val();
-  if (inputUndergraduate == "") inputUndergraduate = "未入力";
-  if (myUndergraduate != "未入力") inputUndergraduate = myUndergraduate;
+  if (myUndergraduate != "") inputUndergraduate = myUndergraduate;
 
   let inputDepartment = $("#department").val();
-  if (inputDepartment == "") inputDepartment = "未入力";
-  if (myDepartment != "未入力") inputDepartment = myDepartment;
+  if (myDepartment != "") inputDepartment = myDepartment;
 
   let inputGrade = $("#grade").val();
-  if (inputGrade == "") inputGrade = -1;
-  if (myGrade != "未入力") inputGrade = myGrade;
+  if (myGrade != -1 || inputGrade == "") inputGrade = myGrade;
+  if (isNaN(inputGrade)) inputGrade = -1;
 
   let inputDetails = $("#details").val();
-  if (inputDetails == "") inputDetails = "未入力";
-  if (myDetails != "未入力") inputDetails = myDetails;
+  if (myDetails != "") inputDetails = myDetails;
 
   let inputTwitter = $("#twitter").val();
-  if (inputTwitter == "") inputTwitter = "未入力";
-  if (myTwitter != "未入力") inputTwitter = myTwitter;
+  if (myTwitter != "") inputTwitter = myTwitter;
 
   let inputInstagram = $("#instagram").val();
-  if (inputInstagram == "") inputInstagram = "未入力";
-  if (myInstagram != "未入力") inputInstagram = myInstagram;
+  if (myInstagram != "") inputInstagram = myInstagram;
 
   // Add a new document in collection "cities"
-  db.collection("account").doc(accountDoc).set({
+  db.collection("account").doc(accountDoc).update({
       email: myEmail,
       name: userName,
       uid: uid,
