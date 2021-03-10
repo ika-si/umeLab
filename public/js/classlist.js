@@ -267,9 +267,9 @@ function reduceCreditToMyCreditField(bool) {
                             })
                             .then(() => {
                                 console.log("Document successfully updated!");
-                                if (bool == false) { // 更新ならページ遷移する
+                                // if (bool == false) { // 更新ならページ遷移する
                                     window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-                                }
+                                // }
                             })
                             .catch((error) => {
                                 // The document probably doesn't exist.
@@ -283,9 +283,9 @@ function reduceCreditToMyCreditField(bool) {
                             })
                             .then(() => {
                                 console.log("Document successfully updated!");
-                                if (bool == false) { // 更新ならページ遷移する
+                                // if (bool == false) { // 更新ならページ遷移する
                                     window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-                                }
+                                // }
                             })
                             .catch((error) => {
                                 // The document probably doesn't exist.
@@ -299,9 +299,9 @@ function reduceCreditToMyCreditField(bool) {
                             })
                             .then(() => {
                                 console.log("Document successfully updated!");
-                                if (bool == false) { // 更新ならページ遷移する
+                                // if (bool == false) { // 更新ならページ遷移する
                                     window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-                                }
+                                // }
                             })
                             .catch((error) => {
                                 // The document probably doesn't exist.
