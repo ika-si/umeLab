@@ -74,7 +74,6 @@ p{
 
 
 .changeroom{
-
   /* .addRoomをコピペしたのでいい感じに色とか大きさとか変更してねー */
   color: #3BAF75;
   background-color: #F5F5F5;
@@ -114,4 +113,17 @@ border-radius: 15px;
   border: solid 1px F1907E;
   position: relative;
   left: 850px;
+}
+
+.myAcount{
+  color:#F1907E;
+    position: relative;
+    left:100px;
+    top:100px;
+}
+
+.myposition{
+  position: relative;
+  left:100px;
+  top:270px;
 }

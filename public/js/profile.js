@@ -24,16 +24,16 @@ function showProfile(){
               optionalCount = doc.data()['optionalCount'];
               freeCount = doc.data()['freeCount'];
 
-              $('#MyName').append('<h4>名前: ' + userName + '</h4>');
-              $('#MyUndergraduate').append('<h4>学部: ' + myUndergraduate + '</h4>');
-              $('#MyDepartment').append('<h4>学科: ' + myDepartment + '</h4>');
-              $('#MyGrade').append('<h4>学年: ' + myGrade + '</h4>');
-              $('#MyDetails').append('<h4>コメント: ' + myDetails + '</h4>');
+              $('#MyName').append('<h4>名　　前　:　' + userName + '</h4>');
+              $('#MyUndergraduate').append('<h4>学　　部　:　' + myUndergraduate + '</h4>');
+              $('#MyDepartment').append('<h4>学　　科　:　' + myDepartment + '</h4>');
+              $('#MyGrade').append('<h4>学　　年　:　' + myGrade + '</h4>');
+              $('#MyDetails').append('<h4>コメント　:　' + myDetails + '</h4>');
               $('#MyTwitter').append('<h4>@' + myTwitter + '</h4>');
               $('#MyInstagram').append('<h4>' + myInstagram + '</h4>');
-              $('#MyMustCredits').append('<h4>必修科目単位数: ' + mustCount + '</h4>');
-              $('#MyOptionalMustCredits').append('<h4>選択必修科目単位数: ' + optionalCount + '</h4>');
-              $('#MyFreeCredits').append('<h4>自由科目単位数: ' + freeCount + '</h4>');
+              $('#MyMustCredits').append('<h4><br>　　必修科目　:　' + mustCount + '</h4>');
+              $('#MyOptionalMustCredits').append('<h4>選択必修科目　:　' + optionalCount + '</h4>');
+              $('#MyFreeCredits').append('<h4>　　自由科目　:　' + freeCount + '</h4>');
 
           }
           // console.log('アカウントがない');
@@ -59,7 +59,7 @@ function showNewProfile(){
 }
 
 function changeProfile(){
-  
+
   let inputUndergraduate = $("#undergraduate").val();
   if (inputUndergraduate == "") inputUndergraduate = "未入力";
   if (myUndergraduate != "未入力") inputUndergraduate = myUndergraduate;

@@ -39,6 +39,6 @@ function show() {
     $('#MyDetails').append('<h4>コメント: ' + myDetails + '</h4>');
     $('#MyTwitter').append('<h4>@' + myTwitter + '</h4>');
     $('#MyInstagram').append('<h4>' + myInstagram + '</h4>');
-    
+
 }
 show();
