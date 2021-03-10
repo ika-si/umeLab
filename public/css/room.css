@@ -198,3 +198,7 @@ body {
   position: relative;
   left: 130px;
 }
+
+#roomDetail {
+  width: 500px;
+}
