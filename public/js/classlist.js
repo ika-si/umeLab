@@ -239,9 +239,7 @@ function deleteUserFromClassUsers(bool) {
             console.log(docid);
             db.collection("rooms").doc(period).collection("classes").doc(classdocid).collection("users").doc(docid).delete().then(() => {
                 console.log("Document successfully deleted!");
-                if (bool == false) { // 更新ならページ遷移する
-                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-                }
+                reduceCreditToMyCreditField(bool);
             }).catch((error) => {
                 console.error("Error removing document: ", error);
             });
@@ -249,6 +247,76 @@ function deleteUserFromClassUsers(bool) {
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
+    });
+}
+
+function reduceCreditToMyCreditField(bool) {
+    db.collection("account")
+    .get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            if(doc.data()['uid'] == uid) {
+                var myaccountRef = db.collection("account").doc(doc.id);
+
+                myaccountRef.get().then((doc) => {
+                    if (doc.exists) {
+                        // console.log("Document data:", doc.data());
+                        if (selectedSubjectType == "必修科目") {
+
+                            return myaccountRef.update({
+                                mustCount: Number(doc.data()["mustCount"]) - Number(selectedCredit)
+                            })
+                            .then(() => {
+                                console.log("Document successfully updated!");
+                                if (bool == false) { // 更新ならページ遷移する
+                                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                                }
+                            })
+                            .catch((error) => {
+                                // The document probably doesn't exist.
+                                console.error("Error updating document: ", error);
+                            });
+
+                        } else if (selectedSubjectType == "選択必修科目") {
+
+                            return myaccountRef.update({
+                                optionalCount: Number(doc.data()["optionalCount"]) - Number(selectedCredit)
+                            })
+                            .then(() => {
+                                console.log("Document successfully updated!");
+                                if (bool == false) { // 更新ならページ遷移する
+                                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                                }
+                            })
+                            .catch((error) => {
+                                // The document probably doesn't exist.
+                                console.error("Error updating document: ", error);
+                            });
+
+                        } else if (selectedSubjectType == "自由科目") {
+
+                            return myaccountRef.update({
+                                freeCount: Number(doc.data()["freeCount"]) - Number(selectedCredit)
+                            })
+                            .then(() => {
+                                console.log("Document successfully updated!");
+                                if (bool == false) { // 更新ならページ遷移する
+                                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                                }
+                            })
+                            .catch((error) => {
+                                // The document probably doesn't exist.
+                                console.error("Error updating document: ", error);
+                            });
+
+                        }
+                    } else {
+                        console.log("No such document!");
+                    }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+            }
+        });
     });
 }
 
@@ -291,16 +359,80 @@ function addUserToClassUsers() {
                     style: selectedStyle,
                     subjectType: selectedSubjectType,
                     url: selectedUrl,
-                    credit: selectedCredit
+                    credit: Number(selectedCredit)
                 })
                 .then(() => {
                     console.log("Document written with ID: ");
-                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid); // 先に処理が進んでしまうのここに書いた
+                    addCreditToMyCreditField();
                 })
                 .catch((error) => {
                     console.error("Error writing document: ", error);
                 });
-                console.log("add myClasses =>", doc.data());
+                // console.log("add myClasses =>", doc.data());
+            }
+        });
+    });
+}
+
+function addCreditToMyCreditField() { // 自分の選択必修科目とかの単位数を更新していく関数
+    db.collection("account")
+    .get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            if(doc.data()['uid'] == uid) {
+                var myaccountRef = db.collection("account").doc(doc.id);
+
+                myaccountRef.get().then((doc) => {
+                    if (doc.exists) {
+                        // console.log("Document data:", doc.data());
+                        if (selectedSubjectType == "必修科目") {
+
+                            return myaccountRef.update({
+                                mustCount: Number(doc.data()["mustCount"]) + Number(selectedCredit)
+                            })
+                            .then(() => {
+                                console.log("Document successfully updated!");
+                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid); // 先に処理が進んでしまうのここに書いた
+                            })
+                            .catch((error) => {
+                                // The document probably doesn't exist.
+                                console.error("Error updating document: ", error);
+                            });
+
+                        } else if (selectedSubjectType == "選択必修科目") {
+
+                            return myaccountRef.update({
+                                optionalCount: Number(doc.data()["optionalCount"]) + Number(selectedCredit)
+                            })
+                            .then(() => {
+                                console.log("Document successfully updated!");
+                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid); // 先に処理が進んでしまうのここに書いた
+                            })
+                            .catch((error) => {
+                                // The document probably doesn't exist.
+                                console.error("Error updating document: ", error);
+                            });
+
+                        } else if (selectedSubjectType == "自由科目") {
+
+                            return myaccountRef.update({
+                                freeCount: Number(doc.data()["freeCount"]) + Number(selectedCredit)
+                            })
+                            .then(() => {
+                                console.log("Document successfully updated!");
+                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid); // 先に処理が進んでしまうのここに書いた
+                            })
+                            .catch((error) => {
+                                // The document probably doesn't exist.
+                                console.error("Error updating document: ", error);
+                            });
+
+                        }
+                    } else {
+                        console.log("No such document!");
+                    }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
             }
         });
     });
