@@ -195,10 +195,9 @@ function confirmClass(){
     if (window.confirm(msg)) {
     // confirm で ok が押された時の処理
         if (isChangeStatus) {
-            deleteClassRegistration(true);
-        }
-        if (isSomethingSelected) {
-            addClassToMyClasses(); // -> 呼び出し先で最終的にページ遷移する
+            deleteClassRegistration(true); // 更新の時この一行が実行される。この先でページ遷移する。addClassToMyClasses()もこの先で呼び出される
+        } else if (isSomethingSelected) {
+            addClassToMyClasses(); // addの時この一行が実行される呼び出し先で最終的にページ遷移する
         }
     }
 }
@@ -245,9 +244,6 @@ function deleteUserFromClassUsers(bool) {
                 //     reduceCreditToMyCreditField2(); //ページ遷移はまだしない
                 // }
                 reduceCreditToMyCreditField(bool);
-                // if (bool == false) { // 削除ならページ遷移する。更新なら追加処理に移る。
-                //     // window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-                // }
             }).catch((error) => {
                 console.error("Error removing document: ", error);
             });
@@ -281,6 +277,8 @@ function reduceCreditToMyCreditField(bool) {
                                         console.log("Document successfully updated!");
                                         if (bool == false) {
                                             window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                                        } else {
+                                            addClassToMyClasses();
                                         }
                                     })
                                     .catch((error) => {
@@ -297,6 +295,8 @@ function reduceCreditToMyCreditField(bool) {
                                         console.log("Document successfully updated!");
                                         if (bool == false) {
                                             window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                                        } else {
+                                            addClassToMyClasses();
                                         }
                                     })
                                     .catch((error) => {
@@ -313,6 +313,8 @@ function reduceCreditToMyCreditField(bool) {
                                         console.log("Document successfully updated!");
                                         if (bool == false) {
                                             window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+                                        } else {
+                                            addClassToMyClasses();
                                         }
                                     })
                                     .catch((error) => {
