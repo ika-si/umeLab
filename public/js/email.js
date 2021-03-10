@@ -91,7 +91,10 @@ function add(nameAdd){
     db.collection("account").add({
         name: nameAdd,
         email: emailAdd,
-        uid: uidAdd
+        uid: uidAdd,
+        freeCount: 0,
+        mustCount: 0,
+        optionalCount: 0
     }).then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);
         window.location.assign('../signin.html');
