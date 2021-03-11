@@ -100,6 +100,7 @@ function add(){
     $("#nameAdd").val('');
     $("#msgAdd").val('');
     console.log("Document written with ID: ");
+    scroll();
   })
   .catch((error) => {
     console.error("Error writing document: ", error);
@@ -127,7 +128,7 @@ function test_ivent(e) {
 (function () {
   var sendMessage = function () {
     var $messages = $('.messages');
-    return $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 300);
+    return $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 250);
   };
 
   setTimeout(function () {
@@ -135,3 +136,17 @@ function test_ivent(e) {
   }, 1000);
 
 }.call(this));
+
+
+
+function scroll() {
+  var sendMessage = function () {
+    var $messages = $('.messages');
+    return $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 0);
+  };
+
+  setTimeout(function () {
+    return sendMessage();
+  }, 50);
+
+}
