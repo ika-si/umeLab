@@ -8,8 +8,8 @@ function getClasses() {
         urlClass = urlClass.substring(0, urlClass.indexOf("?"));
     }
     period = value[3];
-    console.log(urlClass);
-    console.log(period);
+    // console.log(urlClass);
+    // console.log(period);
 }
 getClasses();
 
@@ -25,7 +25,7 @@ function showRoomTitle() {
             let teacherName = doc.data()['teacher'];
             let classStyle = doc.data()['style'];
             let classUrl = doc.data()['url'];
-            console.log(periodName +" "+ className +" "+ teacherName);
+            // console.log(periodName +" "+ className +" "+ teacherName);
             document.getElementById("roomname").textContent = periodName +" - "+ className +" - ";
             document.getElementById("teachername").textContent = "　　教授名　：" + teacherName;
             document.getElementById("roomStyle").textContent = "　　授業形態：" + classStyle;
@@ -58,15 +58,12 @@ function getStudents() {
 
     // TODo: 配列とかオブジェクトとかにユーザー一覧を格納する処理を書く。
     //      studentごとのuidとnameのセットが必要。　かつ、自分がどれかを明確にさせる
-    //      uid , userNameにすでに自分の情報が入っているみたい
-    let myEmail, myUndergraduate, myDepartment, myGrade, myDetails, myTwitter, myInstagram;
+    //      uid , userNameにすでに自分の情報が入っている
     usersRef.get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            console.log(doc.id, " => ", doc.data());
-            let myAccountUid = doc.data()['uid'];
+            // console.log(doc.id, " => ", doc.data());
             $('#memberlist').append('<a class="btn rounded-pill person" data-uid="'+ doc.data()['uid'] +'">' + doc.data()['name'] + '</a><br><br>');
-            // $('#memberlist').append('<a class="btn rounded-pill person" onclick="showMemberInfo('+ myAccountUid+')">' + doc.data()['name'] + '</a><br><br>');
         });
     })
     .catch((error) => {
@@ -78,14 +75,13 @@ getStudents();
 
 
 $(document).on("click", ".person", function (event) {
-    // var otheruid = event.value;
-    var otheruid = $(this).data('uid')
-    console.log(otheruid);
+    let otheruid = $(this).data('uid');
+    let myUndergraduate, myDepartment, myGrade, myDetails, myTwitter, myInstagram;
     db.collection("account").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             if(doc.data()['uid'] == otheruid) {
-                console.log("Document data:", doc.data());
-                console.log(doc.id, " => ", doc.data());
+                // console.log("Document data:", doc.data());
+                // console.log(doc.id, " => ", doc.data());
                 userName = doc.data()['name'];
                 myUndergraduate = doc.data()['undergraduate'];
                 myDepartment = doc.data()['department'];

@@ -6,16 +6,13 @@ function show() {
     if (uid.indexOf("?") != -1) {
         uid = uid.substring(0, uid.indexOf("?"));
     }
-    console.log(decodeURIComponent(uid));
 
     var db = firebase.firestore();
     let collection = db.collection("account");
     collection.get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             if(doc.data()['uid'] == uid) {
-                console.log('find');
                 userName = doc.data()['name'];
-                console.log(doc.data()['name']);
                 $('#nameAccount').append('<button class="account" onclick="sendAccount()">' + userName + '</button>');
             }
             // console.log('アカウントがない');

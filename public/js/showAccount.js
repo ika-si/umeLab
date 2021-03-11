@@ -1,19 +1,15 @@
 function show() {
     var query = location.search;
     var value1 = query.split('?');
-    console.log(value1[3]);
     var array = [];
-
 
     var value2 = value1[1].split('=');
     array[0] = value2[1];
-    console.log(array[0]);
 
 
     for(let i = 1; i < value1.length; i++) {
         var value2 = value1[i].split('=');
         array[i] = value2[1];
-        console.log(array[i]);
     }
 
     userName = decodeURI(array[1]);

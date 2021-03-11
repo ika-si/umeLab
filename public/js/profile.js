@@ -8,7 +8,6 @@ function showProfile(){
           if(doc.data()['uid'] == uid) {
             accountDoc = doc.id;
             console.log(accountDoc);
-              console.log('find');
               userName = doc.data()['name'];
               myEmail = doc.data()['email'];
               myUndergraduate = doc.data()['undergraduate'];

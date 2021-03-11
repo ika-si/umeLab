@@ -15,9 +15,9 @@ function getFromURL() {
         // isChangeStatus = false;
     }
     classdocid = value[3];
-    console.log(period);
-    console.log(classdocid);
-    console.log("クラス変更 ", isChangeStatus);
+    // console.log(period);
+    // console.log(classdocid);
+    // console.log("クラス変更 ", isChangeStatus);
 }
 
 let isSomethingSelected = false; // 何かしら選択されているかどうか
