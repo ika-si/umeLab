@@ -20,21 +20,18 @@ function show() {
     myTwitter = decodeURI(array[6]);
     myInstagram = decodeURI(array[7]);
 
+    $('#MyName').append('<h4>名　　前　:　' + userName + '</h4>');
+    $('#MyUndergraduate').append('<h4>学　　部　:　' + myUndergraduate + '</h4>');
+    $('#MyDepartment').append('<h4>学　　科　:　' + myDepartment + '</h4>');
     if (myGrade == -1) {
-        myGrade = "未入力"
+        $('#MyGrade').append('<h4>学　　年　:　' + '</h4>');
+    } else {
+        $('#MyGrade').append('<h4>学　　年　:　' + myGrade + '</h4>');
     }
-
-    // if (uid.indexOf("?") != -1) {
-    //     uid = uid.substring(0, uid.indexOf("?"));
-    // }
-    // console.log(decodeURIComponent(uid));
-    $('#MyName').append('<h4>名前: ' + userName + '</h4>');
-    $('#MyUndergraduate').append('<h4>学部: ' + myUndergraduate + '</h4>');
-    $('#MyDepartment').append('<h4>学科: ' + myDepartment + '</h4>');
-    $('#MyGrade').append('<h4>学年: ' + myGrade + '</h4>');
-    $('#MyDetails').append('<h4>コメント: ' + myDetails + '</h4>');
+    $('#MyDetails').append('<h4>コメント　:　' + myDetails + '</h4>');
     $('#MyTwitter').append('<h4>@' + myTwitter + '</h4>');
     $('#MyInstagram').append('<h4>' + myInstagram + '</h4>');
+
 
 }
 show();

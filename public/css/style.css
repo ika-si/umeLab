@@ -127,3 +127,9 @@ border-radius: 15px;
   left:100px;
   top:270px;
 }
+
+.showAccount {
+  color:#F1907E;
+  /* text-align: center; */
+  padding: 100px 200px;
+}
