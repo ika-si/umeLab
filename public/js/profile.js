@@ -62,23 +62,33 @@ function showNewProfile(){
 function changeProfile(){
 
   let inputUndergraduate = $("#undergraduate").val();
-  if (myUndergraduate != "") inputUndergraduate = myUndergraduate;
+  if (inputUndergraduate == "") {
+    if (myUndergraduate != "") inputUndergraduate = myUndergraduate;
+  }
 
   let inputDepartment = $("#department").val();
-  if (myDepartment != "") inputDepartment = myDepartment;
+  if (inputDepartment == "") {
+    if (myDepartment != "") inputDepartment = myDepartment;
+  }
 
   let inputGrade = $("#grade").val();
-  if (myGrade != -1 || inputGrade == "") inputGrade = myGrade;
+  if (inputGrade == "") inputGrade = myGrade;
   if (isNaN(inputGrade)) inputGrade = -1;
 
   let inputDetails = $("#details").val();
-  if (myDetails != "") inputDetails = myDetails;
+  if (inputDetails == "") {
+    if (myDetails != "") inputDetails = myDetails;
+  }
 
   let inputTwitter = $("#twitter").val();
-  if (myTwitter != "") inputTwitter = myTwitter;
+  if (inputTwitter == "") {
+    if (myTwitter != "") inputTwitter = myTwitter;
+  }
 
   let inputInstagram = $("#instagram").val();
-  if (myInstagram != "") inputInstagram = myInstagram;
+  if (inputInstagram == "") {
+    if (myInstagram != "") inputInstagram = myInstagram;
+  }
 
   // Add a new document in collection "cities"
   db.collection("account").doc(accountDoc).update({
