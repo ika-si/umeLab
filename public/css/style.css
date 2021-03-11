@@ -1,6 +1,6 @@
 body{
   background-color:#F5F5F5;
-
+  margin-top: 2%;
 }
 #nameAdd{
   width: 50%;
@@ -40,6 +40,7 @@ h1{
 }
 h2{
   color: #2C3F55;
+  font-size: 3em;
 }
 h3{
   color: #2C3F55;
