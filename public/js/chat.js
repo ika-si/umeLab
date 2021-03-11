@@ -6,7 +6,7 @@ var messagesRef = db.collection("rooms").doc(period).collection("classes").doc(u
 /**
  * 同期処理
  **/
-messagesRef.orderBy("createdAt").limit(20).onSnapshot( (snapshot) => {
+messagesRef.orderBy("createdAt").onSnapshot( (snapshot) => {
     // $('#list').text('');
     snapshot.docChanges().forEach((change) => {
         // 追加
