@@ -21,7 +21,7 @@
 
   <div class="row g-5">
     <div class="col-6">
-      <h2>chatTable</h2>
+      <h2>chat<span class="table-color">Table</span></h2>
     </div>
     <div class="col-2">
       <button type="button" class="sign" onclick="history.back()">戻る</button>
@@ -63,12 +63,11 @@
       <br>
       <ul id="list" class="messages" ></ul>
       <input type="text" class="form-control" placeholder="message" id='msgAdd'>
-      <button type="button" class="btn btn-primary" id="addMsgBtn" onclick="add()">Add</button>
+      <button type="button" class="btn btn-primary" id="addMsgBtn" onclick="add()">Send</button>
 
     </div>
   </div>
 
-  <!-- わからなくてなんとなく読み込んでいる -->
       <!-- The core Firebase JS SDK is always required and must be listed first -->
       <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
       <!--firebase UIの読み込み-->
@@ -80,8 +79,6 @@
 
 
       <script src="js/config.js"></script>
-
-      <!-- ここまでわからなくてなんとなく読み込んでいるところ -->
 
     <!-- <script src="./js/logout.js"></script> -->
     <script src="./js/account.js"></script>
