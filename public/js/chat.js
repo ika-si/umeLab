@@ -46,6 +46,7 @@ function addLog(id, data){
     // 表示エリアへ追加
     // let chatlog = document.getElementById("list");
     // chatlog.insertBefore(li, chatlog.firstChild);
+    scroll();
 }
 
 /**
