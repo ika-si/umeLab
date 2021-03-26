@@ -197,6 +197,8 @@ body {
 #memberBox{
   position: relative;
   left: 130px;
+  overflow:scroll;
+  height: 65%;
 }
 
 #roomDetail {
