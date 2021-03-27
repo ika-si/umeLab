@@ -48,7 +48,7 @@ function search() {
   var defer = $.Deferred();
   setTimeout(function() {
     defer.resolve(); // 解決
-  }, 2000);
+  }, 1000);
   return defer.promise(); // プロミスを作って返す
 }
 
@@ -109,14 +109,25 @@ function dbEmail(nameAdd) {
 
 function searchEmail() {
   var user = firebase.auth().currentUser;
-  var email;
+  var name, email, photoUrl, uid, emailVerified;
+
   if (user != null) {
+    name = user.displayName;
     email = user.email;
+    photoUrl = user.photoURL;
+    emailVerified = user.emailVerified;
     uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                     // this value to authenticate with your backend server, if
-                     // you have one. Use User.getToken() instead.
+                    // this value to authenticate with your backend server, if
+                    // you have one. Use User.getToken() instead.
   }
-  console.log(email);
+  
+  var univ_gmail = email.split('@');
+  console.log(univ_gmail);
+  if (univ_gmail[1] !== 'gm.tsuda.ac.jp') {
+    alert("大学用アカウントを用いてください");
+    window.stop();
+  }
+
   var db = firebase.firestore();
   let collection = db.collection("account");
   collection.get().then((querySnapshot) => {
@@ -124,11 +135,11 @@ function searchEmail() {
           if(doc.data()['email'] == email) {
               console.log('find');
               signUpFlag = true;
-              // window.location.href ='../signin.html';
+              window.location.href ='../signin.html';
           }
       })
   })
-  // $('#errorMessage').append("すでにアカウントがあります");
+ 
   var defer = $.Deferred();
   setTimeout(function() {
     defer.resolve(); // 解決
