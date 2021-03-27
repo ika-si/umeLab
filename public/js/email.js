@@ -1,31 +1,42 @@
 function signInWithEmailPassword() {
-    let emailAdd = $("#emailAdd").val();
-    if (emailAdd == "") return;
-
-    let passwordAdd = $("#passwordAdd").val();
-    if (passwordAdd == "") return;
-
-    var email = emailAdd;
-    var password = passwordAdd;
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    search();
+  }).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode);
+    console.log(errorMessage);
+    $('#errorMessage').append("Error: "+errorMessage);
+    $("#nameAdd").val('');
+  });
 
     // [START auth_signin_password]
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((user) => {
-        // Signed in 
-        console.log('signin');
-        search(email);
-      })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        $('#errorMessage').append("Error: "+errorMessage);
-        $("#emailAdd").val('');
-        $("#passwordAdd").val('');
-      });
+    // firebase.auth().signInWithEmailAndPassword(email, password)
+    //   .then((user) => {
+    //     // Signed in 
+    //     console.log('signin');
+    //     search(email);
+    //   })
+    //   .catch((error) => {
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //     $('#errorMessage').append("Error: "+errorMessage);
+    //     $("#emailAdd").val('');
+    //     $("#passwordAdd").val('');
+    //   });
     // [END auth_signin_password]
 }
 
-function search(email) {
+function search() {
+  var user = firebase.auth().currentUser;
+  var email,uid;
+  if (user != null) {
+    email = user.email;
+    uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                     // this value to authenticate with your backend server, if
+                     // you have one. Use User.getToken() instead.
+  }
     var db = firebase.firestore();
     let collection = db.collection("account");
     collection.get().then((querySnapshot) => {
@@ -42,6 +53,7 @@ function search(email) {
             // $('#list').append('<li>'+ name + '</li>');
         })
     })
+    window.location.href ='../signup.html';
 }
 
 function signUpWithEmailPassword() {
@@ -49,31 +61,34 @@ function signUpWithEmailPassword() {
     let nameAdd = $("#nameAdd").val();
     if (nameAdd == "") return;
 
-    // 入力されたemailとpassword
-    let emailAdd = $("#emailAdd").val();
-    if (emailAdd == "") return;
-
-    let passwordAdd = $("#passwordAdd").val();
-    if (passwordAdd == "") return;
-
     var name = nameAdd;
-    var email = emailAdd;
-    var password = passwordAdd;
 
-    // [START auth_signup_password]
-    firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
-        // Signed in 
-        add(name);
-    }).catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        $('#errorMessage').append("Error: "+errorMessage);
-        $("#nameAdd").val('');
-        $("#emailAdd").val('');
-        $("#passwordAdd").val('');
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      add(name);
+    }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+      $('#errorMessage').append("Error: "+errorMessage);
+      $("#nameAdd").val('');
     });
+    
+    // [START auth_signup_password]
+    // firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
+    //     // Signed in 
+    //     add(name);
+    // }).catch((error) => {
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //     console.log(errorCode);
+    //     console.log(errorMessage);
+    //     $('#errorMessage').append("Error: "+errorMessage);
+    //     $("#nameAdd").val('');
+    //     $("#emailAdd").val('');
+    //     $("#passwordAdd").val('');
+    // });
     // [END auth_signup_password]
 }
 
