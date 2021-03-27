@@ -1,7 +1,15 @@
+// signIn
+
+var signInFlag = true;
 function signInWithGmail() {
   var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function(result) {
-    search();
+    var promise = search();
+    promise.done(function() {
+      if (signInFlag) {
+        window.location.href ='../signup.html';
+      }
+    });
   }).catch(function(error) {
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -32,12 +40,19 @@ function search() {
           if(doc.data()['email'] == email) {
               console.log('find');
               var uid = doc.data()['uid'];
+              signInFlag = false;
               window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
           }
       })
   })
-  $('#errorMessage').append("signupしてください");
+  var defer = $.Deferred();
+  setTimeout(function() {
+    defer.resolve(); // 解決
+  }, 2000);
+  return defer.promise(); // プロミスを作って返す
 }
+
+// signUp
 
 function signUpWithGmail() {
 
@@ -57,23 +72,6 @@ function signUpWithGmail() {
       $('#errorMessage').append("Error: "+errorMessage);
       $("#nameAdd").val('');
     });
-}
-
-var flag = false;
-async function add(nameAdd){
-  
-  try {
-    console.log(flag);
-    searchEmail()
-  } catch (error) {
-    console.log(error);
-  } finally {
-    if (flag) {
-      console.log(flag);
-      dbEmail(nameAdd);
-    }
-  }
-
 }
 
 function dbEmail(nameAdd) {
@@ -125,10 +123,30 @@ function searchEmail() {
       querySnapshot.forEach((doc) => {
           if(doc.data()['email'] == email) {
               console.log('find');
-              flag = true;
-              window.location.href ='../signin.html';
+              signUpFlag = true;
+              // window.location.href ='../signin.html';
           }
       })
   })
   // $('#errorMessage').append("すでにアカウントがあります");
+  var defer = $.Deferred();
+  setTimeout(function() {
+    defer.resolve(); // 解決
+  }, 2000);
+  return defer.promise(); // プロミスを作って返す
 }
+
+
+var signUpFlag = false;
+function add(nameAdd){
+
+  var promise = searchEmail();
+  promise.done(function() {
+    if (!signUpFlag) {
+      console.log(signUpFlag);
+      dbEmail(nameAdd);
+    }
+  });
+
+}
+
