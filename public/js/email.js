@@ -1,83 +1,80 @@
-function signInWithEmailPassword() {
-    let emailAdd = $("#emailAdd").val();
-    if (emailAdd == "") return;
+// signIn
 
-    let passwordAdd = $("#passwordAdd").val();
-    if (passwordAdd == "") return;
+var signInFlag = true;
+function signInWithGmail() {
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    var promise = search();
+    promise.done(function() {
+      if (signInFlag) {
+        window.location.href ='../signup.html';
+      }
+    });
+  }).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode);
+    console.log(errorMessage);
+    $('#errorMessage').append("Error: "+errorMessage);
+    $("#nameAdd").val('');
+  });
+}
 
-    var email = emailAdd;
-    var password = passwordAdd;
+function search() {
+  var user = firebase.auth().currentUser;
+  var name, email, photoUrl, uid, emailVerified;
 
-    // [START auth_signin_password]
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((user) => {
-        // Signed in 
-        console.log('signin');
-        search(email);
+  if (user != null) {
+    name = user.displayName;
+    email = user.email;
+    photoUrl = user.photoURL;
+    emailVerified = user.emailVerified;
+    uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                    // this value to authenticate with your backend server, if
+                    // you have one. Use User.getToken() instead.
+  }
+  var db = firebase.firestore();
+  let collection = db.collection("account");
+  collection.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+          if(doc.data()['email'] == email) {
+              console.log('find');
+              var uid = doc.data()['uid'];
+              signInFlag = false;
+              window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+          }
       })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        $('#errorMessage').append("Error: "+errorMessage);
-        $("#emailAdd").val('');
-        $("#passwordAdd").val('');
-      });
-    // [END auth_signin_password]
+  })
+  var defer = $.Deferred();
+  setTimeout(function() {
+    defer.resolve(); // 解決
+  }, 1000);
+  return defer.promise(); // プロミスを作って返す
 }
 
-function search(email) {
-    var db = firebase.firestore();
-    let collection = db.collection("account");
-    collection.get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['email'] == email) {
-                console.log('find');
-                var uid = doc.data()['uid'];
-                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-            }
-            // console.log('アカウントがない');
-            // window.location.href ='../index.html';
-            // console.log(doc.data()['name']);
-            // var name = doc.data()['name'];
-            // $('#list').append('<li>'+ name + '</li>');
-        })
-    })
-}
+// signUp
 
-function signUpWithEmailPassword() {
+function signUpWithGmail() {
 
     let nameAdd = $("#nameAdd").val();
     if (nameAdd == "") return;
 
-    // 入力されたemailとpassword
-    let emailAdd = $("#emailAdd").val();
-    if (emailAdd == "") return;
-
-    let passwordAdd = $("#passwordAdd").val();
-    if (passwordAdd == "") return;
-
     var name = nameAdd;
-    var email = emailAdd;
-    var password = passwordAdd;
 
-    // [START auth_signup_password]
-    firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
-        // Signed in 
-        add(name);
-    }).catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        $('#errorMessage').append("Error: "+errorMessage);
-        $("#nameAdd").val('');
-        $("#emailAdd").val('');
-        $("#passwordAdd").val('');
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      add(name);
+    }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+      $('#errorMessage').append("Error: "+errorMessage);
+      $("#nameAdd").val('');
     });
-    // [END auth_signup_password]
 }
 
-function add(nameAdd){
+function dbEmail(nameAdd) {
   var user = firebase.auth().currentUser;
   var emailAdd,uidAdd;
   
@@ -87,53 +84,80 @@ function add(nameAdd){
                      // this value to authenticate with your backend server, if
                      // you have one. Use User.getToken() instead.
   }
-    var db = firebase.firestore();
-    db.collection("account").add({
-        name: nameAdd,
-        email: emailAdd,
-        uid: uidAdd,
-        undergraduate: "",
-        department: "",
-        grade: -1,
-        twitter: "",
-        instagram: "",
-        details: "",
-        freeCount: 0,
-        mustCount: 0,
-        optionalCount: 0
-    }).then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        window.location.assign('../signin.html');
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
+  var db = firebase.firestore();
+  db.collection("account").add({
+      name: nameAdd,
+      email: emailAdd,
+      uid: uidAdd,
+      undergraduate: "",
+      department: "",
+      grade: -1,
+      twitter: "",
+      instagram: "",
+      details: "",
+      freeCount: 0,
+      mustCount: 0,
+      optionalCount: 0
+  }).then(function(docRef) {
+      console.log("Document written with ID: ", docRef.id);
+      window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+  })
+  .catch(function(error) {
+       console.error("Error adding document: ", error);
+  });
 }
 
-function sendEmailVerification() {
-    // [START auth_send_email_verification]
-    firebase.auth().currentUser.sendEmailVerification()
-      .then(() => {
-        // Email verification sent!
-        // ...
-      });
-    // [END auth_send_email_verification]
+function searchEmail() {
+  var user = firebase.auth().currentUser;
+  var name, email, photoUrl, uid, emailVerified;
+
+  if (user != null) {
+    name = user.displayName;
+    email = user.email;
+    photoUrl = user.photoURL;
+    emailVerified = user.emailVerified;
+    uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                    // this value to authenticate with your backend server, if
+                    // you have one. Use User.getToken() instead.
+  }
+  
+  var univ_gmail = email.split('@');
+  console.log(univ_gmail);
+  if (univ_gmail[1] !== 'gm.tsuda.ac.jp') {
+    alert("大学用アカウントを用いてください");
+    window.stop();
+  }
+
+  var db = firebase.firestore();
+  let collection = db.collection("account");
+  collection.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+          if(doc.data()['email'] == email) {
+              console.log('find');
+              signUpFlag = true;
+              window.location.href ='../signin.html';
+          }
+      })
+  })
+ 
+  var defer = $.Deferred();
+  setTimeout(function() {
+    defer.resolve(); // 解決
+  }, 2000);
+  return defer.promise(); // プロミスを作って返す
 }
-function sendPasswordReset() {
-    let email = $("#emailAdd").val();
-    if (email == "") return;
-    
-    // const email = "sam@example.com";
-  // [START auth_send_password_reset]
-  firebase.auth().sendPasswordResetEmail(email)
-    .then(() => {
-      // Password reset email sent!
-      window.location.assign('../signin.html');
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ..
-    });
-  // [END auth_send_password_reset]
+
+
+var signUpFlag = false;
+function add(nameAdd){
+
+  var promise = searchEmail();
+  promise.done(function() {
+    if (!signUpFlag) {
+      console.log(signUpFlag);
+      dbEmail(nameAdd);
+    }
+  });
+
 }
+
