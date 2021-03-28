@@ -11,23 +11,22 @@
   <!-- jQueryの読み込み -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-
+  <link rel="stylesheet" href="./css/style.css">
+  
   <title>timetable</title>
 </head>
 <body>
   <!-- <script src ="./js/timetable.js"></script> -->
-  <link rel="stylesheet" href="./css/style.css">
 
-  <div class="row g-5">
-    <div class="col-8">
+  <div class="row">
+    <div class="col-md-8 col-lg-8">
       <h2>chat<span class="table-color">Table</span></h2>
     </div>
-    <div class="col-2">
+    <div class="col col-lg-2 text-center">
       <button type="button" class="sign" id="addBtn" onclick="signOut()">signOut</button>
-      <!-- <button type="button" id="logoutbtn" class="btn btn-outline-warning btn-lg">LogOut</button> -->
     </div>
-    <div class="col-2">
-      <div id="nameAccount"></div>
+    <div class="col col-lg-2">
+      <div id="nameAccount" class="text-center"></div>
     </div>
   </div>
 

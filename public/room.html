@@ -11,7 +11,6 @@
   <!-- jQueryの読み込み -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-  <link rel="stylesheet" href="./css/room.css">
   <link rel="stylesheet" href="./css/chat.css">
   <link rel="stylesheet" href="./css/style.css">
 
@@ -19,19 +18,15 @@
   </head>
   <body>
 
-    <div class="row g-5">
-      <div class="col-6">
+    <div class="row">
+      <div class="col-md-12 col-lg-6">
         <h2>chat<span class="table-color">Table</span></h2>
       </div>
-      <div class="col-2">
+      <div class="col col-lg-2 text-center">
         <button type="button" class="sign" onclick="history.back()">戻る</button>
       </div>
-      <div class="col-2">
+      <div class="col col-lg-2 text-center">
         <button type="button" class="sign" id="addBtn" onclick="signOut()">signOut</button>
-        <!-- <button type="button" id="logoutbtn" class="btn btn-outline-warning btn-lg"">LogOut</button> -->
-      </div>
-      <div class="col-2">
-        <ul id="nameAccount"></ul>
       </div>
     </div>
 
@@ -59,13 +54,12 @@
         <div class="col-md-12 col-lg-8">
           <div class="chat_window">
             <div class="top_menu">
-              <div class="title">chat</div>
+              <div class="title">チャット</div>
             </div>
             <br>
             <ul id="list" class="messages" ></ul>
             <input type="text" class="form-control" placeholder="message" id='msgAdd'>
             <button type="button" class="btn btn-primary" id="addMsgBtn" onclick="add()">Send</button>
-    
           </div>
         </div>
       </div>
