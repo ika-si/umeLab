@@ -1,6 +1,6 @@
 .classDetail {
   display: table;
-  width: 1000px;
+  /* width: 400px; */
   margin: 10px;
 }
 
@@ -11,7 +11,7 @@
   /* position: right; */
   position: relative;
   left: 200px;
-  width: 1200px;
+  /* width: 1200px; */
   height: 50px;
   /* background-color: pink; */
 }
@@ -19,52 +19,54 @@
 #checkBtn{
   transform:scale(1.5);
   position: relative;
-  left: 150px;
+  left: 15%;
   top: 10px;
   height: 50px;
-  width: 10px;
+  /* width: 10px; */
   /* background-color: pink; */
 }
 
 #subjectID{
-  position: absolute;
-  left: 200px;
+  position: relative;
+  left: 15%;
+  height: 50px;
+  /* width: 15%; */
+  /* background-color: pink; */
+}
+
+#subjectName{
+  position: relative;
+  left: 20%;
+  height: 50px;
+  width: 330px;
+  /* background-color: pink; */
+}
+
+#professor{
+  position: relative;
+  left: 20%;
   height: 50px;
   width: 150px;
   /* background-color: pink; */
 }
 
-#subjectName{
-  position: absolute;
-  left: 300px;
+#style{
+  position: relative;
+  left: 20%;
   height: 50px;
-  width: 240px;
-  /* background-color: pink; */
-}
-
-#professor{
-  position: absolute;
-  left: 550px;
-  height: 50px;
-  width: 400px;
   /* background-color: pink; */
 }
 
 #subjectType{
   position: relative;
-  left: 800px;
-  height: 50px;
-  /* background-color: pink; */
-}
-
-#style{
-  position: relative;
-  left: 60px;
+  left: 20%;
   height: 50px;
   /* background-color: pink; */
 }
 
 .BigcheckBtn{
+  position: relative;
+  left: 120%;
   color: #3BAF75;
   background-color: #F5F5F5;
   padding: 10px 10px 10px 10px;
@@ -75,6 +77,8 @@
 
 .BigCancelBtn{
   /* class.htmlのキャンセルボタン */
+  position: relative;
+  left: 120%;
   color: #3BAF75;
   background-color: #F5F5F5;
   padding: 10px 10px 10px 10px;
