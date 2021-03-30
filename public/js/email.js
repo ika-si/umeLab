@@ -100,7 +100,7 @@ function dbEmail(nameAdd) {
       optionalCount: 0
   }).then(function(docRef) {
       console.log("Document written with ID: ", docRef.id);
-      window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
+      window.location.href ='../timetable.html?name=' + encodeURIComponent(uidAdd);
   })
   .catch(function(error) {
        console.error("Error adding document: ", error);
@@ -126,6 +126,7 @@ function searchEmail() {
   if (univ_gmail[1] !== 'gm.tsuda.ac.jp') {
     alert("大学用アカウントを用いてください");
     window.stop();
+    window.location.href ='../signup.html';
   }
 
   var db = firebase.firestore();
