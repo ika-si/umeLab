@@ -1,6 +1,5 @@
 body{
   background-color:#F5F5F5;
-  margin-top: 2%;
 }
 #nameAdd{
   width: 50%;
@@ -21,7 +20,7 @@ body{
 
 .center{
   text-align: center;
-  padding: 100px 100px;
+  padding: 80px 100px;
 }
 
 .sign{
@@ -34,13 +33,16 @@ body{
   width: 130px;
   height: 40px;
   border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 h1{
   color: #2C3F55;
 }
 h2{
   color: #2C3F55;
-  font-size: 3em;
+  font-size: 4em;
+  margin-top: 30px;
 }
 h3{
   color: #2C3F55;
@@ -95,13 +97,15 @@ p{
 }
 
 .account{
-color:#F5F5F5;
-background-color:#F1907E;
-padding: 5px 5px 5px 5px;
-position: center;
-width:75px;
-border: solid 3px #F1907E;
-border-radius: 15px;
+  color:#F5F5F5;
+  background-color:#F1907E;
+  padding: 5px 5px 5px 5px;
+  position: center;
+  width:75px;
+  border: solid 3px #F1907E;
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .BigcheckBtn{
@@ -120,14 +124,14 @@ border-radius: 15px;
   color:#F1907E;
     position: relative;
     left:100px;
-    top:100px;
+    top:60px;
 }
 
 .yourAccount{
   color:#F1907E;
     position: relative;
-    left:200px;
-    top:100px;
+    left:100px;
+    top:60px;
 }
 
 .myposition{

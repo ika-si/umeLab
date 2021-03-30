@@ -1,3 +1,24 @@
+/* * {
+  box-sizing: border-box;
+} */
+
+body {
+  /* background-color: #edeff2; */
+  font-family: "Calibri", "Roboto", sans-serif;
+}
+
+#memberBox{
+  /* position: relative; */
+  overflow:scroll;
+  height: 95%;
+  margin: 10px;
+  padding: 10px;
+}
+
+#roomDetail {
+  width: 600px;
+}
+
 .my {
   color: #F5F5F5;
   background-color: #F1907E;
@@ -38,15 +59,16 @@
 }
 
 .chat_window {
-  position: absolute;
-  width: calc(50% - 20px);
-  max-width: 800px;
+  /* position: absolute; */
+  /* width: calc(50% - 20px); */
+  max-width: 100%;
+  margin: 10px;
+  width: 4000px;
   height: 580px;
   border-radius: 10px;
   background-color: #fff;
-  left: 75%;
-  top: 55%;
-  transform: translateX(-50%) translateY(-50%);
+  /* left: 50%; */
+  /* transform: translateX(-50%) translateY(-50%); */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   background-color: #f8f8f8;
   overflow: hidden;
