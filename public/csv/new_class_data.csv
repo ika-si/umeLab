@@ -1,0 +1,1676 @@
+﻿id(時間割コード),classId(何かに使うかもしれない通し番号),name,teacher,credit,style,url,termperiod
+11A01,20210001,社会心理学(1),南谷　則子,1,オンライン,Coming Soon…,T1Mon1
+11A02,20210002,Extensive Reading I (英),楠　香織,1,オンライン,Coming Soon…,T1Mon1
+11A03,20210003,Intensive Reading I a (英),中尾　真子,1,オンライン,Coming Soon…,T1Mon1
+11A04,20210004,Intensive Reading I a (英),藤坂　恭子,1,オンライン,Coming Soon…,T1Mon1
+11A05,20210005,比較政治論(1),網谷　龍介,1,オンライン,Coming Soon…,T1Mon1
+11A06,20210006,数学特別講義 B (1),原　隆,1,ハイブリッド,Coming Soon…,T1Mon1
+11A07,20210007,ネットワークシステム(演習付),新田　善久,2,オンライン,Coming Soon…,T1Mon1/T1Mon2
+11A08,20210008,教育方法論,高垣　マユミ,2,オンライン,Coming Soon…,T1Mon1/T1Mon2
+11A09,20210009,生徒指導の理論と方法,前田　基成,1,オンライン,Coming Soon…,T1Mon1
+11A10,20210010,教育課程論,渡邊　あや,2,オンライン,Coming Soon…,T1Mon1/T1Mon2
+11G01,20210011,Oral English I (英),Betsy Longacre Terada,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G02,20210012,Oral English I (英),Kristofer Raymond Bayne,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G03,20210013,Oral English I (英),Carolyn Morikawa,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G04,20210014,Oral English I (数),Brian Heagney,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G05,20210015,Oral English I (数),Clara Kumagai,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G06,20210016,Oral English I (数),Kim Marie Turnberg Sano,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G07,20210017,Composition I (国・多),長谷川　志保,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G08,20210018,Composition I (国・多),清水　由布紀,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G09,20210019,Composition I (国・多),川島　るり子,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G10,20210020,Composition I (国・多),久島　智津子,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G11,20210021,Pronunciation I (英),奥坊　光子,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G12,20210022,Pronunciation I (英),奥野　晶子,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G13,20210023,スペイン語 I (演習) e (国・多),青島　郁代,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G14,20210024,韓国・朝鮮語 I (演習) d (国・多),張　銀英,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11G15,20210025,Academic Writing & Presentation III,Paul Michael Garside,3,オンライン,Coming Soon…,T1Mon1/T3Mon1/T4Mon1
+11N01,20210026,社会心理学(3),南谷　則子,1,オンライン(未確定),Coming Soon…,T3Mon1
+11N02,20210027,Extensive Reading I (英),楠　香織,1,オンライン(未確定),Coming Soon…,T3Mon1
+11N03,20210028,Extensive Reading I (英),中尾　真子,1,オンライン(未確定),Coming Soon…,T3Mon1
+11N04,20210029,Intensive Reading I a (英),藤坂　恭子,1,オンライン(未確定),Coming Soon…,T3Mon1
+11N05,20210030,余暇教育(スポーツと身体スキル),薄井　澄誉子,0.5,オンライン(未確定),Coming Soon…,T3Mon1
+11N06,20210031,比較政治論(3),網谷　龍介,1,オンライン(未確定),Coming Soon…,T3Mon1
+11N07,20210032,数学特別講義 B (3),原　隆,1,オンライン(未確定),Coming Soon…,T3Mon1
+11N08,20210033,情報表現(3),稲葉　利江子,1,オンライン(未確定),Coming Soon…,T3Mon1
+11N09,20210034,国際ボランティア論,木山　啓子,1,オンライン(未確定),Coming Soon…,T3Mon1
+11N10,20210035,生徒指導の理論と方法,前田　基成,1,オンライン(未確定),Coming Soon…,T3Mon1
+11N11,20210036,イギリス文学特殊講義(小説),溝口　昭子,1,オンライン(未確定),Coming Soon…,T3Mon1
+11P01,20210037,教育方法論,高垣　マユミ,2,オンライン(未確定),Coming Soon…,T3Mon1/T4Mon1
+11P02,20210038,教育課程論,渡邊　あや,2,オンライン(未確定),Coming Soon…,T3Mon1/T4Mon1
+11R01,20210039,社会心理学(4),南谷　則子,1,オンライン(未確定),Coming Soon…,T4Mon1
+11R02,20210040,Intensive Reading I b (英),楠　香織,1,オンライン(未確定),Coming Soon…,T4Mon1
+11R03,20210041,Intensive Reading I b (英),藤坂　恭子,1,オンライン(未確定),Coming Soon…,T4Mon1
+11R04,20210042,Intensive Reading I b (英),中尾　真子,1,オンライン(未確定),Coming Soon…,T4Mon1
+11R05,20210043,グローバル文学(英語)特殊講義,溝口　昭子,1,オンライン(未確定),Coming Soon…,T4Mon1
+11R06,20210044,比較政治論(4),網谷　龍介,1,オンライン(未確定),Coming Soon…,T4Mon1
+11R07,20210045,数学特別講義 B (4),原　隆,1,オンライン(未確定),Coming Soon…,T4Mon1
+11R08,20210046,情報表現(4),稲葉　利江子,1,オンライン(未確定),Coming Soon…,T4Mon1
+11R09,20210047,進路指導の理論と方法,前田　基成,1,オンライン(未確定),Coming Soon…,T4Mon1
+11R10,20210048,デベロプメント・スタディーズ,山下　靖子,1,オンライン(未確定),Coming Soon…,T4Mon1
+12A01,20210049,国語学(1),高橋　雄太,1,オンライン,Coming Soon…,T1Mon2
+12A02,20210050,経済学(1),森　悠子,1,オンライン,Coming Soon…,T1Mon2
+12A03,20210051,経済学研究(1),森　悠子,1,オンライン,Coming Soon…,T1Mon2
+12A04,20210052,Extensive Reading I (国・多),長谷川　志保,1,オンライン,Coming Soon…,T1Mon2
+12A05,20210053,Extensive Reading I (国・多),川島　るり子,1,オンライン,Coming Soon…,T1Mon2
+12A06,20210054,Intensive Reading I a (国・多),奥坊　光子,1,オンライン,Coming Soon…,T1Mon2
+12A07,20210055,中国語 III (講読) (1),布川　雅英,1,オンライン,Coming Soon…,T1Mon2
+12A08,20210056,スペイン語 III (講読) (1),青砥　清一,1,オンライン,Coming Soon…,T1Mon2
+12A09,20210057,韓国・朝鮮語 III (演習) (1),張　銀英,1,オンライン,Coming Soon…,T1Mon2
+12A10,20210058,日本語指導 Ba (1),作田　奈苗,1,オンライン,Coming Soon…,T1Mon2
+12A11,20210059,健康教育,井上　則子,1,オンライン,Coming Soon…,T1Mon2
+12A12,20210060,現代文化論(1),Sookyeong Hong,1,オンライン,Coming Soon…,T1Mon2
+12A13,20210061,世界の健康科学,松山　章子,1,オンライン,Coming Soon…,T1Mon2
+12A14,20210062,メディア概論 a,稲葉　利江子,1,オンライン,Coming Soon…,T1Mon2
+12A15,20210063,進路指導の理論と方法,前田　基成,1,オンライン,Coming Soon…,T1Mon2
+12B01,20210064,情報数学特論 a,永井　敦,2,ハイブリッド,Coming Soon…,T1Mon2/T2Mon2
+12B02,20210065,数学特論 XE,吉川　祥,2,オンライン,Coming Soon…,T1Mon2/T2Mon2
+12G01,20210066,Oral English I (国・多),Kim Marie Turnberg Sano,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G02,20210067,Oral English I (国・多),Brian Heagney,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G03,20210068,Oral English I (国・多),Paul Michael Garside,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G04,20210069,Oral English I (国・多),Clara Kumagai,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G05,20210070,Oral English I (情),Kristofer Raymond Bayne,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G06,20210071,Oral English I (情),Betsy Longacre Terada,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G07,20210072,Oral English I (情),Carolyn Morikawa,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G08,20210073,Composition I (英),梅垣　代枝野,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G09,20210074,Composition I (英),楠　香織,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G10,20210075,Composition I (英),藤坂　恭子,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G11,20210076,Pronunciation I (国・多),奥野　晶子,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G12,20210077,Pronunciation I (国・多),吉田　真理子,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G13,20210078,MI Composition II,道家　美紀子,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G14,20210079,MI Composition II,北村　文,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G15,20210080,MI Composition II,中尾　真子,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G16,20210081,MI Composition II,高久田　佳津子,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G17,20210082,ドイツ語 I (演習) a (英),松原　良輔,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G18,20210083,スペイン語 I (文法) A (英),青島　郁代,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G19,20210084,スペイン語 I (文法) B (英),浅香　武和,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G20,20210085,４年セミナー,小野　創,3,ハイブリッド,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G21,20210086,４年セミナー,郷路　拓也,3,ハイブリッド,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G22,20210087,アメリカ文化概論,大類　久恵,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G23,20210088,英語史,児馬　修,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G24,20210089,音声学,池頭　純子,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G25,20210090,３年セミナー,Chris Burgess,3,ハイブリッド,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G26,20210091,４年セミナー,柴田　邦臣,3,ハイブリッド,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G27,20210092,４年セミナー,光成　歩,3,ハイブリッド,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G28,20210093,３年セミナー,菊池　弘明,3,ハイブリッド,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G29,20210094,３年セミナー,小西　由紀子,3,ハイブリッド,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G30,20210095,３年セミナー,内藤　由香,3,ハイブリッド,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G31,20210096,３年セミナー,松野　一夫,3,ハイブリッド,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G32,20210097,３年セミナー,執行　洋子,3,ハイブリッド,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G33,20210098,フランス語 III (講読) (1)(3)(4),土屋　良二,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G34,20210099,中国語 III (講読),布川　雅英,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G35,20210100,スペイン語 III (講読),青砥　清一,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12G36,20210101,韓国・朝鮮語 III (演習),張　銀英,3,オンライン,Coming Soon…,T1Mon2/T3Mon2/T4Mon2
+12N01,20210102,国語学(3),高橋　雄太,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N02,20210103,経済学(3),森　悠子,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N03,20210104,経済学研究(3),森　悠子,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N04,20210105,科学と人間(3),樋口　喜昭,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N05,20210106,Extensive Reading I (国・多),長谷川　志保,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N06,20210107,Intensive Reading I a (国・多),川島　るり子,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N07,20210108,Intensive Reading I a (国・多),奥坊　光子,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N08,20210109,中国語 III (講読) (3),布川　雅英,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N09,20210110,スペイン語 III (講読) (3),青砥　清一,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N10,20210111,韓国・朝鮮語 III (演習) (3),張　銀英,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N11,20210112,日本語指導 Ba (3),作田　奈苗,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N12,20210113,健康教育,井上　則子,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N13,20210114,余暇教育(レク活動とグループワーク),薄井　澄誉子,0.5,オンライン(未確定),Coming Soon…,T3Mon2
+12N14,20210115,現代文化論(3),Sookyeong Hong,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N15,20210116,生徒指導の理論と方法,前田　基成,1,オンライン(未確定),Coming Soon…,T3Mon2
+12N16,20210117,メディア概論 b,稲葉　利江子,1,オンライン(未確定),Coming Soon…,T3Mon2
+12P01,20210118,情報数学特論 d,田口　政義,2,オンライン(未確定),Coming Soon…,T3Mon2/T4Mon2
+12P02,20210119,教育方法論,高垣　マユミ,2,オンライン(未確定),Coming Soon…,T3Mon2/T4Mon2
+12P03,20210120,英語科指導とICT活用,久島　智津子,2,オンライン(未確定),Coming Soon…,T3Mon2/T4Mon2
+12P04,20210121,教育課程論,渡邊　あや,2,オンライン(未確定),Coming Soon…,T3Mon2/T4Mon2
+12R01,20210122,国語学(4),高橋　雄太,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R02,20210123,経済学(4),森　悠子,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R03,20210124,経済学研究(4),森　悠子,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R04,20210125,日本語ライティング(4),原田　朱美,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R05,20210126,Intensive Reading I b (国・多),川島　るり子,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R06,20210127,Intensive Reading I b (国・多),長谷川　志保,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R07,20210128,Intensive Reading I b (国・多),奥坊　光子,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R08,20210129,中国語 III (講読) (4),布川　雅英,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R09,20210130,スペイン語 III (講読) (4),青砥　清一,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R10,20210131,韓国・朝鮮語 III (演習) (4),張　銀英,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R11,20210132,日本語指導 Ba (4),作田　奈苗,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R12,20210133,動きの教育,井上　則子,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R13,20210134,現代文化論(4),Sookyeong Hong,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R14,20210135,東アジア研究(現代韓国特論),金　貴粉,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R15,20210136,離散数学 c,礒島　伸,1,オンライン(未確定),Coming Soon…,T4Mon2
+12R16,20210137,進路指導の理論と方法,前田　基成,1,オンライン(未確定),Coming Soon…,T4Mon2
+13A01,20210138,日本国憲法a,武田　万里子,1,オンライン,Coming Soon…,T1Mon3
+13A02,20210139,社会学(1),柴田　邦臣,1,オンライン,Coming Soon…,T1Mon3
+13A03,20210140,社会学研究(1),柴田　邦臣,1,オンライン,Coming Soon…,T1Mon3
+13A04,20210141,情報処理I a,原山　智重子,1,オンライン,Coming Soon…,T1Mon3
+13A05,20210142,女性学(1),吉朝　加奈,1,オンライン,Coming Soon…,T1Mon3
+13A06,20210143,日本語ライティング(1),飯野　朋美,1,オンライン,Coming Soon…,T1Mon3
+13A07,20210144,日本語指導 Bb (1),作田　奈苗,1,オンライン,Coming Soon…,T1Mon3
+13A08,20210145,健康教育,井上　則子,1,オンライン,Coming Soon…,T1Mon3
+13A09,20210146,余暇教育(スポーツと身体スキル),薄井　澄誉子,0.5,ハイブリッド,Coming Soon…,T1Mon3
+13A10,20210147,ウェルネス研究(スポーツ・ジェンダー論),山田　ゆかり,1,オンライン,Coming Soon…,T1Mon3
+13A11,20210148,ユーラシア研究(1),松嵜　英也,1,オンライン,Coming Soon…,T1Mon3
+13A12,20210149,東アジア研究(中国現代史),関　智英,1,オンライン,Coming Soon…,T1Mon3
+13A13,20210150,福祉社会学,門下　祐子,1,オンライン,Coming Soon…,T1Mon3
+13A14,20210151,数学特別講義 C (1),竹内　敦司,1,オンライン,Coming Soon…,T1Mon3
+13A15,20210152,線形代数(演習付)(1),永井　敦・立井　博子,2,オンライン,Coming Soon…,T1Mon3/T1Mon4
+13A16,20210153,コンピュータアーキテクチャ,新田　善久,1,オンライン,Coming Soon…,T1Mon3
+13A17,20210154,教育コンテンツ制作,久島　智津子,1,オンライン,Coming Soon…,T1Mon3
+13A18,20210155,メディアコミュニケーションワークショップ,稲葉　利江子,1,オンライン,Coming Soon…,T1Mon3
+13A19,20210156,デジタルエンターテインメントワークショップ,栗原　一貴,1,オンライン,Coming Soon…,T1Mon3
+13A20,20210157,西アジア研究(1),今井　真士,1,オンライン,Coming Soon…,T1Mon3
+13A21,20210158,東南アジア研究(現代東南アジア特論)(1),光成　歩,1,オンライン,Coming Soon…,T1Mon3
+13A22,20210159,現代日本政治経済論(1),堀江　孝司,1,オンライン,Coming Soon…,T1Mon3
+13A23,20210160,３年セミナー (1),三澤　健宏,1,ハイブリッド,Coming Soon…,T1Mon3
+13A24,20210161,紛争と平和,田村　幸恵,1,オンライン,Coming Soon…,T1Mon3
+13A25,20210162,多文化・国際協力の実践(1),松山　章子,1,オンライン,Coming Soon…,T1Mon3
+13B01,20210163,数学特論 XG,菊池　弘明,2,オンライン,Coming Soon…,T1Mon3/T2Mon3
+13C01,20210164,中・古英語,児馬　修,2,オンライン,Coming Soon…,T1Mon3/T3Mon3
+13G01,20210165,Intensive Listening I,Carolyn Morikawa,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G02,20210166,フランス語 I (演習) e (国・多),土屋　良二,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G03,20210167,フランス語 II (講読) C (英),清水　正,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G04,20210168,ドイツ語 II (講読) D (国・多),松原　良輔,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G05,20210169,中国語 II (講読) A (英),布川　雅英,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G06,20210170,ロシア語 I (文法),長井　淳,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G07,20210171,スペイン語 I (文法) G (国・多),浅香　武和,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G08,20210172,スペイン語 II (講読) G (国・多),青砥　清一,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G09,20210173,韓国・朝鮮語 II (演習) a (英),張　銀英,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G10,20210174,基礎セミナー,北村　文,3,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G11,20210175,Literary Reading I,Clara Kumagai,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G12,20210176,Literary Reading I,梅垣　代枝野,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G13,20210177,Literary Reading I,道家　美紀子,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G14,20210178,Literary Reading I,長谷川　志保,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G15,20210179,Academic Listening II,Brian Heagney,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G16,20210180,Grammar II (英),川島　るり子,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G17,20210181,Academic Writing & Presentation III,Paul Michael Garside,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G18,20210182,Academic Writing & Presentation III,Terence J. Cooney,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G19,20210183,文法論,佐藤　陽介,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G20,20210184,音声学,池頭　純子,3,オンライン,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G21,20210185,３年セミナー,森　悠子,3,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G22,20210186,３年セミナー,小島　敬裕,3,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G23,20210187,４年セミナー,Chris Burgess,3,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G24,20210188,２年セミナー,原　隆,3,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G25,20210189,２年セミナー,礒田　恵以子,3,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G26,20210190,２年セミナー,久野　雄介,3,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G27,20210191,２年セミナー,宮澤　治子,3,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G28,20210192,２年セミナー,中屋敷　厚,3,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3
+13G29,20210193,４年セミナー,井上　歩,6,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3/T1Thu3/T3Thu3/T4Thu3
+13G30,20210194,４年セミナー,松野　一夫,6,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3/T1Mon4/T3Mon4/T4Mon4
+13G31,20210195,４年セミナー,三上　敏夫,6,ハイブリッド,Coming Soon…,T1Mon3/T3Mon3/T4Mon3/T1Mon4/T3Mon4/T4Mon4
+13N01,20210196,日本国憲法b,武田　万里子,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N02,20210197,社会学(3),柴田　邦臣,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N03,20210198,社会学研究(3),柴田　邦臣,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N04,20210199,情報処理I a,原山　智重子,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N05,20210200,女性学(3),大橋　稔,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N06,20210201,日本語ライティング(3),飯野　朋美,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N07,20210202,日本語指導 Bb (3),作田　奈苗,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N08,20210203,動きの教育,井上　則子,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N09,20210204,余暇教育(レク活動とグループワーク),宇津木　安来,0.5,オンライン(未確定),Coming Soon…,T3Mon3
+13N10,20210205,ユーラシア研究(3),松嵜　英也,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N11,20210206,東アジア研究(中国・香港・台湾特論),関　智英,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N12,20210207,数学特別講義 C (3),竹内　敦司,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N13,20210208,線形代数(演習付)(3),永井　敦・立井　博子,2,オンライン(未確定),Coming Soon…,T3Mon3/T3Mon4
+13N14,20210209,教育メディアワークショップ,来住　伸子,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N15,20210210,西アジア研究(3),今井　真士,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N16,20210211,東南アジア研究(現代東南アジア特論)(3),光成　歩,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N17,20210212,現代日本政治経済論(3),堀江　孝司,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N18,20210213,３年セミナー (3),三澤　健宏,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N19,20210214,災害と復興,松本　早野香,1,オンライン(未確定),Coming Soon…,T3Mon3
+13N20,20210215,多文化・国際協力の実践(3),川端　浩平,1,オンライン(未確定),Coming Soon…,T3Mon3
+13R01,20210216,法女性学,武田　万里子,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R02,20210217,社会学(4),渡部　春佳,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R03,20210218,社会学研究(4),渡部　春佳,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R04,20210219,情報処理I b,原山　智重子,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R05,20210220,女性学(4),大橋　稔,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R06,20210221,日本語指導 Bb (4),作田　奈苗,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R07,20210222,動きの教育,井上　則子,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R08,20210223,英語学特殊講義 a,児馬　修,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R09,20210224,ユーラシア研究(4),松嵜　英也,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R10,20210225,東アジア研究(中国の国際政治),関　智英,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R11,20210226,ソーシャル・インクルージョン論,柴田　邦臣,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R12,20210227,数学特別講義 C (4),竹内　敦司,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R13,20210228,確率統計(演習付),貞廣　泰造・立井　博子,2,オンライン(未確定),Coming Soon…,T4Mon3/T4Mon4
+13R14,20210229,情報数学 b,永井　敦,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R15,20210230,国際援助論,崎坂　香屋子,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R16,20210231,西アジア研究(4),今井　真士,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R17,20210232,東南アジア研究(現代東南アジア特論)(4),光成　歩,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R18,20210233,現代日本政治経済論(4),堀江　孝司,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R19,20210234,３年セミナー (4),三澤　健宏,1,オンライン(未確定),Coming Soon…,T4Mon3
+13R20,20210235,多文化・国際協力の実践(4),松山　章子,1,オンライン(未確定),Coming Soon…,T4Mon3
+14A01,20210236,日本語ライティング(1),飯野　朋美,1,オンライン,Coming Soon…,T1Mon4
+14A02,20210237,ロシア語 III (講読) (1),長井　淳,1,オンライン,Coming Soon…,T1Mon4
+14A03,20210238,余暇教育(フィットネスと健康),薄井　澄誉子,0.5,オンライン,Coming Soon…,T1Mon4
+14A04,20210239,オペレーティングシステム,砂原　秀樹,1,オンライン,Coming Soon…,T1Mon4
+14A05,20210240,教育相談の理論と方法,高垣　マユミ,2,オンライン,Coming Soon…,T1Mon4/T1Mon5
+14A06,20210241,イギリス研究特殊講義 a,米須　初美,1,オンライン,Coming Soon…,T1Mon4
+14A07,20210242,特別支援教育論,柴田　邦臣,1,オンライン,Coming Soon…,T1Mon4
+14A08,20210243,Global Southとフィールドワーク(アジア・アフリカ・ラテンアメリカ) a (1),三澤　健宏,1,オンライン,Coming Soon…,T1Mon4
+14G01,20210244,ことばの世界,郷路　拓也,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G02,20210245,Reading Skills II,古谷　孝子,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G03,20210246,Reading Skills II,宇佐見　英美子,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G04,20210247,Oral English II (国),Kenneth Biegel,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G05,20210248,Oral English II (国),Robert Spivak,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G06,20210249,Oral English II (国),Terence J. Cooney,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G07,20210250,フランス語 II (演習) b (英),土屋　良二,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G08,20210251,中国語 II (講読) C (英),布川　雅英,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G09,20210252,Academic Listening II,Brian Heagney,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G10,20210253,翻訳の理論と実践,早川　敦子,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G11,20210254,通訳の世界,青柳　洋子,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G12,20210255,３年セミナー,葛西　弘隆,3,ハイブリッド,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G13,20210256,３年セミナー,松嵜　英也,3,ハイブリッド,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G14,20210257,３年セミナー,関　智英,3,ハイブリッド,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G15,20210258,４年セミナー,網谷　龍介,3,ハイブリッド,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G16,20210259,４年セミナー,森　悠子,3,ハイブリッド,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G17,20210260,４年セミナー / プロジェクト,栗原　一貴,5,ハイブリッド,Coming Soon…,T1Mon4/T3Tue3/T3Thu4/T4Tue3/T4Tue4
+14G18,20210261,MI４年セミナー,吉田　真理子,3,ハイブリッド,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G19,20210262,教育学概論,渡邊　あや,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G20,20210263,ギリシャ語・ラテン語演習 a,吉川　斉,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G21,20210264,解析学基礎 II (演習付),中屋敷　厚・前田　多恵,6,ハイブリッド,Coming Soon…,T1Mon4/T3Mon4/T4Mon4/T1Tue4/T3Tue4/T4Tue4
+14G22,20210265,１年基礎セミナー,松山　章子,3,ハイブリッド,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14G23,20210266,ロシア語 III (講読),長井　淳,3,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4
+14N01,20210267,日本語ライティング(3),飯野　朋美,1,オンライン(未確定),Coming Soon…,T3Mon4
+14N02,20210268,ロシア語 III (講読) (3),長井　淳,1,オンライン(未確定),Coming Soon…,T3Mon4
+14N03,20210269,余暇教育(フィットネスと健康),Maja Sori Doval,0.5,オンライン(未確定),Coming Soon…,T3Mon4
+14N04,20210270,情報セキュリティ入門,砂原　秀樹,1,オンライン(未確定),Coming Soon…,T3Mon4
+14N05,20210271,Global Southとフィールドワーク(アジア・アフリカ・ラテンアメリカ) a (3),鈴木　慶孝,1,オンライン(未確定),Coming Soon…,T3Mon4
+14N06,20210272,教職実践演習(中・高),牛島　順子,2,オンライン(未確定),Coming Soon…,T3Mon4/T3Mon5
+14P01,20210273,教育心理学,高垣　マユミ,2,オンライン(未確定),Coming Soon…,T3Mon4/T4Mon4
+14R01,20210274,ロシア語 III (講読) (4),長井　淳,1,オンライン(未確定),Coming Soon…,T4Mon4
+14R02,20210275,余暇教育(スポーツと身体スキル),薄井　澄誉子,0.5,オンライン(未確定),Coming Soon…,T4Mon4
+14R03,20210276,ウェルネス研究(野外教育),井上　則子,1,オンライン(未確定),Coming Soon…,T4Mon4
+14R04,20210277,情報セキュリティ(演習付),砂原　秀樹,2,オンライン(未確定),Coming Soon…,T4Mon4/T4Mon5
+14R05,20210278,イギリス文学特殊講義(詩),米須　初美,1,オンライン(未確定),Coming Soon…,T4Mon4
+14R06,20210279,Global Southとフィールドワーク(アジア・アフリカ・ラテンアメリカ) a (4),三澤　健宏,1,オンライン(未確定),Coming Soon…,T4Mon4
+14R07,20210280,教職実践演習(中・高),牛島　順子,2,オンライン(未確定),Coming Soon…,T4Mon4/T4Mon5
+15A01,20210281,日本文学(近現代文学)(1),堀井　一摩,1,オンライン,Coming Soon…,T1Mon5
+15A02,20210282,日本研究(近現代文学)(1),堀井　一摩,1,オンライン,Coming Soon…,T1Mon5
+15A03,20210283,国際保健論(1),松山　章子,1,オンライン,Coming Soon…,T1Mon5
+15A04,20210284,最適化入門,三上　敏夫,1,オンライン,Coming Soon…,T1Mon5
+15A05,20210285,特別支援教育論,柴田　邦臣,1,オンライン,Coming Soon…,T1Mon5
+15A06,20210286,グローバリゼーション論(1),西口　里紗,1,オンライン,Coming Soon…,T1Mon5
+15G01,20210287,音楽,池田　澄人,3,オンライン,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G02,20210288,Composition II,真部　多真記,3,オンライン,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G03,20210289,Composition II,宇佐見　英美子,3,オンライン,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G04,20210290,Composition II,柳田　利枝,3,オンライン,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G05,20210291,Listening II,Robert Spivak,3,オンライン,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G06,20210292,Listening II,Terence J. Cooney,3,オンライン,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G07,20210293,Grammar II (英),古谷　孝子,3,オンライン,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G08,20210294,Academic Writing & Presentation III,Kenneth Biegel,3,オンライン,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G09,20210295,イギリス文学史,阿部　曜子 / 米須　初美 / 秦　邦生,3,オンライン,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G10,20210296,日本語学概論,内田　宗一,3,オンライン,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G11,20210297,３年セミナー,網谷　龍介,3,ハイブリッド,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G12,20210298,４年セミナー,葛西　弘隆,3,ハイブリッド,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G13,20210299,４年セミナー,小島　敬裕,3,ハイブリッド,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G14,20210300,４年セミナー,関　智英,3,ハイブリッド,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G15,20210301,４年セミナー,三澤　健宏,3,ハイブリッド,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G16,20210302,４年セミナー / プロジェクト,稲葉　利江子,5,ハイブリッド,Coming Soon…,T1Mon5/T3Mon4/T3Mon5/T4Mon4/T4Mon5
+15G17,20210303,教育学概論,渡邊　あや,3,オンライン,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G18,20210304,英語科指導法 II,舩田　まなみ,3,ハイブリッド,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15G19,20210305,数学科指導法 I,武沢　護,3,ハイブリッド,Coming Soon…,T1Mon5/T3Mon5/T4Mon5
+15N01,20210306,日本文学(近現代文学)(3),堀井　一摩,1,オンライン(未確定),Coming Soon…,T3Mon5
+15N02,20210307,日本研究(近現代文学)(3),堀井　一摩,1,オンライン(未確定),Coming Soon…,T3Mon5
+15N03,20210308,プログラミング言語論,青柳　龍也・金子　敬一,1,オンライン(未確定),Coming Soon…,T3Mon5
+15N04,20210309,国際保健論(3),松山　章子,1,オンライン(未確定),Coming Soon…,T3Mon5
+15N05,20210310,データリテラシー a,立井　博子,1,オンライン(未確定),Coming Soon…,T3Mon5
+15N06,20210311,グローバリゼーション論(3),西口　里紗,1,オンライン(未確定),Coming Soon…,T3Mon5
+15P01,20210312,関数解析(演習付),菊池　弘明・浜野　大,4,オンライン(未確定),Coming Soon…,T3Mon5/T4Mon5/T3Thu5/T4Thu5
+15P02,20210313,教育心理学,高垣　マユミ,2,オンライン(未確定),Coming Soon…,T3Mon5/T4Mon5
+15R01,20210314,日本文学(近現代文学)(4),堀井　一摩,1,オンライン(未確定),Coming Soon…,T4Mon5
+15R02,20210315,余暇教育(フィットネスと健康),薄井　澄誉子,0.5,オンライン(未確定),Coming Soon…,T4Mon5
+15R03,20210316,日本研究(近現代文学)(4),堀井　一摩,1,オンライン(未確定),Coming Soon…,T4Mon5
+15R04,20210317,国際保健論(4),松山　章子,1,オンライン(未確定),Coming Soon…,T4Mon5
+15R05,20210318,グローバリゼーション論(4),西口　里紗,1,オンライン(未確定),Coming Soon…,T4Mon5
+15R06,20210319,国際関係の中の子ども,南雲　勇多,1,オンライン(未確定),Coming Soon…,T4Mon5
+16G01,20210320,情報科指導法,佐藤　義弘 / 来住　伸子,3,ハイブリッド,Coming Soon…,T1Mon6/T3Mon6/T4Mon6
+21A01,20210321,国語表現(1),吉田　夏美,1,オンライン,Coming Soon…,T1Tue1
+21A02,20210322,Extensive Reading I (国・多),前田　陽子,1,オンライン,Coming Soon…,T1Tue1
+21A03,20210323,Intensive Reading I a (国・多),滝澤　真理子,1,オンライン,Coming Soon…,T1Tue1
+21A04,20210324,Intensive Reading I a (国・多),福圓　容子,1,オンライン,Coming Soon…,T1Tue1
+21A05,20210325,健康教育,岡　伊織,1,オンライン,Coming Soon…,T1Tue1
+21A06,20210326,異文化理解教育論(1),吉谷　武志,1,オンライン,Coming Soon…,T1Tue1
+21A07,20210327,数学特別講義 A (1),加藤　晃史,1,オンライン,Coming Soon…,T1Tue1
+21A08,20210328,データベース入門,青木　保一,1,オンライン,Coming Soon…,T1Tue1
+21A09,20210329,多文化共生論(1),川端　浩平,1,オンライン,Coming Soon…,T1Tue1
+21A10,20210330,教育学特講(1),吉谷　武志,1,オンライン,Coming Soon…,T1Tue1
+21A11,20210331,３年セミナー (1),松山　章子,1,ハイブリッド,Coming Soon…,T1Tue1
+21B01,20210332,数学特論 XC,新國　亮,2,オンライン,Coming Soon…,T1Tue1/T2Tue1
+21G01,20210333,Oral English I (国・多),Charles D. Hubenthal,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G02,20210334,Oral English I (国・多),Terry Keith Fieldsend,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G03,20210335,Oral English I (国・多),Simon Stevens,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G04,20210336,Oral English I (国・多),Kim Marie Turnberg Sano,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G05,20210337,Composition I (英),増田　珠子,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G06,20210338,Composition I (英),榊原　かをり,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G07,20210339,Composition I (英),菅　靖子,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G08,20210340,Pronunciation I (国・多),楠　香織,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G09,20210341,Pronunciation I (国・多),菅原　供子,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G10,20210342,Pronunciation I (国・多),北村　文,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G11,20210343,CS Composition II,佐藤　響子,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G12,20210344,CS Composition II,山田　純子,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G13,20210345,CS Composition II,山本　三穂,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G14,20210346,中国語 I (文法) D (英),上西　啓,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G15,20210347,中国語 I (文法) G (国・多),関　智英,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G16,20210348,スペイン語 II (講読) A (英),高松　英樹,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G17,20210349,スペイン語 II (演習) b (英),Ines Planas Navarro,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G18,20210350,韓国・朝鮮語 I (文法) C (英),稲毛　恵,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G19,20210351,韓国・朝鮮語 I (演習) a (英),金　泰植,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G20,20210352,コミュニケーション概論,中西　雅之,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G21,20210353,第二言語習得概論(英語教育),星野　徳子 / 稲垣　善律,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G22,20210354,アメリカ文化 b,中村　雅子,3,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G23,20210355,原書講読(２年セミナー),Chris Burgess,3,ハイブリッド,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G24,20210356,原書講読(２年セミナー),廣瀬　方美,3,ハイブリッド,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G25,20210357,原書講読(２年セミナー),葛西　弘隆,3,ハイブリッド,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G26,20210358,原書講読(２年セミナー),光成　歩,3,ハイブリッド,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G27,20210359,原書講読(２年セミナー),森　悠子,3,ハイブリッド,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G28,20210360,原書講読(２年セミナー),下谷内　奈緒,3,ハイブリッド,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G29,20210361,原書講読(２年セミナー),吉岡　潤,3,ハイブリッド,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G30,20210362,英語科指導法 II,植野　伸子,3,ハイブリッド,Coming Soon…,T1Tue1/T3Tue1/T4Tue1
+21G31,20210363,数値解析入門(演習付),小西　由紀子・神谷　亮,6,オンライン,Coming Soon…,T1Tue1/T3Tue1/T4Tue1/T1Thu4/T3Thu4/T4Thu4
+21N01,20210364,国語表現(3),吉田　夏美,1,オンライン(未確定),Coming Soon…,T3Tue1
+21N02,20210365,Extensive Reading I (国・多),前田　陽子,1,オンライン(未確定),Coming Soon…,T3Tue1
+21N03,20210366,Extensive Reading I (国・多),滝澤　真理子,1,オンライン(未確定),Coming Soon…,T3Tue1
+21N04,20210367,Intensive Reading I a (国・多),福圓　容子,1,オンライン(未確定),Coming Soon…,T3Tue1
+21N05,20210368,健康教育,岡　伊織,1,オンライン(未確定),Coming Soon…,T3Tue1
+21N06,20210369,異文化理解教育論(3),吉谷　武志,1,オンライン(未確定),Coming Soon…,T3Tue1
+21N07,20210370,数学特別講義 A (3),加藤　晃史,1,オンライン(未確定),Coming Soon…,T3Tue1
+21N08,20210371,情報科学 b,青木　保一,1,オンライン(未確定),Coming Soon…,T3Tue1
+21N09,20210372,多文化共生論(3),川端　浩平,1,オンライン(未確定),Coming Soon…,T3Tue1
+21N10,20210373,教育学特講(3),吉谷　武志,1,オンライン(未確定),Coming Soon…,T3Tue1
+21N11,20210374,３年セミナー (3),松山　章子,1,オンライン(未確定),Coming Soon…,T3Tue1
+21N12,20210375,民俗学,松本　亜紀,1,オンライン(未確定),Coming Soon…,T3Tue1
+21P01,20210376,社会科・地理歴史科指導法 II,小原　淳,2,オンライン(未確定),Coming Soon…,T3Tue1/T4Tue1
+21R01,20210377,国語表現(4),吉田　夏美,1,オンライン(未確定),Coming Soon…,T4Tue1
+21R02,20210378,Intensive Reading I b (国・多),前田　陽子,1,オンライン(未確定),Coming Soon…,T4Tue1
+21R03,20210379,Intensive Reading I b (国・多),福圓　容子,1,オンライン(未確定),Coming Soon…,T4Tue1
+21R04,20210380,Intensive Reading I b (国・多),滝澤　真理子,1,オンライン(未確定),Coming Soon…,T4Tue1
+21R05,20210381,異文化理解教育論(4),吉谷　武志,1,オンライン(未確定),Coming Soon…,T4Tue1
+21R06,20210382,数学特別講義 A (4),加藤　晃史,1,オンライン(未確定),Coming Soon…,T4Tue1
+21R07,20210383,多文化共生論(4),川端　浩平,1,オンライン(未確定),Coming Soon…,T4Tue1
+21R08,20210384,教育学特講(4),吉谷　武志,1,オンライン(未確定),Coming Soon…,T4Tue1
+21R09,20210385,３年セミナー (4),松山　章子,1,オンライン(未確定),Coming Soon…,T4Tue1
+22A01,20210386,情報処理II a,菅沼　睦,1,オンライン,Coming Soon…,T1Tue2
+22A02,20210387,Extensive Reading I (英),菅原　供子,1,オンライン,Coming Soon…,T1Tue2
+22A03,20210388,Extensive Reading I (英),梅垣　代枝野,1,オンライン,Coming Soon…,T1Tue2
+22A04,20210389,Intensive Reading I a (英),山本　三穂,1,オンライン,Coming Soon…,T1Tue2
+22A05,20210390,スペイン語 III (演習) (1),Ines Planas Navarro,1,オンライン,Coming Soon…,T1Tue2
+22A06,20210391,日本語指導 Aa (1),関　麻由美,1,オンライン,Coming Soon…,T1Tue2
+22A07,20210392,余暇教育(スポーツと身体スキル),Maja Sori Doval,0.5,ハイブリッド,Coming Soon…,T1Tue2
+22A08,20210393,Japan Studies in English (Introduction),Alexandra Hambleton,1,オンライン,Coming Soon…,T1Tue2
+22A09,20210394,言語思想論(1),多賀　吉隆,1,オンライン,Coming Soon…,T1Tue2
+22A10,20210395,東アジア研究(韓国現代史),朴　正鎮,1,オンライン,Coming Soon…,T1Tue2
+22A11,20210396,東アジア研究(現代中国社会論),吉見　崇,1,オンライン,Coming Soon…,T1Tue2
+22A12,20210397,言語教育とジェンダー,佐藤　響子,1,オンライン,Coming Soon…,T1Tue2
+22A13,20210398,幾何学入門(演習付),井上　歩,2,ハイブリッド,Coming Soon…,T1Tue2/T1Thu2
+22A14,20210399,３年セミナー (1),松山　章子,1,ハイブリッド,Coming Soon…,T1Tue2
+22A15,20210400,３年セミナー (1),川端　浩平,1,ハイブリッド,Coming Soon…,T1Tue2
+22A16,20210401,環境問題,八塚　春名,1,オンライン,Coming Soon…,T1Tue2
+22C01,20210402,意味・語用論,井川　壽子,2,オンライン,Coming Soon…,T1Tue2/T3Tue2
+22C02,20210403,１年セミナー,稲葉　利江子,2,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2
+22C03,20210404,１年セミナー,青柳　龍也,2,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2
+22C04,20210405,１年セミナー,栗原　一貴,2,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2
+22C05,20210406,１年セミナー,中野　美由紀,2,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2
+22C06,20210407,１年セミナー,新田　善久,2,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2
+22C07,20210408,１年セミナー,杉村　大輔,2,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2
+22G01,20210409,Oral English I (英),Charles D. Hubenthal,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G02,20210410,Oral English I (英),Simon Stevens,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G03,20210411,Oral English I (英),Kim Marie Turnberg Sano,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G04,20210412,Composition I (国・多),福圓　容子,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G05,20210413,Composition I (国・多),滝澤　真理子,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G06,20210414,Composition I (国・多),楠　香織,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G07,20210415,Composition I (国・多),前田　陽子,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G08,20210416,Pronunciation I (英),近藤　ゆう子,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G09,20210417,Pronunciation I (英),榊原　かをり,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G10,20210418,フランス語 I (文法) C (英),坂井　由加里,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G11,20210419,フランス語 I (演習) f (国・多),稲村　真実,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G12,20210420,フランス語 II (演習) a (英),Nicolas Blanchard,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G13,20210421,中国語 I (文法) E (国・多),関　智英,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G14,20210422,中国語 II (演習) a (英),姚　毅,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G15,20210423,スペイン語 I (文法) C (英),高松　英樹,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G16,20210424,韓国・朝鮮語 II (講読) E (国・多),金　泰植,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G17,20210425,韓国・朝鮮語 II (演習) d (国・多),稲毛　恵,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G18,20210426,Literary Reading II,山田　純子,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G19,20210427,Literary Reading II,Jonathan D. Picken / 米須　初美,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G20,20210428,Grammar II (英),阪口　美津子,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G21,20210429,３年セミナー,阿部　曜子,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G22,20210430,Academic Writing & Presentation III,Terry Keith Fieldsend,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G23,20210431,４年セミナー,阿部　曜子,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G24,20210432,４年セミナー,中村　雅子,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G25,20210433,卒論指導,星野　徳子,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G26,20210434,日本語教授法,古川　敦子,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G27,20210435,日本語文法概論,庵　功雄,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G28,20210436,１年セミナー,網谷　龍介,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G29,20210437,１年セミナー,Sookyeong Hong,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G30,20210438,１年セミナー,葛西　弘隆,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G31,20210439,１年セミナー,光成　歩,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G32,20210440,１年セミナー,森　悠子,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G33,20210441,１年セミナー,西川　賢,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G34,20210442,１年セミナー,柴田　邦臣,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G35,20210443,１年セミナー,武田　万里子,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G36,20210444,１年セミナー,吉岡　潤,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G37,20210445,３年セミナー,渡邊　あや,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G38,20210446,４年セミナー,下谷内　奈緒,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G39,20210447,言語教育方法論 B,古川　敦子,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G40,20210448,数学科指導法 II,野町　直史,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G41,20210449,複素解析学(演習付),中屋敷　厚,6,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2/T1Thu2/T3Thu2/T4Thu2
+22G42,20210450,１年基礎セミナー,木村　真希子,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G43,20210451,１年基礎セミナー,丸山　淳子,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G44,20210452,１年基礎セミナー,三澤　健宏,3,ハイブリッド,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22G45,20210453,スペイン語 III (演習),Ines Planas Navarro,3,オンライン,Coming Soon…,T1Tue2/T3Tue2/T4Tue2
+22N01,20210454,情報処理II b,菅沼　睦,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N02,20210455,Extensive Reading I (英),菅原　供子,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N03,20210456,Intensive Reading I a (英),梅垣　代枝野,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N04,20210457,Intensive Reading I a (英),山本　三穂,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N05,20210458,スペイン語 III (演習) (3),Ines Planas Navarro,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N06,20210459,日本語指導 Aa (3),関　麻由美,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N07,20210460,余暇教育(レク活動とグループワーク),Maja Sori Doval,0.5,オンライン(未確定),Coming Soon…,T3Tue2
+22N08,20210461,言語思想論(3),多賀　吉隆,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N09,20210462,東アジア研究(北朝鮮特論),朴　正鎮,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N10,20210463,東アジア研究(現代中国特論),吉見　崇,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N11,20210464,コンテンツデザイン,永嶋　さゆり,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N12,20210465,Cultural Representation in Media,Alexandra Hambleton,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N13,20210466,３年セミナー (3),松山　章子,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N14,20210467,３年セミナー (3),川端　浩平,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N15,20210468,食と環境,八塚　春名,1,オンライン(未確定),Coming Soon…,T3Tue2
+22N21,20210469,家族社会学,鷹田　佳典,1,オンライン(未確定),Coming Soon…,T3Tue2
+22P01,20210470,文学批評,大田　信良,2,オンライン(未確定),Coming Soon…,T3Tue2/T4Tue2
+22P02,20210471,社会科・地理歴史科指導法 I,小原　淳,2,オンライン(未確定),Coming Soon…,T3Tue2/T4Tue2
+22P03,20210472,位相入門(演習付),井上　歩,4,オンライン(未確定),Coming Soon…,T3Tue2/T4Tue2/T3Thu2/T4Thu2
+22R01,20210473,情報処理II c,菅沼　睦,1,オンライン(未確定),Coming Soon…,T4Tue2
+22R02,20210474,Intensive Reading I b (英),梅垣　代枝野,1,オンライン(未確定),Coming Soon…,T4Tue2
+22R03,20210475,Intensive Reading I b (英),菅原　供子,1,オンライン(未確定),Coming Soon…,T4Tue2
+22R04,20210476,Intensive Reading I b (英),山本　三穂,1,オンライン(未確定),Coming Soon…,T4Tue2
+22R05,20210477,スペイン語 III (演習) (4),Ines Planas Navarro,1,オンライン(未確定),Coming Soon…,T4Tue2
+22R06,20210478,日本語指導 Aa (4),関　麻由美,1,オンライン(未確定),Coming Soon…,T4Tue2
+22R07,20210479,余暇教育(スポーツと身体スキル),Maja Sori Doval,0.5,オンライン(未確定),Coming Soon…,T4Tue2
+22R08,20210480,言語思想論(4),多賀　吉隆,1,オンライン(未確定),Coming Soon…,T4Tue2
+22R09,20210481,東アジア研究(朝鮮半島の国際政治),朴　正鎮,1,オンライン(未確定),Coming Soon…,T4Tue2
+22R10,20210482,東アジア研究(現代中国経済論),吉見　崇,1,オンライン(未確定),Coming Soon…,T4Tue2
+22R11,20210483,コンピュータグラフィックス a,新田　善久,1,オンライン(未確定),Coming Soon…,T4Tue2
+22R12,20210484,３年セミナー (4),松山　章子,1,オンライン(未確定),Coming Soon…,T4Tue2
+22R13,20210485,３年セミナー (4),川端　浩平,1,オンライン(未確定),Coming Soon…,T4Tue2
+23A01,20210486,キリスト教概論(1),中西　恭子,1,オンライン,Coming Soon…,T1Tue3
+23A02,20210487,日本文学(古典文学)(1),木村　朗子,1,オンライン,Coming Soon…,T1Tue3
+23A03,20210488,余暇教育(スポーツと身体スキル),Maja Sori Doval,0.5,ハイブリッド,Coming Soon…,T1Tue3
+23A04,20210489,English III (Lecture)(1),タック川崎　レスリー,1,オンライン,Coming Soon…,T1Tue3
+23A05,20210490,国際経営論(1),木村　有里,1,オンライン,Coming Soon…,T1Tue3
+23A06,20210491,日本研究(日本と台湾の近現代関係史),岡本　真希子,1,オンライン,Coming Soon…,T1Tue3
+23A07,20210492,日本研究(古典文学)(1),木村　朗子,1,オンライン,Coming Soon…,T1Tue3
+23A08,20210493,Oral English III (1),Terry Keith Fieldsend,1,オンライン,Coming Soon…,T1Tue3
+23A09,20210494,インターラクティブシステム,栗原　一貴,1,オンライン,Coming Soon…,T1Tue3
+23A10,20210495,アルゴリズム c (演習付),新田　善久,2,オンライン,Coming Soon…,T1Tue3/T1Tue4
+23A11,20210496,国際人口論(1),三澤　健宏,1,オンライン,Coming Soon…,T1Tue3
+23A12,20210497,代数学基礎(演習付),松野　一夫・前田　多恵,2,オンライン,Coming Soon…,T1Tue3/T1Fri3
+23A13,20210498,３年セミナー (1),木村　真希子,1,ハイブリッド,Coming Soon…,T1Tue3
+23A14,20210499,３年セミナー (1),丸山　淳子,1,ハイブリッド,Coming Soon…,T1Tue3
+23A15,20210500,医療人類学,松山　章子,1,オンライン,Coming Soon…,T1Tue3
+23C01,20210501,日英語の比較,井川　壽子,2,オンライン,Coming Soon…,T1Tue3/T3Tue3
+23C02,20210502,対照言語学 1,井川　壽子,2,オンライン,Coming Soon…,T1Tue3/T3Tue3
+23G01,20210503,フランス語 I (文法) D (国・多),稲村　真実,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G02,20210504,フランス語 I (文法) G (国・多),坂井　由加里,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G03,20210505,フランス語 II (講読) F (国・多),市川　裕史,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G04,20210506,ドイツ語 I (文法) A (英),松鵜　功記,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G05,20210507,ドイツ語 II (演習) a (英),久保山　亮,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G06,20210508,中国語 I (文法) A (英),上西　啓,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G07,20210509,中国語 II (演習) g (国・多),姚　毅,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G08,20210510,ロシア語 II (講読),松嵜　英也,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G09,20210511,スペイン語 I (演習) g (国・多),政岡　潔子,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G10,20210512,スペイン語 II (講読) E (国・多),中井　博康,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G11,20210513,韓国・朝鮮語 II (演習) c (英),稲毛　恵,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G12,20210514,基礎セミナー,中西　雅之,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G13,20210515,基礎セミナー,菅　靖子,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G14,20210516,基礎セミナー,阿部　曜子,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G15,20210517,基礎セミナー,相木　裕史,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G16,20210518,基礎セミナー,Alexandra Hambleton,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G17,20210519,Literary Reading I,菅原　供子,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G18,20210520,Literary Reading I,米須　初美,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G19,20210521,Literary Reading I,梅垣　代枝野,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G20,20210522,Academic Listening II,Annette Karseras,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G21,20210523,３年セミナー,稲垣　善律,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G22,20210524,３年セミナー,Jonathan D. Picken,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G23,20210525,３年セミナー,John William Cheng,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G24,20210526,Academic Writing & Presentation III,Elizabeth I. Dow,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G25,20210527,アメリカ文学史,池野　みさお,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G26,20210528,音声学,広実　義人,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G27,20210529,日本語教材・教具論,古川　敦子,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G28,20210530,３年セミナー,下谷内　奈緒,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G29,20210531,３年セミナー,西川　賢,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G30,20210532,３年セミナー,光成　歩,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G31,20210533,４年セミナー,井上　則子,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G32,20210534,English III (Practice),Chris Burgess,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G33,20210535,言語教育方法論 A,豊嶋　朗子,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G34,20210536,言語教材開発論 B,古川　敦子,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G35,20210537,４年セミナー,小西　由紀子,6,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3/T1Tue4/T3Tue4/T4Tue4
+23G36,20210538,４年セミナー,中屋敷　厚,6,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3/T1Tue4/T3Tue4/T4Tue4
+23G37,20210539,４年セミナー / プロジェクト,中野　美由紀,5,ハイブリッド,Coming Soon…,T1Tue3/T3Tue4/T3Tue5/T4Tue3/T4Tue4
+23G38,20210540,MI４年セミナー,北村　文,3,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G39,20210541,英語科指導法 I,豊嶋　朗子,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G40,20210542,数学科指導法 II,野町　直史,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23G41,20210543,フランス語 III (演習) (1)(3)(4),Nicolas Blanchard,3,オンライン,Coming Soon…,T1Tue3/T3Tue3/T4Tue3
+23N01,20210544,キリスト教概論(3),中西　恭子,1,オンライン(未確定),Coming Soon…,T3Tue3
+23N02,20210545,日本文学(古典文学)(3),木村　朗子,1,オンライン(未確定),Coming Soon…,T3Tue3
+23N03,20210546,余暇教育(スポーツと身体スキル),Maja Sori Doval,0.5,オンライン(未確定),Coming Soon…,T3Tue3
+23N04,20210547,English III (Lecture)(3),タック川崎　レスリー,1,オンライン(未確定),Coming Soon…,T3Tue3
+23N05,20210548,国際経営論(3),木村　有里,1,オンライン(未確定),Coming Soon…,T3Tue3
+23N06,20210549,日本研究(日本と朝鮮半島の近現代関係史),岡本　真希子,1,オンライン(未確定),Coming Soon…,T3Tue3
+23N07,20210550,日本研究(古典文学)(3),木村　朗子,1,オンライン(未確定),Coming Soon…,T3Tue3
+23N08,20210551,Oral English III (3),Terry Keith Fieldsend,1,オンライン(未確定),Coming Soon…,T3Tue3
+23N09,20210552,アルゴリズム a (演習付),新田　善久,2,オンライン(未確定),Coming Soon…,T3Tue3/T3Tue4
+23N10,20210553,マルチメディア(演習付),杉村　大輔,2,オンライン(未確定),Coming Soon…,T3Tue3/T3Tue4
+23N11,20210554,国際人口論(3),三澤　健宏,1,オンライン(未確定),Coming Soon…,T3Tue3
+23N12,20210555,データリテラシー b,中野　美由紀,1,オンライン(未確定),Coming Soon…,T3Tue3
+23N13,20210556,３年セミナー (3),木村　真希子,1,オンライン(未確定),Coming Soon…,T3Tue3
+23N14,20210557,３年セミナー (3),丸山　淳子,1,オンライン(未確定),Coming Soon…,T3Tue3
+23P01,20210558,演劇と教育,吉田　真理子,2,オンライン(未確定),Coming Soon…,T3Tue3/T4Tue3
+23P02,20210559,代数入門(演習付),松野　一夫・前田　多恵,4,オンライン(未確定),Coming Soon…,T3Tue3/T4Tue3/T3Fri3/T4Fri3
+23P03,20210560,教職実践演習(中・高),牛島　順子,2,オンライン(未確定),Coming Soon…,T3Tue3/T4Tue3
+23R01,20210561,キリスト教概論(4),中西　恭子,1,オンライン(未確定),Coming Soon…,T4Tue3
+23R02,20210562,日本文学(古典文学)(4),木村　朗子,1,オンライン(未確定),Coming Soon…,T4Tue3
+23R03,20210563,余暇教育(スポーツと身体スキル),Maja Sori Doval,0.5,オンライン(未確定),Coming Soon…,T4Tue3
+23R04,20210564,English III (Lecture)(4),タック川崎　レスリー,1,オンライン(未確定),Coming Soon…,T4Tue3
+23R05,20210565,国際経営論(4),木村　有里,1,オンライン(未確定),Coming Soon…,T4Tue3
+23R06,20210566,日本研究(少数者の日本近現代史),岡本　真希子,1,オンライン(未確定),Coming Soon…,T4Tue3
+23R07,20210567,日本研究(古典文学)(4),木村　朗子,1,オンライン(未確定),Coming Soon…,T4Tue3
+23R08,20210568,アルゴリズム b (演習付),新田　善久,2,オンライン(未確定),Coming Soon…,T4Tue3/T4Tue4
+23R09,20210569,数理ファイナンス,藤田　岳彦,1,オンライン(未確定),Coming Soon…,T4Tue3
+23R10,20210570,国際人口論(4),三澤　健宏,1,オンライン(未確定),Coming Soon…,T4Tue3
+23R11,20210571,３年セミナー (4),木村　真希子,1,オンライン(未確定),Coming Soon…,T4Tue3
+23R12,20210572,３年セミナー (4),丸山　淳子,1,オンライン(未確定),Coming Soon…,T4Tue3
+24A01,20210573,政治学(1),葛西　弘隆,1,オンライン,Coming Soon…,T1Tue4
+24A02,20210574,政治学研究(1),葛西　弘隆,1,オンライン,Coming Soon…,T1Tue4
+24A03,20210575,情報と社会(1),稲葉　利江子,1,オンライン,Coming Soon…,T1Tue4
+24A04,20210576,日本研究演習 (英語) (1),Annette Karseras,1,オンライン,Coming Soon…,T1Tue4
+24A05,20210577,動きの教育,Maja Sori Doval,1,オンライン,Coming Soon…,T1Tue4
+24A06,20210578,開発経済学(1),森　悠子,1,オンライン,Coming Soon…,T1Tue4
+24A07,20210579,EU研究(1),工藤　芽衣,1,オンライン,Coming Soon…,T1Tue4
+24A08,20210580,映像コンテンツ制作,青柳　龍也・渡辺　真太郎,1,オンライン,Coming Soon…,T1Tue4
+24B01,20210581,情報科学特論 d,中野　美由紀,2,ハイブリッド,Coming Soon…,T1Tue4/T2Tue4
+24G01,20210582,くらしと地球環境,渋江　桂子,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G02,20210583,Intensive Listening I,Craig Sisman,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G03,20210584,フランス語 I (演習) a (英),坂井　由加里,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G04,20210585,フランス語 II (講読) B (英),稲村　真実,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G05,20210586,フランス語 II (講読) D (国・多),竹本　研史,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G06,20210587,ドイツ語 I (演習) c (国・多),松鵜　功記,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G07,20210588,ドイツ語 II (講読) B (英),久保山　亮,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G08,20210589,中国語 II (講読) B (英),上西　啓,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G09,20210590,中国語 II (演習) c (英),姚　毅,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G10,20210591,スペイン語 II (講読) F (国・多),中井　博康,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G11,20210592,スペイン語 II (演習) d (国・多),Cristina Cenzano Rosa,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G12,20210593,韓国・朝鮮語 I (文法) B (英),稲毛　恵,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G13,20210594,基礎セミナー,稲垣　善律,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G14,20210595,基礎セミナー,井川　壽子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G15,20210596,基礎セミナー,John William Cheng,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G16,20210597,基礎セミナー,Jonathan D. Picken,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G17,20210598,Academic Writing II,伊藤　航多,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G18,20210599,Academic Writing II,近藤　ゆう子,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G19,20210600,Academic Writing II,村越　麻子,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G20,20210601,Academic Writing & Presentation III,Keith Ford,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G21,20210602,Academic Writing & Presentation III,Timothy P. Knight,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G22,20210603,４年セミナー,菅　靖子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G23,20210604,４年セミナー,Joshua Brook Antle,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G24,20210605,音声学,広実　義人,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G25,20210606,異文化コミュニケーション理論,Elizabeth I. Dow,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G26,20210607,１年セミナー,南　諭子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G27,20210608,１年セミナー,岡本　真希子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G28,20210609,１年セミナー,朴　正鎮,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G29,20210610,１年セミナー,多賀　吉隆,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G30,20210611,３年セミナー,木村　有里,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G31,20210612,３年セミナー,井上　則子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G32,20210613,４年セミナー,高垣　マユミ,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G33,20210614,４年セミナー,西川　賢,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G34,20210615,４年セミナー,松嵜　英也,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G35,20210616,４年セミナー,Sookyeong Hong,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G36,20210617,English III (Practice),Chris Burgess,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G37,20210618,English III (Practice),タック川崎　レスリー,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G38,20210619,幾何学 Ｂ,井上　歩,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G39,20210620,４年セミナー / プロジェクト,貞廣　泰造,5,ハイブリッド,Coming Soon…,T1Tue4/T3Tue3/T3Tue4/T4Tue3/T4Tue4
+24G40,20210621,メディア４年セミナー,郷路　拓也,3,オンライン,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G41,20210622,英語科指導法 II,齊藤　涼子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G42,20210623,２年セミナー(ラウンドテーブル),三澤　健宏 / 松山　章子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G43,20210624,２年セミナー(ラウンドテーブル),松山　章子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G44,20210625,２年セミナー(ラウンドテーブル),木村　朗子 / 松山　章子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G45,20210626,２年セミナー(ラウンドテーブル),木村　真希子 / 松山　章子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G46,20210627,２年セミナー(ラウンドテーブル),川端　浩平 / 松山　章子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G47,20210628,２年セミナー(ラウンドテーブル),丸山　淳子 / 松山　章子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24G48,20210629,２年セミナー(ラウンドテーブル),八塚　春名 / 松山　章子,3,ハイブリッド,Coming Soon…,T1Tue4/T3Tue4/T4Tue4
+24N01,20210630,政治学(3),葛西　弘隆,1,オンライン(未確定),Coming Soon…,T3Tue4
+24N02,20210631,政治学研究(3）,葛西　弘隆,1,オンライン(未確定),Coming Soon…,T3Tue4
+24N03,20210632,情報と社会(3),稲葉　利江子,1,オンライン(未確定),Coming Soon…,T3Tue4
+24N04,20210633,日本研究演習 (英語) (3),Annette Karseras,1,オンライン(未確定),Coming Soon…,T3Tue4
+24N05,20210634,動きの教育,Maja Sori Doval,1,オンライン(未確定),Coming Soon…,T3Tue4
+24N06,20210635,Japan Studies in English (Project),北村　文,1,オンライン(未確定),Coming Soon…,T3Tue4
+24N07,20210636,開発経済学(3),森　悠子,1,オンライン(未確定),Coming Soon…,T3Tue4
+24N08,20210637,貧困問題,丸山　淳子,1,オンライン(未確定),Coming Soon…,T3Tue4
+24R01,20210638,政治学(4),葛西　弘隆,1,オンライン(未確定),Coming Soon…,T4Tue4
+24R02,20210639,政治学研究(4),葛西　弘隆,1,オンライン(未確定),Coming Soon…,T4Tue4
+24R03,20210640,情報と社会(4),稲葉　利江子,1,オンライン(未確定),Coming Soon…,T4Tue4
+24R04,20210641,日本研究演習 (英語) (4),Annette Karseras,1,オンライン(未確定),Coming Soon…,T4Tue4
+24R05,20210642,動きの教育,Maja Sori Doval,1,オンライン(未確定),Coming Soon…,T4Tue4
+24R06,20210643,開発経済学(4),森　悠子,1,オンライン(未確定),Coming Soon…,T4Tue4
+25A01,20210644,世界の文学(イギリス),米須　初美,1,オンライン,Coming Soon…,T1Tue5
+25A02,20210645,日本研究演習(1),木村　朗子,1,オンライン,Coming Soon…,T1Tue5
+25A03,20210646,ウェルネス研究(カウンセリングの基礎),吉村　麻奈美,1,オンライン,Coming Soon…,T1Tue5
+25A04,20210647,アメリカ小説 a,相木　裕史,1,オンライン,Coming Soon…,T1Tue5
+25A05,20210648,日本語学特殊講義 2,寅丸　真澄,1,オンライン,Coming Soon…,T1Tue5
+25A06,20210649,国際経済論(1),澤木　久之,1,オンライン,Coming Soon…,T1Tue5
+25A07,20210650,社会思想史(1),竹本　研史,1,オンライン,Coming Soon…,T1Tue5
+25A08,20210651,翻訳文化論,齋藤　由美子,1,オンライン,Coming Soon…,T1Tue5
+25A09,20210652,社会調査法(1),嶋根　卓也,1,オンライン,Coming Soon…,T1Tue5
+25A10,20210653,社会調査法(1),水口　恵美子,1,オンライン,Coming Soon…,T1Tue5
+25A11,20210654,センサー入門,金箱　淳一,1,オンライン,Coming Soon…,T1Tue5
+25A12,20210655,離散数学 a,貞廣　泰造,1,オンライン,Coming Soon…,T1Tue5
+25A13,20210656,コロナ禍に立ち向かう世界 a,北村　文・副島　英樹・田井中　雅人,1,オンライン,Coming Soon…,T1Tue5
+25C01,20210657,教職概論,牛島　順子,2,オンライン,Coming Soon…,T1Tue5/T3Tue5
+25G01,20210658,ドイツ語 II (講読) C (国・多),松鵜　功記,3,オンライン,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G02,20210659,スペイン語 II (演習) c (英),Cristina Cenzano Rosa,3,オンライン,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G03,20210660,韓国・朝鮮語 II (講読) B (英),稲毛　恵,3,オンライン,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G04,20210661,Academic Writing II,John William Cheng / Soo-Hye Han,3,オンライン,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G05,20210662,Oral English II (英),Timothy P. Knight,3,オンライン,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G06,20210663,Oral English II (英),Craig Sisman,3,オンライン,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G07,20210664,Oral English II (英),Keith Ford,3,オンライン,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G08,20210665,Academic Writing & Presentation III,Annette Karseras,3,オンライン,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G10,20210666,原書講読(２年セミナー),網谷　龍介,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G11,20210667,原書講読(２年セミナー),小島　敬裕,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G12,20210668,原書講読(２年セミナー),南　諭子,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G13,20210669,原書講読(２年セミナー),西川　賢,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G14,20210670,原書講読(２年セミナー),岡本　真希子,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G15,20210671,原書講読(２年セミナー),柴田　邦臣,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G16,20210672,原書講読(２年セミナー),多賀　吉隆,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G17,20210673,原書講読(２年セミナー),高垣　マユミ,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G18,20210674,原書講読(２年セミナー),渡邊　あや,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G19,20210675,原書講読(２年セミナー),守田　まどか,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G20,20210676,４年セミナー,木村　有里,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G21,20210677,４年セミナー,朴　正鎮,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G22,20210678,Academic Reading II,宮井　勢都子 / 齊藤　涼子 / 広実　義人,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G23,20210679,Academic Reading II,齊藤　涼子 / 広実　義人 / 宮井　勢都子,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25G24,20210680,Academic Reading II,広実　義人 / 宮井　勢都子 / 齊藤　涼子,3,ハイブリッド,Coming Soon…,T1Tue5/T3Tue5/T4Tue5
+25N01,20210681,世界の文学(英語圏),阿部　曜子,1,オンライン(未確定),Coming Soon…,T3Tue5
+25N02,20210682,日本研究演習(3),木村　朗子,1,オンライン(未確定),Coming Soon…,T3Tue5
+25N03,20210683,健康教育,吉村　麻奈美,1,オンライン(未確定),Coming Soon…,T3Tue5
+25N04,20210684,国際経済論(3),澤木　久之,1,オンライン(未確定),Coming Soon…,T3Tue5
+25N05,20210685,社会思想史(3),竹本　研史,1,オンライン(未確定),Coming Soon…,T3Tue5
+25N06,20210686,越境文学論,齋藤　由美子,1,オンライン(未確定),Coming Soon…,T3Tue5
+25N07,20210687,社会調査法(3),松山　章子,1,オンライン(未確定),Coming Soon…,T3Tue5
+25N08,20210688,社会調査法(3),八塚　春名,1,オンライン(未確定),Coming Soon…,T3Tue5
+25N09,20210689,情報科学 d,青柳　龍也,1,オンライン(未確定),Coming Soon…,T3Tue5
+25N10,20210690,ソーシャルコンテンツ制作,工藤　紀篤,1,オンライン(未確定),Coming Soon…,T3Tue5
+25N11,20210691,教育メディアワークショップ,来住　伸子,1,オンライン(未確定),Coming Soon…,T3Tue5
+25N12,20210692,コロナ禍に立ち向かう世界 b,阿部　曜子・雲島　知恵・久野　量一・菅　靖子・和田　忠彦,1,オンライン(未確定),Coming Soon…,T3Tue5
+25P01,20210693,教職概論,牛島　順子,2,オンライン(未確定),Coming Soon…,T3Tue5/T4Tue5
+25R01,20210694,世界の文学(アメリカ),相木　裕史,1,オンライン(未確定),Coming Soon…,T4Tue5
+25R02,20210695,日本研究演習(4),木村　朗子,1,オンライン(未確定),Coming Soon…,T4Tue5
+25R03,20210696,ウェルネス研究(健康心理学),吉村　麻奈美,1,オンライン(未確定),Coming Soon…,T4Tue5
+25R04,20210697,国際経済論(4),澤木　久之,1,オンライン(未確定),Coming Soon…,T4Tue5
+25R05,20210698,社会思想史(4),竹本　研史,1,オンライン(未確定),Coming Soon…,T4Tue5
+25R06,20210699,文学論特論,齋藤　由美子,1,オンライン(未確定),Coming Soon…,T4Tue5
+25R07,20210700,社会調査法(4),松山　章子,1,オンライン(未確定),Coming Soon…,T4Tue5
+25R08,20210701,社会調査法(4),八塚　春名,1,オンライン(未確定),Coming Soon…,T4Tue5
+25R09,20210702,Webテクノロジー a,大塚　亜未,1,オンライン(未確定),Coming Soon…,T4Tue5
+25R10,20210703,メディアコミュニケーションワークショップ,稲葉　利江子,1,オンライン(未確定),Coming Soon…,T4Tue5
+25R11,20210704,デジタルエンターテインメントワークショップ,栗原　一貴,1,オンライン(未確定),Coming Soon…,T4Tue5
+25R12,20210705,The Practice of Teaching Oral English,Joshua Brook Antle,1,オンライン(未確定),Coming Soon…,T4Tue5
+31A01,20210706,心理学(1),神長　伸幸,1,オンライン,Coming Soon…,T1Wed1
+31A02,20210707,動きの教育,辻元　早苗,1,オンライン,Coming Soon…,T1Wed1
+31A03,20210708,イギリス社会(1),Alan George Milne,1,オンライン,Coming Soon…,T1Wed1
+31A04,20210709,English III (Lecture)(1),Alan George Milne,1,オンライン,Coming Soon…,T1Wed1
+31A05,20210710,比較教育論(1),渡邊　あや,1,オンライン,Coming Soon…,T1Wed1
+31A06,20210711,ヨーロッパ政治(1),網谷　龍介,1,オンライン,Coming Soon…,T1Wed1
+31A07,20210712,ヨーロッパ社会(イギリス)(1),Alan George Milne,1,オンライン,Coming Soon…,T1Wed1
+31A08,20210713,コンピュータグラフィックス b,新田　善久,1,オンライン,Coming Soon…,T1Wed1
+31A09,20210714,社会科・公民科指導法 I,木内　剛,2,オンライン,Coming Soon…,T1Wed1/T1Wed2
+31A10,20210715,数学序論(演習付),宮澤　治子・久野　雄介,2,ハイブリッド,Coming Soon…,T1Mon2/T1Wed1
+31C01,20210716,第二言語習得論(日本語教育),古川　敦子,2,オンライン,Coming Soon…,T1Wed1/T3Wed1
+31G01,20210717,Pronunciation I (情),小野　雅子,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G02,20210718,Pronunciation I (情),宇佐見　英美子,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G03,20210719,MI Reading Skills II,小西　正恵,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G04,20210720,MI Reading Skills II,熊野　真理,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G05,20210721,MI Reading Skills II,柳澤　波香,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G06,20210722,中国語 I (演習) b (英),李　洵,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G07,20210723,韓国・朝鮮語 I (演習) e (国・多),金　泰植,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G08,20210724,Literary Reading II,山田　純子,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G09,20210725,Academic Writing II,Matthew Michael Hanley,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G10,20210726,Academic Writing II,Chester J. Proshan,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G11,20210727,Academic Writing II,岩田　有美子,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G12,20210728,Oral English II (英),Geoffrey Pierce,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G13,20210729,Oral English II (英),Kathleen A. R. Era,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G14,20210730,Oral English II (英),Terence J. Cooney,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G15,20210731,Academic Writing & Presentation III,Lillian R. Swain / Soo-Hye Han,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G16,20210732,Academic Writing & Presentation III,Terry Keith Fieldsend,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G17,20210733,翻訳の世界,前沢　明枝,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G18,20210734,Academic Reading II,Alexandra Hambleton / 中西　雅之 / 星野　徳子,3,ハイブリッド,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G19,20210735,Academic Reading II,John William Cheng / Jonathan D. Picken / 郷路　拓也,3,ハイブリッド,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G20,20210736,Academic Reading II,佐藤　陽介 / Alexandra Hambleton / 中西　雅之,3,ハイブリッド,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31G21,20210737,論理と計算機科学,礒田　恵以子,3,オンライン,Coming Soon…,T1Wed1/T3Wed1/T4Wed1
+31N01,20210738,心理学(3),神長　伸幸,1,オンライン(未確定),Coming Soon…,T3Wed1
+31N02,20210739,動きの教育,辻元　早苗,1,オンライン(未確定),Coming Soon…,T3Wed1
+31N03,20210740,イギリス社会(3),Alan George Milne,1,オンライン(未確定),Coming Soon…,T3Wed1
+31N04,20210741,English III (Lecture)(3),Alan George Milne,1,オンライン(未確定),Coming Soon…,T3Wed1
+31N05,20210742,比較教育論(3),渡邊　あや,1,オンライン(未確定),Coming Soon…,T3Wed1
+31N06,20210743,ヨーロッパ社会(イギリス)(3),Alan George Milne,1,オンライン(未確定),Coming Soon…,T3Wed1
+31N07,20210744,コンピュータ概論 I,青柳　龍也,1,オンライン(未確定),Coming Soon…,T3Wed1
+31N08,20210745,教職実践演習(中・高),三町　章,2,オンライン(未確定),Coming Soon…,T3Wed1/T3Wed2
+31P01,20210746,社会科・公民科指導法 II,木内　剛,2,オンライン(未確定),Coming Soon…,T3Wed1/T4Wed1
+31P02,20210747,線形代数学 I (演習付),原　隆,4,オンライン(未確定),Coming Soon…,T3Mon2/T4Mon2/T3Wed1/T4Wed1
+31P03,20210748,数値計算法,菊池　弘明,2,オンライン(未確定),Coming Soon…,T3Wed1/T4Wed1
+31P04,20210749,教育心理学,高垣　マユミ,2,オンライン(未確定),Coming Soon…,T3Wed1/T4Wed1
+31R01,20210750,心理学(4),神長　伸幸,1,オンライン(未確定),Coming Soon…,T4Wed1
+31R02,20210751,動きの教育,辻元　早苗,1,オンライン(未確定),Coming Soon…,T4Wed1
+31R03,20210752,イギリス社会(4),Alan George Milne,1,オンライン(未確定),Coming Soon…,T4Wed1
+31R04,20210753,対照言語学 2,井上　優,1,オンライン(未確定),Coming Soon…,T4Wed1
+31R05,20210754,English III (Lecture)(4),Alan George Milne,1,オンライン(未確定),Coming Soon…,T4Wed1
+31R06,20210755,比較教育論(4),渡邊　あや,1,オンライン(未確定),Coming Soon…,T4Wed1
+31R07,20210756,ヨーロッパ社会(イギリス)(4),Alan George Milne,1,オンライン(未確定),Coming Soon…,T4Wed1
+31R08,20210757,EU研究(4),網谷　龍介,1,オンライン(未確定),Coming Soon…,T4Wed1
+31R09,20210758,コンピュータ概論 II,青柳　龍也,1,オンライン(未確定),Coming Soon…,T4Wed1
+31R10,20210759,教職実践演習(中・高),三町　章,2,オンライン(未確定),Coming Soon…,T4Wed1/T4Wed2
+32A01,20210760,キリスト教史(1),寺戸　淳子,1,オンライン,Coming Soon…,T1Wed2
+32A02,20210761,世界の文学(ドイツ)(1),関口　裕昭,1,オンライン,Coming Soon…,T1Wed2
+32A03,20210762,世界の文学(朝鮮)(1),高橋　梓,1,オンライン,Coming Soon…,T1Wed2
+32A04,20210763,国語表現(1),木村　真希子,1,オンライン,Coming Soon…,T1Wed2
+32A05,20210764,世界史概説(1),大塚　修,1,オンライン,Coming Soon…,T1Wed2
+32A06,20210765,世界史研究(1),大塚　修,1,オンライン,Coming Soon…,T1Wed2
+32A07,20210766,中国語 III (講読) (1),山口　早苗,1,オンライン,Coming Soon…,T1Wed2
+32A08,20210767,中国語 III (演習) (1),李　洵,1,オンライン,Coming Soon…,T1Wed2
+32A09,20210768,日本語指導 C (1),塩谷　由美子,1,オンライン,Coming Soon…,T1Wed2
+32A10,20210769,余暇教育(レク活動とグループワーク),辻元　早苗,0.5,ハイブリッド,Coming Soon…,T1Wed2
+32A11,20210770,Composition III (1),Betsy Longacre Terada,1,オンライン,Coming Soon…,T1Wed2
+32A12,20210771,大学数学入門 a,立井　博子,1,オンライン,Coming Soon…,T1Wed2
+32A13,20210772,自然言語処理,小町　守,1,オンライン,Coming Soon…,T1Wed2
+32A14,20210773,メディア処理とモデリング入門,中山　健,1,オンライン,Coming Soon…,T1Wed2
+32G01,20210774,Pronunciation I (数),荒木　和美,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G02,20210775,Pronunciation I (数),岩田　有美子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G03,20210776,Reading Skills II,奥野　晶子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G04,20210777,Reading Skills II,宇佐見　英美子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G05,20210778,Oral English II (国),Terry Keith Fieldsend,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G06,20210779,Oral English II (国),Geoffrey Pierce,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G07,20210780,Oral English II (国),Kathleen A. R. Era,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G08,20210781,Composition II,阿部　曜子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G09,20210782,Composition II,柳澤　波香,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G10,20210783,Composition II,熊野　真理,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G11,20210784,Listening II,Terence J. Cooney,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G12,20210785,Listening II,Joshua Brook Antle,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G13,20210786,CS Reading Skills II,山田　純子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G14,20210787,CS Reading Skills II,吉岡　里枝子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G15,20210788,フランス語 I (文法) A (英),中村　敦子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G16,20210789,フランス語 I (演習) g (国・多),村中　由美子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G17,20210790,中国語 I (文法) C (英),橋本　恭子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G18,20210791,中国語 I (演習) e (国・多),張　玉萍,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G19,20210792,スペイン語 I (文法) D (国・多),丹波　美佐子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G20,20210793,韓国・朝鮮語 II (演習) b (英),金　泰植,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G21,20210794,Literary Reading II,Matthew Michael Hanley,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G22,20210795,Literary Reading II,Chester J. Proshan,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G23,20210796,Academic Writing II,稲垣　善律,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G24,20210797,Academic Writing II,Jonathan D. Picken,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G25,20210798,Academic Writing II,小野　雅子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G26,20210799,３年セミナー,早川　敦子,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G27,20210800,３年セミナー,相木　裕史,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G28,20210801,３年セミナー,菅　靖子,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G29,20210802,３年セミナー,伊藤　航多,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G30,20210803,３年セミナー,池野　みさお / 大類　久恵,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G31,20210804,３年セミナー,宮井　勢都子 / 池野　みさお,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G32,20210805,３年セミナー,大類　久恵 / 宮井　勢都子,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G33,20210806,３年セミナー,郷路　拓也,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G34,20210807,３年セミナー,佐藤　陽介,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G35,20210808,３年セミナー,中西　雅之,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G36,20210809,３年セミナー,Alexandra Hambleton / 北村　文,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G36,20210810,３年セミナー,Alexandra Hambleton / 北村　文,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G37,20210811,３年セミナー,北村　文 / Alexandra Hambleton,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G37,20210812,３年セミナー,北村　文 / Alexandra Hambleton,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G38,20210813,４年セミナー,早川　敦子,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G39,20210814,４年セミナー,相木　裕史,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G40,20210815,４年セミナー,吉田　真理子,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G41,20210816,４年セミナー,星野　徳子,3,ハイブリッド,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G42,20210817,卒論指導,小野　創,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G43,20210818,English III (Practice),Alan George Milne,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G44,20210819,中国語 III (講読),山口　早苗,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32G45,20210820,中国語 III (演習),李　洵,3,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2
+32N01,20210821,キリスト教史(3),寺戸　淳子,1,オンライン(未確定),Coming Soon…,T3Wed2
+32N02,20210822,世界の文学(ドイツ)(3),関口　裕昭,1,オンライン(未確定),Coming Soon…,T3Wed2
+32N03,20210823,世界の文学(朝鮮)(3),高橋　梓,1,オンライン(未確定),Coming Soon…,T3Wed2
+32N04,20210824,国語表現(3),木村　真希子,1,オンライン(未確定),Coming Soon…,T3Wed2
+32N05,20210825,世界史概説(3),大塚　修,1,オンライン(未確定),Coming Soon…,T3Wed2
+32N06,20210826,世界史研究(3),大塚　修,1,オンライン(未確定),Coming Soon…,T3Wed2
+32N07,20210827,中国語 III (講読) (3),山口　早苗,1,オンライン(未確定),Coming Soon…,T3Wed2
+32N08,20210828,中国語 III (演習) (3),李　洵,1,オンライン(未確定),Coming Soon…,T3Wed2
+32N09,20210829,日本語指導 C (3),塩谷　由美子,1,オンライン(未確定),Coming Soon…,T3Wed2
+32N10,20210830,余暇教育(フィットネスと健康),辻元　早苗,0.5,オンライン(未確定),Coming Soon…,T3Wed2
+32N11,20210831,ウェルネス研究(人間関係論),森岡　さやか,1,オンライン(未確定),Coming Soon…,T3Wed2
+32N12,20210832,Composition III (3),Betsy Longacre Terada,1,オンライン(未確定),Coming Soon…,T3Wed2
+32N13,20210833,Media Literacy,John William Cheng,1,オンライン(未確定),Coming Soon…,T3Wed2
+32P01,20210834,多文化社会と言語教育,古川　敦子,2,オンライン(未確定),Coming Soon…,T3Wed2/T4Wed2
+32P02,20210835,道徳教育の理論と方法,伊東　毅,2,オンライン(未確定),Coming Soon…,T3Wed2/T4Wed2
+32P03,20210836,英語科指導とICT活用,久島　智津子,2,オンライン(未確定),Coming Soon…,T3Wed2/T4Wed2
+32P04,20210837,アルゴリズム入門,中山　健,2,オンライン(未確定),Coming Soon…,T3Wed2/T4Wed2
+32R01,20210838,キリスト教史(4),寺戸　淳子,1,オンライン(未確定),Coming Soon…,T4Wed2
+32R02,20210839,世界の文学(ドイツ)(4),関口　裕昭,1,オンライン(未確定),Coming Soon…,T4Wed2
+32R03,20210840,世界の文学(朝鮮)(4),高橋　梓,1,オンライン(未確定),Coming Soon…,T4Wed2
+32R04,20210841,国語表現(4),木村　真希子,1,オンライン(未確定),Coming Soon…,T4Wed2
+32R05,20210842,世界史概説(4),大塚　修,1,オンライン(未確定),Coming Soon…,T4Wed2
+32R06,20210843,世界史研究(4),大塚　修,1,オンライン(未確定),Coming Soon…,T4Wed2
+32R07,20210844,中国語 III (講読) (4),山口　早苗,1,オンライン(未確定),Coming Soon…,T4Wed2
+32R08,20210845,中国語 III (演習) (4),李　洵,1,オンライン(未確定),Coming Soon…,T4Wed2
+32R09,20210846,日本語指導 C (4),塩谷　由美子,1,オンライン(未確定),Coming Soon…,T4Wed2
+32R10,20210847,余暇教育(レク活動とグループワーク),辻元　早苗,0.5,オンライン(未確定),Coming Soon…,T4Wed2
+32R11,20210848,災害情報学入門,村山　優子,1,オンライン(未確定),Coming Soon…,T4Wed2
+33A01,20210849,国際関係概論(1),下谷内　奈緒,1,オンライン,Coming Soon…,T1Wed3
+33A02,20210850,ヒューマン・セクソロジー(1),木村　朗子,1,オンライン,Coming Soon…,T1Wed3
+33A03,20210851,スペイン語 IV (1),中井　博康,1,オンライン,Coming Soon…,T1Wed3
+33A04,20210852,交換留学生のための日本語 II (上級読解)(1),塩谷　由美子,1,オンライン,Coming Soon…,T1Wed3
+33A05,20210853,余暇教育(フィットネスと健康),シン　イェンリン,0.5,オンライン,Coming Soon…,T1Wed3
+33A06,20210854,Contemporary British Society and Culture a,Clara Kumagai,1,オンライン,Coming Soon…,T1Wed3
+33A07,20210855,国際社会学(1),木村　真希子,1,オンライン,Coming Soon…,T1Wed3
+33A08,20210856,東南アジア研究(島嶼部)(1),光成　歩,1,オンライン,Coming Soon…,T1Wed3
+33A09,20210857,政治思想史(1),葛西　弘隆,1,オンライン,Coming Soon…,T1Wed3
+33A10,20210858,１年セミナー,原　隆,1,ハイブリッド,Coming Soon…,T1Wed3
+33A11,20210859,１年セミナー,井上　歩,1,ハイブリッド,Coming Soon…,T1Wed3
+33A12,20210860,１年セミナー,菊池　弘明,1,ハイブリッド,Coming Soon…,T1Wed3
+33A13,20210861,１年セミナー,久野　雄介,1,ハイブリッド,Coming Soon…,T1Wed3
+33A14,20210862,１年セミナー,三上　敏夫,1,ハイブリッド,Coming Soon…,T1Wed3
+33A15,20210863,１年セミナー,中屋敷　厚,1,ハイブリッド,Coming Soon…,T1Wed3
+33A16,20210864,コンピュータリテラシー a,前田　留美,1,オンライン,Coming Soon…,T1Wed3
+33A17,20210865,国際関係史(1),吉岡　潤,1,オンライン,Coming Soon…,T1Wed3
+33A18,20210866,南アジア研究(1),三瀬　利之,1,オンライン,Coming Soon…,T1Wed3
+33A19,20210867,３年セミナー (1),八塚　春名,1,ハイブリッド,Coming Soon…,T1Wed3
+33A20,20210868,通訳入門 a,和田　一美,1,オンライン,Coming Soon…,T1Wed3
+33B01,20210869,情報数学特論 e,寺田　至,2,オンライン,Coming Soon…,T1Wed3/T2Wed3
+33C01,20210870,３年プロジェクト,青柳　龍也,2,ハイブリッド,Coming Soon…,T1Wed3/T3Wed3
+33C02,20210871,３年プロジェクト,来住　伸子,2,ハイブリッド,Coming Soon…,T1Wed3/T3Wed3
+33C03,20210872,３年プロジェクト,栗原　一貴,2,ハイブリッド,Coming Soon…,T1Wed3/T3Wed3
+33C04,20210873,３年プロジェクト,中野　美由紀,2,ハイブリッド,Coming Soon…,T1Wed3/T3Wed3
+33C05,20210874,３年プロジェクト,新田　善久,2,ハイブリッド,Coming Soon…,T1Wed3/T3Wed3
+33C06,20210875,３年プロジェクト,貞廣　泰造,2,ハイブリッド,Coming Soon…,T1Wed3/T3Wed3
+33C07,20210876,３年プロジェクト,杉村　大輔,2,ハイブリッド,Coming Soon…,T1Wed3/T3Wed3
+33C08,20210877,教育メディア b,稲葉　利江子,2,オンライン,Coming Soon…,T1Wed3/T3Wed3
+33G01,20210878,フランス語 I (文法) B (英),村中　由美子,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G02,20210879,フランス語 II (演習) d (国・多),市川　裕史,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G03,20210880,フランス語 II (演習) f (国・多),中村　敦子,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G04,20210881,中国語 I (演習) a (英),張　玉萍,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G05,20210882,中国語 II (講読) D (英),橋本　恭子,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G06,20210883,中国語 II (講読) E (国・多),関　智英,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G07,20210884,中国語 II (講読) G (国・多),山口　早苗,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G08,20210885,中国語 II (演習) f (国・多),李　洵,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G09,20210886,ロシア語 II (演習),南平　かおり,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G10,20210887,スペイン語 II (講読) B (英),丹波　美佐子,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G11,20210888,スペイン語 II (演習) a (英),Salome Gonzalez Portela / 未定,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G12,20210889,スペイン語 II (演習) f (国・多),Prieto Munoz Beatriz,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G13,20210890,日本語 II (上級読解),塩谷　由美子,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G14,20210891,Academic Writing & Presentation III,Chester J. Proshan,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G15,20210892,３年セミナー,Sookyeong Hong,3,ハイブリッド,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G16,20210893,言語教育方法論 A,小西　正恵,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G17,20210894,MI４年セミナー,丸山　淳子,3,ハイブリッド,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G18,20210895,英語科指導法 I,小西　正恵,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33G20,20210896,スペイン語 IV,中井　博康,3,オンライン,Coming Soon…,T1Wed3/T3Wed3/T4Wed3
+33N01,20210897,国際関係概論(3),網谷　龍介,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N02,20210898,ヒューマン・セクソロジー(3),木村　朗子,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N03,20210899,スペイン語 IV (3),中井　博康,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N04,20210900,交換留学生のための日本語 II (上級読解)(3),塩谷　由美子,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N05,20210901,余暇教育(フィットネスと健康),シン　イェンリン,0.5,オンライン(未確定),Coming Soon…,T3Wed3
+33N06,20210902,国際社会学(3),木村　真希子,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N07,20210903,東南アジア研究(島嶼部)(3),光成　歩,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N08,20210904,情報社会論(3),柴田　邦臣,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N09,20210905,政治思想史(3),葛西　弘隆,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N10,20210906,確率統計入門(3),三上　敏夫,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N11,20210907,コンピュータリテラシー b,前田　留美,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N12,20210908,数式図形画像処理入門,井上　歩,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N13,20210909,国際関係史(3),吉岡　潤,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N14,20210910,南アジア研究(3),三瀬　利之,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N15,20210911,３年セミナー (3),八塚　春名,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N16,20210912,地域研究入門(3),三澤　健宏,1,オンライン(未確定),Coming Soon…,T3Wed3
+33N17,20210913,通訳入門 b,和田　一美,1,オンライン(未確定),Coming Soon…,T3Wed3
+33R01,20210914,国際関係概論(4),網谷　龍介・井上　則子・葛西　弘隆・松嵜　英也・南　諭子・森　悠子・下谷内　奈緒・武田　万里子,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R02,20210915,ヒューマン・セクソロジー(4),木村　朗子,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R03,20210916,スペイン語 IV (4),中井　博康,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R04,20210917,交換留学生のための日本語 II (上級読解)(4),塩谷　由美子,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R05,20210918,余暇教育(フィットネスと健康),シン　イェンリン,0.5,オンライン(未確定),Coming Soon…,T4Wed3
+33R06,20210919,国際社会学(4),木村　真希子,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R07,20210920,東南アジア研究(島嶼部)(4),光成　歩,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R08,20210921,政治思想史(4),葛西　弘隆,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R09,20210922,確率統計入門(4),三上　敏夫,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R10,20210923,３年セミナー,青柳　龍也,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R11,20210924,３年セミナー,稲葉　利江子,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R12,20210925,３年セミナー,来住　伸子,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R13,20210926,３年セミナー,栗原　一貴,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R14,20210927,３年セミナー,中野　美由紀,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R15,20210928,３年セミナー,新田　善久,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R16,20210929,３年セミナー,貞廣　泰造,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R17,20210930,３年セミナー,杉村　大輔,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R18,20210931,ネットワーク概論,村山　優子,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R19,20210932,国際関係史(4),吉岡　潤,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R20,20210933,南アジア研究(4),三瀬　利之,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R21,20210934,３年セミナー (4),八塚　春名,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R22,20210935,地域研究入門(4),川端　浩平・木村　真希子・木村　朗子・丸山　淳子・松山　章子・三澤　健宏・八塚　春名,1,オンライン(未確定),Coming Soon…,T4Wed3
+33R23,20210936,通訳入門 c,和田　一美,1,オンライン(未確定),Coming Soon…,T4Wed3
+34A01,20210937,情報処理I a,前田　留美,1,オンライン,Coming Soon…,T1Wed4
+34A02,20210938,ロシア語 IV (1),南平　かおり,1,オンライン,Coming Soon…,T1Wed4
+34A03,20210939,スペイン語 III (演習) (1),Prieto Munoz Beatriz,1,オンライン,Coming Soon…,T1Wed4
+34A04,20210940,日本語指導 Ab (1),西部　由佳,1,オンライン,Coming Soon…,T1Wed4
+34A05,20210941,余暇教育(フィットネスと健康),シン　イェンリン,0.5,オンライン,Coming Soon…,T1Wed4
+34A06,20210942,言語政策,斎藤　敬太,1,オンライン,Coming Soon…,T1Wed4
+34A07,20210943,多文化社会とフィールドワーク(1),寺本　めぐ美,1,オンライン,Coming Soon…,T1Wed4
+34A08,20210944,プログラミング基礎講座 a,大塚　亜未,1,オンライン,Coming Soon…,T1Wed4
+34G01,20210945,物質と生命現象,岩崎　容子,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G02,20210946,Composition I (数),小西　正恵,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G03,20210947,Composition I (数),荒木　和美,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G04,20210948,Composition I (数),井原　浩子,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G05,20210949,フランス語 I (演習) c (英),野村　訓子,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G06,20210950,フランス語 I (演習) d (国・多),中村　敦子,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G07,20210951,中国語 I (文法) F (国・多),橋本　恭子,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G08,20210952,中国語 I (演習) d (英),李　洵,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G09,20210953,中国語 I (演習) h (国・多),張　玉萍,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G10,20210954,中国語 II (講読) H (国・多),山口　早苗,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G11,20210955,スペイン語 II (演習) g (国・多),Salome Gonzalez Portela / 未定,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G12,20210956,韓国・朝鮮語 II (講読) D (国・多),金　愛慶,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G13,20210957,Bible Studies,Matthew Michael Hanley,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G14,20210958,ロシア語 IV,南平　かおり,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34G15,20210959,スペイン語 III (演習),Prieto Munoz Beatriz,3,オンライン,Coming Soon…,T1Wed4/T3Wed4/T4Wed4
+34N01,20210960,情報処理I a,前田　留美,1,オンライン(未確定),Coming Soon…,T3Wed4
+34N02,20210961,女性とメンタルヘルス,藤井　光恵,1,オンライン(未確定),Coming Soon…,T3Wed4
+34N03,20210962,ロシア語 IV (3),南平　かおり,1,オンライン(未確定),Coming Soon…,T3Wed4
+34N04,20210963,スペイン語 III (演習) (3),Prieto Munoz Beatriz,1,オンライン(未確定),Coming Soon…,T3Wed4
+34N05,20210964,日本語指導 Ab (3),西部　由佳,1,オンライン(未確定),Coming Soon…,T3Wed4
+34N06,20210965,余暇教育(フィットネスと健康),シン　イェンリン,0.5,オンライン(未確定),Coming Soon…,T3Wed4
+34N07,20210966,知的財産概論,菅野　政孝,1,オンライン(未確定),Coming Soon…,T3Wed4
+34N08,20210967,ネット時代の広告とマーケティング論,小野　晃典,1,オンライン(未確定),Coming Soon…,T3Wed4
+34N09,20210968,多文化社会とフィールドワーク(3),寺本　めぐ美,1,オンライン(未確定),Coming Soon…,T3Wed4
+34N10,20210969,教育実習指導,高垣　マユミ・牛島　順子・渡邊　あや,1,オンライン(未確定),Coming Soon…,T3Wed4
+34P01,20210970,数学特論 XF,吉川　祥,2,オンライン(未確定),Coming Soon…,T3Wed4/T4Wed4
+34R01,20210971,情報処理I b,前田　留美,1,オンライン(未確定),Coming Soon…,T4Wed4
+34R02,20210972,ロシア語 IV (4),南平　かおり,1,オンライン(未確定),Coming Soon…,T4Wed4
+34R03,20210973,スペイン語 III (演習) (4),Prieto Munoz Beatriz,1,オンライン(未確定),Coming Soon…,T4Wed4
+34R04,20210974,日本語指導 Ab (4),西部　由佳,1,オンライン(未確定),Coming Soon…,T4Wed4
+34R05,20210975,余暇教育(フィットネスと健康),シン　イェンリン,0.5,オンライン(未確定),Coming Soon…,T4Wed4
+34R06,20210976,マルチリンガリズム,斎藤　敬太,1,オンライン(未確定),Coming Soon…,T4Wed4
+34R07,20210977,コンテンツビジネス論,小野　晃典,1,オンライン(未確定),Coming Soon…,T4Wed4
+34R08,20210978,多文化社会とフィールドワーク(4),寺本　めぐ美,1,オンライン(未確定),Coming Soon…,T4Wed4
+41A01,20210979,Extensive Reading I (国・多),安澤　梨花,1,オンライン,Coming Soon…,T1Thu1
+41A02,20210980,Intensive Reading I a (国・多),岩田　有美子,1,オンライン,Coming Soon…,T1Thu1
+41A03,20210981,Intensive Reading I a (国・多),上神　弥生,1,オンライン,Coming Soon…,T1Thu1
+41A04,20210982,韓国・朝鮮語 IV (1),金　愛慶,1,オンライン,Coming Soon…,T1Thu1
+41A05,20210983,動きの教育,針ヶ谷　雅子,1,オンライン,Coming Soon…,T1Thu1
+41A06,20210984,English III (Lecture)(1),Chris Burgess,1,オンライン,Coming Soon…,T1Thu1
+41A07,20210985,オーストラリア研究(1),Chris Burgess,1,オンライン,Coming Soon…,T1Thu1
+41A08,20210986,日本研究(沖縄研究)(1),水谷　明子,1,オンライン,Coming Soon…,T1Thu1
+41A09,20210987,国際協力論(1),八塚　春名,1,オンライン,Coming Soon…,T1Thu1
+41A10,20210988,情報社会論(1),大野　はな恵,1,オンライン,Coming Soon…,T1Thu1
+41A11,20210989,人文地理学(1),星川　真樹,1,オンライン,Coming Soon…,T1Thu1
+41A12,20210990,自然地理学(1),仁科　淳司,1,オンライン,Coming Soon…,T1Thu1
+41A13,20210991,暗号理論,岸本　渡,1,オンライン,Coming Soon…,T1Thu1
+41A14,20210992,情報科学英語 a,Joseph D. Harvath,1,オンライン,Coming Soon…,T1Thu1
+41A15,20210993,教育相談の理論と方法,前田　基成,2,オンライン,Coming Soon…,T1Thu1/T1Thu2
+41A16,20210994,先住民論,木村　真希子,1,オンライン,Coming Soon…,T1Thu1
+41A19,20210995,交換留学生のための日本語 I (読解・作文)(1),八木　公子,1,オンライン,Coming Soon…,T1Thu1
+41G01,20210996,Reading Skills I (数),梁瀬　千起,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G02,20210997,Reading Skills I (数),佐藤　亜希子,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G03,20210998,Oral English I (国・多),Steven P. Engler,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G04,20210999,Oral English I (国・多),Bernard Francis Wilson,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G05,20211000,Oral English I (国・多),Charles D. Hubenthal,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G06,20211001,Oral English I (国・多),Carolyn Morikawa,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G07,20211002,Composition I (国・多),川島　るり子,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G08,20211003,Composition I (国・多),古谷　孝子,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G09,20211004,Composition I (国・多),白土　厚子,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G10,20211005,Pronunciation I (国・多),稲垣　善律 / 佐賀　裕実,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G11,20211006,Pronunciation I (国・多),奥野　晶子,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G12,20211007,Pronunciation I (国・多),熊野　真理,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G13,20211008,CS Speaking and Listening II,Virginia A. Jenkins,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G14,20211009,CS Speaking and Listening II,Terry Keith Fieldsend,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G15,20211010,CS Speaking and Listening II,Betsy Longacre Terada,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G16,20211011,フランス語 II (講読) E (国・多),安川　孝,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G17,20211012,スペイン語 II (演習) e (国・多),Ines Planas Navarro,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G18,20211013,韓国・朝鮮語 II (演習) e (国・多),丁　元泰,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G19,20211014,英語学概論,小野　創,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G20,20211015,音声学,山内　智恵子,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G21,20211016,３年セミナー,辻上　奈美江 / 徳永　佳晃,3,ハイブリッド,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G22,20211017,言語教育方法論 A,奥脇　奈津美,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G23,20211018,英語科指導法 I,奥脇　奈津美,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G24,20211019,数学科指導法 I,武沢　護,3,ハイブリッド,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G25,20211020,コンピュータシミュレーション,平田　大介,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G26,20211021,韓国・朝鮮語 IV,金　愛慶,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41G27,20211022,日本語 I (読解・作文),八木　公子,3,オンライン,Coming Soon…,T1Thu1/T3Thu1/T4Thu1
+41N01,20211023,Extensive Reading I (国・多),上神　弥生,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N02,20211024,Extensive Reading I (国・多),安澤　梨花,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N03,20211025,Intensive Reading I a (国・多),岩田　有美子,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N04,20211026,韓国・朝鮮語 IV (3),金　愛慶,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N05,20211027,英語英文学科での学び,阿部　曜子・Joshua Brook Antle・Elizabeth I. Dow・古川　敦子・Alexandra Hambleton・早川　敦子・星野　徳子・井川　壽子・池野　みさお・大類　久恵・吉田　真理子,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N06,20211028,English III (Lecture)(3),Chris Burgess,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N07,20211029,オーストラリア研究(3),Chris Burgess,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N08,20211030,日本研究(沖縄研究)(3),水谷　明子,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N09,20211031,国際協力論(3),八塚　春名,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N10,20211032,人文地理学(3),星川　真樹,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N11,20211033,自然地理学(3),仁科　淳司,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N12,20211034,情報科学英語 b,Joseph D. Harvath,1,オンライン(未確定),Coming Soon…,T3Thu1
+41N17,20211035,交換留学生のための日本語 I (読解・作文)(3),八木　公子,1,オンライン(未確定),Coming Soon…,T3Thu1
+41P01,20211036,教育相談の理論と方法,前田　基成,2,オンライン(未確定),Coming Soon…,T3Thu1/T4Thu1
+41R01,20211037,Intensive Reading I b (国・多),上神　弥生,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R02,20211038,Intensive Reading I b (国・多),岩田　有美子,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R03,20211039,Intensive Reading I b (国・多),安澤　梨花,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R04,20211040,韓国・朝鮮語 IV (4),金　愛慶,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R05,20211041,動きの教育,針ヶ谷　雅子,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R06,20211042,English III (Lecture)(4),Chris Burgess,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R07,20211043,オーストラリア研究(4),Chris Burgess,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R08,20211044,日本研究(沖縄研究)(4),水谷　明子,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R09,20211045,国際協力論(4),八塚　春名,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R10,20211046,人文地理学(4),星川　真樹,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R11,20211047,自然地理学(4),仁科　淳司,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R12,20211048,情報科学英語 c,Joseph D. Harvath,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R13,20211049,イギリス研究特殊講義 b,雲島　知恵,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R14,20211050,市民社会と健康,松崎　良美,1,オンライン(未確定),Coming Soon…,T4Thu1
+41R15,20211051,交換留学生のための日本語 I (読解・作文)(4),八木　公子,1,オンライン(未確定),Coming Soon…,T4Thu1
+42A01,20211052,文化人類学 (1),丸山　淳子,1,オンライン,Coming Soon…,T1Thu2
+42A02,20211053,Extensive Reading I (英),川島　るり子,1,オンライン,Coming Soon…,T1Thu2
+42A03,20211054,Intensive Reading I a (英),奥野　晶子,1,オンライン,Coming Soon…,T1Thu2
+42A04,20211055,Intensive Reading I a (英),高橋　百合子,1,オンライン,Coming Soon…,T1Thu2
+42A05,20211056,中国語 III (演習) (1),呉　志剛,1,オンライン,Coming Soon…,T1Thu2
+42A06,20211057,韓国・朝鮮語 III (講読) (1),丁　元泰,1,オンライン,Coming Soon…,T1Thu2
+42A08,20211058,余暇教育(レク活動とグループワーク),針ヶ谷　雅子,0.5,ハイブリッド,Coming Soon…,T1Thu2
+42A09,20211059,ウェルネス研究(女性の健康とキャリア),大庭　さよ,1,オンライン,Coming Soon…,T1Thu2
+42A10,20211060,地域研究序説(1),多賀　吉隆,1,オンライン,Coming Soon…,T1Thu2
+42A11,20211061,国際政治論(1),朴　正鎮,1,オンライン,Coming Soon…,T1Thu2
+42A12,20211062,国際金融論(1),澤木　久之,1,オンライン,Coming Soon…,T1Thu2
+42A13,20211063,アメリカ政治(1),西川　賢,1,オンライン,Coming Soon…,T1Thu2
+42A14,20211064,地誌(1),星川　真樹,1,オンライン,Coming Soon…,T1Thu2
+42A15,20211065,ビジネスコミュニケーション,稲葉　利江子,1,オンライン,Coming Soon…,T1Thu2
+42A16,20211066,数理モデル(演習付),貞廣　泰造,2,オンライン,Coming Soon…,T1Thu2/T1Thu3
+42A17,20211067,社会調査法入門(1),松崎　良美,1,オンライン,Coming Soon…,T1Thu2
+42A18,20211068,国際日本文化論(1),Sookyeong Hong,1,オンライン,Coming Soon…,T1Thu2
+42G01,20211069,Oral English I (英),Virginia A. Jenkins,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G02,20211070,Oral English I (英),John William Cheng,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G03,20211071,Oral English I (英),Carolyn Morikawa,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G04,20211072,Composition I (英),上神　弥生,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G05,20211073,Composition I (英),中根　友里恵,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G06,20211074,Composition I (英),佐藤　陽介,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G07,20211075,Composition I (情),梁瀬　千起,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G08,20211076,Composition I (情),佐藤　亜希子,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G09,20211077,Composition I (情),山内　智恵子,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G10,20211078,Pronunciation I (英),岩田　有美子,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G11,20211079,Pronunciation I (英),佐賀　裕実,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G12,20211080,MI Oral English II,Steven P. Engler,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G13,20211081,MI Oral English II,Charles D. Hubenthal,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G14,20211082,MI Oral English II,Betsy Longacre Terada,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G15,20211083,MI Oral English II,Bernard Francis Wilson,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G16,20211084,フランス語 II (演習) c (英),安川　孝,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G17,20211085,中国語 II (講読) F (国・多),橋本　幸枝,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G18,20211086,韓国・朝鮮語 II (講読) C (英),金　愛慶,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G20,20211087,Literary Reading II,村越　麻子,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G21,20211088,Academic Listening II,Jonathan D. Picken,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G22,20211089,Grammar II (英),古谷　孝子,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G23,20211090,４年セミナー,米須　初美,3,ハイブリッド,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G24,20211091,４年セミナー,中西　雅之,3,ハイブリッド,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G25,20211092,音声学,小川　直樹,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G26,20211093,日本語教授法演習,古川　敦子,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G27,20211094,３年セミナー,武田　万里子,3,ハイブリッド,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G28,20211095,４年セミナー,新本　史斉,3,ハイブリッド,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G29,20211096,４年セミナー,辻上　奈美江 / 徳永　佳晃,3,ハイブリッド,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G30,20211097,４年セミナー / プロジェクト,新田　善久,5,ハイブリッド,Coming Soon…,T1Thu2/T3Thu2/T3Tue5/T4Thu2/T4Tue5
+42G31,20211098,英語科指導法 II,熊野　真理,3,ハイブリッド,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G32,20211099,解析学基礎 I (演習付),礒田　恵以子・菊池　弘明,6,ハイブリッド,Coming Soon…,T1Tue3/T3Tue3/T4Tue3/T1Thu2/T3Thu2/T4Thu2
+42G33,20211100,１年基礎セミナー,川端　浩平,3,ハイブリッド,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G34,20211101,１年基礎セミナー,木村　朗子,3,ハイブリッド,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G35,20211102,１年基礎セミナー,八塚　春名,3,ハイブリッド,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G36,20211103,中国語 III (演習),呉　志剛,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42G37,20211104,韓国・朝鮮語 III (講読),丁　元泰,3,オンライン,Coming Soon…,T1Thu2/T3Thu2/T4Thu2
+42N01,20211105,文化人類学 (3),丸山　淳子,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N02,20211106,Extensive Reading I (英),川島　るり子,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N03,20211107,Extensive Reading I (英),奥野　晶子,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N04,20211108,Intensive Reading I a (英),高橋　百合子,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N05,20211109,中国語 III (演習) (3),呉　志剛,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N06,20211110,韓国・朝鮮語 III (講読) (3),丁　元泰,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N08,20211111,地域研究序説(3),Chris Burgess・市川　裕史・小島　敬裕・光成　歩・中井　博康・岡本　真希子・多賀　吉隆・吉岡　潤,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N09,20211112,国際政治論(3),朴　正鎮,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N10,20211113,国際金融論(3),澤木　久之,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N11,20211114,アメリカ政治(3),西川　賢,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N12,20211115,地誌(3),星川　真樹,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N13,20211116,デジタルメディア概論,杉村　大輔,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N14,20211117,社会調査法入門(3),松崎　良美,1,オンライン(未確定),Coming Soon…,T3Thu2
+42N15,20211118,国際日本文化論(3),Sookyeong Hong,1,オンライン(未確定),Coming Soon…,T3Thu2
+42P01,20211119,数学特論 XB,津田　照久,2,オンライン(未確定),Coming Soon…,T3Thu2/T4Thu2
+42R01,20211120,文化人類学 (4),丸山　淳子,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R02,20211121,Intensive Reading I b (英),川島　るり子,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R03,20211122,Intensive Reading I b (英),奥野　晶子,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R04,20211123,Intensive Reading I b (英),高橋　百合子,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R05,20211124,中国語 III (演習) (4),呉　志剛,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R06,20211125,韓国・朝鮮語 III (講読) (4),丁　元泰,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R08,20211126,余暇教育(レク活動とグループワーク),針ヶ谷　雅子,0.5,オンライン(未確定),Coming Soon…,T4Thu2
+42R09,20211127,ウェルネス研究(女性の健康とキャリア),大庭　さよ,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R10,20211128,文化研究序説,市川　裕史,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R11,20211129,国際政治論(4),朴　正鎮,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R12,20211130,国際金融論(4),澤木　久之,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R13,20211131,アメリカ政治(4),西川　賢,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R14,20211132,ヨーロッパ政治(4),池田　和希,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R15,20211133,地誌(4),星川　真樹,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R16,20211134,Webテクノロジー b,来住　伸子,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R17,20211135,社会調査法入門(4),松崎　良美,1,オンライン(未確定),Coming Soon…,T4Thu2
+42R18,20211136,国際日本文化論(4),Sookyeong Hong,1,オンライン(未確定),Coming Soon…,T4Thu2
+43A01,20211137,ロシア語 III (演習) (1),松嵜　英也,1,オンライン,Coming Soon…,T1Thu3
+43A02,20211138,余暇教育(スポーツと身体スキル),井上　則子,0.5,ハイブリッド,Coming Soon…,T1Thu3
+43A03,20211139,アメリカ社会(1),西川　賢,1,オンライン,Coming Soon…,T1Thu3
+43A04,20211140,ヨーロッパ文化(スペイン)(1),中井　博康,1,オンライン,Coming Soon…,T1Thu3
+43A05,20211141,日本研究(Japanese Society)(1),Chris Burgess,1,オンライン,Coming Soon…,T1Thu3
+43A06,20211142,イスラーム概論,徳永　佳晃,1,オンライン,Coming Soon…,T1Thu3
+43A07,20211143,移民研究,増田　直子,1,オンライン,Coming Soon…,T1Thu3
+43A08,20211144,イギリス文学特殊講義(演劇),森　祐希子,1,オンライン,Coming Soon…,T1Thu3
+43A09,20211145,３年セミナー (1),木村　朗子,1,ハイブリッド,Coming Soon…,T1Thu3
+43A10,20211146,多文化・国際協力の学び(1),木村　真希子,1,オンライン,Coming Soon…,T1Thu3
+43A11,20211147,マイノリティ論,川端　浩平,1,オンライン,Coming Soon…,T1Thu3
+43A12,20211148,開発と文化,丸山　淳子,1,オンライン,Coming Soon…,T1Thu3
+43B01,20211149,ルベーグ積分(演習付),三上　敏夫,4,オンライン,Coming Soon…,T1Thu3/T2Thu3/T1Thu4/T2Thu4
+43C01,20211150,２年プロジェクト,中野　美由紀・新田　善久 / 栗原　一貴・永井　敦,2,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3
+43C02,20211151,２年プロジェクト,栗原　一貴・新田　善久 / 永井　敦・中野　美由紀,2,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3
+43C03,20211152,２年プロジェクト,栗原　一貴・永井　敦 / 中野　美由紀・新田　善久,2,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3
+43C04,20211153,２年プロジェクト,永井　敦・中野　美由紀 / 栗原　一貴・新田　善久,2,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3
+43G01,20211154,総合,稲葉　利江子・水谷　明子・小野　創,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G02,20211155,Intensive Listening I,Bernard Francis Wilson,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G03,20211156,中国語 I (文法) H (国・多),橋本　幸枝,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G04,20211157,中国語 II (演習) b (英),呉　志剛,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G05,20211158,中国語 II (演習) d (英),姚　毅,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G06,20211159,中国語 II (演習) h (国・多),殷　晴,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G07,20211160,スペイン語 I (演習) b (英),浦　眞佐子,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G08,20211161,スペイン語 II (講読) D (国・多),二宮　哲,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G09,20211162,韓国・朝鮮語 I (文法) A (英),金　愛慶,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G10,20211163,韓国・朝鮮語 I (文法) E (国・多),丁　元泰,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G11,20211164,Literary Reading I,村越　麻子,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G12,20211165,Literary Reading I,高橋　百合子,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G13,20211166,Literary Reading I,Iain B.M. Lambert,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G14,20211167,Literary Reading II,上神　弥生 / 森　祐希子,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G15,20211168,Literary Reading II,Lillian R. Swain,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G16,20211169,Literary Reading II,佐賀　裕実,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G17,20211170,Academic Listening II,Christopher Piper,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G18,20211171,Grammar II (英),佐藤　陽介,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G19,20211172,Academic Writing & Presentation III,Paul Maxwell Shackleford,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G20,20211173,Academic Writing & Presentation III,Anthony Tobin,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G21,20211174,４年セミナー,John William Cheng,3,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G22,20211175,卒論指導,稲垣　善律,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G23,20211176,社会言語学,岩田　祐子,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G24,20211177,言語とコミュニケーション,小谷　真理子 / Soo-Hye Han,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G25,20211178,日本語教授法,八木　公子,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G26,20211179,通訳の理論と実践,中西　雅之,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G27,20211180,３年セミナー,新本　史斉,3,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G28,20211181,３年セミナー,朴　正鎮,3,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G29,20211182,４年セミナー,武田　万里子,3,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G30,20211183,４年セミナー,岡本　真希子,3,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G31,20211184,言語教育方法論 B,八木　公子,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G32,20211185,４年セミナー,原　隆,6,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3/T4Thu3/T1Thu4/T3Thu4/T4Thu4
+43G33,20211186,４年セミナー,菊池　弘明,6,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3/T4Thu3/T1Thu4/T3Thu4/T4Thu4
+43G34,20211187,４年セミナー,久野　雄介,6,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3/T4Thu3/T1Thu4/T3Thu4/T4Thu4
+43G35,20211188,４年セミナー / プロジェクト,来住　伸子,5,ハイブリッド,Coming Soon…,T1Thu3/T3Tue2/T3Thu3/T4Tue2/T4Thu3
+43G36,20211189,英語科指導法 II,熊野　真理,3,ハイブリッド,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G37,20211190,線形代数学 II (演習付),小西　由紀子・植田　美佳,6,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3/T1Fri4/T3Fri4/T4Fri4
+43G38,20211191,フランス語 IV (1)(3)(4),市川　裕史,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43G39,20211192,ロシア語 III (演習),松嵜　英也,3,オンライン,Coming Soon…,T1Thu3/T3Thu3/T4Thu3
+43N01,20211193,ロシア語 III (演習) (3),松嵜　英也,1,オンライン(未確定),Coming Soon…,T3Thu3
+43N02,20211194,余暇教育(スポーツと身体スキル),井上　則子,0.5,オンライン(未確定),Coming Soon…,T3Thu3
+43N03,20211195,アメリカ社会(3),西川　賢,1,オンライン(未確定),Coming Soon…,T3Thu3
+43N04,20211196,ヨーロッパ文化(スペイン)(3),中井　博康,1,オンライン(未確定),Coming Soon…,T3Thu3
+43N05,20211197,日本研究(Japanese Society)(3),Chris Burgess,1,オンライン(未確定),Coming Soon…,T3Thu3
+43N06,20211198,イスラーム地域研究入門,徳永　佳晃,1,オンライン(未確定),Coming Soon…,T3Thu3
+43N07,20211199,ヨーロッパ社会(民族と言語)(3),多賀　吉隆,1,オンライン(未確定),Coming Soon…,T3Thu3
+43N08,20211200,３年セミナー (3),木村　朗子,1,オンライン(未確定),Coming Soon…,T3Thu3
+43N09,20211201,多文化・国際協力の学び(3),川端　浩平・木村　真希子・木村　朗子・丸山　淳子・松山　章子・三澤　健宏・八塚　春名,1,オンライン(未確定),Coming Soon…,T3Thu3
+43P01,20211202,測度論的確率論(演習付),三上　敏夫,4,オンライン(未確定),Coming Soon…,T3Thu3/T4Thu3/T3Thu4/T4Thu4
+43R01,20211203,ロシア語 III (演習) (4),松嵜　英也,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R02,20211204,健康教育,井上　則子,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R03,20211205,アメリカ社会(4),西川　賢,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R04,20211206,ヨーロッパ文化(スペイン)(4),中井　博康,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R05,20211207,日本研究(Japanese Society)(4),Chris Burgess,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R06,20211208,イスラーム地域研究特論,徳永　佳晃,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R07,20211209,２年セミナー,青柳　龍也,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R08,20211210,２年セミナー,中野　美由紀,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R09,20211211,２年セミナー,貞廣　泰造,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R10,20211212,２年セミナー,杉村　大輔,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R11,20211213,国際移動論,木村　真希子,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R12,20211214,ヨーロッパ社会(民族と言語)(4),野村　佳世,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R13,20211215,３年セミナー (4),木村　朗子,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R14,20211216,多文化・国際協力の学び(4),丸山　淳子,1,オンライン(未確定),Coming Soon…,T4Thu3
+43R15,20211217,グローバリゼーションと文化,川端　浩平,1,オンライン(未確定),Coming Soon…,T4Thu3
+44A01,20211218,世界の文学(東欧)(1),久山　宏一,1,オンライン,Coming Soon…,T1Thu4
+44A02,20211219,日本史概説(1),岡本　真希子,1,オンライン,Coming Soon…,T1Thu4
+44A03,20211220,日本史概論(1),岡本　真希子,1,オンライン,Coming Soon…,T1Thu4
+44A04,20211221,ドイツ語 III (講読) (1),新本　史斉,1,オンライン,Coming Soon…,T1Thu4
+44A05,20211222,中国語 III (演習) (1),殷　晴,1,オンライン,Coming Soon…,T1Thu4
+44A06,20211223,中国語 IV (1),姚　毅,1,オンライン,Coming Soon…,T1Thu4
+44A07,20211224,スペイン語 III (講読) (1),二宮　哲,1,オンライン,Coming Soon…,T1Thu4
+44A08,20211225,交換留学生のための日本語 I (聴解・会話)(1),志村　ゆかり,1,オンライン,Coming Soon…,T1Thu4
+44A09,20211226,ウェルネス研究(スポーツ心理学),井上　則子,1,オンライン,Coming Soon…,T1Thu4
+44A10,20211227,イギリス文化史 a,菅　靖子,1,オンライン,Coming Soon…,T1Thu4
+44A11,20211228,Journalistic English,Bernard Francis Wilson,1,オンライン,Coming Soon…,T1Thu4
+44A12,20211229,ヨーロッパ文化(イギリス)(1),菅　靖子,1,オンライン,Coming Soon…,T1Thu4
+44A13,20211230,プログラミング II (演習付)(1),杉村　大輔・大沼　亮,2,ハイブリッド,Coming Soon…,T1Thu4/T1Thu5
+44A14,20211231,文化とジェンダー(1),木村　朗子,1,オンライン,Coming Soon…,T1Thu4
+44B01,20211232,情報科学特論 b,栗原　一貴,2,ハイブリッド,Coming Soon…,T1Thu4/T2Thu4
+44G01,20211233,異文化理解とコミュニケーション,John William Cheng,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G02,20211234,平和研究,川上　泰徳,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G03,20211235,Intensive Listening I,Christopher Piper,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G04,20211236,Oral English II (国),Paul Maxwell Shackleford,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G05,20211237,Oral English II (国),Iain B.M. Lambert / Soo-Hye Han,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G06,20211238,Oral English II (国),Lola Gayle Moriguchi,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G07,20211239,Composition II,岩田　祐子,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G08,20211240,Composition II,増田　直子,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G09,20211241,Composition II,安澤　梨花,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G10,20211242,Listening II,Virginia A. Jenkins,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G11,20211243,Listening II,Kenneth Biegel,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G12,20211244,ドイツ語 I (演習) b (国・多）,若林　恵,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G13,20211245,中国語 I (文法) B (英),橋本　幸枝,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G14,20211246,中国語 I (演習) g (国・多),呉　志剛,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G15,20211247,ロシア語 I (演習),松嵜　英也,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G16,20211248,スペイン語 I (文法) E (国・多),高畠　理恵,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G17,20211249,スペイン語 I (演習) f (国・多),浦　眞佐子,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G18,20211250,韓国・朝鮮語 I (文法) D (国・多),金　愛慶,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G19,20211251,韓国・朝鮮語 II (講読) A (英),丁　元泰,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G20,20211252,日本語 I (聴解・会話),志村　ゆかり / 古川　敦子,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G21,20211253,基礎セミナー,米須　初美,3,ハイブリッド,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G22,20211254,Literary Reading II,村越　麻子,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G23,20211255,Academic Writing II,Keith Ford,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G24,20211256,Academic Writing II,高橋　百合子,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G25,20211257,Academic Writing II,椿　清文,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G26,20211258,Academic Listening II,Anthony Tobin,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G27,20211259,Academic Writing & Presentation III,Lillian R. Swain,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G28,20211260,アメリカ文学特殊講義,須藤　彩子,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G29,20211261,３年セミナー,中井　博康,3,ハイブリッド,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G30,20211262,４年セミナー / プロジェクト,永井　敦,5,ハイブリッド,Coming Soon…,T1Thu4/T3Thu4/T3Thu5/T4Thu4/T4Thu5
+44G31,20211263,イギリス文学概論(詩・演劇・小説),森　祐希子 / 阿部　曜子 / 原田　範行,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G32,20211264,ドイツ語 III (講読),新本　史斉,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G33,20211265,中国語 III (演習),殷　晴,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G34,20211266,中国語 IV,姚　毅,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44G35,20211267,スペイン語 III (講読),二宮　哲,3,オンライン,Coming Soon…,T1Thu4/T3Thu4/T4Thu4
+44N01,20211268,世界の文学(東欧)(3),久山　宏一,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N02,20211269,日本史概説(3),岡本　真希子,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N03,20211270,日本史概論(3),岡本　真希子,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N04,20211271,ドイツ語 III (講読) (3),新本　史斉,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N05,20211272,中国語 III (演習) (3),殷　晴,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N06,20211273,中国語 IV (3),姚　毅,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N07,20211274,スペイン語 III (講読) (3),二宮　哲,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N08,20211275,交換留学生のための日本語 I (聴解・会話)(3),古川　敦子,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N09,20211276,イギリス社会史 b,菅　靖子,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N10,20211277,Film Reviewing,Bernard Francis Wilson,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N11,20211278,ヨーロッパ社会(イギリス史)(3),菅　靖子,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N12,20211279,プログラミング II (演習付)(3),杉村　大輔・大沼　亮,2,オンライン(未確定),Coming Soon…,T3Thu4/T3Thu5
+44N13,20211280,データサイエンス(演習付),中野　美由紀,2,オンライン(未確定),Coming Soon…,T3Thu4/T3Thu5
+44N14,20211281,文化とジェンダー(3),木村　朗子,1,オンライン(未確定),Coming Soon…,T3Thu4
+44N15,20211282,Intercultural Understanding (Japan and the World),Rita Zamzamah Nazeer-Ikeda,1,オンライン(未確定),Coming Soon…,T3Thu4
+44R01,20211283,世界の文学(東欧)(4),久山　宏一,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R02,20211284,日本史概説(4),岡本　真希子,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R03,20211285,日本史概論(4),岡本　真希子,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R04,20211286,情報処理I b,白倉　悟子,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R05,20211287,青年期のメンタルヘルス,平井　利幸,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R06,20211288,ドイツ語 III (講読) (4),新本　史斉,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R07,20211289,中国語 III (演習) (4),殷　晴,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R08,20211290,中国語 IV (4),姚　毅,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R09,20211291,スペイン語 III (講読) (4),二宮　哲,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R10,20211292,交換留学生のための日本語 I (聴解・会話)(4),古川　敦子,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R11,20211293,イギリス文化史 b,菅　靖子,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R12,20211294,Public Speaking,Bernard Francis Wilson,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R13,20211295,ヨーロッパ文化(イギリス)(4),菅　靖子,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R14,20211296,アプリケーションデザイン,杉村　大輔,1,オンライン(未確定),Coming Soon…,T4Thu4
+44R15,20211297,文化とジェンダー(4),木村　朗子,1,オンライン(未確定),Coming Soon…,T4Thu4
+45A01,20211298,法学,南　諭子,1,オンライン,Coming Soon…,T1Thu5
+45A02,20211299,法学研究,南　諭子,1,オンライン,Coming Soon…,T1Thu5
+45A03,20211300,情報処理I a,白倉　悟子,1,オンライン,Coming Soon…,T1Thu5
+45A04,20211301,情報処理I a,大塚　亜未,1,オンライン,Coming Soon…,T1Thu5
+45A05,20211302,ドイツ語 IV (1),若林　恵,1,オンライン,Coming Soon…,T1Thu5
+45A06,20211303,余暇教育(フィットネスと健康),國寶　真美,0.5,オンライン,Coming Soon…,T1Thu5
+45A07,20211304,ヨーロッパ文化(フランス)(1),市川　裕史,1,オンライン,Coming Soon…,T1Thu5
+45A08,20211305,情報数学 a,永井　敦,1,オンライン,Coming Soon…,T1Thu5
+45A09,20211306,NPO-NGO論,榎本　珠良,1,オンライン,Coming Soon…,T1Thu5
+45A10,20211307,アフリカ研究,眞城　百華,1,オンライン,Coming Soon…,T1Thu5
+45G01,20211308,Reading Skills II,高橋　百合子,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G02,20211309,Reading Skills II,増田　直子,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G03,20211310,Listening and Speaking II,Lola Gayle Moriguchi,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G04,20211311,Listening and Speaking II,Virginia A. Jenkins,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G05,20211312,Listening and Speaking II,Christopher Piper,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G06,20211313,ドイツ語 I (文法) C (国・多),齋藤　由美子,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G07,20211314,スペイン語 I (演習) d (国・多),高畠　理恵,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G08,20211315,韓国・朝鮮語 I (演習) b (英),金　泰植,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G09,20211316,韓国・朝鮮語 I (演習) c (英),丁　元泰,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G10,20211317,Literary Reading II,阿部　曜子,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G11,20211318,Academic Writing II,Iain B.M. Lambert,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G12,20211319,Academic Writing II,Lillian R. Swain,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G13,20211320,Oral English II (英),Keith Ford,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G14,20211321,Oral English II (英),Kenneth Biegel,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G15,20211322,Oral English II (英),Anthony Tobin,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G16,20211323,Academic Listening II,Paul Maxwell Shackleford,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G17,20211324,アメリカ文化 c,杉山　恵子,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G18,20211325,認知科学と言語教育,久野　雅樹,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G19,20211326,３年セミナー,柴田　邦臣,3,ハイブリッド,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G20,20211327,３年セミナー,岡本　真希子,3,ハイブリッド,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G21,20211328,４年セミナー,中井　博康,3,ハイブリッド,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G22,20211329,Academic Reading II,椿　清文 / 川島　るり子 / 安澤　梨花,3,ハイブリッド,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G23,20211330,Academic Reading II,川島　るり子 / 安澤　梨花 / Jonathan D. Picken,3,ハイブリッド,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G24,20211331,Academic Reading II,安澤　梨花 / 稲垣　善律 / 川島　るり子,3,ハイブリッド,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45G25,20211332,ドイツ語 IV,若林　恵,3,オンライン,Coming Soon…,T1Thu5/T3Thu5/T4Thu5
+45N01,20211333,日本国憲法a,南　諭子,1,オンライン(未確定),Coming Soon…,T3Thu5
+45N02,20211334,情報処理I a,白倉　悟子,1,オンライン(未確定),Coming Soon…,T3Thu5
+45N03,20211335,情報処理I a,大塚　亜未,1,オンライン(未確定),Coming Soon…,T3Thu5
+45N04,20211336,ドイツ語 IV (3),若林　恵,1,オンライン(未確定),Coming Soon…,T3Thu5
+45N05,20211337,ヨーロッパ文化(フランス)(3),市川　裕史,1,オンライン(未確定),Coming Soon…,T3Thu5
+45R01,20211338,日本国憲法b,南　諭子,1,オンライン(未確定),Coming Soon…,T4Thu5
+45R02,20211339,情報処理I b,大塚　亜未,1,オンライン(未確定),Coming Soon…,T4Thu5
+45R03,20211340,ドイツ語 IV (4),若林　恵,1,オンライン(未確定),Coming Soon…,T4Thu5
+45R04,20211341,余暇教育(レク活動とグループワーク),國寶　真美,0.5,オンライン(未確定),Coming Soon…,T4Thu5
+45R05,20211342,ヨーロッパ文化(フランス)(4),市川　裕史,1,オンライン(未確定),Coming Soon…,T4Thu5
+51A01,20211343,情報と職業,藤本　一男,1,オンライン,Coming Soon…,T1Fri1
+51A02,20211344,Extensive Reading I (英),村越　麻子,1,オンライン,Coming Soon…,T1Fri1
+51A03,20211345,Intensive Reading I a (英),奥野　晶子,1,オンライン,Coming Soon…,T1Fri1
+51A04,20211346,精神分析学,木戸秋　明男,1,オンライン,Coming Soon…,T1Fri1
+51A05,20211347,道徳教育の理論と方法,小澤　理恵子,2,オンライン,Coming Soon…,T1Fri1/T1Fri2
+51A06,20211348,特別活動の研究,関本　惠一,2,オンライン,Coming Soon…,T1Fri1/T1Fri2
+51G01,20211349,生物と人間,矢ケ崎　朋樹,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G02,20211350,Reading Skills I (情),山田　純子,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G03,20211351,Reading Skills I (情),円浄　ゆり / 後藤　礼圭,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G04,20211352,Oral English I (国・多),Clara Kumagai,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G05,20211353,Oral English I (国・多),Virginia A. Jenkins,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G06,20211354,Oral English I (国・多),Richard B. Wilcox,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G07,20211355,Oral English I (国・多),Bernard Francis Wilson,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G08,20211356,Composition I (英),星野　徳子,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G09,20211357,Composition I (英),後藤　礼圭 / 円浄　ゆり,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G10,20211358,Composition I (英),山越　美規枝,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G11,20211359,Composition I (英),堀口　優子,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G12,20211360,Composition I (英),増井　由紀美,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G13,20211361,Pronunciation I (英),佐賀　裕実,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G14,20211362,Pronunciation I (英),菅原　供子,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G15,20211363,MI Listening II,Joshua Brook Antle,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G16,20211364,MI Listening II,Christopher Elvin,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G17,20211365,MI Listening II,Paul Kallender,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G18,20211366,スペイン語 II (講読) C (英),高橋　沙恵子,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G19,20211367,１年セミナー,下谷内　奈緒,3,ハイブリッド,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G20,20211368,１年セミナー,Maja Sori Doval,3,ハイブリッド,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G21,20211369,言語教育方法論 A,五十嵐　佐知子,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G22,20211370,英語科指導法 I,五十嵐　佐知子,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G23,20211371,フランス語 III (演習) (1)(3)(4),Philippe Deniau,3,オンライン,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51G24,20211372,１年セミナー,水谷　明子,3,ハイブリッド,Coming Soon…,T1Fri1/T3Fri1/T4Fri1
+51N01,20211373,Extensive Reading I (英),村越　麻子,1,オンライン(未確定),Coming Soon…,T3Fri1
+51N02,20211374,Intensive Reading I a (英),奥野　晶子,1,オンライン(未確定),Coming Soon…,T3Fri1
+51N03,20211375,アメリカ小説 b,池野　みさお,1,オンライン(未確定),Coming Soon…,T3Fri1
+51N04,20211376,特別活動の指導法,関本　惠一,1,オンライン(未確定),Coming Soon…,T3Fri1
+51N05,20211377,計算機数学(演習付),植田　美佳,2,オンライン(未確定),Coming Soon…,T3Fri1/T3Fri2
+51P01,20211378,情報科学特論 a,衛藤　将史,2,オンライン(未確定),Coming Soon…,T3Fri1/T4Fri1
+51P02,20211379,道徳教育の理論と方法,小澤　理恵子,2,オンライン(未確定),Coming Soon…,T3Fri1/T4Fri1
+51P03,20211380,数学科指導とICT活用,水谷　正大,2,オンライン(未確定),Coming Soon…,T3Fri1/T4Fri1
+51P04,20211381,教育メディア a,森本　康彦,2,オンライン(未確定),Coming Soon…,T3Fri1/T4Fri1
+51R01,20211382,Intensive Reading I b (英),奥野　晶子,1,オンライン(未確定),Coming Soon…,T4Fri1
+51R02,20211383,Intensive Reading I b (英),村越　麻子,1,オンライン(未確定),Coming Soon…,T4Fri1
+51R03,20211384,アメリカ小説 c,椿　清文,1,オンライン(未確定),Coming Soon…,T4Fri1
+51R04,20211385,プログラミング入門(演習付),植田　美佳,2,オンライン(未確定),Coming Soon…,T4Fri1/T4Fri2
+51R05,20211386,総合的な学習の時間の指導法,関本　惠一,1,オンライン(未確定),Coming Soon…,T4Fri1
+52A01,20211387,第三世界の思想と文化(1),杉山　圭以子,1,オンライン,Coming Soon…,T1Fri2
+52A02,20211388,日本研究入門(1),Alexandra Hambleton,1,オンライン,Coming Soon…,T1Fri2
+52A03,20211389,Extensive Reading I (国・多),吉岡　里枝子,1,オンライン,Coming Soon…,T1Fri2
+52A04,20211390,Extensive Reading I (国・多),山田　純子,1,オンライン,Coming Soon…,T1Fri2
+52A05,20211391,Intensive Reading I a (国・多),堀口　優子,1,オンライン,Coming Soon…,T1Fri2
+52A06,20211392,Intensive Reading I a (国・多),増井　由紀美,1,オンライン,Coming Soon…,T1Fri2
+52A07,20211393,動きの教育,谷野　悦代,1,オンライン,Coming Soon…,T1Fri2
+52A08,20211394,ウェルネス研究(世界の身体文化表現論),Maja Sori Doval,1,オンライン,Coming Soon…,T1Fri2
+52A09,20211395,国際機構論(1),下谷内　奈緒,1,オンライン,Coming Soon…,T1Fri2
+52A10,20211396,東欧研究(1),吉岡　潤,1,オンライン,Coming Soon…,T1Fri2
+52A11,20211397,プログラミング I (演習付)(1),来住　伸子・大沼　亮,2,ハイブリッド,Coming Soon…,T1Fri2/T1Fri3
+52A12,20211398,Reading and Listening for Proficiency Tests b(1),増田　直子,1,オンライン,Coming Soon…,T1Fri2
+52A13,20211399,情報科学英語 d,小西　正恵,1,オンライン,Coming Soon…,T1Fri2
+52A14,20211400,国際交流論,稲田　充弘,1,オンライン,Coming Soon…,T1Fri2
+52A15,20211401,情報通信ネットワーク入門,水谷　正大,1,オンライン,Coming Soon…,T1Fri2
+52A16,20211402,翻訳入門 a,柳田　利枝,1,オンライン,Coming Soon…,T1Fri2
+52G01,20211403,Oral English I (英),Paul Kallender,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G02,20211404,Oral English I (英),Clara Kumagai,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G03,20211405,Oral English I (英),Christopher Elvin,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G04,20211406,Oral English I (英),Virginia A. Jenkins,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G05,20211407,Oral English I (英),Bernard Francis Wilson,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G06,20211408,Composition I (国・多),奥野　晶子,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G07,20211409,Composition I (国・多),菅原　供子,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G08,20211410,Composition I (国・多),佐賀　裕実,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G09,20211411,Composition I (国・多),相木　裕史,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G10,20211412,Composition I (国・多),五十嵐　佐知子,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G11,20211413,Pronunciation I (国・多),山越　美規枝,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G12,20211414,Pronunciation I (国・多),村越　麻子,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G13,20211415,Oral English III,Kristofer Raymond Bayne,1,オンライン,Coming Soon…,T1Fri2
+52G14,20211416,フランス語 II (講読) A (英),加藤　行男,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G15,20211417,ドイツ語 II (演習) b (英),Anette Liebhart,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G16,20211418,中国語 II (演習) e (国・多),何　珍時,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G17,20211419,スペイン語 I (演習) a (英),高橋　沙恵子,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G18,20211420,４年セミナー,大類　久恵,3,ハイブリッド,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G19,20211421,イギリス文化概論,伊藤　航多,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G20,20211422,アメリカ文化 a,佐藤　千登勢,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G21,20211423,日本語教授法演習,渋谷　実希,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G22,20211424,３年セミナー,南　諭子,3,ハイブリッド,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G23,20211425,４年セミナー,澤木　久之,3,ハイブリッド,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G24,20211426,English III (Practice),Chester J. Proshan,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G25,20211427,English III (Practice),Richard B. Wilcox,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G26,20211428,言語教育方法論 A,星野　徳子,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G27,20211429,MI４年セミナー,大石　茜,3,ハイブリッド,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52G28,20211430,英語科指導法 I,星野　徳子,3,オンライン,Coming Soon…,T1Fri2/T3Fri2/T4Fri2
+52N01,20211431,第三世界の思想と文化(3),杉山　圭以子,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N02,20211432,日本研究入門(3),Alexandra Hambleton,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N03,20211433,Extensive Reading I (国・多),山田　純子,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N04,20211434,Intensive Reading I a (国・多),堀口　優子,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N05,20211435,Intensive Reading I a (国・多),吉岡　里枝子,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N06,20211436,Intensive Reading I b (国・多),増井　由紀美,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N07,20211437,余暇教育(フィットネスと健康),谷野　悦代,0.5,オンライン(未確定),Coming Soon…,T3Fri2
+52N08,20211438,ウェルネス研究(武道身体文化論),Maja Sori Doval,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N09,20211439,国際機構論(3),下谷内　奈緒,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N10,20211440,東欧研究(3),吉岡　潤,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N11,20211441,プログラミング I (演習付)(3),来住　伸子・大沼　亮,2,オンライン(未確定),Coming Soon…,T3Fri2/T3Fri3
+52N12,20211442,Reading and Listening for Proficiency Tests b(3),増田　直子,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N13,20211443,情報科学英語 e,小西　正恵,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N14,20211444,特別活動の指導法,関本　惠一,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N15,20211445,情報科指導とICT活用,森本　康彦,1,オンライン(未確定),Coming Soon…,T3Fri2
+52N16,20211446,翻訳入門 b,柳田　利枝,1,オンライン(未確定),Coming Soon…,T3Fri2
+52P01,20211447,情報数学特論 b,貞廣　泰造,2,オンライン(未確定),Coming Soon…,T3Fri2/T4Fri2
+52P02,20211448,道徳教育の理論と方法,小澤　理恵子,2,オンライン(未確定),Coming Soon…,T3Fri2/T4Fri2
+52P03,20211449,情報システム入門,水谷　正大,2,オンライン(未確定),Coming Soon…,T3Fri2/T4Fri2
+52R01,20211450,第三世界の思想と文化(4),杉山　圭以子,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R02,20211451,日本研究入門(4),Alexandra Hambleton,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R03,20211452,Extensive Reading I (国・多),増井　由紀美,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R04,20211453,Intensive Reading I b (国・多),堀口　優子,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R05,20211454,Intensive Reading I b (国・多),山田　純子,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R06,20211455,Intensive Reading I b (国・多),吉岡　里枝子,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R07,20211456,動きの教育,谷野　悦代,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R08,20211457,健康教育,Maja Sori Doval,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R09,20211458,国際機構論(4),下谷内　奈緒,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R10,20211459,東欧研究(4),吉岡　潤,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R11,20211460,国際ウェルネス,横田　香穂梨,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R12,20211461,プログラミング I (演習付)(4),来住　伸子・大沼　亮,2,オンライン(未確定),Coming Soon…,T4Fri2/T4Fri3
+52R13,20211462,Reading and Listening for Proficiency Tests b(4),増田　直子,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R14,20211463,情報科学英語 f,小西　正恵,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R15,20211464,総合的な学習の時間の指導法,関本　惠一,1,オンライン(未確定),Coming Soon…,T4Fri2
+52R16,20211465,翻訳入門 c,柳田　利枝,1,オンライン(未確定),Coming Soon…,T4Fri2
+53A01,20211466,情報処理I a,小田　正美,1,オンライン,Coming Soon…,T1Fri3
+53A02,20211467,交換留学生のための日本語 II (上級作文)(1),関　麻由美,1,オンライン,Coming Soon…,T1Fri3
+53A03,20211468,動きの教育,Maja Sori Doval,1,オンライン,Coming Soon…,T1Fri3
+53A04,20211469,グローバルヒストリーのなかのイギリス,佐藤　繭香,1,オンライン,Coming Soon…,T1Fri3
+53A05,20211470,国際法(1),南　諭子,1,オンライン,Coming Soon…,T1Fri3
+53A06,20211471,東南アジア研究(大陸部)(1),北澤　直宏,1,オンライン,Coming Soon…,T1Fri3
+53A07,20211472,情報科学 c,柴田　淳司,1,オンライン,Coming Soon…,T1Fri3
+53A08,20211473,日本・アジアの文化研究(1),樹本　健,1,オンライン,Coming Soon…,T1Fri3
+53G01,20211474,美術,森下　和貴子,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G02,20211475,Intensive Listening I,Ralph Baker,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G03,20211476,Grammar II,小林　真由美,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G04,20211477,フランス語 I (文法) E (国・多),市川　裕史,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G05,20211478,フランス語 I (文法) F (国・多),加藤　行男,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G06,20211479,フランス語 II (演習) e (国・多),Philippe Deniau,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G07,20211480,ドイツ語 II (講読) A (英),高本　教之,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G08,20211481,ドイツ語 II (演習) d (国・多),Anette Liebhart,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G09,20211482,中国語 I (演習) f (国・多),何　珍時,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G10,20211483,スペイン語 I (文法) F (国・多),政岡　潔子,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G11,20211484,日本語 II (上級作文),関　麻由美,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G12,20211485,基礎セミナー,伊藤　航多,3,ハイブリッド,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G13,20211486,基礎セミナー,Elizabeth I. Dow,3,ハイブリッド,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G14,20211487,Literary Reading I,菅原　供子,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G15,20211488,Literary Reading I,村越　麻子,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G16,20211489,Literary Reading I,増井　由紀美,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G17,20211490,３年セミナー,池野　みさお,3,ハイブリッド,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G18,20211491,３年セミナー,井川　壽子,3,ハイブリッド,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G19,20211492,４年セミナー,池野　みさお,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G20,20211493,卒論指導,大類　久恵,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G21,20211494,初等英語教育研究,吉田　真理子,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G22,20211495,３年セミナー,澤木　久之,3,ハイブリッド,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G23,20211496,３年セミナー,吉岡　潤,3,ハイブリッド,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G24,20211497,３年セミナー,多賀　吉隆,3,ハイブリッド,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G25,20211498,４年セミナー / プロジェクト,杉村　大輔,5,ハイブリッド,Coming Soon…,T1Fri3/T3Fri3/T3Fri4/T4Fri3/T4Fri4
+53G26,20211499,MI Presentation and Academic Writing,Alexandra Hambleton,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G27,20211500,MI Presentation and Academic Writing,Carolyn Morikawa,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G28,20211501,MI Presentation and Academic Writing,Kristofer Raymond Bayne,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G29,20211502,MI Presentation and Academic Writing,Richard B. Wilcox,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G30,20211503,Oral Communication,Lillian R. Swain / Soo-Hye Han,3,オンライン,Coming Soon…,T1Fri3/T3Fri3/T4Fri3
+53G31,20211504,幾何学 A (演習付),宮澤　治子・久野　雄介,6,オンライン,Coming Soon…,T1Wed2/T3Wed2/T4Wed2/T1Fri3/T3Fri3/T4Fri3
+53G32,20211505,４年セミナー / プロジェクト,青柳　龍也,5,ハイブリッド,Coming Soon…,T1Fri3/T3Fri3/T3Fri4/T4Fri3/T4Fri4
+53N01,20211506,情報処理I a,小田　正美,1,オンライン(未確定),Coming Soon…,T3Fri3
+53N02,20211507,交換留学生のための日本語 II (上級作文)(3),関　麻由美,1,オンライン(未確定),Coming Soon…,T3Fri3
+53N03,20211508,動きの教育,Maja Sori Doval,1,オンライン(未確定),Coming Soon…,T3Fri3
+53N04,20211509,国際法(3),南　諭子,1,オンライン(未確定),Coming Soon…,T3Fri3
+53N05,20211510,東南アジア研究(大陸部)(3),北澤　直宏,1,オンライン(未確定),Coming Soon…,T3Fri3
+53N06,20211511,社会情報システム,湯浦　克彦,1,オンライン(未確定),Coming Soon…,T3Fri3
+53N07,20211512,ITコンテンツ制作,松岡　淳子,1,オンライン(未確定),Coming Soon…,T3Fri3
+53N08,20211513,日本・アジアの文化研究(3),樹本　健,1,オンライン(未確定),Coming Soon…,T3Fri3
+53P01,20211514,英語科指導とICT活用,小西　正恵,2,オンライン(未確定),Coming Soon…,T3Fri3/T4Fri3
+53R01,20211515,情報処理I b,小田　正美,1,オンライン(未確定),Coming Soon…,T4Fri3
+53R02,20211516,交換留学生のための日本語 II (上級作文)(4),関　麻由美,1,オンライン(未確定),Coming Soon…,T4Fri3
+53R03,20211517,動きの教育,Maja Sori Doval,1,オンライン(未確定),Coming Soon…,T4Fri3
+53R04,20211518,イギリス社会史 a,佐藤　繭香,1,オンライン(未確定),Coming Soon…,T4Fri3
+53R05,20211519,国際法(4),南　諭子,1,オンライン(未確定),Coming Soon…,T4Fri3
+53R06,20211520,ヨーロッパ社会(イギリス史)(1),佐藤　繭香,1,オンライン(未確定),Coming Soon…,T4Fri3
+53R07,20211521,東南アジア研究(大陸部)(4),北澤　直宏,1,オンライン(未確定),Coming Soon…,T4Fri3
+53R08,20211522,テクニカルライティング,飯野　朋美,1,オンライン(未確定),Coming Soon…,T4Fri3
+53R09,20211523,日本・アジアの文化研究(4),樹本　健,1,オンライン(未確定),Coming Soon…,T4Fri3
+53R10,20211524,ラテンアメリカ研究,横田　香穂梨,1,オンライン(未確定),Coming Soon…,T4Fri3
+53R11,20211525,ジェンダーと健康,吉朝　加奈,1,オンライン(未確定),Coming Soon…,T4Fri3
+54A01,20211526,哲学(1),田原　彰太郎,1,オンライン,Coming Soon…,T1Fri4
+54A02,20211527,哲学研究(1),田原　彰太郎,1,オンライン,Coming Soon…,T1Fri4
+54A03,20211528,宗教学(1),柴田　史子,1,オンライン,Coming Soon…,T1Fri4
+54A04,20211529,宗教学研究(1),柴田　史子,1,オンライン,Coming Soon…,T1Fri4
+54A05,20211530,ドイツ語 III (演習) (1),Anette Liebhart,1,オンライン,Coming Soon…,T1Fri4
+54A06,20211531,余暇教育(スポーツと身体スキル),東原　綾子,0.5,ハイブリッド,Coming Soon…,T1Fri4
+54A07,20211532,憲法(1),大西　健司,1,オンライン,Coming Soon…,T1Fri4
+54A08,20211533,情報数学基礎(演習付),貞廣　泰造・植田　美佳,2,オンライン,Coming Soon…,T1Fri4/T1Fri5
+54A09,20211534,ソフトウェア開発法(演習付),青柳　龍也・吉田　葵,2,オンライン,Coming Soon…,T1Fri4/T1Fri5
+54A10,20211535,コンテンツ保護とセキュリティ,板倉　美貴,1,オンライン,Coming Soon…,T1Fri4
+54A11,20211536,アジア交流史,北澤　直宏,1,オンライン,Coming Soon…,T1Fri4
+54A12,20211537,Global Southとフィールドワーク(アジア・アフリカ・ラテンアメリカ) b (1),宮内　洋平,1,オンライン,Coming Soon…,T1Fri4
+54C01,20211538,形態論,杉岡　洋子,2,オンライン,Coming Soon…,T1Fri4/T3Fri4
+54G01,20211539,Reading Skills II,相木　裕史,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G02,20211540,Reading Skills II,増田　直子,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G03,20211541,Oral English II (国),Kristofer Raymond Bayne,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G04,20211542,Oral English II (国),Lillian R. Swain,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G05,20211543,Oral English II (国),Ralph Baker,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G06,20211544,Composition II,佐藤　繭香,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G07,20211545,Composition II,小倉　咲,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G08,20211546,Composition II,執行　智子,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G09,20211547,フランス語 I (演習) b (英),加藤　行男,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G10,20211548,ドイツ語 I (文法) B (国・多）,高本　教之,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G11,20211549,中国語 I (演習) c (英),何　珍時,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G12,20211550,スペイン語 I (演習) c (英),政岡　潔子,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G13,20211551,Academic Writing II,Robert Spivak,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G14,20211552,Academic Writing II,吉岡　里枝子,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G15,20211553,Academic Writing II,Joshua Brook Antle,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G16,20211554,Academic Listening II,Simon Stevens,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G17,20211555,Academic Listening II,Paul Maxwell Shackleford,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G18,20211556,３年セミナー,Elizabeth I. Dow,3,ハイブリッド,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G19,20211557,卒論指導,伊藤　航多,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G21,20211558,１年セミナー,澤木　久之,3,ハイブリッド,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G22,20211559,３年セミナー,市川　裕史,3,ハイブリッド,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G23,20211560,４年セミナー,南　諭子,3,ハイブリッド,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G24,20211561,４年セミナー,吉岡　潤,3,ハイブリッド,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G25,20211562,４年セミナー,多賀　吉隆,3,ハイブリッド,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G26,20211563,４年セミナー,市川　裕史,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G27,20211564,English III (Practice),樹本　健,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G28,20211565,代数学(演習付),礒田　恵以子・松野　一夫,6,オンライン,Coming Soon…,T1Mon4/T3Mon4/T4Mon4/T1Fri4/T3Fri4/T4Fri4
+54G29,20211566,ドイツ語 III (演習),Anette Liebhart,3,オンライン,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54G30,20211567,４年セミナー,井川　壽子,3,ハイブリッド,Coming Soon…,T1Fri4/T3Fri4/T4Fri4
+54N01,20211568,哲学(3),田原　彰太郎,1,オンライン(未確定),Coming Soon…,T3Fri4
+54N02,20211569,哲学研究(3),田原　彰太郎,1,オンライン(未確定),Coming Soon…,T3Fri4
+54N03,20211570,宗教学(3),柴田　史子,1,オンライン(未確定),Coming Soon…,T3Fri4
+54N04,20211571,宗教学研究(3),柴田　史子,1,オンライン(未確定),Coming Soon…,T3Fri4
+54N05,20211572,ドイツ語 III (演習) (3),Anette Liebhart,1,オンライン(未確定),Coming Soon…,T3Fri4
+54N06,20211573,余暇教育(スポーツと身体スキル),東原　綾子,0.5,オンライン(未確定),Coming Soon…,T3Fri4
+54N07,20211574,音韻論,窪薗　晴夫,2,オンライン(未確定),Coming Soon…,T3Fri4/T3Fri5
+54N08,20211575,憲法(3),大西　健司,1,オンライン(未確定),Coming Soon…,T3Fri4
+54N09,20211576,微分積分(演習付)(3),永井　敦・植田　美佳,2,オンライン(未確定),Coming Soon…,T3Fri4/T3Fri5
+54N10,20211577,離散数学 b,貞廣　泰造,1,オンライン(未確定),Coming Soon…,T3Fri4
+54N11,20211578,システム運用(演習付),青柳　龍也・加藤　朗,2,オンライン(未確定),Coming Soon…,T3Fri4/T3Fri5
+54N12,20211579,Global Southとフィールドワーク(アジア・アフリカ・ラテンアメリカ) b (3),神代　ちひろ,1,オンライン(未確定),Coming Soon…,T3Fri4
+54P01,20211580,日本語学特殊講義 1,宇佐美　洋,2,オンライン(未確定),Coming Soon…,T3Fri4/T4Fri4
+54P02,20211581,情報処理,小田　正美,2,オンライン(未確定),Coming Soon…,T3Fri4/T4Fri4
+54P03,20211582,英語科指導とICT活用,小西　正恵,2,オンライン(未確定),Coming Soon…,T3Fri4/T4Fri4
+54R01,20211583,哲学(4),田原　彰太郎,1,オンライン(未確定),Coming Soon…,T4Fri4
+54R02,20211584,哲学研究(4),田原　彰太郎,1,オンライン(未確定),Coming Soon…,T4Fri4
+54R03,20211585,宗教学(4),柴田　史子,1,オンライン(未確定),Coming Soon…,T4Fri4
+54R04,20211586,宗教学研究(4),柴田　史子,1,オンライン(未確定),Coming Soon…,T4Fri4
+54R05,20211587,科学と人間(4),久保木　孝・宮本　洋子・山口　浩一・山本　佳世子・横川　慎二・未定,1,オンライン(未確定),Coming Soon…,T4Fri4
+54R06,20211588,ドイツ語 III (演習) (4),Anette Liebhart,1,オンライン(未確定),Coming Soon…,T4Fri4
+54R07,20211589,余暇教育(スポーツと身体スキル),東原　綾子,0.5,オンライン(未確定),Coming Soon…,T4Fri4
+54R08,20211590,英語学特殊講義 b,杉岡　洋子,1,オンライン(未確定),Coming Soon…,T4Fri4
+54R09,20211591,憲法(4),大西　健司,1,オンライン(未確定),Coming Soon…,T4Fri4
+54R10,20211592,微分積分(演習付)(4),永井　敦,2,オンライン(未確定),Coming Soon…,T4Fri4/T4Fri5
+54R11,20211593,人工知能・機械学習(演習付),青柳　龍也・牛久　祥孝,2,オンライン(未確定),Coming Soon…,T4Fri4/T4Fri5
+54R12,20211594,Global Southとフィールドワーク(アジア・アフリカ・ラテンアメリカ) b (4),小西　公大,1,オンライン(未確定),Coming Soon…,T4Fri4
+55A01,20211595,情報処理I a,松岡　淳子,1,オンライン,Coming Soon…,T1Fri5
+55A02,20211596,情報処理I a,小田　正美,1,オンライン,Coming Soon…,T1Fri5
+55A03,20211597,科学と人間(1),小浦　寛之,1,オンライン,Coming Soon…,T1Fri5
+55A04,20211598,余暇教育(レク活動とグループワーク),辻元　早苗,0.5,ハイブリッド,Coming Soon…,T1Fri5
+55G01,20211599,Listening II,Paul Maxwell Shackleford,3,オンライン,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G02,20211600,Listening II,Simon Stevens,3,オンライン,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G03,20211601,ドイツ語 II (演習) c (国・多),高本　教之,3,オンライン,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G04,20211602,Literary Reading II,相木　裕史,3,オンライン,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G05,20211603,Oral English II (英),Elizabeth I. Dow / Joshua Brook Antle,3,オンライン,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G06,20211604,Oral English II (英),Kristofer Raymond Bayne,3,オンライン,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G07,20211605,Oral English II (英),Lillian R. Swain,3,オンライン,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G08,20211606,Oral English II (英),Robert Spivak,3,オンライン,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G09,20211607,原書講読(２年セミナー),出町　未央,3,ハイブリッド,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G10,20211608,原書講読(２年セミナー),大石　茜,3,ハイブリッド,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G11,20211609,Academic Reading II,小倉　咲 / 小野　創 / 吉岡　里枝子,3,オンライン,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G12,20211610,Academic Reading II,大類　久恵 / 吉岡　里枝子 / 小倉　咲,3,ハイブリッド,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55G13,20211611,Academic Reading II,吉岡　里枝子 / 小倉　咲 / Soo-Hye Han,3,ハイブリッド,Coming Soon…,T1Fri5/T3Fri5/T4Fri5
+55N01,20211612,情報処理I a,松岡　淳子,1,オンライン(未確定),Coming Soon…,T3Fri5
+55N02,20211613,情報処理I a,小田　正美,1,オンライン(未確定),Coming Soon…,T3Fri5
+55R01,20211614,情報処理I b,松岡　淳子,1,オンライン(未確定),Coming Soon…,T4Fri5
+55R02,20211615,情報処理I b,小田　正美,1,オンライン(未確定),Coming Soon…,T4Fri5
+59B01,20211616,数学特論 XA,市原　直幸,2,オンライン(未確定),Coming Soon…,他
+99B01,20211617,情報科学特論 c,Mei Kobayashi,2,オンライン(未確定),Coming Soon…,他
+99G01,20211618,卒業論文,伊藤　航多,6,オンライン(未確定),Coming Soon…,他
+99G02,20211619,卒業論文,大類　久恵,6,オンライン(未確定),Coming Soon…,他
+99G03,20211620,卒業論文,小野　創,6,オンライン(未確定),Coming Soon…,他
+99G04,20211621,卒業論文,稲垣　善律,6,オンライン(未確定),Coming Soon…,他
+99G05,20211622,卒業論文,星野　徳子,6,オンライン(未確定),Coming Soon…,他
+99G06,20211623,卒業論文,網谷　龍介,6,オンライン(未確定),Coming Soon…,他
+99G07,20211624,卒業論文,葛西　弘隆,6,オンライン(未確定),Coming Soon…,他
+99G08,20211625,卒業論文,南　諭子,6,オンライン(未確定),Coming Soon…,他
+99G09,20211626,卒業論文,下谷内　奈緒,6,オンライン(未確定),Coming Soon…,他
+99G10,20211627,卒業論文,武田　万里子,6,オンライン(未確定),Coming Soon…,他
+99G11,20211628,卒業論文,澤木　久之,6,オンライン(未確定),Coming Soon…,他
+99G12,20211629,卒業論文,木村　有里,6,オンライン(未確定),Coming Soon…,他
+99G13,20211630,卒業論文,森　悠子,6,オンライン(未確定),Coming Soon…,他
+99G14,20211631,卒業論文,柴田　邦臣,6,オンライン(未確定),Coming Soon…,他
+99G15,20211632,卒業論文,吉岡　潤,6,オンライン(未確定),Coming Soon…,他
+99G16,20211633,卒業論文,井上　則子,6,オンライン(未確定),Coming Soon…,他
+99G17,20211634,卒業論文,高垣　マユミ,6,オンライン(未確定),Coming Soon…,他
+99G18,20211635,卒業論文,多賀　吉隆,6,オンライン(未確定),Coming Soon…,他
+99G19,20211636,卒業論文,西川　賢,6,オンライン(未確定),Coming Soon…,他
+99G20,20211637,卒業論文,市川　裕史,6,オンライン(未確定),Coming Soon…,他
+99G21,20211638,卒業論文,新本　史斉,6,オンライン(未確定),Coming Soon…,他
+99G22,20211639,卒業論文,中井　博康,6,オンライン(未確定),Coming Soon…,他
+99G23,20211640,卒業論文,松嵜　英也,6,オンライン(未確定),Coming Soon…,他
+99G24,20211641,卒業論文,小島　敬裕,6,オンライン(未確定),Coming Soon…,他
+99G25,20211642,卒業論文,光成　歩,6,オンライン(未確定),Coming Soon…,他
+99G26,20211643,卒業論文,朴　正鎮,6,オンライン(未確定),Coming Soon…,他
+99G27,20211644,卒業論文,関　智英,6,オンライン(未確定),Coming Soon…,他
+99G28,20211645,卒業論文,岡本　真希子,6,オンライン(未確定),Coming Soon…,他
+99G29,20211646,卒業論文,Sookyeong Hong,6,オンライン(未確定),Coming Soon…,他
+99G30,20211647,卒業論文,Chris Burgess,6,オンライン(未確定),Coming Soon…,他
+99G31,20211648,卒業論文,辻上　奈美江 / 徳永　佳晃,6,オンライン(未確定),Coming Soon…,他
+99G32,20211649,卒業論文,三澤　健宏,6,オンライン(未確定),Coming Soon…,他
+99G33,20211650,卒業論文,青柳　龍也,4,オンライン(未確定),Coming Soon…,他
+99G34,20211651,卒業論文,稲葉　利江子,4,オンライン(未確定),Coming Soon…,他
+99G35,20211652,卒業論文,来住　伸子,4,オンライン(未確定),Coming Soon…,他
+99G36,20211653,卒業論文,栗原　一貴,4,オンライン(未確定),Coming Soon…,他
+99G37,20211654,卒業論文,永井　敦,4,オンライン(未確定),Coming Soon…,他
+99G38,20211655,卒業論文,中野　美由紀,4,オンライン(未確定),Coming Soon…,他
+99G39,20211656,卒業論文,新田　善久,4,オンライン(未確定),Coming Soon…,他
+99G40,20211657,卒業論文,貞廣　泰造,4,オンライン(未確定),Coming Soon…,他
+99G41,20211658,卒業論文,杉村　大輔,4,オンライン(未確定),Coming Soon…,他
+99G42,20211659,フィールドワーク報告卒業論文,北村　文,6,オンライン(未確定),Coming Soon…,他
+99G43,20211660,フィールドワーク報告卒業論文,吉田　真理子,6,オンライン(未確定),Coming Soon…,他
+99G44,20211661,フィールドワーク報告卒業論文,丸山　淳子,6,オンライン(未確定),Coming Soon…,他
+99G45,20211662,フィールドワーク報告卒業論文,大石　茜,6,オンライン(未確定),Coming Soon…,他
+99G46,20211663,卒業論文(卒業制作),郷路　拓也,-1,オンライン(未確定),Coming Soon…,他
+99G47,20211664,教育実習 A,高垣　マユミ・牛島　順子・渡邊　あや,5,オンライン(未確定),Coming Soon…,他
+99G48,20211665,教育実習 A,星野　徳子,5,オンライン(未確定),Coming Soon…,他
+99G49,20211666,教育実習 A,菊池　弘明,5,オンライン(未確定),Coming Soon…,他
+99G50,20211667,教育実習 B,高垣　マユミ・牛島　順子・渡邊　あや,3,オンライン(未確定),Coming Soon…,他
+99G51,20211668,教育実習 B,星野　徳子,3,オンライン(未確定),Coming Soon…,他
+99G52,20211669,教育実習 B,菊池　弘明,3,オンライン(未確定),Coming Soon…,他
+99H01,20211670,語学研修(英語),菅　靖子,-1,オンライン(未確定),Coming Soon…,他
+99H02,20211671,インデペンデントスタディ,敦賀　和外,1,オンライン(未確定),Coming Soon…,他
+99H03,20211672,インターンシップ,敦賀　和外,1,オンライン(未確定),Coming Soon…,他
+99H04,20211673,サービスラーニング,敦賀　和外,1,オンライン(未確定),Coming Soon…,他
+99N01,20211674,国際機構特論,下谷内　奈緒,-1,オンライン(未確定),Coming Soon…,他
+99R01,20211675,数学特論 XD,井上　玲,2,オンライン(未確定),Coming Soon…,他
