@@ -1,6 +1,6 @@
 const db = firebase.firestore();
 
-let period, classdocid;
+let period, classId; //period:2021T1Mon1とか classId:20210001とか
 let isChangeStatus = false; // add->false, change->true
 getFromURL();
 function getFromURL() {
@@ -14,12 +14,15 @@ function getFromURL() {
     } else {
         // isChangeStatus = false;
     }
-    classdocid = value[3];
-    // console.log(period);
-    // console.log(classdocid);
-    // console.log("クラス変更 ", isChangeStatus);
+    classId = value[3];
+    console.log(period);
+    console.log(classId);
+    console.log("クラス変更 ", isChangeStatus);
 }
-
+const year = period.substring(0,4); // 2021
+let lastClassdocid; // 変更の時に使用する、選択済みクラスのdoc.id
+let countUpData = 0;
+let lockCheckboxNum;
 let isSomethingSelected = false; // 何かしら選択されているかどうか
 $('#decideBtn').prop('disabled', true);
 
@@ -32,32 +35,44 @@ if (isChangeStatus) {
     // document.getElementById("confirmStatus").innerText = "時間割に追加したい授業を選択してください";
 }
 
+let selectedClassdocid; // doc.id
 let selectedPeriod;     // "月曜1限"とか
 let selectedId;         // t1m1101 とか
+let selectedClassId;    // 20210001 とか
 let selectedClassName;  // "哲学"とか教科名
 let selectedTeacher;    // 先生の名前
 let selectedTerm;       // ターム 1~4のいづれか
-let selectedStyle;      // オンラインとか //
-let selectedSubjectType; // 選択必修とか  //
-let selectedCredit;     // 単位          //
-let selectedUrl;        // URL           // 
-let selectedClassDocId; // rooms/.../classes/各クラスのドキュメントID　と account/.../myClasses/各履修クラスのドキュメントID　とを一致させるために rooms/.../classes/各クラスのドキュメントID を取得
+let selectedStyle;      // オンラインとか
+let selectedCredit;     // 単位
+let selectedUrl;        // URL
 
 displayClass();
 
 function displayClass() {
 
-    db.collection("rooms").doc(period).collection('classes').orderBy('classId').limit(1).get().then((querySnapshot) => { // 良い書き方が思い浮かばなかったがフィールドのperiodの値を取り出している
-        querySnapshot.forEach((doc) => {
-            document.getElementById("openingClass").textContent = doc.data()['period'];
-            selectedPeriod = doc.data()['period'];
-            // console.log("[開講曜日・時限]" + selectedPeriod);
-        });
-    });
+    // 時限タイトル表示
+    if (period.substring(6,9) == 'Mon') {
+        selectedPeriod = "月曜" + period.substring(9) + "限";
+    } else if (period.substring(6,9) == 'Tue') {
+        selectedPeriod = "火曜" + period.substring(9) + "限";
+    } else if (period.substring(6,9) == 'Wed') {
+        selectedPeriod = "水曜" + period.substring(9) + "限"
+    } else if (period.substring(6,9) == 'Thu') {
+        selectedPeriod = "木曜" + period.substring(9) + "限";
+    } else {
+        selectedPeriod = "金曜" + period.substring(9) + "限";
+    }
+    document.getElementById("openingClass").textContent = selectedPeriod;
 
-
-    db.collection("rooms").doc(period).collection('classes').orderBy('classId').get().then((querySnapshot) => {
+    db.collection("years").doc(year).collection('classes').where(period.substring(4), "==", true).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
+            if (isChangeStatus && doc.data()["classId"] == classId) { // 変更ステータスで、選択中クラスのclassIdが見つかったとき
+                lastClassdocid = doc.id;
+                console.log(lastClassdocid);
+                lockCheckboxNum = countUpData;
+                countUpData++;
+            }
+            countUpData++;
             // console.log(`${doc.id} => ${doc.data()['id']}`);
             // console.log(`${doc.id} => ${doc.data()['name']}`);
 
@@ -76,7 +91,7 @@ function displayClass() {
                 newCBinput.setAttribute('type', 'checkbox');
                 newCBinput.setAttribute('id', `checkbox${doc.data()['classId']}`);
                 newCBinput.setAttribute('name', 'className');
-                newCBinput.setAttribute('onclick', `clickBtn(${doc.data()['classId']}, '${doc.data()['id']}', '${doc.data()['name']}', '${doc.data()['teacher']}', '${doc.data()['term']}', '${doc.id}', '${doc.data()['style']}', '${doc.data()['subjectType']}', '${doc.data()['credit']}', '${doc.data()['url']}')`);
+                newCBinput.setAttribute('onclick', `clickBtn('${doc.id}', ${doc.data()['classId']}, '${doc.data()['id']}', '${doc.data()['name']}', '${doc.data()['teacher']}', '${doc.data()['term']}', '${doc.data()['style']}', '${doc.data()['credit']}', '${doc.data()['url']}')`);
                 let newCBlabel = document.createElement('label');
                 newCBlabel.setAttribute('class', 'form-check-label');
                 newCBlabel.setAttribute('for', 'flexSwitchCheckDefault');
@@ -105,8 +120,8 @@ function displayClass() {
 
             newDetail = document.createElement('div');
             newDetail.setAttribute('class', 'form-check form-switch');
-            newDetail.setAttribute('id', 'subjectType');
-            newDetail.innerText = doc.data()['subjectType'];
+            newDetail.setAttribute('id', 'credit');
+            newDetail.innerText = doc.data()['credit'];
             newRow1.appendChild(newDetail);
 
             newDetail = document.createElement('div');
@@ -118,22 +133,19 @@ function displayClass() {
             parent.appendChild(newRow1);
             // console.log(parent);
         });
+        if (isChangeStatus) {
+            lockCheckbox();
+        }
     });
 }
 
-if (isChangeStatus) {
-    lockCheckbox();
-}
-let boxNum;
 function lockCheckbox() {
-    // 変更前のクラスのcheckboxをcheckを入れて変更できないようにする。色も変えたい。
-    db.collection("rooms").doc(period).collection("classes").doc(classdocid).get().then((doc) => {
+    // 変更前のクラスのcheckboxをcheckを入れて変更できないようにする。
+    db.collection("years").doc(year).collection("classes").doc(lastClassdocid).get().then((doc) => {
         if (doc.exists) {
             const className = document.classtable.className;
-            className[doc.data()["classId"]].checked = true;
-            className[doc.data()["classId"]].disabled = true;
-            boxNum = doc.data()["classId"];
-            // console.log("id=checkbox" + doc.data()["classId"] + " のcheckboxにチェックがはいった");
+            className[lockCheckboxNum].checked = true;
+            className[lockCheckboxNum].disabled = true;
         } else {
             console.log("No such document!");
         }
@@ -143,24 +155,24 @@ function lockCheckbox() {
 }
 
 
-function clickBtn(classId, id, name, teacher, term, classDocId, style, subjectType, credit, url){
+function clickBtn(docid, cId, id, name, teacher, term, style, credit, url){
     if (isChangeStatus) {
         lockCheckbox();
     }
     const className = document.classtable.className;
     isSomethingSelected = false;
     for (let i = 0; i < className.length; i++){
-        if (isChangeStatus && i == boxNum) {
+        if (isChangeStatus && i == lockCheckboxNum) {
             continue;
         }
-        if (className[i].id == "checkbox"+classId){
+        if (className[i].id == "checkbox"+cId){
+            selectedClassdocid = docid;
             selectedId = id;
+            selectedClassId = cId;
             selectedClassName = name;
             selectedTeacher = teacher;
             selectedTerm = term;
-            selectedClassDocId = classDocId;
             selectedStyle = style;
-            selectedSubjectType = subjectType;
             selectedCredit = credit;
             selectedUrl = url;
             isSomethingSelected = className[i].checked;
@@ -188,22 +200,20 @@ function confirmClass(){
     for (let i = 0; i < className.length; i++){
         if(className[i].checked){
             // console.log(className[i]);
-            msg = `このクラスを選択しますか？\n${selectedPeriod}\n- ID：${selectedId} \n- 教科名：${selectedClassName} \n- 教授名：${selectedTeacher} \n- 授業区分：${selectedSubjectType} \n- 授業形態：${selectedStyle}`;
+            msg = `このクラスを選択しますか？\n${period.substring(4,6)} ${selectedPeriod}\n- 時間割コード：${selectedId} \n- 教科名：${selectedClassName} \n- 教員名：${selectedTeacher} \n- 単位数：${selectedCredit} \n- 授業形態：${selectedStyle}`;
             break;
         }
     }
     if (window.confirm(msg)) {
     // confirm で ok が押された時の処理
         if (isChangeStatus) {
-            deleteClassRegistration(true); // 更新の時この一行が実行される。この先でページ遷移する。addClassToMyClasses()もこの先で呼び出される
+            deleteClassRegistration(true); // 更新の時この一行が実行される。この先でページ遷移する。addUserToClassUsers()もこの先で呼び出される
         } else if (isSomethingSelected) {
-            addClassToMyClasses(); // addの時この一行が実行される呼び出し先で最終的にページ遷移する
+            addUserToClassUsers(); // addの時この一行が実行される呼び出し先で最終的にページ遷移する
         }
     }
 }
 
-
-// 以下は、Firestoreにデータを追加・削除する関数　ページ遷移もある
 
 function confirmDelete() {
     if(window.confirm("このクラスを時間割表から取り消しますか？")) {
@@ -211,39 +221,43 @@ function confirmDelete() {
     }
 }
 
-function deleteClassRegistration(bool) { // account/.../myClasses/からドキュメントを消す、rooms/.../classdocid を消す
+function deleteClassRegistration(bool) {
     deleteClassFromMyClasses(bool);
-    // deleteUserFromClassUsers();
 }
 function deleteClassFromMyClasses(bool) {
     db.collection("account").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             if(doc.data()['uid'] == uid) {
-                db.collection("account").doc(doc.id).collection("myClasses").doc(classdocid).delete().then(() => {
-                    console.log("Document successfully deleted!");
+                // クラス配列フィールドから当てはまるclassIdを削除する
+                db.collection("account").doc(doc.id).update({
+                    y2021MyClasses: firebase.firestore.FieldValue.arrayRemove(Number(classId))
+                })
+                .then(() => {
+                    console.log("Document successfully updated!");
                     deleteUserFromClassUsers(bool);
-                }).catch((error) => {
-                    console.error("Error removing document: ", error);
+                })
+                .catch((error) => {
+                    console.error("Error updating document: ", error);
                 });
             }
         });
     });
 }
 function deleteUserFromClassUsers(bool) {
-    db.collection("rooms").doc(period).collection("classes").doc(classdocid).collection("users").where("uid", "==", uid)
+    db.collection("years").doc(year).collection("classes").doc(lastClassdocid).collection("users").where("uid", "==", uid)
     .get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            let docid = doc.id;
-            // console.log(docid);
-            db.collection("rooms").doc(period).collection("classes").doc(classdocid).collection("users").doc(docid).delete().then(() => {
+            console.log(doc.id);
+            db.collection("years").doc(year).collection("classes").doc(lastClassdocid).collection("users").doc(doc.id).delete().then(() => {
                 console.log("Document successfully deleted!");
-                // if (bool == false) { // 削除
-                //     reduceCreditToMyCreditField1(); //ページ遷移もする
-                // } else { // 更新
-                //     reduceCreditToMyCreditField2(); //ページ遷移はまだしない
-                // }
-                reduceCreditToMyCreditField(bool);
+
+                if (bool == false) {
+                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(period.substring(4,6));
+                } else {
+                    addUserToClassUsers();
+                }
+
             }).catch((error) => {
                 console.error("Error removing document: ", error);
             });
@@ -254,202 +268,57 @@ function deleteUserFromClassUsers(bool) {
     });
 }
 
-function reduceCreditToMyCreditField(bool) {
-    db.collection("account")
-    .get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['uid'] == uid) {
-                var myaccountRef = db.collection("account").doc(doc.id);
-
-                myaccountRef.get().then((doc) => {
-                    if (doc.exists) {
-                        // ->
-                        db.collection("rooms").doc(period).collection("classes").doc(classdocid).get().then((doc2) => {
-                            if (doc2.exists) {
-                                let sbt = doc2.data()["subjectType"];
-                                if (sbt == "必修科目") {
-
-                                    return myaccountRef.update({
-                                        // mustCount: Number(doc.data()["mustCount"]) - Number(selectedCredit)
-                                        mustCount: Number(doc.data()["mustCount"]) - Number(doc2.data()["credit"])
-                                    })
-                                    .then(() => {
-                                        console.log("Document successfully updated!");
-                                        if (bool == false) {
-                                            window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-                                        } else {
-                                            addClassToMyClasses();
-                                        }
-                                    })
-                                    .catch((error) => {
-                                        // The document probably doesn't exist.
-                                        console.error("Error updating document: ", error);
-                                    });
-
-                                } else if (sbt == "選択必修科目") {
-
-                                    return myaccountRef.update({
-                                        optionalCount: Number(doc.data()["optionalCount"]) - Number(doc2.data()["credit"])
-                                    })
-                                    .then(() => {
-                                        console.log("Document successfully updated!");
-                                        if (bool == false) {
-                                            window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-                                        } else {
-                                            addClassToMyClasses();
-                                        }
-                                    })
-                                    .catch((error) => {
-                                        // The document probably doesn't exist.
-                                        console.error("Error updating document: ", error);
-                                    });
-
-                                } else if (sbt == "自由科目") {
-
-                                    return myaccountRef.update({
-                                        freeCount: Number(doc.data()["freeCount"]) - Number(doc2.data()["credit"])
-                                    })
-                                    .then(() => {
-                                        console.log("Document successfully updated!");
-                                        if (bool == false) {
-                                            window.location.href ='../timetable.html?name=' + encodeURIComponent(uid);
-                                        } else {
-                                            addClassToMyClasses();
-                                        }
-                                    })
-                                    .catch((error) => {
-                                        // The document probably doesn't exist.
-                                        console.error("Error updating document: ", error);
-                                    });
-
-                                }
-
-                            } else {
-                                console.log("No such document!");
-                            }
-                        }).catch((error) => {
-                            console.log("Error getting document:", error);
-                        });
-
-                        // <-
-                    } else {
-                        console.log("No such document!");
-                    }
-                }).catch((error) => {
-                    console.log("Error getting document:", error);
-                });
-            }
-        });
+function addUserToClassUsers() {
+    // years/.../users にuidフィールドを持ったドキュメントを追加  履修者一覧を表示するときに使う
+    console.log(selectedClassdocid);
+    db.collection("years").doc(year).collection("classes").doc(selectedClassdocid).collection("users").add({
+        uid: uid,
+        name: userName
+    })
+    .then(() => {
+        console.log("Document written with ID: ");
+        addClassToMyClasses();
+    })
+    .catch((error) => {
+        console.error("Error writing document: ", error);
     });
 }
 
 function addClassToMyClasses() {
-    // rooms/.../users にuidフィールドを持ったドキュメントを追加  履修者一覧を表示するときに使う
-    db.collection("rooms").doc(period).collection("classes")
-    .get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if (doc.data()['id'] == selectedId) {
-                db.collection("rooms").doc(period).collection("classes").doc(doc.id).collection("users").add({
-                    uid: uid,
-                    name: userName
-                })
-                .then(() => {
-                    console.log("Document written with ID: ");
-                    addUserToClassUsers();
-                })
-                .catch((error) => {
-                    console.error("Error writing document: ", error);
-                });
-            }
-        });
-    });
-}
-
-function addUserToClassUsers() {
-    // rooms/.../classes/各クラスのドキュメント と同じドキュメントを account/.../myClasses/下につくる
-    db.collection("account")
-    .get().then((querySnapshot) => {
+    db.collection("account").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             if(doc.data()['uid'] == uid) {
-                db.collection("account").doc(doc.id).collection("myClasses").doc(selectedClassDocId).set({
-                    room: decodeURIComponent(period),
-                    id: selectedId,
-                    name: selectedClassName,
-                    period: selectedPeriod,
-                    teacher: selectedTeacher,
-                    term: selectedTerm,
-                    style: selectedStyle,
-                    subjectType: selectedSubjectType,
-                    url: selectedUrl,
-                    credit: Number(selectedCredit)
-                })
-                .then(() => {
-                    console.log("Document written with ID: ");
-                    addCreditToMyCreditField();
-                })
-                .catch((error) => {
-                    console.error("Error writing document: ", error);
-                });
-                // console.log("add myClasses =>", doc.data());
-            }
-        });
-    });
-}
 
-function addCreditToMyCreditField() { // 自分の選択必修科目とかの単位数を更新していく関数
-    db.collection("account")
-    .get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['uid'] == uid) {
-                var myaccountRef = db.collection("account").doc(doc.id);
-
-                myaccountRef.get().then((doc) => {
-                    if (doc.exists) {
-                        // console.log("Document data:", doc.data());
-                        if (selectedSubjectType == "必修科目") {
-
-                            return myaccountRef.update({
-                                mustCount: Number(doc.data()["mustCount"]) + Number(selectedCredit)
+                db.collection('account').doc(doc.id)
+                .get().then((doc2) => {
+                    if (doc2.exists) {
+                        if (typeof doc2.data()["y2021MyClasses"] === 'undefined') {
+                            // 新しく配列フィールドを作成して追加
+                            db.collection('account').doc(doc2.id).set({
+                                y2021MyClasses: [selectedClassId]
+                            }, {merge: true})
+                            .then(() => {
+                                console.log("Document successfully written!");
+                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(period.substring(4,6));
+                            })
+                            .catch((error) => {
+                                console.error("Error writing document: ", error);
+                            });
+                        } else {
+                            // 既にある配列フィールドに追加
+                            db.collection('account').doc(doc2.id).update({
+                                y2021MyClasses: firebase.firestore.FieldValue.arrayUnion(selectedClassId)
                             })
                             .then(() => {
                                 console.log("Document successfully updated!");
-                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid); // 先に処理が進んでしまうのここに書いた
+                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(period.substring(4,6));
                             })
                             .catch((error) => {
-                                // The document probably doesn't exist.
                                 console.error("Error updating document: ", error);
                             });
-
-                        } else if (selectedSubjectType == "選択必修科目") {
-
-                            return myaccountRef.update({
-                                optionalCount: Number(doc.data()["optionalCount"]) + Number(selectedCredit)
-                            })
-                            .then(() => {
-                                console.log("Document successfully updated!");
-                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid); // 先に処理が進んでしまうのここに書いた
-                            })
-                            .catch((error) => {
-                                // The document probably doesn't exist.
-                                console.error("Error updating document: ", error);
-                            });
-
-                        } else if (selectedSubjectType == "自由科目") {
-
-                            return myaccountRef.update({
-                                freeCount: Number(doc.data()["freeCount"]) + Number(selectedCredit)
-                            })
-                            .then(() => {
-                                console.log("Document successfully updated!");
-                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid); // 先に処理が進んでしまうのここに書いた
-                            })
-                            .catch((error) => {
-                                // The document probably doesn't exist.
-                                console.error("Error updating document: ", error);
-                            });
-
                         }
                     } else {
+                        // doc.data() will be undefined in this case
                         console.log("No such document!");
                     }
                 }).catch((error) => {

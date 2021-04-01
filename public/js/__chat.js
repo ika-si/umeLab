@@ -1,20 +1,8 @@
 //firestoreからデータ取得
 // var db = firebase.firestore();
 
-let classdocid;
-db.collection('years').doc(year).collection('classes').where("classId", "==", Number(classId))
-    .get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            // messagesRef = doc.collection('chat');
-            classdocid = doc.id;
-            // console.log(messagesRef);
-            console.log(classdocid);
-        });
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
-var messagesRef = db.collection("years").doc(year).collection("classes").doc(classdocid).collection("chat");
+var messagesRef = db.collection("rooms").doc(period).collection("classes").doc(urlClass).collection("chat");
+
 /**
  * 同期処理
  **/
