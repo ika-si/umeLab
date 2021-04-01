@@ -34,7 +34,14 @@
   <table class="table table-bordered" style="table-layout:fixed;">
     <thead class="thead-dark">
       <tr>
-        <th scope="col" style="width:50px;"></th>
+        <th scope="col" style="width:50px;">
+          <select id="termSelect" onchange="reloadTimeTable()">
+            <option value="T1" selected>T1</option>
+            <option value="T2">T2</option>
+            <option value="T3">T3</option>
+            <option value="T4">T4</option>
+          </select>
+        </th>
         <th scope="col" class="day">Mon</th>
         <th scope="col" class="day">Tue</th>
         <th scope="col" class="day">Wed</th>
@@ -154,6 +161,9 @@
     </tbody>
   </table>
 
+  <input type="button" class ="Bigchangeroom" id="btn1" value="履修を変更する">
+  <input type="button" class ="Bigchangeroom" id="btn2" value="変更完了">
+
 
   <!-- <h2>テスト　chat.htmlへのリンク</h2>
   <button type="button" class="btn btn-primary" onclick="userSend()">chat.htmlへの移動</button> -->
@@ -179,10 +189,6 @@
     <!-- <script src="./js/logout.js"></script> -->
     <script src="js/account.js"></script>
     <script src ="js/timetable.js"></script>
-
-    <input type="button" class ="Bigchangeroom" id="btn1" value="履修を変更する">
-    <input type="button" class ="Bigchangeroom" id="btn2" value="変更完了">
-
 
 
 </html>

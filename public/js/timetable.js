@@ -144,7 +144,7 @@ function judgeMyClassContain(period, myClassesArr) {
     .get().then((querySnapshot) => {
       for (var k in querySnapshot.docs) {
         const doc = querySnapshot.docs[k];
-        console.log(doc.id);
+        // console.log(doc.id);
 
 
       // querySnapshot.forEach((doc) => {
