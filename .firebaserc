@@ -1,6 +1,6 @@
 {
   "projects": {
-    "staging": "umelab2",
-    "default": "umelab2"
+    "staging": "chattable-umelab",
+    "default": "chattable-umelab"
   }
 }
