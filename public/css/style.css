@@ -23,6 +23,15 @@ body{
   padding: 80px 100px;
 }
 
+.details {
+  margin-left: 200px;
+  margin-bottom: 100px;
+}
+.details img {
+  width: 900px;
+  height: 430px;
+}
+
 .sign{
   color:white;
   background-color:#2C3F55;
