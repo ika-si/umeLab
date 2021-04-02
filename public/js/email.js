@@ -48,7 +48,7 @@ function search() {
   var defer = $.Deferred();
   setTimeout(function() {
     defer.resolve(); // 解決
-  }, 1000);
+  }, 5000);
   return defer.promise(); // プロミスを作って返す
 }
 
@@ -144,7 +144,7 @@ function searchEmail() {
   var defer = $.Deferred();
   setTimeout(function() {
     defer.resolve(); // 解決
-  }, 2000);
+  }, 5000);
   return defer.promise(); // プロミスを作って返す
 }
 
