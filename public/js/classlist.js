@@ -158,13 +158,13 @@ function checkCanAddClass(tpArr, countUpData) {
 
                 if (isChangeStatus) {
                     // 一旦更新
-                    console.log(myYearContainArr);
-                    console.log(lastTermPeriodArr);
+                    // console.log(myYearContainArr);
+                    // console.log(lastTermPeriodArr);
                     for (let i=0; i<lastTermPeriodArr.length; i++) {
-                        console.log(myYearContainArr.indexOf(lastTermPeriodArr[i]));
+                        // console.log(myYearContainArr.indexOf(lastTermPeriodArr[i]));
                         myYearContainArr.splice(myYearContainArr.indexOf(lastTermPeriodArr[i]), 1);
                     }
-                    console.log(myYearContainArr);
+                    // console.log(myYearContainArr);
                 }
 
                 let canAddClass = true;
@@ -176,8 +176,14 @@ function checkCanAddClass(tpArr, countUpData) {
                 }
                 if (canAddClass == false) {
                     const className = document.classtable.className;
-                    className[countUpData-1].disabled = true;
-                    console.log(countUpData + "　番目のチェックボックス　disabled");
+                    // console.log(className);
+                    // console.log(document.getElementsByClassName("classDetail"));
+                    // console.log(countUpData);
+                    // console.log(className.length);
+                    if (countUpData <= className.length) {
+                        className[countUpData-1].disabled = true;
+                        console.log(countUpData + "　番目のチェックボックス　disabled");
+                    }
                 }
             }
         });
@@ -206,6 +212,9 @@ function clickBtn(docid, cId, id, name, teacher, term, style, credit, url, termP
     }
     const className = document.classtable.className;
     isSomethingSelected = false;
+    // console.log(isSomethingSelected);
+    // console.log(className);
+    // console.log(className.length);
     for (let i = 0; i < className.length; i++){
         if (isChangeStatus && i == lockCheckboxNum) {
             continue;
@@ -238,8 +247,10 @@ function clickBtn(docid, cId, id, name, teacher, term, style, credit, url, termP
 function checkDecideBtn() {
     if (isSomethingSelected) {
         $('#decideBtn').prop('disabled', false);
+        console.log(document.getElementById("decideBtn"));
     } else {
         $('#decideBtn').prop('disabled', true);
+        console.log(document.getElementById("decideBtn"));
     }
 }
 
