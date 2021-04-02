@@ -36,31 +36,33 @@
 
 #subjectName{
   position: absolute;
-  left: 300px;
+  left: 350px;
   height: 50px;
-  width: 240px;
+  width: 250px;
   /* background-color: pink; */
 }
 
 #professor{
   position: absolute;
-  left: 550px;
+  left: 600px;
   height: 50px;
-  width: 400px;
-  /* background-color: pink; */
-}
-
-#credit{
-  position: relative;
-  left: 800px;
-  height: 50px;
+  width: 200px;
   /* background-color: pink; */
 }
 
 #style{
-  position: relative;
-  left: 60px;
+  position: absolute;
+  left: 800px;
   height: 50px;
+  width: 200px;
+  /* background-color: pink; */
+}
+
+#credit{
+  position: absolute;
+  left: 1000px;
+  height: 50px;
+  width: 150px;
   /* background-color: pink; */
 }
 
