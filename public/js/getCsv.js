@@ -106,11 +106,12 @@ fileReader.onload = () => {
     ];
 
     let isOtherPeriod = false;
+    let tpArr = [];
     if (classData[i][7].trim() == "他") {
       // console.log("skip!");
       isOtherPeriod = true;
     } else {
-      const tpArr = classData[i][7].trim().split('/');
+      tpArr = classData[i][7].trim().split('/');
       // console.log(tpArr);
       for (let t=0; t<tpArr.length; t++) {
         for (let k=0; k<30; k++) {
@@ -126,7 +127,6 @@ fileReader.onload = () => {
 
 
 
-
     db.collection("years").doc("2021").collection("classes").add({
     // db.collection("rooms").doc(classData[i][0]).collection("classes").add({
       id: classData[i][0],
@@ -139,6 +139,7 @@ fileReader.onload = () => {
 
       // termperiod: 
       isOtherPeriod: isOtherPeriod,
+      termPeriodArr: tpArr,
 
       T1Mon1: containTermPeriod[0][0],
       T2Mon1: containTermPeriod[0][1],
