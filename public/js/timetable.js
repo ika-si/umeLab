@@ -8,7 +8,7 @@ let returnTerm; // classlist.html から戻ってきた時にもとのターム�
 let query = location.search;
 let value = query.split('=');
 returnTerm = value[2];
-console.log(returnTerm);
+console.log("returnTerm : ", returnTerm);
 if (value[1].indexOf("?") != -1) { // classlist.html から戻ってきた時
   if (returnTerm == "T1") {
     selectedTerm.options[0].selected = true;
