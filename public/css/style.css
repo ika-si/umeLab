@@ -20,16 +20,19 @@ body{
 
 .center{
   text-align: center;
-  padding: 80px 100px;
+  /* padding: 80px 100px; */
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .details {
-  margin-left: 200px;
+  text-align: left;
+  /* margin-left: 300px; */
   margin-bottom: 100px;
 }
 .details img {
-  width: 900px;
-  height: 430px;
+  width: 700px;
+  height: 350px;
 }
 
 .sign{
