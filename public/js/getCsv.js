@@ -34,7 +34,8 @@ fileReader.onload = () => {
   // console.log(classData[1][0]);
 
   // 各クラスのデータをcsvファイルをもとに作成する処理
-  for (let i=1; i<classData.length-1; i++) { // なんか最後空白行が入ってしまうので-1している
+  // for (let i=1; i<classData.length-1; i++) { // なんか最後空白行が入ってしまうので-1している　T1.3.4分
+  for (let i=1676; i<classData.length-1; i++) { // なんか最後空白行が入ってしまうので-1している T2分
     let containTermPeriod = [
       [false, false, false, false], // Mon1
       [false, false, false, false], // Mon2
