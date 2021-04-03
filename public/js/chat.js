@@ -124,7 +124,7 @@ let msg_form = document.getElementById('msgAdd');
 msg_form.addEventListener('keypress', test_ivent);
 
 function test_ivent(e) {
-  if (e.keyCode === 13) {
+  if (e.keyCode === 13 && e.keyCode === 16) {
     add();
   }
   return false;
