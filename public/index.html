@@ -26,11 +26,24 @@
   <body>
     <div class="center">
       <h2>chat<span class="table-color">Table</span></h2>
-      <p>同じ授業をとっている人とつながるアプリ</p>
+      <h4>-Tsuda University ver-</h4>
+      <p>同じ授業をとっている津田塾生とつながるアプリ</p>
       <h5 id="errorMessage"></h5>
       <br>
       <button type="button" class="sign" id="addBtn" onclick="location.href='./signup.html'">signUp</button>
       <button type="button" class="sign" id="addBtn" onclick="signInWithGmail()">signIn</button>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-9">
+        <div class="details">
+          <p>※津田塾大学から配布されたGmailを用いてください。(~@gm.tsuda.ac.jp)</p>
+          <p>※PCでの使用を推奨しています。</p>
+          <p>※授業zoomURLが公開され次第、roomに追加されます。しばらくお待ちください。</p>
+          <p>※情報科学科の有志が作成しました。温かい目で見守ってください。</p>
+          <a href="details.html" target="_blank">使い方はこちら</a>
+        </div>
+      </div>
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -46,8 +59,6 @@
     <script src="js/config.js"></script>
 
     <script src="js/email.js"></script>
-
-    <!-- <script src="./js/login.js"></script> -->
 
   </body>
 </html>
