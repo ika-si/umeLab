@@ -39,7 +39,7 @@ function showChat() {
       });
   });
 }
-
+showChat();
 
 
 function addLog(id, data){
