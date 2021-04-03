@@ -23,7 +23,7 @@ function showChat() {
       // $('#list').text('');
       snapshot.docChanges().forEach((change) => {
 
-        console.log(change.doc.data()['name']);
+        // console.log(change.doc.data()['name']);
           // 追加
           if ( change.type === 'added' ) {
               addLog(change.doc.id, change.doc.data());

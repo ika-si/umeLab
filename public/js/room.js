@@ -89,7 +89,7 @@ function showStudents() {
     usersRef.get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            console.log(doc.id, " => ", doc.data()['name']);
+            // console.log(doc.id, " => ", doc.data()['name']);
             $('#memberlist').append('<a class="btn rounded-pill person" data-uid="'+ doc.data()['uid'] +'">' + doc.data()['name'] + '</a><br><br>');
         });
     })
