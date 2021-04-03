@@ -1,4 +1,4 @@
-let year_term_period, classId, year;
+let year_term_period, classId, year, classdocid;
 function getClasses() {
     // URLから授業情報を取得
     let query = location.search;
@@ -9,6 +9,7 @@ function getClasses() {
     }
     classId = value[3];
     year = classId.substring(0,4);
+    console.log(year);
     console.log(year_term_period);
     console.log(classId);
 }
@@ -24,13 +25,14 @@ function showRoomTitle() {
     .get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             let periodName;
-            if (year_term_period.substring(6) == 'Mon') {
+            // console.log(year_term_period.substring(6,9));
+            if (year_term_period.substring(6,9) == 'Mon') {
                 periodName = "月曜" + year_term_period.substring(9) + "限";
-            } else if (year_term_period.substring(6) == 'Tue') {
+            } else if (year_term_period.substring(6,9) == 'Tue') {
                 periodName = "火曜" + year_term_period.substring(9) + "限";
-            } else if (year_term_period.substring(6) == 'Wed') {
+            } else if (year_term_period.substring(6,9) == 'Wed') {
                 periodName = "水曜" + year_term_period.substring(9) + "限"
-            } else if (year_term_period.substring(6) == 'Thu') {
+            } else if (year_term_period.substring(6,9) == 'Thu') {
                 periodName = "木曜" + year_term_period.substring(9) + "限";
             } else {
                 periodName = "金曜" + year_term_period.substring(9) + "限";
@@ -48,6 +50,10 @@ function showRoomTitle() {
                 document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="${classUrl}" target="_blank">${classUrl}</a>`;
             }
             // console.log(document.getElementById("roomDetail"));
+            classdocid = doc.id;
+            console.log(classdocid);
+            showStudents();
+            showChat();
         });
     })
     .catch((error) => {
@@ -56,35 +62,42 @@ function showRoomTitle() {
 }
 showRoomTitle();
 
-function getStudents() {
-    let classdocid;
-    db.collection('years').doc(year).collection('classes').where("classId", "==", Number(classId))
-    .get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            // usersRef = doc.collection('users');
-            classdocid = doc.id;
-            // console.log(usersRef);
-            console.log(classdocid);
-        });
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
-    usersRef = db.collection('years').doc(year).collection('classes').doc(classdocid).collection('users');
+// function getStudents() {
+//     let classdocid;
+//     db.collection('years').doc(year).collection('classes').where("classId", "==", Number(classId))
+//     .get().then((querySnapshot) => {
+//         querySnapshot.forEach((doc) => {
+//             // usersRef = doc.collection('users');
+//             classdocid = doc.id;
+//             // console.log(usersRef);
+//             console.log(classdocid);
+//         });
+//     })
+//     .catch((error) => {
+//         console.log("Error getting documents: ", error);
+//     });
+//     if(classdocid !== 'undefined') {
+//         console.log("find");
+//         console.log(classdocid);
+//         showStudents(classdocid);
+//     }
+// }
+// getStudents();
 
+function showStudents() {
+    usersRef = db.collection('years').doc(year).collection('classes').doc(classdocid).collection('users');
     usersRef.get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            // console.log(doc.id, " => ", doc.data());
+            console.log(doc.id, " => ", doc.data()['name']);
             $('#memberlist').append('<a class="btn rounded-pill person" data-uid="'+ doc.data()['uid'] +'">' + doc.data()['name'] + '</a><br><br>');
         });
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
     });
-
 }
-getStudents();
+
 
 
 $(document).on("click", ".person", function (event) {
