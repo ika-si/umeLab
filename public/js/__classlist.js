@@ -2,27 +2,26 @@ const db = firebase.firestore();
 
 setYearcontainsTermPeriod();
 
-let period, classId; //period:2021T1Mon1とか classId:20210001とか
+let year_term_period, id; //period:2021T1Mon1とか id:11J03 とか
 let isChangeStatus = false; // add->false, change->true
 getFromURL();
 function getFromURL() {
     // URLから取得
     let query = location.search;
     let value = query.split('=');
-    period = value[2];
-    if (period.indexOf("?") != -1) {
-        period = period.substring(0, period.indexOf("?"));
+    year_term_period = value[2];
+    if (year_term_period.indexOf("?") != -1) {
+        year_term_period = year_term_period.substring(0, year_term_period.indexOf("?"));
         isChangeStatus = true;
     } else {
         // isChangeStatus = false;
     }
-    classId = value[3];
-    console.log(period);
-    console.log(classId);
+    id = value[3];
+    console.log(year_term_period);
+    console.log(id);
     console.log("クラス変更 ", isChangeStatus);
 }
-const year = period.substring(0,4); // 2021
-let lastClassdocid; // 変更の時に使用する、選択済みクラスのdoc.id
+const year = year_term_period.substring(0,4); // 2021
 let lastTermPeriodArr;
 let countUpData = 0;
 let lockCheckboxNum;
@@ -38,51 +37,63 @@ if (isChangeStatus) {
     // document.getElementById("confirmStatus").innerText = "時間割に追加したい授業を選択してください";
 }
 
-let selectedClassdocid; // doc.id
+let selectedClassdocid; // doc.id  11J01
 let selectedPeriod;     // "月曜1限"とか
-let selectedId;         // t1m1101 とか
-let selectedClassId;    // 20210001 とか
-let selectedClassName;  // "哲学"とか教科名
-let selectedTeacher;    // 先生の名前
-let selectedTerm;       // ターム 1~4のいづれか
-let selectedStyle;      // オンラインとか
-let selectedCredit;     // 単位
-let selectedUrl;        // URL
 let selectedTermPeriodArr; // T1Mon1とかの配列
 
-displayClass();
+let thisTPClassArr;
+showClassTitle();
+getTPClassArr();
 
-function displayClass() {
-
+function showClassTitle() {
     // 時限タイトル表示
-    if (period.substring(6,9) == 'Mon') {
-        selectedPeriod = "月曜" + period.substring(9) + "限";
-    } else if (period.substring(6,9) == 'Tue') {
-        selectedPeriod = "火曜" + period.substring(9) + "限";
-    } else if (period.substring(6,9) == 'Wed') {
-        selectedPeriod = "水曜" + period.substring(9) + "限"
-    } else if (period.substring(6,9) == 'Thu') {
-        selectedPeriod = "木曜" + period.substring(9) + "限";
+    if (year_term_period.substring(6,9) == 'Mon') {
+        selectedPeriod = "月曜" + year_term_period.substring(9) + "限";
+    } else if (year_term_period.substring(6,9) == 'Tue') {
+        selectedPeriod = "火曜" + year_term_period.substring(9) + "限";
+    } else if (year_term_period.substring(6,9) == 'Wed') {
+        selectedPeriod = "水曜" + year_term_period.substring(9) + "限"
+    } else if (year_term_period.substring(6,9) == 'Thu') {
+        selectedPeriod = "木曜" + year_term_period.substring(9) + "限";
     } else {
-        selectedPeriod = "金曜" + period.substring(9) + "限";
+        selectedPeriod = "金曜" + year_term_period.substring(9) + "限";
     }
-    document.getElementById("openingClass").textContent = selectedPeriod;
+    document.getElementById("openingClass").textContent = year_term_period.substring(4,6) + " " + selectedPeriod;
+}
+function getTPClassArr() {
+    db.collection("years").doc(year).get().then((doc) => {
+        if (doc.exists) {
+            thisTPClassArr = doc.data()[`${year_term_period.substring(4)}Arr`];
+            // console.log(thisTPClassArr);
+        } else {
+            console.log("No such document!");
+        }
+        if (isChangeStatus) {
+            getLastSelectclassTPArr();
+        } else {
+            displayClass(0);
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+}
+function getLastSelectclassTPArr() {
+    db.collection("years").doc(year).collection("classes").doc(id).get().then((doc) => {
+        if (doc.exists) {
+            lastTermPeriodArr = doc.data()["termPeriodArr"];
+        } else {
+            console.log("No such document!");
+        }
+        displayClass(0);
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+}
 
-    db.collection("years").doc(year).collection('classes').where(period.substring(4), "==", true).get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if (isChangeStatus && doc.data()["classId"] == classId) { // 変更ステータスで、選択中クラスのclassIdが見つかったとき
-                lastClassdocid = doc.id;
-                lastTermPeriodArr = doc.data()["termPeriodArr"];
-                console.log(lastClassdocid);
-                lockCheckboxNum = countUpData;
-                countUpData++;
-            }
-            countUpData++;
-
-            // console.log(`${doc.id} => ${doc.data()['id']}`);
-            // console.log(`${doc.id} => ${doc.data()['name']}`);
-
-            // let parent = document.getElementsByClassName("classtable")[0];
+function displayClass(i) {
+    db.collection("years").doc(year).collection("classes").doc(thisTPClassArr[i]).get().then((doc) => {
+        if (doc.exists) {
+            // クラスの一行表示
             let parent = document.classtable;
 
             let newRow1 = document.createElement('div');
@@ -95,9 +106,9 @@ function displayClass() {
                 let newCBinput = document.createElement('input');
                 newCBinput.setAttribute('class', 'form-check-input');
                 newCBinput.setAttribute('type', 'checkbox');
-                newCBinput.setAttribute('id', `checkbox${doc.data()['classId']}`);
+                newCBinput.setAttribute('id', `checkbox${i}`);
                 newCBinput.setAttribute('name', 'className');
-                newCBinput.setAttribute('onclick', `clickBtn('${doc.id}', ${doc.data()['classId']}, '${doc.data()['id']}', '${doc.data()['name']}', '${doc.data()['teacher']}', '${doc.data()['term']}', '${doc.data()['style']}', '${doc.data()['credit']}', '${doc.data()['url']}', '${doc.data()['termPeriodArr']}')`);
+                newCBinput.setAttribute('onclick', `clickBtn('${doc.id}', ${i}, '${doc.data()['termPeriodArr']}')`);
                 let newCBlabel = document.createElement('label');
                 newCBlabel.setAttribute('class', 'form-check-label');
                 newCBlabel.setAttribute('for', 'flexSwitchCheckDefault');
@@ -139,18 +150,46 @@ function displayClass() {
             parent.appendChild(newRow1);
             // console.log(parent);
 
-            // 履修追加できないようにスイッチを切り替えられなくする
-            // 履修放棄した場合でも選択できないもののスイッチを切り替えられなくする
-            const tpArr = doc.data()['termPeriodArr'];
-            // console.log(tpArr);
-            checkCanAddClass(tpArr, countUpData);
-        });
-        if (isChangeStatus) {
-            lockCheckbox();
+
+            // console.log(document.getElementById("checkbox"+i).onclick);
+            
+            
+            if (isChangeStatus && doc.data()["id"] == id) {
+                console.log(doc.data()["id"]);
+                // 選択済みクラスを選択できないようにする
+                const className = document.classtable.className;
+                if (i == 0) { // なんかclassName、一つの時だけListではなく単純に1つのタグが取り出されるみたいなので分ける
+                    className.checked = true;
+                    className.disabled = true;
+                } else {
+                    className[i].checked = true;
+                    className[i].disabled = true;
+                }
+                // console.log(className);
+
+                lockCheckboxNum = i;
+                // lastTermPeriodArr = doc.data()["termPeriodArr"];
+            } else {
+                // 履修追加できないようにスイッチを切り替えられなくする
+                // 履修放棄した場合でも選択できないもののスイッチを切り替えられなくする
+                const tpArr = doc.data()['termPeriodArr'];
+                // console.log(tpArr);
+                checkCanAddClass(tpArr, i);
+            }
+
+        } else {
+            console.log("No such document!");
         }
+        // 次のクラスの一行表示を行う
+        if (i + 1 != thisTPClassArr.length) {
+            displayClass(i + 1);
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     });
+
 }
-function checkCanAddClass(tpArr, countUpData) {
+function checkCanAddClass(tpArr, i) {
     db.collection("account").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             if(doc.data()['uid'] == uid) {
@@ -172,6 +211,7 @@ function checkCanAddClass(tpArr, countUpData) {
                 for (let i=0; i<tpArr.length; i++) {
                     if (myYearContainArr.includes(tpArr[i])) {
                         canAddClass = false;
+                        break;
                     }
                 }
                 if (canAddClass == false) {
@@ -180,99 +220,77 @@ function checkCanAddClass(tpArr, countUpData) {
                     // console.log(document.getElementsByClassName("classDetail"));
                     // console.log(countUpData);
                     // console.log(className.length);
-                    if (countUpData <= className.length) {
-                        className[countUpData-1].disabled = true;
-                        console.log(countUpData + "　番目のチェックボックス　disabled");
+                    if (i == 0) { // なんかclassName、一つの時だけListではなく単純に1つのタグが取り出されるみたいなので分ける
+                        className.disabled = true;
+                    } else {
+                        className[i].disabled = true;
                     }
+                    console.log((i+1) + "　番目のチェックボックス　disabled");
+                    
                 }
             }
         });
     });
 }
 
-function lockCheckbox() {
-    // 変更前のクラスのcheckboxをcheckを入れて変更できないようにする。
-    db.collection("years").doc(year).collection("classes").doc(lastClassdocid).get().then((doc) => {
-        if (doc.exists) {
-            const className = document.classtable.className;
-            className[lockCheckboxNum].checked = true;
-            className[lockCheckboxNum].disabled = true;
-        } else {
-            console.log("No such document!");
-        }
-    }).catch((error) => {
-        console.log("Error getting document:", error);
-    });
-}
 
 
-function clickBtn(docid, cId, id, name, teacher, term, style, credit, url, termPeriodArr){
-    if (isChangeStatus) {
-        lockCheckbox();
-    }
+function clickBtn(docid, i, termPeriodArr){
+    // if (isChangeStatus) {
+    //     lockCheckbox();
+    // }
+    // console.log(document.getElementById("checkbox"+i).onclick);
+    selectedClassdocid = docid; // 11J03とか
+    selectedTermPeriodArr = termPeriodArr.split(",");
+    // console.log(selectedTermPeriodArr);
     const className = document.classtable.className;
     isSomethingSelected = false;
-    // console.log(isSomethingSelected);
-    // console.log(className);
-    // console.log(className.length);
-    for (let i = 0; i < className.length; i++){
-        if (isChangeStatus && i == lockCheckboxNum) {
+    for (let k = 0; k < className.length; k++){
+        if (isChangeStatus && k == lockCheckboxNum) {
             continue;
         }
-        if (className[i].id == "checkbox"+cId){
-            selectedClassdocid = docid;
-            selectedId = id;
-            selectedClassId = cId;
-            selectedClassName = name;
-            selectedTeacher = teacher;
-            selectedTerm = term;
-            selectedStyle = style;
-            selectedCredit = credit;
-            selectedUrl = url;
-
-            selectedTermPeriodArr = termPeriodArr.split(',');
-            // console.log(termPeriodArr);
-            // console.log(selectedTermPeriodArr);
-            
-            isSomethingSelected = className[i].checked;
+        if (className[k].id == "checkbox"+i) {
+            isSomethingSelected = className[k].checked;
             checkDecideBtn(); // $('#decideBtn').prop('disabled', !isSomethingSelected);
             console.log("isSomethingSelected: " + isSomethingSelected);
-            console.log("now select -> id: " + id + "  name: " + name + "  teacher: " + teacher);
+            if (isSomethingSelected) {
+                console.log("now select -> 時間割コード: ", selectedClassdocid);
+            }
             continue;
         }
-        className[i].checked = false;
+        className[k].checked = false;
     }
 }
 
 function checkDecideBtn() {
     if (isSomethingSelected) {
         $('#decideBtn').prop('disabled', false);
-        console.log(document.getElementById("decideBtn"));
+        // console.log(document.getElementById("decideBtn"));
     } else {
         $('#decideBtn').prop('disabled', true);
-        console.log(document.getElementById("decideBtn"));
+        // console.log(document.getElementById("decideBtn"));
     }
 }
 
-function confirmClass(){
-    const className = document.classtable.className;
+function confirmClass() {
     let msg = "";
-    // confirm表示メッセージの用意
-    for (let i = 0; i < className.length; i++){
-        if(className[i].checked){
-            // console.log(className[i]);
-            msg = `このクラスを選択しますか？\n${period.substring(4,6)} ${selectedPeriod}\n- 時間割コード：${selectedId} \n- 教科名：${selectedClassName} \n- 教員名：${selectedTeacher} \n- 単位数：${selectedCredit} \n- 授業形態：${selectedStyle}`;
-            break;
+    db.collection("years").doc(year).collection("classes").doc(selectedClassdocid).get().then((doc) => {
+        if (doc.exists) {
+            msg = `このクラスを選択しますか？\n${year_term_period.substring(4,6)} ${selectedPeriod}\n- 時間割コード：${doc.data()['id']} \n- 教科名：${doc.data()['name']} \n- 教員名：${doc.data()['teacher']} \n- 授業形態：${doc.data()['style']} \n- 単位数：${doc.data()['credit']}`;
+            if (window.confirm(msg)) {
+            // confirm で ok が押された時の処理
+                if (isChangeStatus) {
+                    deleteClassRegistration(true); // 更新の時この一行が実行される。この先でページ遷移する。addUserToClassUsers()もこの先で呼び出される
+                } else if (isSomethingSelected) {
+                    addUserToClassUsers(); // addの時この一行が実行される呼び出し先で最終的にページ遷移する
+                }
+            }
+        } else {
+            console.log("No such document!");
         }
-    }
-    if (window.confirm(msg)) {
-    // confirm で ok が押された時の処理
-        if (isChangeStatus) {
-            deleteClassRegistration(true); // 更新の時この一行が実行される。この先でページ遷移する。addUserToClassUsers()もこの先で呼び出される
-        } else if (isSomethingSelected) {
-            addUserToClassUsers(); // addの時この一行が実行される呼び出し先で最終的にページ遷移する
-        }
-    }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
 }
 
 
@@ -298,9 +316,9 @@ function deleteClassFromMyClasses(bool) {
                 }
                 console.log(myYearContainArr);
 
-                // クラス配列フィールドから当てはまるclassIdを削除する
+                // クラス配列フィールドから当てはまるidを削除する
                 db.collection("account").doc(doc.id).update({
-                    y2021MyClasses: firebase.firestore.FieldValue.arrayRemove(Number(classId)),
+                    y2021MyClasses: firebase.firestore.FieldValue.arrayRemove(id),
                     y2021ContainArr: myYearContainArr
                 })
                 .then(() => {
@@ -315,16 +333,16 @@ function deleteClassFromMyClasses(bool) {
     });
 }
 function deleteUserFromClassUsers(bool) {
-    db.collection("years").doc(year).collection("classes").doc(lastClassdocid).collection("users").where("uid", "==", uid)
+    db.collection("years").doc(year).collection("classes").doc(id).collection("users").where("uid", "==", uid)
     .get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             console.log(doc.id);
-            db.collection("years").doc(year).collection("classes").doc(lastClassdocid).collection("users").doc(doc.id).delete().then(() => {
+            db.collection("years").doc(year).collection("classes").doc(id).collection("users").doc(doc.id).delete().then(() => {
                 console.log("Document successfully deleted!");
 
                 if (bool == false) {
-                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(period.substring(4,6));
+                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
                 } else {
                     addUserToClassUsers();
                 }
@@ -375,12 +393,12 @@ function addClassToMyClasses() {
                         if (typeof doc2.data()["y2021MyClasses"] === 'undefined') {
                             // 新しく配列フィールドを作成して追加
                             db.collection('account').doc(doc2.id).set({
-                                y2021MyClasses: [selectedClassId],
+                                y2021MyClasses: [selectedClassdocid],
                                 y2021ContainArr: myYearContainArr
                             }, {merge: true})
                             .then(() => {
                                 console.log("Document successfully written!");
-                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(period.substring(4,6));
+                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
                             })
                             .catch((error) => {
                                 console.error("Error writing document: ", error);
@@ -388,12 +406,12 @@ function addClassToMyClasses() {
                         } else {
                             // 既にある配列フィールドに追加
                             db.collection('account').doc(doc2.id).update({
-                                y2021MyClasses: firebase.firestore.FieldValue.arrayUnion(selectedClassId),
+                                y2021MyClasses: firebase.firestore.FieldValue.arrayUnion(selectedClassdocid),
                                 y2021ContainArr: myYearContainArr
                             })
                             .then(() => {
                                 console.log("Document successfully updated!");
-                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(period.substring(4,6));
+                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
                             })
                             .catch((error) => {
                                 console.error("Error updating document: ", error);

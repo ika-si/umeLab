@@ -24,6 +24,152 @@ function csv_array(data) {
 let classData;
 // const db = firebase.firestore();
 
+// let jCodeArrAll = [];
+let jCodeArrAll = [
+  {time:"T1Mon1", arr:[]},
+  {time:"T1Mon2", arr:[]},
+  {time:"T1Mon3", arr:[]},
+  {time:"T1Mon4", arr:[]},
+  {time:"T1Mon5", arr:[]},
+  {time:"T1Mon6", arr:[]},
+
+  {time:"T2Mon1", arr:[]},
+  {time:"T2Mon2", arr:[]},
+  {time:"T2Mon3", arr:[]},
+  {time:"T2Mon4", arr:[]},
+  {time:"T2Mon5", arr:[]},
+  {time:"T2Mon6", arr:[]},
+
+  {time:"T3Mon1", arr:[]},
+  {time:"T3Mon2", arr:[]},
+  {time:"T3Mon3", arr:[]},
+  {time:"T3Mon4", arr:[]},
+  {time:"T3Mon5", arr:[]},
+  {time:"T3Mon6", arr:[]},
+
+  {time:"T4Mon1", arr:[]},
+  {time:"T4Mon2", arr:[]},
+  {time:"T4Mon3", arr:[]},
+  {time:"T4Mon4", arr:[]},
+  {time:"T4Mon5", arr:[]},
+  {time:"T4Mon6", arr:[]},
+
+
+  {time:"T1Tue1", arr:[]},
+  {time:"T1Tue2", arr:[]},
+  {time:"T1Tue3", arr:[]},
+  {time:"T1Tue4", arr:[]},
+  {time:"T1Tue5", arr:[]},
+  {time:"T1Tue6", arr:[]},
+
+  {time:"T2Tue1", arr:[]},
+  {time:"T2Tue2", arr:[]},
+  {time:"T2Tue3", arr:[]},
+  {time:"T2Tue4", arr:[]},
+  {time:"T2Tue5", arr:[]},
+  {time:"T2Tue6", arr:[]},
+
+  {time:"T3Tue1", arr:[]},
+  {time:"T3Tue2", arr:[]},
+  {time:"T3Tue3", arr:[]},
+  {time:"T3Tue4", arr:[]},
+  {time:"T3Tue5", arr:[]},
+  {time:"T3Tue6", arr:[]},
+
+  {time:"T4Tue1", arr:[]},
+  {time:"T4Tue2", arr:[]},
+  {time:"T4Tue3", arr:[]},
+  {time:"T4Tue4", arr:[]},
+  {time:"T4Tue5", arr:[]},
+  {time:"T4Tue6", arr:[]},
+
+
+  {time:"T1Wed1", arr:[]},
+  {time:"T1Wed2", arr:[]},
+  {time:"T1Wed3", arr:[]},
+  {time:"T1Wed4", arr:[]},
+  {time:"T1Wed5", arr:[]},
+  {time:"T1Wed6", arr:[]},
+
+  {time:"T2Wed1", arr:[]},
+  {time:"T2Wed2", arr:[]},
+  {time:"T2Wed3", arr:[]},
+  {time:"T2Wed4", arr:[]},
+  {time:"T2Wed5", arr:[]},
+  {time:"T2Wed6", arr:[]},
+
+  {time:"T3Wed1", arr:[]},
+  {time:"T3Wed2", arr:[]},
+  {time:"T3Wed3", arr:[]},
+  {time:"T3Wed4", arr:[]},
+  {time:"T3Wed5", arr:[]},
+  {time:"T3Wed6", arr:[]},
+
+  {time:"T4Wed1", arr:[]},
+  {time:"T4Wed2", arr:[]},
+  {time:"T4Wed3", arr:[]},
+  {time:"T4Wed4", arr:[]},
+  {time:"T4Wed5", arr:[]},
+  {time:"T4Wed6", arr:[]},
+
+
+  {time:"T1Thu1", arr:[]},
+  {time:"T1Thu2", arr:[]},
+  {time:"T1Thu3", arr:[]},
+  {time:"T1Thu4", arr:[]},
+  {time:"T1Thu5", arr:[]},
+  {time:"T1Thu6", arr:[]},
+
+  {time:"T2Thu1", arr:[]},
+  {time:"T2Thu2", arr:[]},
+  {time:"T2Thu3", arr:[]},
+  {time:"T2Thu4", arr:[]},
+  {time:"T2Thu5", arr:[]},
+  {time:"T2Thu6", arr:[]},
+
+  {time:"T3Thu1", arr:[]},
+  {time:"T3Thu2", arr:[]},
+  {time:"T3Thu3", arr:[]},
+  {time:"T3Thu4", arr:[]},
+  {time:"T3Thu5", arr:[]},
+  {time:"T3Thu6", arr:[]},
+
+  {time:"T4Thu1", arr:[]},
+  {time:"T4Thu2", arr:[]},
+  {time:"T4Thu3", arr:[]},
+  {time:"T4Thu4", arr:[]},
+  {time:"T4Thu5", arr:[]},
+  {time:"T4Thu6", arr:[]},
+
+
+  {time:"T1Fri1", arr:[]},
+  {time:"T1Fri2", arr:[]},
+  {time:"T1Fri3", arr:[]},
+  {time:"T1Fri4", arr:[]},
+  {time:"T1Fri5", arr:[]},
+  {time:"T1Fri6", arr:[]},
+
+  {time:"T2Fri1", arr:[]},
+  {time:"T2Fri2", arr:[]},
+  {time:"T2Fri3", arr:[]},
+  {time:"T2Fri4", arr:[]},
+  {time:"T2Fri5", arr:[]},
+  {time:"T2Fri6", arr:[]},
+
+  {time:"T3Fri1", arr:[]},
+  {time:"T3Fri2", arr:[]},
+  {time:"T3Fri3", arr:[]},
+  {time:"T3Fri4", arr:[]},
+  {time:"T3Fri5", arr:[]},
+  {time:"T3Fri6", arr:[]},
+
+  {time:"T4Fri1", arr:[]},
+  {time:"T4Fri2", arr:[]},
+  {time:"T4Fri3", arr:[]},
+  {time:"T4Fri4", arr:[]},
+  {time:"T4Fri5", arr:[]},
+  {time:"T4Fri6", arr:[]},
+]
 
 fileReader.onload = () => {
 
@@ -34,8 +180,9 @@ fileReader.onload = () => {
   // console.log(classData[1][0]);
 
   // 各クラスのデータをcsvファイルをもとに作成する処理
-  // for (let i=1; i<classData.length-1; i++) { // なんか最後空白行が入ってしまうので-1している　T1.3.4分
-  for (let i=1676; i<classData.length-1; i++) { // なんか最後空白行が入ってしまうので-1している T2分
+  // for (let i=1; i<classData.length-1; i++) { // なんか最後空白行が入ってしまうので-1している　T1.2.3.4分
+  // for (let i=1676; i<classData.length-1; i++) { // なんか最後空白行が入ってしまうので-1している T2分
+  for (let i=1; i<classData.length-1; i++) {
     let containTermPeriod = [
       [false, false, false, false], // Mon1
       [false, false, false, false], // Mon2
@@ -126,10 +273,20 @@ fileReader.onload = () => {
       // console.log(containTermPeriod);
     }
 
+    for (let k=0; k<tpArr.length; k++) {
+      for (let l=0; l<jCodeArrAll.length; l++) {
 
+        if (jCodeArrAll[l].time == tpArr[k]) {
+          let lastArr = jCodeArrAll[l].arr;
+          lastArr.push(classData[i][0]);
+          jCodeArrAll[l].arr = lastArr;
+        }
 
-    db.collection("years").doc("2021").collection("classes").add({
-    // db.collection("rooms").doc(classData[i][0]).collection("classes").add({
+      }
+    }
+
+    // db.collection("years").doc("2021").collection("classes").add({
+    db.collection("years").doc("2021").collection("classes").doc(classData[i][0]).set({
       id: classData[i][0],
       classId: Number(classData[i][1]),
       name: classData[i][2],
@@ -294,54 +451,167 @@ fileReader.onload = () => {
     })
     .then(() => {
       console.log("Document successfully written!");
+        
     })
       .catch((error) => {
     console.error("Error writing document: ", error);
     });
+
+    if (i == classData.length-2) {
+      setFirestoreField();
+    }
   }
+}
 
-
-
-  // // 各クラスに collection"chat" と　collection"users"　を追加する処理
-  // const periodData = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
-  // for (let i=0; i<5; i++) {
-  //   for (let j=0; j<=5; j++) { // あれ、5限までだっけ
-
-  //     db.collection("rooms").doc(periodData[i]+j).collection("classes")
-  //     .get()
-  //     .then((querySnapshot) => {
-  //         querySnapshot.forEach((doc) => {
-
-  //             db.collection("rooms").doc(periodData[i]+j).collection("classes").doc(doc.id).collection("chat").add({
-  //               name:"test",
-  //               msg:"testです",
-  //               createdAt:"2021年2月4日 00:00:00 UTC+9"
-  //             })
-  //             .then(() => {
-  //               console.log("Document successfully written!");
-  //             })
-  //             .catch((error) => {
-  //               console.error("Error writing document: ", error);
-  //             });
-
-  //             db.collection("rooms").doc(periodData[i]+j).collection("classes").doc(doc.id).collection("users").add({
-  //               name: "test",
-  //               uid: "hogehogehogehogehoge"
-  //             })
-  //             .then(() => {
-  //               console.log("Document successfully written!");
-  //             })
-  //             .catch((error) => {
-  //               console.error("Error writing document: ", error);
-  //             });
-
-  //         });
-  //     })
-  //     .catch((error) => {
-  //         console.log("Error getting documents: ", error);
-  //     });
-
-  //   }
-  // }
+function setFirestoreField() {
+  // 新しく配列フィールドを作成して追加
+  db.collection('years').doc('2021').set({
+    T1Mon1Arr: jCodeArrAll[0].arr,
+    T1Mon2Arr: jCodeArrAll[1].arr,
+    T1Mon3Arr: jCodeArrAll[2].arr,
+    T1Mon4Arr: jCodeArrAll[3].arr,
+    T1Mon5Arr: jCodeArrAll[4].arr,
+    T1Mon6Arr: jCodeArrAll[5].arr,
+  
+    T2Mon1Arr: jCodeArrAll[6].arr,
+    T2Mon2Arr: jCodeArrAll[7].arr,
+    T2Mon3Arr: jCodeArrAll[8].arr,
+    T2Mon4Arr: jCodeArrAll[9].arr,
+    T2Mon5Arr: jCodeArrAll[10].arr,
+    T2Mon6Arr: jCodeArrAll[11].arr,
+  
+    T3Mon1Arr: jCodeArrAll[12].arr,
+    T3Mon2Arr: jCodeArrAll[13].arr,
+    T3Mon3Arr: jCodeArrAll[14].arr,
+    T3Mon4Arr: jCodeArrAll[15].arr,
+    T3Mon5Arr: jCodeArrAll[16].arr,
+    T3Mon6Arr: jCodeArrAll[17].arr,
+  
+    T4Mon1Arr: jCodeArrAll[18].arr,
+    T4Mon2Arr: jCodeArrAll[19].arr,
+    T4Mon3Arr: jCodeArrAll[20].arr,
+    T4Mon4Arr: jCodeArrAll[21].arr,
+    T4Mon5Arr: jCodeArrAll[22].arr,
+    T4Mon6Arr: jCodeArrAll[23].arr,
+  
+    T1Tue1Arr: jCodeArrAll[24].arr,
+    T1Tue2Arr: jCodeArrAll[25].arr,
+    T1Tue3Arr: jCodeArrAll[26].arr,
+    T1Tue4Arr: jCodeArrAll[27].arr,
+    T1Tue5Arr: jCodeArrAll[28].arr,
+    T1Tue6Arr: jCodeArrAll[29].arr,
+  
+    T2Tue1Arr: jCodeArrAll[30].arr,
+    T2Tue2Arr: jCodeArrAll[31].arr,
+    T2Tue3Arr: jCodeArrAll[32].arr,
+    T2Tue4Arr: jCodeArrAll[33].arr,
+    T2Tue5Arr: jCodeArrAll[34].arr,
+    T2Tue6Arr: jCodeArrAll[35].arr,
+  
+    T3Tue1Arr: jCodeArrAll[36].arr,
+    T3Tue2Arr: jCodeArrAll[37].arr,
+    T3Tue3Arr: jCodeArrAll[38].arr,
+    T3Tue4Arr: jCodeArrAll[39].arr,
+    T3Tue5Arr: jCodeArrAll[40].arr,
+    T3Tue6Arr: jCodeArrAll[41].arr,
+  
+    T4Tue1Arr: jCodeArrAll[42].arr,
+    T4Tue2Arr: jCodeArrAll[43].arr,
+    T4Tue3Arr: jCodeArrAll[44].arr,
+    T4Tue4Arr: jCodeArrAll[45].arr,
+    T4Tue5Arr: jCodeArrAll[46].arr,
+    T4Tue6Arr: jCodeArrAll[47].arr,
+  
+    T1Wed1Arr: jCodeArrAll[48].arr,
+    T1Wed2Arr: jCodeArrAll[49].arr,
+    T1Wed3Arr: jCodeArrAll[50].arr,
+    T1Wed4Arr: jCodeArrAll[51].arr,
+    T1Wed5Arr: jCodeArrAll[52].arr,
+    T1Wed6Arr: jCodeArrAll[53].arr,
+  
+    T2Wed1Arr: jCodeArrAll[54].arr,
+    T2Wed2Arr: jCodeArrAll[55].arr,
+    T2Wed3Arr: jCodeArrAll[56].arr,
+    T2Wed4Arr: jCodeArrAll[57].arr,
+    T2Wed5Arr: jCodeArrAll[58].arr,
+    T2Wed6Arr: jCodeArrAll[59].arr,
+  
+    T3Wed1Arr: jCodeArrAll[60].arr,
+    T3Wed2Arr: jCodeArrAll[61].arr,
+    T3Wed3Arr: jCodeArrAll[62].arr,
+    T3Wed4Arr: jCodeArrAll[63].arr,
+    T3Wed5Arr: jCodeArrAll[64].arr,
+    T3Wed6Arr: jCodeArrAll[65].arr,
+  
+    T4Wed1Arr: jCodeArrAll[66].arr,
+    T4Wed2Arr: jCodeArrAll[67].arr,
+    T4Wed3Arr: jCodeArrAll[68].arr,
+    T4Wed4Arr: jCodeArrAll[69].arr,
+    T4Wed5Arr: jCodeArrAll[70].arr,
+    T4Wed6Arr: jCodeArrAll[71].arr,
+  
+    T1Thu1Arr: jCodeArrAll[72].arr,
+    T1Thu2Arr: jCodeArrAll[73].arr,
+    T1Thu3Arr: jCodeArrAll[74].arr,
+    T1Thu4Arr: jCodeArrAll[75].arr,
+    T1Thu5Arr: jCodeArrAll[76].arr,
+    T1Thu6Arr: jCodeArrAll[77].arr,
+  
+    T2Thu1Arr: jCodeArrAll[78].arr,
+    T2Thu2Arr: jCodeArrAll[79].arr,
+    T2Thu3Arr: jCodeArrAll[80].arr,
+    T2Thu4Arr: jCodeArrAll[81].arr,
+    T2Thu5Arr: jCodeArrAll[82].arr,
+    T2Thu6Arr: jCodeArrAll[83].arr,
+  
+    T3Thu1Arr: jCodeArrAll[84].arr,
+    T3Thu2Arr: jCodeArrAll[85].arr,
+    T3Thu3Arr: jCodeArrAll[86].arr,
+    T3Thu4Arr: jCodeArrAll[87].arr,
+    T3Thu5Arr: jCodeArrAll[88].arr,
+    T3Thu6Arr: jCodeArrAll[89].arr,
+  
+    T4Thu1Arr: jCodeArrAll[90].arr,
+    T4Thu2Arr: jCodeArrAll[91].arr,
+    T4Thu3Arr: jCodeArrAll[92].arr,
+    T4Thu4Arr: jCodeArrAll[93].arr,
+    T4Thu5Arr: jCodeArrAll[94].arr,
+    T4Thu6Arr: jCodeArrAll[95].arr,
+  
+    T1Fri1Arr: jCodeArrAll[96].arr,
+    T1Fri2Arr: jCodeArrAll[97].arr,
+    T1Fri3Arr: jCodeArrAll[98].arr,
+    T1Fri4Arr: jCodeArrAll[99].arr,
+    T1Fri5Arr: jCodeArrAll[100].arr,
+    T1Fri6Arr: jCodeArrAll[101].arr,
+  
+    T2Fri1Arr: jCodeArrAll[102].arr,
+    T2Fri2Arr: jCodeArrAll[103].arr,
+    T2Fri3Arr: jCodeArrAll[104].arr,
+    T2Fri4Arr: jCodeArrAll[105].arr,
+    T2Fri5Arr: jCodeArrAll[106].arr,
+    T2Fri6Arr: jCodeArrAll[107].arr,
+  
+    T3Fri1Arr: jCodeArrAll[108].arr,
+    T3Fri2Arr: jCodeArrAll[109].arr,
+    T3Fri3Arr: jCodeArrAll[110].arr,
+    T3Fri4Arr: jCodeArrAll[111].arr,
+    T3Fri5Arr: jCodeArrAll[112].arr,
+    T3Fri6Arr: jCodeArrAll[113].arr,
+  
+    T4Fri1Arr: jCodeArrAll[114].arr,
+    T4Fri2Arr: jCodeArrAll[115].arr,
+    T4Fri3Arr: jCodeArrAll[116].arr,
+    T4Fri4Arr: jCodeArrAll[117].arr,
+    T4Fri5Arr: jCodeArrAll[118].arr,
+    T4Fri6Arr: jCodeArrAll[119].arr,
+    
+  }, {merge: true})
+  .then(() => {
+      console.log("Document successfully written!");
+  })
+  .catch((error) => {
+      console.error("Error writing document: ", error);
+  });
 
 }
