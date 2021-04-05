@@ -138,46 +138,52 @@ function buttonShow(){
 
 function judgeMyClassContain(period, myClassesArr) {
   const term_period = selectedTerm.value + period;
-  for (let i=0; i<myClassesArr.length; i++) {
-    // 自分が履修しているクラスのなかにはT1Mon1 == trueとかになるのは一つしかないことを利用
-    db.collection("years").doc(year).collection("classes").where("classId", "==", Number(myClassesArr[i]))
-    .get().then((querySnapshot) => {
-      for (var k in querySnapshot.docs) {
-        const doc = querySnapshot.docs[k];
-        // console.log(doc.id);
+  db.collection("years").doc(year).get().then((doc) => {
+    if (doc.exists) {
+        // 自分の履修クラス配列とタームピリオドに開講される授業配列のなかに一致するものがあればそのタームピリオドに自分が履修しているということを利用
+        let tpContainArr = doc.data()[`${term_period}Arr`];
+        for (let i=0; i<tpContainArr.length; i++) {
+          for (let j=0; j<myClassesArr.length; j++) {
 
-
-      // querySnapshot.forEach((doc) => {
-        if (doc.data()[`${term_period}`] == true) {
-          document.getElementById(`${period}add`).style.display = "none";
+            if (tpContainArr[i] == myClassesArr[j]) {
+              console.log(period + " " +tpContainArr[i]);
+              document.getElementById(`${period}add`).style.display = "none";
               
-          if(edit==false){
-            document.getElementById(`${period}room`).style.display = "block";
-            document.getElementById(`${period}change`).style.display = "none";
-          } else {
-            document.getElementById(`${period}room`).style.display = "none";
-            document.getElementById(`${period}change`).style.display = "block";
+              if(edit==false){
+                document.getElementById(`${period}room`).style.display = "block";
+                document.getElementById(`${period}change`).style.display = "none";
+              } else {
+                document.getElementById(`${period}room`).style.display = "none";
+                document.getElementById(`${period}change`).style.display = "block";
+              }
+              
+              db.collection("years").doc(year).collection("classes").doc(tpContainArr[i]).get().then((doc2) => {
+                if (doc2.exists) {
+                  console.log(doc2.data()["name"]);
+                  document.getElementById(`${period}name`).textContent = doc2.data()["name"];
+                } else {
+                    console.log("No such document!");
+                }
+              }).catch((error) => {
+                  console.log("Error getting document:", error);
+              });
+
+              break;
+            }
+
+            if (i + 1 == tpContainArr.length && j + 1 == myClassesArr.length) {
+              displayAddBtn(period);
+            }
+
           }
-          
-          document.getElementById(`${period}name`).textContent = doc.data()["name"];
-          break;
-        } else {
-          // document.getElementById(`${period}add`).style.display = "block";
-          // document.getElementById(`${period}room`).style.display = "none";
-          // document.getElementById(`${period}change`).style.display = "none";
-        }
-      // });
-
-        if (k + 1 == querySnapshot.docs.length && i + 1 == myClassesArr.length) {
-          displayAddBtn(period);
         }
 
-      }
-    })
-    .catch((error) => {
-      console.log("Error getting documents: ", error);
-    });
-  }
+    } else {
+        console.log("No such document!");
+    }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
+  });
 }
 function displayAddBtn(period) {
   for (let i=0; i<weekArr.length; i++) {
@@ -197,8 +203,8 @@ function userSendChat() {
   window.location.href ='../chat.html?name=' + encodeURIComponent(uid);
 }
 
-function userSendRoom(year_term_period, classId) {
-  window.location.href ='../room.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(year_term_period) + "?classId=" + encodeURIComponent(classId);
+function userSendRoom(year_term_period, id) {
+  window.location.href ='../room.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(year_term_period) + "?id=" + encodeURIComponent(id);
 }
 
 function userSendClasslist(period) { // 追加ボタンを押された時の処理
@@ -206,8 +212,8 @@ function userSendClasslist(period) { // 追加ボタンを押された時の処�
   window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(year_term_period);
 }
 
-function userSendClasslistChange(year_term_period, classId) {
-  window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(year_term_period) + "?classId=" + encodeURIComponent(classId);
+function userSendClasslistChange(year_term_period, id) {
+  window.location.href ='../classlist.html?name=' + encodeURIComponent(uid) + "?period=" + encodeURIComponent(year_term_period) + "?id=" + encodeURIComponent(id);
 }
 
 
@@ -229,44 +235,49 @@ function getMyClassIdArr(term_period) {
     querySnapshot.forEach((doc) => {
       const myClassesArr = doc.data()[`y${year}MyClasses`];
       console.log(myClassesArr);
-      findCorrectClassId(term_period, myClassesArr);
+      findCorrectId(term_period, myClassesArr);
     });
   })
   .catch((error) => {
       console.log("Error getting documents: ", error);
   });
 }
-function findCorrectClassId(term_period, myClassesArr) {
+function findCorrectId(term_period, myClassesArr) {
   for (let i=0; i<myClassesArr.length; i++) {
-    // 自分が履修しているクラスのなかにはT1Mon1 == trueとかになるのは一つしかないことを利用
-    db.collection("years").doc(year).collection("classes").where("classId", "==", Number(myClassesArr[i]))
-    .get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        if (doc.data()[`${term_period}`] == true) {
-          // 発見
-          const year_term_period = year + term_period;
 
-          // "edit==true" -> 更新ボタンが表示されていてそれを押したときの状態なので、更新の時こっち
-          if (edit == true) {
-            userSendClasslistChange(year_term_period, myClassesArr[i]);
+    db.collection("years").doc(year).get().then((doc) => {
+      if (doc.exists) {
+          let tpContainArr = doc.data()[`${term_period}Arr`];
+          console.log(tpContainArr);
+          for (let j=0; j<tpContainArr.length; j++) {
+            if (myClassesArr[i] == tpContainArr[j]) {
+              // 発見
+              const year_term_period = year + term_period;
+
+              // "edit==true" -> 更新ボタンが表示されていてそれを押したときの状態なので、更新の時こっち
+              if (edit == true) {
+                userSendClasslistChange(year_term_period, myClassesArr[i]);
+              }
+
+              // roomに飛ばすときこっち
+              else {
+                userSendRoom(year_term_period, myClassesArr[i]);
+              }
+
+            }
           }
 
-          // roomに飛ばすときこっち
-          else {
-            userSendRoom(year_term_period, myClassesArr[i]);
-          }
-
-        }
-      });
-    })
-    .catch((error) => {
-      console.log("Error getting documents: ", error);
+          
+  
+      } else {
+          console.log("No such document!");
+      }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     });
+
   }
 }
-
-
-
 
 
 
@@ -274,153 +285,3 @@ function termSelectChange() {
   const selected = document.getElementById("termSelect");
   console.log(selected.value);
 }
-
-
-
-
-
-// let classDoacId = [
-//   {time:"T1Mon1"},
-//   {time:"T1Mon2"},
-//   {time:"T1Mon3"},
-//   {time:"T1Mon4"},
-//   {time:"T1Mon5"},
-//   {time:"T1Mon6"},
-
-//   {time:"T2Mon1"},
-//   {time:"T2Mon2"},
-//   {time:"T2Mon3"},
-//   {time:"T2Mon4"},
-//   {time:"T2Mon5"},
-//   {time:"T2Mon6"},
-
-//   {time:"T3Mon1"},
-//   {time:"T3Mon2"},
-//   {time:"T3Mon3"},
-//   {time:"T3Mon4"},
-//   {time:"T3Mon5"},
-//   {time:"T3Mon6"},
-
-//   {time:"T4Mon1"},
-//   {time:"T4Mon2"},
-//   {time:"T4Mon3"},
-//   {time:"T4Mon4"},
-//   {time:"T4Mon5"},
-//   {time:"T4Mon6"},
-
-
-//   {time:"T1Tue1"},
-//   {time:"T1Tue2"},
-//   {time:"T1Tue3"},
-//   {time:"T1Tue4"},
-//   {time:"T1Tue5"},
-//   {time:"T1Tue6"},
-
-//   {time:"T2Tue1"},
-//   {time:"T2Tue2"},
-//   {time:"T2Tue3"},
-//   {time:"T2Tue4"},
-//   {time:"T2Tue5"},
-//   {time:"T2Tue6"},
-
-//   {time:"T3Tue1"},
-//   {time:"T3Tue2"},
-//   {time:"T3Tue3"},
-//   {time:"T3Tue4"},
-//   {time:"T3Tue5"},
-//   {time:"T3Tue6"},
-
-//   {time:"T4Tue1"},
-//   {time:"T4Tue2"},
-//   {time:"T4Tue3"},
-//   {time:"T4Tue4"},
-//   {time:"T4Tue5"},
-//   {time:"T4Tue6"},
-
-
-//   {time:"T1Wed1"},
-//   {time:"T1Wed2"},
-//   {time:"T1Wed3"},
-//   {time:"T1Wed4"},
-//   {time:"T1Wed5"},
-//   {time:"T1Wed6"},
-
-//   {time:"T2Wed1"},
-//   {time:"T2Wed2"},
-//   {time:"T2Wed3"},
-//   {time:"T2Wed4"},
-//   {time:"T2Wed5"},
-//   {time:"T2Wed6"},
-
-//   {time:"T3Wed1"},
-//   {time:"T3Wed2"},
-//   {time:"T3Wed3"},
-//   {time:"T3Wed4"},
-//   {time:"T3Wed5"},
-//   {time:"T3Wed6"},
-
-//   {time:"T4Wed1"},
-//   {time:"T4Wed2"},
-//   {time:"T4Wed3"},
-//   {time:"T4Wed4"},
-//   {time:"T4Wed5"},
-//   {time:"T4Wed6"},
-
-
-//   {time:"T1Thu1"},
-//   {time:"T1Thu2"},
-//   {time:"T1Thu3"},
-//   {time:"T1Thu4"},
-//   {time:"T1Thu5"},
-//   {time:"T1Thu6"},
-
-//   {time:"T2Thu1"},
-//   {time:"T2Thu2"},
-//   {time:"T2Thu3"},
-//   {time:"T2Thu4"},
-//   {time:"T2Thu5"},
-//   {time:"T2Thu6"},
-
-//   {time:"T3Thu1"},
-//   {time:"T3Thu2"},
-//   {time:"T3Thu3"},
-//   {time:"T3Thu4"},
-//   {time:"T3Thu5"},
-//   {time:"T3Thu6"},
-
-//   {time:"T4Thu1"},
-//   {time:"T4Thu2"},
-//   {time:"T4Thu3"},
-//   {time:"T4Thu4"},
-//   {time:"T4Thu5"},
-//   {time:"T4Thu6"},
-
-
-//   {time:"T1Fri1"},
-//   {time:"T1Fri2"},
-//   {time:"T1Fri3"},
-//   {time:"T1Fri4"},
-//   {time:"T1Fri5"},
-//   {time:"T1Fri6"},
-
-//   {time:"T2Fri1"},
-//   {time:"T2Fri2"},
-//   {time:"T2Fri3"},
-//   {time:"T2Fri4"},
-//   {time:"T2Fri5"},
-//   {time:"T2Fri6"},
-
-//   {time:"T3Fri1"},
-//   {time:"T3Fri2"},
-//   {time:"T3Fri3"},
-//   {time:"T3Fri4"},
-//   {time:"T3Fri5"},
-//   {time:"T3Fri6"},
-
-//   {time:"T4Fri1"},
-//   {time:"T4Fri2"},
-//   {time:"T4Fri3"},
-//   {time:"T4Fri4"},
-//   {time:"T4Fri5"},
-//   {time:"T4Fri6"},
-// ]

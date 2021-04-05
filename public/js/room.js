@@ -1,4 +1,4 @@
-let year_term_period, classId, year, classdocid;
+let year_term_period, id, year;
 function getClasses() {
     // URLから授業情報を取得
     let query = location.search;
@@ -7,11 +7,11 @@ function getClasses() {
     if (year_term_period.indexOf("?") != -1) {
         year_term_period = year_term_period.substring(0, year_term_period.indexOf("?"));
     }
-    classId = value[3];
-    year = classId.substring(0,4);
+    id = value[3];
+    year = year_term_period.substring(0,4);
     console.log(year);
     console.log(year_term_period);
-    console.log(classId);
+    console.log(id);
 }
 getClasses();
 
@@ -20,12 +20,9 @@ const db = firebase.firestore();
 let usersRef; // getStudents() でコレクションが入る
 
 function showRoomTitle() {
-
-    db.collection('years').doc(year).collection('classes').where("classId", "==", Number(classId))
-    .get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
+    db.collection("year").doc(year).collection("classes").doc(id).get().then((doc) => {
+        if (doc.exists) {
             let periodName;
-            // console.log(year_term_period.substring(6,9));
             if (year_term_period.substring(6,9) == 'Mon') {
                 periodName = "月曜" + year_term_period.substring(9) + "限";
             } else if (year_term_period.substring(6,9) == 'Tue') {
@@ -37,7 +34,7 @@ function showRoomTitle() {
             } else {
                 periodName = "金曜" + year_term_period.substring(9) + "限";
             }
-            // let periodName = doc.data()['period'];
+
             let className = doc.data()['name']; //
             let teacherName = doc.data()['teacher']; //
             let classStyle = doc.data()['style']; //
@@ -47,45 +44,25 @@ function showRoomTitle() {
             document.getElementById("teachername").textContent = "　　教授名　：" + teacherName;
             document.getElementById("roomStyle").textContent = "　　授業形態：" + classStyle;
             if (classStyle == "オンライン" || classStyle == "ハイブリッド") {
-                document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="${classUrl}" target="_blank">${classUrl}</a>`;
+                // document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="${classUrl}" target="_blank">${classUrl}</a>`;
+                document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="https://sites.google.com/tsuda.ac.jp/online-class-timetable" target="_blank">${classUrl}</a>`; // ComingSoon の時はとりあえずオンライン授業時間割に飛ぶようにしておく
             }
             // console.log(document.getElementById("roomDetail"));
-            classdocid = doc.id;
-            console.log(classdocid);
             showStudents();
             showChat();
-        });
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
+    
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     });
 }
 showRoomTitle();
 
-// function getStudents() {
-//     let classdocid;
-//     db.collection('years').doc(year).collection('classes').where("classId", "==", Number(classId))
-//     .get().then((querySnapshot) => {
-//         querySnapshot.forEach((doc) => {
-//             // usersRef = doc.collection('users');
-//             classdocid = doc.id;
-//             // console.log(usersRef);
-//             console.log(classdocid);
-//         });
-//     })
-//     .catch((error) => {
-//         console.log("Error getting documents: ", error);
-//     });
-//     if(classdocid !== 'undefined') {
-//         console.log("find");
-//         console.log(classdocid);
-//         showStudents(classdocid);
-//     }
-// }
-// getStudents();
 
 function showStudents() {
-    usersRef = db.collection('years').doc(year).collection('classes').doc(classdocid).collection('users');
+    usersRef = db.collection('year').doc(year).collection('classes').doc(id).collection('users');
     usersRef.get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {

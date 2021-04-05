@@ -1,7 +1,7 @@
 //firestoreからデータ取得
 // var db = firebase.firestore();
 
-// db.collection('year').doc(year).collection('classes').where("classId", "==", Number(classId))
+// db.collection('years').doc(year).collection('classes').where("classId", "==", Number(classId))
 //     .get().then((querySnapshot) => {
 //         querySnapshot.forEach((doc) => {
 //             // messagesRef = doc.collection('chat');
@@ -15,7 +15,7 @@
 //     });
 var messagesRef;
 function showChat() {
-  messagesRef = db.collection("year").doc(year).collection("classes").doc(id).collection("chat");
+  messagesRef = db.collection("years").doc(year).collection("classes").doc(id).collection("chat");
   /**
    * 同期処理
    **/

@@ -182,7 +182,7 @@ fileReader.onload = () => {
   // 各クラスのデータをcsvファイルをもとに作成する処理
   // for (let i=1; i<classData.length-1; i++) { // なんか最後空白行が入ってしまうので-1している　T1.2.3.4分
   // for (let i=1676; i<classData.length-1; i++) { // なんか最後空白行が入ってしまうので-1している T2分
-  for (let i=1; i<classData.length-1; i++) { // なんか最後空白行が入ってしまうので-1している T2分
+  for (let i=1; i<classData.length-1; i++) {
     let containTermPeriod = [
       [false, false, false, false], // Mon1
       [false, false, false, false], // Mon2
@@ -278,15 +278,15 @@ fileReader.onload = () => {
 
         if (jCodeArrAll[l].time == tpArr[k]) {
           let lastArr = jCodeArrAll[l].arr;
-          lastArr.push(classData[i][0]);
+          lastArr.push(classData[i][1]);
           jCodeArrAll[l].arr = lastArr;
         }
 
       }
     }
 
-    // db.collection("years").doc("2021").collection("classes").add({
-    db.collection("years").doc("2021").collection("classes").doc(classData[i][0]).set({
+    // db.collection("year").doc("2021").collection("classes").add({
+    db.collection("year").doc("2021").collection("classes").doc(classData[i][1]).set({
       id: classData[i][0],
       classId: Number(classData[i][1]),
       name: classData[i][2],
@@ -465,7 +465,7 @@ fileReader.onload = () => {
 
 function setFirestoreField() {
   // 新しく配列フィールドを作成して追加
-  db.collection('years').doc('2021').set({
+  db.collection('year').doc('2021').set({
     T1Mon1Arr: jCodeArrAll[0].arr,
     T1Mon2Arr: jCodeArrAll[1].arr,
     T1Mon3Arr: jCodeArrAll[2].arr,
