@@ -237,7 +237,7 @@ function clickBtn(docid, i, termPeriodArr){
             checkDecideBtn(); // $('#decideBtn').prop('disabled', !isSomethingSelected);
             console.log("isSomethingSelected: " + isSomethingSelected);
             if (isSomethingSelected) {
-                console.log("now select -> 時間割コード: ", selectedClassdocid);
+                console.log("now select -> classId: ", selectedClassdocid);
             }
             continue;
         }
