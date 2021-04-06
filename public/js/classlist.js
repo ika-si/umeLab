@@ -299,7 +299,7 @@ function deleteClassFromMyClasses(bool) {
 
                 // クラス配列フィールドから当てはまるidを削除する
                 db.collection("account").doc(doc.id).update({
-                    y2021MyClasses: firebase.firestore.FieldValue.arrayRemove(classId),
+                    y2021MyClasses: firebase.firestore.FieldValue.arrayRemove(Number(classId)),
                     y2021ContainArr: myYearContainArr
                 })
                 .then(() => {
@@ -372,7 +372,7 @@ function addClassToMyClasses() {
                         if (typeof doc2.data()["y2021MyClasses"] === 'undefined') {
                             // 新しく配列フィールドを作成して追加
                             db.collection('account').doc(doc2.id).set({
-                                y2021MyClasses: [selectedClassdocid],
+                                y2021MyClasses: [Number(selectedClassdocid)],
                                 y2021ContainArr: myYearContainArr
                             }, {merge: true})
                             .then(() => {
@@ -385,7 +385,7 @@ function addClassToMyClasses() {
                         } else {
                             // 既にある配列フィールドに追加
                             db.collection('account').doc(doc2.id).update({
-                                y2021MyClasses: firebase.firestore.FieldValue.arrayUnion(selectedClassdocid),
+                                y2021MyClasses: firebase.firestore.FieldValue.arrayUnion(Number(selectedClassdocid)),
                                 y2021ContainArr: myYearContainArr
                             })
                             .then(() => {
