@@ -49,7 +49,7 @@ function showRoomTitle() {
             }
             // console.log(document.getElementById("roomDetail"));
             showStudents();
-            showChat();
+            // showChat();
     
         } else {
             console.log("No such document!");
