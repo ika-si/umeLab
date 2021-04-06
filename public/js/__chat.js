@@ -1,29 +1,45 @@
 //firestoreからデータ取得
 // var db = firebase.firestore();
 
-var messagesRef = db.collection("rooms").doc(period).collection("classes").doc(urlClass).collection("chat");
+// db.collection('years').doc(year).collection('classes').where("classId", "==", Number(classId))
+//     .get().then((querySnapshot) => {
+//         querySnapshot.forEach((doc) => {
+//             // messagesRef = doc.collection('chat');
+//             classdocid = doc.id;
+//             // console.log(messagesRef);
+//             console.log(classdocid);
+//         });
+//     })
+//     .catch((error) => {
+//         console.log("Error getting documents: ", error);
+//     });
+var messagesRef;
+function showChat() {
+  messagesRef = db.collection("years").doc(year).collection("classes").doc(id).collection("chat");
+  /**
+   * 同期処理
+   **/
+  messagesRef.orderBy("createdAt").onSnapshot( (snapshot) => {
+      // $('#list').text('');
+      snapshot.docChanges().forEach((change) => {
 
-/**
- * 同期処理
- **/
-messagesRef.orderBy("createdAt").onSnapshot( (snapshot) => {
-    // $('#list').text('');
-    snapshot.docChanges().forEach((change) => {
-        // 追加
-        if ( change.type === 'added' ) {
-            addLog(change.doc.id, change.doc.data());
-        }
-        // 更新
-        else if( change.type === 'modified' ){
-            modLog(change.doc.id, change.doc.data());
-        }
-        // 削除
-        else if ( change.type === 'removed' ) {
-            removeLog(change.doc.id);
-        }
-    });
-});
-
+        // console.log(change.doc.data()['name']);
+          // 追加
+          if ( change.type === 'added' ) {
+              addLog(change.doc.id, change.doc.data());
+          }
+          // 更新
+          else if( change.type === 'modified' ){
+              modLog(change.doc.id, change.doc.data());
+          }
+          // 削除
+          else if ( change.type === 'removed' ) {
+              removeLog(change.doc.id);
+          }
+      });
+  });
+}
+showChat();
 
 
 function addLog(id, data){
@@ -112,8 +128,10 @@ let msg_form = document.getElementById('msgAdd');
 msg_form.addEventListener('keypress', test_ivent);
 
 function test_ivent(e) {
-  if (e.keyCode === 13) {
-    add();
+  if (e.ctrlKey) {
+    if (e.keyCode === 13) {
+      add();
+    }
   }
   return false;
 }
