@@ -1,6 +1,8 @@
 var db = firebase.firestore();
 let accountDoc, myEmail, myUndergraduate, myDepartment, myGrade, myDetails, myTwitter, myInstagram;
 let mustCount, optionalCount, freeCount;
+let my2021ContainClassIdArr = [];
+let my2021Count = 0;
 
 function showProfile(){
   db.collection("account").get().then((querySnapshot) => {
@@ -31,6 +33,7 @@ function showProfile(){
               $('#MyDetails').append('<h4>コメント　:　' + myDetails + '</h4>');
               $('#MyTwitter').append('<h4>@' + myTwitter + '</h4>');
               $('#MyInstagram').append('<h4>' + myInstagram + '</h4>');
+              $('#My2021Credits').append('<h4><br>2021年度総単位数　:　' + my2021Count + '</h4>'); //
               $('#MyMustCredits').append('<h4><br>　　必修科目　:　' + mustCount + '</h4>');
               $('#MyOptionalMustCredits').append('<h4>選択必修科目　:　' + optionalCount + '</h4>');
               $('#MyFreeCredits').append('<h4>　　自由科目　:　' + freeCount + '</h4>');
@@ -46,7 +49,9 @@ function showProfile(){
 
 }
 
-showProfile();
+// showProfile();
+calcMy2021Credits(); // showProfile()も呼ばれる
+
 function showNewProfile(){
   $('#MyName').innerHTML = userName;
   $('#MyUndergraduate').innerHTML = myUndergraduate;
@@ -109,5 +114,40 @@ function changeProfile(){
       console.error("Error writing document: ", error);
       var errorMessage = error.message;
       $('#errorMessage').append("Error: "+errorMessage);
+  });
+}
+
+function calcMy2021Credits() {
+  db.collection("account").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        if(doc.data()['uid'] == uid) {
+            if (typeof doc.data()["y2021MyClasses"] === 'undefined') {
+              // my2021Count = 0; でプロフィールを表示する
+              showProfile();
+            } else {
+              my2021ContainClassIdArr = doc.data()["y2021MyClasses"];
+              calcCredits(0);
+            }
+        }
+    });
+  });
+}
+
+function calcCredits(i) {
+  db.collection("year").doc("2021").collection("classes").doc(String(my2021ContainClassIdArr[i])).get().then((doc) => {
+    if (doc.exists) {
+        my2021Count += doc.data()["credit"];
+
+        if (i + 1 < my2021ContainClassIdArr.length) {
+          calcCredits(i + 1);
+        } else {
+          // 単位計算完了。プロフィールを表示する
+          showProfile();
+        }
+    } else {
+        console.log("No such document!");
+    }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
   });
 }
