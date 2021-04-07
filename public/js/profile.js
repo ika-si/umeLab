@@ -125,8 +125,12 @@ function calcMy2021Credits() {
               // my2021Count = 0; でプロフィールを表示する
               showProfile();
             } else {
-              my2021ContainClassIdArr = doc.data()["y2021MyClasses"];
-              calcCredits(0);
+              if (doc.data()["y2021MyClasses"].length == 0) {
+                showProfile();
+              } else {
+                my2021ContainClassIdArr = doc.data()["y2021MyClasses"];
+                calcCredits(0);
+              }
             }
         }
     });
