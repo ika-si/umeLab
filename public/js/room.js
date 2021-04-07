@@ -44,8 +44,11 @@ function showRoomTitle() {
             document.getElementById("teachername").textContent = "　　教授名　：" + teacherName;
             document.getElementById("roomStyle").textContent = "　　授業形態：" + classStyle;
             if (classStyle == "オンライン" || classStyle == "ハイブリッド") {
-                // document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="${classUrl}" target="_blank">${classUrl}</a>`;
-                document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="https://sites.google.com/tsuda.ac.jp/online-class-timetable" target="_blank">${classUrl}</a>`; // ComingSoon の時はとりあえずオンライン授業時間割に飛ぶようにしておく
+                if (classUrl.substring(0,6) == "Coming") {
+                    document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="https://sites.google.com/tsuda.ac.jp/online-class-timetable" target="_blank">${classUrl}</a>`; // ComingSoon の時はとりあえずオンライン授業時間割に飛ぶようにしておく
+                } else {
+                    document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="${classUrl}" target="_blank">${classUrl}</a>`;
+                }
             }
             // console.log(document.getElementById("roomDetail"));
             showStudents();
