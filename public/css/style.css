@@ -30,9 +30,20 @@ body{
   /* margin-left: 300px; */
   margin-bottom: 100px;
 }
-img {
+
+.col-8 img {
   width: 100%;
   /* height: 90%; */
+}
+
+.news-container {
+  text-align: left;
+  /* margin-left: 300px; */
+  margin-bottom: 100px;
+}
+
+.news-container img {
+  width: 35%;
 }
 
 .sign{

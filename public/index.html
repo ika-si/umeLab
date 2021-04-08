@@ -19,42 +19,67 @@
 
     <!-- jQueryの読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/sakura.css">
     
   </head>
 
   <body>
-    <div class="center">
-      <!-- <h3>申し訳ありません。少々お待ちください。</h3> -->
-      <h2>chat<span class="table-color">Table</span></h2>
-      <h4>-Tsuda University ver-</h4>
-      <p>同じ授業をとっている津田塾生とつながるアプリ</p>
-      <h5 id="errorMessage"></h5>
-      <br>
-      <button type="button" class="sign" id="addBtn" onclick="location.href='./signup.html'">signUp</button>
-      <button type="button" class="sign" id="addBtn" onclick="signInWithGmail()">signIn</button>
-      <br>
-      <p>PCでの使用を推奨しています。<br>スマホで使用する場合はSafariかChromeで開いてください。</p>
-    </div>
-    <div class="row">
-      <div class="col-3"></div>
-      <div class="col-6">
-        <div class="details">
-          <h4>News</h4>
-          <p>🌟4/6(火) 1:00~2:00　メンテナンスを行います。ご迷惑をおかけします。</p>
-          <p>🌟chatTableを使ってみての感想を募集中!!! 運営のやる気に繋がります💪<a href="https://twitter.com/intent/tweet?hashtags=chatTable_UmeLab" class="twitter-hashtags-btn" target="_blank">Twitterでつぶやく</a></p>
-          <!-- <p>🌟メンテナンスを行ったため、履修データが消えているor違う授業になっている可能性があります。その際には申し訳ありませんが、再度授業を登録し直していただけると幸いです。</p> -->
-          <br>
-          <p>注意事項</p>
-          <p>※津田塾大学から配布されたGmailを用いてください。(~@gm.tsuda.ac.jp)</p>
-          <p>※総合政策の時間割にはまだ対応しておりません。少々お待ちください。</p>
-          <p>※授業zoomURLが公開され次第、roomに追加されます。しばらくお待ちください。</p>
-          <p>※情報科学科の有志が作成しました。温かい目で見守っていただけると幸いです。</p>
-          <p>エラーが出てしまった時や使い方がわからない時は<a href="details.html" target="_blank">こちら</a>をご覧ください</p>
+    <div class="season">
+      <div class="center">
+        <h2>chat<span class="table-color">Table</span></h2>
+        <h4>-Tsuda University ver-</h4>
+        <p>同じ授業をとっている津田塾生とつながるアプリ</p>
+        <h5 id="errorMessage"></h5>
+        <br>
+        <!-- <h2>メンテナンス中です</h2> -->
+        <button type="button" class="sign" id="addBtn" onclick="location.href='./signup.html'">signUp</button>
+        <button type="button" class="sign" id="addBtn" onclick="signInWithGmail()">signIn</button>
+        <br>
+        <!-- <p>使用はPCでお願いします。 -->
+          <!-- <br>スマホで使用する場合はSafariかChromeで開いてください。 -->
+        <!-- </p> -->
+      </div>
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <div class="news-container">
+            <h4>News</h4>
+            <p>🌟1年生、入学おめでとう！！！ 2年生、これから大学生活を楽しんでいこう！🌸</p>
+            <p>🌟授業ZoomURLを追加しました。</p>
+            <p>🌟profileに単位数表示の機能を追加しました。</p>
+            <p>🌟総合政策の時間割を追加しました。星マーク付き。</p>
+            <p>🌟chatTableを使ってみての感想を募集中！ 製作者のやる気に直結します💪
+              <!-- <br> -->
+              <!-- <a href="https://twitter.com/intent/tweet?hashtags=chatTable_UmeLab" class="twitter-hashtags-btn" target="_blank">
+                <img src="img/chatTable.png" alt="chatTable_UmeLab">
+              </a>
+              でつぶやく -->
+            </p>
+            <a href="https://twitter.com/intent/tweet?button_hashtag=chatTable_UmeLab&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #chatTable_UmeLab</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <br>
+            <br>
+            <br>
+            <h4>注意事項</h4>
+            <p>※津田塾大学から配布されたGmailを用いてください。(~@gm.tsuda.ac.jp)</p>
+            <p>※授業zoomURLが公開され次第、roomに追加されます。しばらくお待ちください。</p>
+            <p>※情報科学科の有志が作成しました。温かい目で見守っていただけると幸いです。</p>
+            <p>エラーが出てしまった時や使い方がわからない時は<a href="details.html" target="_blank">こちら</a>をご覧ください</p>
+            <br>
+            <h4>Infomation</h4>
+            <a href="https://sites.google.com/tsuda.ac.jp/kyoumu">教務課のサイト</a>
+            <br>
+            <a href="https://www.univcoop.jp/tsuda/info/info_48.html">生協(教科書について)</a>
+            <br>
+            <a href="https://sites.google.com/gm.tsuda.ac.jp/online-classes">オンライン授業ポータルサイト</a>
+          </div>
         </div>
       </div>
     </div>
-
+    
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <!--firebase UIの読み込み-->
@@ -68,6 +93,8 @@
     <script src="js/config.js"></script>
 
     <script src="js/email.js"></script>
+
+    <script src="js/sakura.js"></script>
 
   </body>
 </html>

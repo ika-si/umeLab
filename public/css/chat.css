@@ -64,7 +64,7 @@ body {
   max-width: 100%;
   margin: 10px;
   width: 4000px;
-  height: 580px;
+  height: 700px;
   border-radius: 10px;
   background-color: #fff;
   /* left: 50%; */
@@ -94,7 +94,7 @@ body {
   list-style: none;
   padding: 20px 10px 0 10px;
   margin: 0;
-  height: 400px;
+  height: 530px;
   overflow: scroll;
 
   display: inline-block;
