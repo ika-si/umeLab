@@ -29,7 +29,7 @@ function show() {
         $('#MyGrade').append('<h4>学　　年　:　' + myGrade + '</h4>');
     }
     $('#MyDetails').append('<h4>コメント　:　' + myDetails + '</h4>');
-    $('#MyTwitter').append('<h4>@' + myTwitter + '</h4>');
+    $('#MyTwitter').append('<a href="https://twitter.com/'+myTwitter+'?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @'+myTwitter+'</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>');
     $('#MyInstagram').append('<h4>' + myInstagram + '</h4>');
 
 
