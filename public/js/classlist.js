@@ -4,15 +4,22 @@ setYearcontainsTermPeriod();
 
 let year_term_period, classId; //period:2021T1Mon1とか classId:20210001 とか
 let isChangeStatus = false; // add->false, change->true
+let displayOtherPeriod = false; // otherPeriodClassses.htmlから飛んできたときはtrue
 getFromURL();
 function getFromURL() {
     // URLから取得
     let query = location.search;
     let value = query.split('=');
     year_term_period = value[2];
+    if (year_term_period == "2021otherPeriod") {
+        displayOtherPeriod = true;
+    }
     if (year_term_period.indexOf("?") != -1) {
         year_term_period = year_term_period.substring(0, year_term_period.indexOf("?"));
         isChangeStatus = true;
+        if (year_term_period == "2021otherPeriod") {
+            displayOtherPeriod = true;
+        }
     } else {
         // isChangeStatus = false;
     }
@@ -25,6 +32,7 @@ const year = year_term_period.substring(0,4); // 2021
 let lastTermPeriodArr;
 let countUpData = 0;
 let lockCheckboxNum;
+let lockMyClassesCheckboxNumArr = [];
 let isSomethingSelected = false; // 何かしら選択されているかどうか
 $('#decideBtn').prop('disabled', true);
 
@@ -42,23 +50,29 @@ let selectedPeriod;     // "月曜1限"とか
 let selectedTermPeriodArr; // T1Mon1とかの配列
 
 let thisTPClassArr;
+let my2021ClassesArr = [];
 showClassTitle();
 getTPClassArr();
+getMy2021ClassesArr();
 
 function showClassTitle() {
     // 時限タイトル表示
-    if (year_term_period.substring(6,9) == 'Mon') {
-        selectedPeriod = "月曜" + year_term_period.substring(9) + "限";
-    } else if (year_term_period.substring(6,9) == 'Tue') {
-        selectedPeriod = "火曜" + year_term_period.substring(9) + "限";
-    } else if (year_term_period.substring(6,9) == 'Wed') {
-        selectedPeriod = "水曜" + year_term_period.substring(9) + "限"
-    } else if (year_term_period.substring(6,9) == 'Thu') {
-        selectedPeriod = "木曜" + year_term_period.substring(9) + "限";
+    if (year_term_period.substring(4,5) == "T") {
+        if (year_term_period.substring(6,9) == 'Mon') {
+            selectedPeriod = "月曜" + year_term_period.substring(9) + "限";
+        } else if (year_term_period.substring(6,9) == 'Tue') {
+            selectedPeriod = "火曜" + year_term_period.substring(9) + "限";
+        } else if (year_term_period.substring(6,9) == 'Wed') {
+            selectedPeriod = "水曜" + year_term_period.substring(9) + "限"
+        } else if (year_term_period.substring(6,9) == 'Thu') {
+            selectedPeriod = "木曜" + year_term_period.substring(9) + "限";
+        } else {
+            selectedPeriod = "金曜" + year_term_period.substring(9) + "限";
+        }
+        document.getElementById("openingClass").textContent = year_term_period.substring(4,6) + " " + selectedPeriod;
     } else {
-        selectedPeriod = "金曜" + year_term_period.substring(9) + "限";
+        document.getElementById("openingClass").textContent = "時限：その他　";
     }
-    document.getElementById("openingClass").textContent = year_term_period.substring(4,6) + " " + selectedPeriod;
 }
 function getTPClassArr() {
     db.collection("year").doc(year).get().then((doc) => {
@@ -67,15 +81,39 @@ function getTPClassArr() {
         } else {
             console.log("No such document!");
         }
-        if (isChangeStatus) {
-            getLastSelectclassTPArr();
-        } else {
-            displayClass(0);
-        }
     }).catch((error) => {
         console.log("Error getting document:", error);
     });
 }
+function getMy2021ClassesArr() {
+    db.collection("account").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            if(doc.data()['uid'] == uid) {
+                db.collection('account').doc(doc.id)
+                .get().then((doc2) => {
+                    if (doc2.exists) {
+                        if (typeof doc2.data()["y2021MyClasses"] === 'undefined') {
+                            // my2021ClassesArr = [];
+                        } else {
+                            my2021ClassesArr = doc2.data()["y2021MyClasses"];
+                        }
+                    } else {
+                        console.log("No such document!");
+                    }
+
+                    if (isChangeStatus) {
+                        getLastSelectclassTPArr();
+                    } else {
+                        displayClass(0);
+                    }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+            }
+        });
+    });
+}
+
 function getLastSelectclassTPArr() {
     db.collection("year").doc(year).collection("classes").doc(classId).get().then((doc) => {
         if (doc.exists) {
@@ -164,6 +202,19 @@ function displayClass(i) {
 
                 lockCheckboxNum = i;
                 // lastTermPeriodArr = doc.data()["termPeriodArr"];
+            } else if (displayOtherPeriod) {
+                // 履修中の科目全てにchecked,disabledする
+                if (my2021ClassesArr.includes(doc.data()["classId"])) {
+                    const className = document.classtable.className;
+                    if (i == 0) { // なんかclassName、一つの時だけListではなく単純に1つのタグが取り出されるみたいなので分ける
+                        className.checked = true;
+                        className.disabled = true;
+                    } else {
+                        className[i].checked = true;
+                        className[i].disabled = true;
+                    }
+                    lockMyClassesCheckboxNumArr.push(i);
+                }
             } else {
                 // 履修追加できないようにスイッチを切り替えられなくする
                 // 履修放棄した場合でも選択できないもののスイッチを切り替えられなくする
@@ -224,12 +275,12 @@ function clickBtn(docid, i, termPeriodArr){
     // if (isChangeStatus) {
     //     lockCheckbox();
     // }
-    selectedClassdocid = docid; // 11J03とか
+    selectedClassdocid = docid;
     selectedTermPeriodArr = termPeriodArr.split(",");
     const className = document.classtable.className;
     isSomethingSelected = false;
     for (let k = 0; k < className.length; k++){
-        if (isChangeStatus && k == lockCheckboxNum) {
+        if ((isChangeStatus && k == lockCheckboxNum) || lockMyClassesCheckboxNumArr.includes(k)) {
             continue;
         }
         if (className[k].id == "checkbox"+i) {
@@ -257,7 +308,11 @@ function confirmClass() {
     let msg = "";
     db.collection("year").doc(year).collection("classes").doc(selectedClassdocid).get().then((doc) => {
         if (doc.exists) {
-            msg = `このクラスを選択しますか？\n${year_term_period.substring(4,6)} ${selectedPeriod}\n- 時間割コード：${doc.data()['id']} \n- 教科名：${doc.data()['name']} \n- 教員名：${doc.data()['teacher']} \n- 授業形態：${doc.data()['style']} \n- 単位数：${doc.data()['credit']}`;
+            if (displayOtherPeriod) {
+                msg = `このクラスを選択しますか？\n時限:その他\n- 時間割コード：${doc.data()['id']} \n- 教科名：${doc.data()['name']} \n- 教員名：${doc.data()['teacher']} \n- 授業形態：${doc.data()['style']} \n- 単位数：${doc.data()['credit']}`;
+            } else {
+                msg = `このクラスを選択しますか？\n${year_term_period.substring(4,6)} ${selectedPeriod}\n- 時間割コード：${doc.data()['id']} \n- 教科名：${doc.data()['name']} \n- 教員名：${doc.data()['teacher']} \n- 授業形態：${doc.data()['style']} \n- 単位数：${doc.data()['credit']}`;
+            }
             if (window.confirm(msg)) {
             // confirm で ok が押された時の処理
                 if (isChangeStatus) {
@@ -361,8 +416,10 @@ function addClassToMyClasses() {
                 const myYearContainArr = doc.data()["y2021ContainArr"];
                 console.log(myYearContainArr);
                 console.log(selectedTermPeriodArr);
-                for (let i=0; i<selectedTermPeriodArr.length; i++) {
-                    myYearContainArr.push(selectedTermPeriodArr[i]);
+                if (! displayOtherPeriod) { // 配列に""が追加されてしまうためはじく
+                    for (let i=0; i<selectedTermPeriodArr.length; i++) {
+                        myYearContainArr.push(selectedTermPeriodArr[i]);
+                    }
                 }
                 console.log(myYearContainArr);
 
@@ -377,7 +434,11 @@ function addClassToMyClasses() {
                             }, {merge: true})
                             .then(() => {
                                 console.log("Document successfully written!");
-                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
+                                if (displayOtherPeriod) {
+                                    window.location.href ='../otherPeriodClasses.html?name=' + encodeURIComponent(uid);
+                                } else {
+                                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
+                                }
                             })
                             .catch((error) => {
                                 console.error("Error writing document: ", error);
@@ -390,7 +451,11 @@ function addClassToMyClasses() {
                             })
                             .then(() => {
                                 console.log("Document successfully updated!");
-                                window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
+                                if (displayOtherPeriod) {
+                                    window.location.href ='../otherPeriodClasses.html?name=' + encodeURIComponent(uid);
+                                } else {
+                                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
+                                }
                             })
                             .catch((error) => {
                                 console.error("Error updating document: ", error);
