@@ -50,7 +50,7 @@ function getMyOPClassArr() {
         }
     }
     console.log(myOPClassArr);
-    if (myOPClassArr != []) {
+    if (myOPClassArr != "") {
         displayMyOPClasses(0);
     }
 }
