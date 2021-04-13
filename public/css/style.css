@@ -117,6 +117,51 @@ p{
   width:130px;
   border-radius: 15px;
   border: solid 1px #3BAF75;
+  margin: 10px;
+}
+
+.otherroom {
+  /* その他の科目を履修するボタン */
+  color: #f78b33;
+  background-color: #F5F5F5;
+  padding: 10px 10px 10px 10px;
+  width:130px;
+  border-radius: 15px;
+  border: solid 1px #f78b33;
+  margin: 10px;
+}
+
+.addOtherPeriodBtn {
+  color: #F1907E;
+  background-color: #F5F5F5;
+  padding: 10px 10px 10px 10px;
+  width:130px;
+  border-radius: 15px;
+  border: solid 1px #F1907E;
+  margin: 10px;
+}
+
+.otherclassroom {
+  color: #3D92A4;
+  background-color: #F5F5F5;
+  padding: 5px 5px 5px 5px;
+  width:100px;
+  border-radius: 15px;
+  border: solid 1px #3D92A4;
+  margin-right: 10px;
+}
+
+.deleteotherclassroom {
+  color: #3BAF75;
+  background-color: #F5F5F5;
+  padding: 5px 5px 5px 5px;
+  width:100px;
+  border-radius: 15px;
+  border: solid 1px #3BAF75;
+}
+
+.opClassDetail {
+  padding: 10px;
 }
 
 .account{

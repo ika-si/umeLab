@@ -75,12 +75,14 @@ function displayMyOPClasses(i) {
 
             let roomBtn = document.createElement('button');
             roomBtn.setAttribute('type', 'button');
+            roomBtn.setAttribute('class', 'otherclassroom');
             roomBtn.innerText = "room";
             roomBtn.setAttribute('onclick', `userSendRoom('${myOPClassArr[i]}')`);
             newRow.appendChild(roomBtn);
 
             let deleteBtn = document.createElement('button');
             deleteBtn.setAttribute('type', 'button');
+            deleteBtn.setAttribute('class', 'deleteotherclassroom');
             deleteBtn.innerText = "履修取消";
             deleteBtn.setAttribute('onclick', `confirmDelete('${myOPClassArr[i]}')`);
             newRow.appendChild(deleteBtn);
