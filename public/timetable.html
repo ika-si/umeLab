@@ -16,7 +16,6 @@
   <title>timetable</title>
 </head>
 <body>
-  <!-- <script src ="./js/timetable.js"></script> -->
 
   <div class="row">
     <div class="col-md-8 col-lg-8">
@@ -163,6 +162,7 @@
 
   <input type="button" class ="Bigchangeroom" id="btn1" value="履修を変更する">
   <input type="button" class ="Bigchangeroom" id="btn2" value="変更完了">
+  <input type="button" class ="otherPeriod otherroom" id="otherPeriodBtn" value="その他の科目" onclick="location.href='./otherPeriodClasses.html?name='+ encodeURIComponent(uid)">
 
   <div class="row">
     <div class="col-1"></div>
@@ -170,6 +170,7 @@
       <div class="details">
         <br>
         <h4>News</h4>
+        <p>🌟その他の科目を追加しました。</p>
         <p>🌟授業ZoomURLを追加しました。</p>
         <p>🌟profileに単位数表示の機能を追加しました。</p>
         <p>🌟総合政策の時間割を追加しました。星マーク付き。</p>
@@ -212,5 +213,7 @@
 
     <!-- <script src="./js/mergeUserToNewFirestore.js"></script> -->
     <!-- <button id="addUsersBtn" onclick="getClassIdArr2()">AddUsers</button> -->
+
+    <!-- <script src="./js/addOtherPeriodArr.js"></script> -->
 
 </html>

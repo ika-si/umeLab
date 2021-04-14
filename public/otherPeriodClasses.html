@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+
+    </style>
+
+    <!-- jQueryの読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <!--firebase UIの読み込み-->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+
+
+    <script src="js/config.js"></script>
+
+    <script src="./js/account.js"></script>
+
+    <title>classlist</title>
+
+    <link rel="stylesheet" href="./css/classlist.css">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div class="row g-5">
+      <div class="col-md-12 col-lg-6">
+        <h2 style="padding-left: 30px;">chat<span class="table-color">Table</span></h2>
+      </div>
+      <div class="col col-lg-2 text-center">
+        <button type="button" class="sign" onclick="location.href='./timetable.html?name='+ encodeURIComponent(uid)">タイムテーブル</button>
+      </div>
+      <div class="col col-lg-2 text-center">
+        <button type="button" class="sign" id="addBtn" onclick="signOut()">signOut</button>
+      </div>
+    </div>
+
+    <br>
+    <h1>その他の履修科目リスト</h1>
+
+    <div id="otherPeriodList"></div>
+    
+    <div>追加ボタンから履修するクラスを一つずつ追加してください</div>
+    <button type="button" id="addOtherPeriod" class="addOtherPeriodBtn" onclick="location.href='./classlist.html?name='+ encodeURIComponent(uid) + '?period=2021otherPeriod'">追加</button>
+
+
+    <script src="js/otherPeriodClasses.js"></script>
+
+  </body>
+</html>

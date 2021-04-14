@@ -23,16 +23,20 @@ function showRoomTitle() {
     db.collection("year").doc(year).collection("classes").doc(id).get().then((doc) => {
         if (doc.exists) {
             let periodName;
-            if (year_term_period.substring(6,9) == 'Mon') {
-                periodName = "月曜" + year_term_period.substring(9) + "限";
-            } else if (year_term_period.substring(6,9) == 'Tue') {
-                periodName = "火曜" + year_term_period.substring(9) + "限";
-            } else if (year_term_period.substring(6,9) == 'Wed') {
-                periodName = "水曜" + year_term_period.substring(9) + "限"
-            } else if (year_term_period.substring(6,9) == 'Thu') {
-                periodName = "木曜" + year_term_period.substring(9) + "限";
+            if (year_term_period.substring(4,5) == "T") {
+                if (year_term_period.substring(6,9) == 'Mon') {
+                    periodName = "月曜" + year_term_period.substring(9) + "限";
+                } else if (year_term_period.substring(6,9) == 'Tue') {
+                    periodName = "火曜" + year_term_period.substring(9) + "限";
+                } else if (year_term_period.substring(6,9) == 'Wed') {
+                    periodName = "水曜" + year_term_period.substring(9) + "限"
+                } else if (year_term_period.substring(6,9) == 'Thu') {
+                    periodName = "木曜" + year_term_period.substring(9) + "限";
+                } else {
+                    periodName = "金曜" + year_term_period.substring(9) + "限";
+                }
             } else {
-                periodName = "金曜" + year_term_period.substring(9) + "限";
+                periodName = "時限:その他"
             }
 
             let className = doc.data()['name']; //
@@ -43,12 +47,10 @@ function showRoomTitle() {
             document.getElementById("roomname").textContent = periodName +" - "+ className +" - ";
             document.getElementById("teachername").textContent = "　　教授名　：" + teacherName;
             document.getElementById("roomStyle").textContent = "　　授業形態：" + classStyle;
-            if (classStyle == "オンライン" || classStyle == "ハイブリッド") {
-                if (classUrl.substring(0,6) == "Coming") {
-                    document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="https://sites.google.com/tsuda.ac.jp/online-class-timetable" target="_blank">${classUrl}</a>`; // ComingSoon の時はとりあえずオンライン授業時間割に飛ぶようにしておく
-                } else {
-                    document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="${classUrl}" target="_blank">${classUrl}</a>`;
-                }
+            if (classUrl.substring(0,6) == "Coming") {
+                document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="https://sites.google.com/tsuda.ac.jp/online-class-timetable" target="_blank">${classUrl}</a>`; // ComingSoon の時はとりあえずオンライン授業時間割に飛ぶようにしておく
+            } else {
+                document.getElementById("classUrlSpace").innerHTML = `　　授業URL  ： <a href="${classUrl}" target="_blank">${classUrl}</a>`;
             }
             // console.log(document.getElementById("roomDetail"));
             showStudents();
