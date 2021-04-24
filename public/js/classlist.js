@@ -1,6 +1,6 @@
 const db = firebase.firestore();
 
-setYearcontainsTermPeriod();
+// setYearcontainsTermPeriod(); //
 
 let year_term_period, classId; //period:2021T1Mon1とか classId:20210001 とか
 let isChangeStatus = false; // add->false, change->true
@@ -51,9 +51,14 @@ let selectedTermPeriodArr; // T1Mon1とかの配列
 
 let thisTPClassArr;
 let my2021ClassesArr = [];
-showClassTitle();
-getTPClassArr();
-getMy2021ClassesArr();
+
+function pageOnload() {
+
+    setYearcontainsTermPeriod(); //
+    showClassTitle();
+    getTPClassArr();
+    // getMy2021ClassesArr();
+}
 
 function showClassTitle() {
     // 時限タイトル表示
@@ -78,6 +83,7 @@ function getTPClassArr() {
     db.collection("year").doc(year).get().then((doc) => {
         if (doc.exists) {
             thisTPClassArr = doc.data()[`${year_term_period.substring(4)}Arr`];
+            getMy2021ClassesArr();
         } else {
             console.log("No such document!");
         }
@@ -86,31 +92,24 @@ function getTPClassArr() {
     });
 }
 function getMy2021ClassesArr() {
-    db.collection("account").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['uid'] == uid) {
-                db.collection('account').doc(doc.id)
-                .get().then((doc2) => {
-                    if (doc2.exists) {
-                        if (typeof doc2.data()["y2021MyClasses"] === 'undefined') {
-                            // my2021ClassesArr = [];
-                        } else {
-                            my2021ClassesArr = doc2.data()["y2021MyClasses"];
-                        }
-                    } else {
-                        console.log("No such document!");
-                    }
-
-                    if (isChangeStatus) {
-                        getLastSelectclassTPArr();
-                    } else {
-                        displayClass(0);
-                    }
-                }).catch((error) => {
-                    console.log("Error getting document:", error);
-                });
+    mydocRef.get().then((doc) => {
+        if (doc.exists) {
+            if (typeof doc.data()["y2021MyClasses"] === 'undefined') {
+                // my2021ClassesArr = [];
+            } else {
+                my2021ClassesArr = doc.data()["y2021MyClasses"];
             }
-        });
+        } else {
+            console.log("No such document!");
+        }
+
+        if (isChangeStatus) {
+            getLastSelectclassTPArr();
+        } else {
+            displayClass(0);
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     });
 }
 
@@ -235,37 +234,39 @@ function displayClass(i) {
 
 }
 function checkCanAddClass(tpArr, i) {
-    db.collection("account").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['uid'] == uid) {
-                const myYearContainArr = doc.data()["y2021ContainArr"];
+    mydocRef.get().then((doc) => {
+        if (doc.exists) {
+            const myYearContainArr = doc.data()["y2021ContainArr"];
 
-                if (isChangeStatus) {
-                    // 一旦更新
-                    for (let i=0; i<lastTermPeriodArr.length; i++) {
-                        myYearContainArr.splice(myYearContainArr.indexOf(lastTermPeriodArr[i]), 1);
-                    }
-                }
-
-                let canAddClass = true;
-                for (let i=0; i<tpArr.length; i++) {
-                    if (myYearContainArr.includes(tpArr[i])) {
-                        canAddClass = false;
-                        break;
-                    }
-                }
-                if (canAddClass == false) {
-                    const className = document.classtable.className;
-                    if (i == 0) { // なんかclassName、一つの時だけListではなく単純に1つのタグが取り出されるみたいなので分ける
-                        className.disabled = true;
-                    } else {
-                        className[i].disabled = true;
-                    }
-                    console.log((i+1) + "　番目のチェックボックス　disabled");
-                    
+            if (isChangeStatus) {
+                // 一旦更新
+                for (let j=0; j<lastTermPeriodArr.length; j++) {
+                    myYearContainArr.splice(myYearContainArr.indexOf(lastTermPeriodArr[j]), 1);
                 }
             }
-        });
+
+            let canAddClass = true;
+            for (let j=0; j<tpArr.length; j++) {
+                if (myYearContainArr.includes(tpArr[j])) {
+                    canAddClass = false;
+                    break;
+                }
+            }
+            if (canAddClass == false) {
+                const className = document.classtable.className;
+                if (i == 0) { // なんかclassName、一つの時だけListではなく単純に1つのタグが取り出されるみたいなので分ける
+                    className.disabled = true;
+                } else {
+                    className[i].disabled = true;
+                }
+                console.log((i+1) + "　番目のチェックボックス　disabled");
+                
+            }
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     });
 }
 
@@ -340,32 +341,34 @@ function deleteClassRegistration(bool) {
     deleteClassFromMyClasses(bool);
 }
 function deleteClassFromMyClasses(bool) {
-    db.collection("account").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['uid'] == uid) {
-                const myYearContainArr = doc.data()["y2021ContainArr"];
-                console.log(myYearContainArr);
-                console.log(lastTermPeriodArr);
-                for (let i=0; i<lastTermPeriodArr.length; i++) {
-                    console.log(myYearContainArr.indexOf(lastTermPeriodArr[i]));
-                    myYearContainArr.splice(myYearContainArr.indexOf(lastTermPeriodArr[i]), 1);
-                }
-                console.log(myYearContainArr);
-
-                // クラス配列フィールドから当てはまるidを削除する
-                db.collection("account").doc(doc.id).update({
-                    y2021MyClasses: firebase.firestore.FieldValue.arrayRemove(Number(classId)),
-                    y2021ContainArr: myYearContainArr
-                })
-                .then(() => {
-                    console.log("Document successfully updated!");
-                    deleteUserFromClassUsers(bool);
-                })
-                .catch((error) => {
-                    console.error("Error updating document: ", error);
-                });
+    mydocRef.get().then((doc) => {
+        if (doc.exists) {
+            const myYearContainArr = doc.data()["y2021ContainArr"];
+            console.log(myYearContainArr);
+            console.log(lastTermPeriodArr);
+            for (let i=0; i<lastTermPeriodArr.length; i++) {
+                console.log(myYearContainArr.indexOf(lastTermPeriodArr[i]));
+                myYearContainArr.splice(myYearContainArr.indexOf(lastTermPeriodArr[i]), 1);
             }
-        });
+            console.log(myYearContainArr);
+
+            // クラス配列フィールドから当てはまるidを削除する
+            mydocRef.update({
+                y2021MyClasses: firebase.firestore.FieldValue.arrayRemove(Number(classId)),
+                y2021ContainArr: myYearContainArr
+            })
+            .then(() => {
+                console.log("Document successfully updated!");
+                deleteUserFromClassUsers(bool);
+            })
+            .catch((error) => {
+                console.error("Error updating document: ", error);
+            });
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     });
 }
 function deleteUserFromClassUsers(bool) {
@@ -410,65 +413,59 @@ function addUserToClassUsers() {
 }
 
 function addClassToMyClasses() {
-    db.collection("account").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['uid'] == uid) {
-                const myYearContainArr = doc.data()["y2021ContainArr"];
-                console.log(myYearContainArr);
-                console.log(selectedTermPeriodArr);
-                if (! displayOtherPeriod) { // 配列に""が追加されてしまうためはじく
-                    for (let i=0; i<selectedTermPeriodArr.length; i++) {
-                        myYearContainArr.push(selectedTermPeriodArr[i]);
-                    }
+    mydocRef.get().then((doc) => {
+        if (doc.exists) {
+            const myYearContainArr = doc.data()["y2021ContainArr"];
+            console.log(myYearContainArr);
+            console.log(selectedTermPeriodArr);
+            if (! displayOtherPeriod) { // 配列に""が追加されてしまうためはじく
+                for (let i=0; i<selectedTermPeriodArr.length; i++) {
+                    myYearContainArr.push(selectedTermPeriodArr[i]);
                 }
-                console.log(myYearContainArr);
+            }
+            console.log(myYearContainArr);
 
-                db.collection('account').doc(doc.id)
-                .get().then((doc2) => {
-                    if (doc2.exists) {
-                        if (typeof doc2.data()["y2021MyClasses"] === 'undefined') {
-                            // 新しく配列フィールドを作成して追加
-                            db.collection('account').doc(doc2.id).set({
-                                y2021MyClasses: [Number(selectedClassdocid)],
-                                y2021ContainArr: myYearContainArr
-                            }, {merge: true})
-                            .then(() => {
-                                console.log("Document successfully written!");
-                                if (displayOtherPeriod) {
-                                    window.location.href ='../otherPeriodClasses.html?name=' + encodeURIComponent(uid);
-                                } else {
-                                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
-                                }
-                            })
-                            .catch((error) => {
-                                console.error("Error writing document: ", error);
-                            });
-                        } else {
-                            // 既にある配列フィールドに追加
-                            db.collection('account').doc(doc2.id).update({
-                                y2021MyClasses: firebase.firestore.FieldValue.arrayUnion(Number(selectedClassdocid)),
-                                y2021ContainArr: myYearContainArr
-                            })
-                            .then(() => {
-                                console.log("Document successfully updated!");
-                                if (displayOtherPeriod) {
-                                    window.location.href ='../otherPeriodClasses.html?name=' + encodeURIComponent(uid);
-                                } else {
-                                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
-                                }
-                            })
-                            .catch((error) => {
-                                console.error("Error updating document: ", error);
-                            });
-                        }
+            if (typeof doc.data()["y2021MyClasses"] === 'undefined') {
+                // 新しく配列フィールドを作成して追加
+                mydocRef.set({
+                    y2021MyClasses: [Number(selectedClassdocid)],
+                    y2021ContainArr: myYearContainArr
+                }, {merge: true})
+                .then(() => {
+                    console.log("Document successfully written!");
+                    if (displayOtherPeriod) {
+                        window.location.href ='../otherPeriodClasses.html?name=' + encodeURIComponent(uid);
                     } else {
-                        console.log("No such document!");
+                        window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
                     }
-                }).catch((error) => {
-                    console.log("Error getting document:", error);
+                })
+                .catch((error) => {
+                    console.error("Error writing document: ", error);
+                });
+            } else {
+                // 既にある配列フィールドに追加
+                mydocRef.update({
+                    y2021MyClasses: firebase.firestore.FieldValue.arrayUnion(Number(selectedClassdocid)),
+                    y2021ContainArr: myYearContainArr
+                })
+                .then(() => {
+                    console.log("Document successfully updated!");
+                    if (displayOtherPeriod) {
+                        window.location.href ='../otherPeriodClasses.html?name=' + encodeURIComponent(uid);
+                    } else {
+                        window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error updating document: ", error);
                 });
             }
-        });
+
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     });
 }
 
@@ -476,35 +473,26 @@ function addClassToMyClasses() {
 //
 
 function setYearcontainsTermPeriod() {
-    db.collection("account").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['uid'] == uid) {
-
-                db.collection('account').doc(doc.id)
-                .get().then((doc2) => {
-                    if (doc2.exists) {
-                        if (typeof doc2.data()["y2021ContainArr"] === 'undefined') {
-                            // 新しく配列フィールドを作成して追加
-                            db.collection('account').doc(doc2.id).set({
-                                y2021ContainArr: []
-                            }, {merge: true})
-                            .then(() => {
-                                console.log("Document successfully written!");
-                            })
-                            .catch((error) => {
-                                console.error("Error writing document: ", error);
-                            });
-                        } else {
-                            //
-                        }
-                    } else {
-                        // doc.data() will be undefined in this case
-                        console.log("No such document!");
-                    }
-                }).catch((error) => {
-                    console.log("Error getting document:", error);
+    mydocRef.get().then((doc) => {
+        if (doc.exists) {
+            if (typeof doc.data()["y2021ContainArr"] === 'undefined') {
+                // 新しく配列フィールドを作成して追加
+                mydocRef.set({
+                    y2021ContainArr: []
+                }, {merge: true})
+                .then(() => {
+                    console.log("Document successfully written!");
+                })
+                .catch((error) => {
+                    console.error("Error writing document: ", error);
                 });
+            } else {
+                //
             }
-        });
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     });
 }

@@ -27,53 +27,57 @@ const db = firebase.firestore();
 const weekArr = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 let edit = false; // 編集ステータスかどうか
 
-// 追加・room・変更ボタンを作成
-for (let i=0; i<weekArr.length; i++) {
-  for (let j=1; j<=6; j++) {
-    let parent = document.getElementById(`${weekArr[i]}${j}`);
-    let classname = document.createElement('span');
-    classname.setAttribute('id', `${parent.id}name`);
-    parent.appendChild(classname);
-    let addBtn = document.createElement('button');
-    addBtn.setAttribute('type', 'button');
-    addBtn.setAttribute('id', `${parent.id}add`);
-    addBtn.setAttribute('class', 'addRoom');
-    addBtn.innerText = "追加";
-    addBtn.setAttribute('onclick', `userSendClasslist('${weekArr[i]}${j}')`);
-    parent.appendChild(addBtn);
-    let roomBtn = document.createElement('button');
-    roomBtn.setAttribute('type', 'button');
-    roomBtn.setAttribute('id', `${parent.id}room`);
-    roomBtn.setAttribute('class', 'classroom');
-    roomBtn.innerText = "room";
-    roomBtn.setAttribute('onclick', `sendRoom('${weekArr[i]}${j}')` );
-    parent.appendChild(roomBtn);
-    let changeBtn = document.createElement('button');
-    changeBtn.setAttribute('type', 'button');
-    changeBtn.setAttribute('id', `${parent.id}change`);
-    changeBtn.setAttribute('class', 'changeroom');
-    changeBtn.innerText = "変更";
-    changeBtn.setAttribute('onclick', `sendClasslistChange('${weekArr[i]}${j}')` );
-    parent.appendChild(changeBtn);
+
+function pageOnload() { // account.js内で呼ばれる処理
+
+  // 追加・room・変更ボタンを作成
+  for (let i=0; i<weekArr.length; i++) {
+    for (let j=1; j<=6; j++) {
+      let parent = document.getElementById(`${weekArr[i]}${j}`);
+      let classname = document.createElement('span');
+      classname.setAttribute('id', `${parent.id}name`);
+      parent.appendChild(classname);
+      let addBtn = document.createElement('button');
+      addBtn.setAttribute('type', 'button');
+      addBtn.setAttribute('id', `${parent.id}add`);
+      addBtn.setAttribute('class', 'addRoom');
+      addBtn.innerText = "追加";
+      addBtn.setAttribute('onclick', `userSendClasslist('${weekArr[i]}${j}')`);
+      parent.appendChild(addBtn);
+      let roomBtn = document.createElement('button');
+      roomBtn.setAttribute('type', 'button');
+      roomBtn.setAttribute('id', `${parent.id}room`);
+      roomBtn.setAttribute('class', 'classroom');
+      roomBtn.innerText = "room";
+      roomBtn.setAttribute('onclick', `sendRoom('${weekArr[i]}${j}')` );
+      parent.appendChild(roomBtn);
+      let changeBtn = document.createElement('button');
+      changeBtn.setAttribute('type', 'button');
+      changeBtn.setAttribute('id', `${parent.id}change`);
+      changeBtn.setAttribute('class', 'changeroom');
+      changeBtn.innerText = "変更";
+      changeBtn.setAttribute('onclick', `sendClasslistChange('${weekArr[i]}${j}')` );
+      parent.appendChild(changeBtn);
+    }
   }
-}
 
-document.getElementById("btn2").style.display = "none";
-document.getElementById("btn1").addEventListener("click", function(){
-  edit = true;
-  document.getElementById("btn1").style.display = "none";
-  document.getElementById("btn2").style.display = "block";
-  buttonShow();
-});
-
-document.getElementById("btn2").addEventListener("click", function(){
-  edit = false;
-  document.getElementById("btn1").style.display = "block";
   document.getElementById("btn2").style.display = "none";
-  buttonShow();
-});
+  document.getElementById("btn1").addEventListener("click", function(){
+    edit = true;
+    document.getElementById("btn1").style.display = "none";
+    document.getElementById("btn2").style.display = "block";
+    buttonShow();
+  });
 
-reloadTimeTable();
+  document.getElementById("btn2").addEventListener("click", function(){
+    edit = false;
+    document.getElementById("btn1").style.display = "block";
+    document.getElementById("btn2").style.display = "none";
+    buttonShow();
+  });
+
+  reloadTimeTable();
+}
 // -----------------------------------------------------------------------------------------------------------------------------
 
 
@@ -110,10 +114,8 @@ function buttonShow(){
   // 追加・room・更新ボタンの表示/非表示を設定
   for (let i=0; i<weekArr.length; i++) {
     for (let j=1; j<=6; j++) {
-
-      db.collection("account").where("uid", "==", uid)
-      .get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
+      mydocRef.get().then((doc) => {
+        if (doc.exists) {
           const myClassesArr = doc.data()['y2021MyClasses'];
           // console.log(myClassesArr);
 
@@ -126,10 +128,12 @@ function buttonShow(){
             const period = weekArr[i] + j;
             judgeMyClassContain(period, myClassesArr);
           }
-        });
-      })
-      .catch((error) => {
-        console.log("Error getting documents: ", error);
+
+        } else {
+            console.log("No such document!");
+        }
+      }).catch((error) => {
+          console.log("Error getting document:", error);
       });
 
     }
@@ -230,16 +234,16 @@ function sendClasslistChange(period){ // 更新ボタンを押された時の処
 }
 
 function getMyClassIdArr(term_period) {
-  db.collection("account").where("uid", "==", uid)
-  .get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
+  mydocRef.get().then((doc) => {
+    if (doc.exists) {
       const myClassesArr = doc.data()[`y${year}MyClasses`];
       console.log(myClassesArr);
       findCorrectId(term_period, myClassesArr);
-    });
-  })
-  .catch((error) => {
-      console.log("Error getting documents: ", error);
+    } else {
+        console.log("No such document!");
+    }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
   });
 }
 function findCorrectId(term_period, myClassesArr) {
