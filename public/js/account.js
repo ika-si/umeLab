@@ -1,4 +1,4 @@
-var uid, userName;
+var uid, userName, mydocRef;
 function show() {
     var query = location.search;
     var value = query.split('=');
@@ -14,6 +14,10 @@ function show() {
             if(doc.data()['uid'] == uid) {
                 userName = doc.data()['name'];
                 $('#nameAccount').append('<button class="account" onclick="sendAccount()">' + userName + '</button>');
+                mydocRef = db.collection("account").doc(doc.id);
+                if (location.pathname != "/room.html") { // room.htmlではuid探索しないのでそのまま
+                    pageOnload();
+                }
             }
             // console.log('アカウントがない');
             // window.location.href ='../index.html';

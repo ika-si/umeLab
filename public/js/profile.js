@@ -4,53 +4,56 @@ let mustCount, optionalCount, freeCount;
 let my2021ContainClassIdArr = [];
 let my2021Count = 0;
 
-function showProfile(){
-  db.collection("account").get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-          if(doc.data()['uid'] == uid) {
-            accountDoc = doc.id;
-            console.log(accountDoc);
-              userName = doc.data()['name'];
-              myEmail = doc.data()['email'];
-              myUndergraduate = doc.data()['undergraduate'];
-              myDepartment = doc.data()['department'];
-              myGrade = doc.data()['grade'];
-              myDetails = doc.data()['details'];
-              myTwitter = doc.data()['twitter'];
-              myInstagram = doc.data()['instagram'];
-              mustCount = doc.data()['mustCount'];
-              optionalCount = doc.data()['optionalCount'];
-              freeCount = doc.data()['freeCount'];
-
-              $('#MyName').append('<h4>名　　前　:　' + userName + '</h4>');
-              $('#MyUndergraduate').append('<h4>学　　部　:　' + myUndergraduate + '</h4>');
-              $('#MyDepartment').append('<h4>学　　科　:　' + myDepartment + '</h4>');
-              if (myGrade == -1) {
-                $('#MyGrade').append('<h4>学　　年　:　' + '</h4>');
-              } else {
-                $('#MyGrade').append('<h4>学　　年　:　' + myGrade + '</h4>');
-              }
-              $('#MyDetails').append('<h4>コメント　:　' + myDetails + '</h4>');
-              $('#MyTwitter').append('<h4>@' + myTwitter + '</h4>');
-              $('#MyInstagram').append('<h4>' + myInstagram + '</h4>');
-              $('#My2021Credits').append('<h4><br>2021年度総単位数　:　' + my2021Count + '</h4>'); //
-              $('#MyMustCredits').append('<h4><br>　　必修科目　:　' + mustCount + '</h4>');
-              $('#MyOptionalMustCredits').append('<h4>選択必修科目　:　' + optionalCount + '</h4>');
-              $('#MyFreeCredits').append('<h4>　　自由科目　:　' + freeCount + '</h4>');
-
-          }
-          // console.log('アカウントがない');
-          // window.location.href ='../index.html';
-          // console.log(doc.data()['name']);
-          // var name = doc.data()['name'];
-          // $('#list').append('<li>'+ name + '</li>');
-      })
-  })
-
+function pageOnload() { // account.jsで呼ばれてここがまず実行される
+  // showProfile();
+  calcMy2021Credits(); // showProfile()も呼ばれる
 }
 
-// showProfile();
-calcMy2021Credits(); // showProfile()も呼ばれる
+function showProfile(){
+  mydocRef.get().then((doc) => {
+    if (doc.exists) {
+      accountDoc = doc.id;
+      console.log(accountDoc);
+        userName = doc.data()['name'];
+        myEmail = doc.data()['email'];
+        myUndergraduate = doc.data()['undergraduate'];
+        myDepartment = doc.data()['department'];
+        myGrade = doc.data()['grade'];
+        myDetails = doc.data()['details'];
+        myTwitter = doc.data()['twitter'];
+        myInstagram = doc.data()['instagram'];
+        mustCount = doc.data()['mustCount'];
+        optionalCount = doc.data()['optionalCount'];
+        freeCount = doc.data()['freeCount'];
+
+        $('#MyName').append('<h4>名　　前　:　' + userName + '</h4>');
+        $('#MyUndergraduate').append('<h4>学　　部　:　' + myUndergraduate + '</h4>');
+        $('#MyDepartment').append('<h4>学　　科　:　' + myDepartment + '</h4>');
+        if (myGrade == -1) {
+          $('#MyGrade').append('<h4>学　　年　:　' + '</h4>');
+        } else {
+          $('#MyGrade').append('<h4>学　　年　:　' + myGrade + '</h4>');
+        }
+        $('#MyDetails').append('<h4>コメント　:　' + myDetails + '</h4>');
+        $('#MyTwitter').append('<h4>@' + myTwitter + '</h4>');
+        $('#MyInstagram').append('<h4>' + myInstagram + '</h4>');
+        $('#My2021Credits').append('<h4><br>2021年度総単位数　:　' + my2021Count + '</h4>'); //
+        $('#MyMustCredits').append('<h4><br>　　必修科目　:　' + mustCount + '</h4>');
+        $('#MyOptionalMustCredits').append('<h4>選択必修科目　:　' + optionalCount + '</h4>');
+        $('#MyFreeCredits').append('<h4>　　自由科目　:　' + freeCount + '</h4>');
+    } else {
+        console.log("No such document!");
+        // console.log('アカウントがない');
+        // window.location.href ='../index.html';
+        // console.log(doc.data()['name']);
+        // var name = doc.data()['name'];
+        // $('#list').append('<li>'+ name + '</li>');
+    }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
+  });
+
+}
 
 function showNewProfile(){
   $('#MyName').innerHTML = userName;
@@ -118,22 +121,24 @@ function changeProfile(){
 }
 
 function calcMy2021Credits() {
-  db.collection("account").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        if(doc.data()['uid'] == uid) {
-            if (typeof doc.data()["y2021MyClasses"] === 'undefined') {
-              // my2021Count = 0; でプロフィールを表示する
-              showProfile();
-            } else {
-              if (doc.data()["y2021MyClasses"].length == 0) {
-                showProfile();
-              } else {
-                my2021ContainClassIdArr = doc.data()["y2021MyClasses"];
-                calcCredits(0);
-              }
-            }
+  mydocRef.get().then((doc) => {
+    if (doc.exists) {
+      if (typeof doc.data()["y2021MyClasses"] === 'undefined') {
+        // my2021Count = 0; でプロフィールを表示する
+        showProfile();
+      } else {
+        if (doc.data()["y2021MyClasses"].length == 0) {
+          showProfile();
+        } else {
+          my2021ContainClassIdArr = doc.data()["y2021MyClasses"];
+          calcCredits(0);
         }
-    });
+      }
+    } else {
+        console.log("No such document!");
+    }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
   });
 }
 
