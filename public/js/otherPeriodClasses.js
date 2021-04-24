@@ -4,7 +4,9 @@ let otherPeriodClassArr = [];
 let my2021ClassesArr = [];
 let myOPClassArr = [];
 
-getOtherPeriodClassArr();
+function pageOnload() {
+    getOtherPeriodClassArr();
+}
 
 function getOtherPeriodClassArr() {
     db.collection("year").doc("2021").get().then((doc) => {
@@ -20,26 +22,19 @@ function getOtherPeriodClassArr() {
 }
 
 function getMy2021ClassesArr() {
-    db.collection("account").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['uid'] == uid) {
-                db.collection('account').doc(doc.id)
-                .get().then((doc2) => {
-                    if (doc2.exists) {
-                        if (typeof doc2.data()["y2021MyClasses"] === 'undefined') {
-                            // my2021ClassesArr = [];
-                        } else {
-                            my2021ClassesArr = doc2.data()["y2021MyClasses"];
-                            getMyOPClassArr();
-                        }
-                    } else {
-                        console.log("No such document!");
-                    }
-                }).catch((error) => {
-                    console.log("Error getting document:", error);
-                });
+    mydocRef.get().then((doc) => {
+        if (doc.exists) {
+            if (typeof doc.data()["y2021MyClasses"] === 'undefined') {
+                // my2021ClassesArr = [];
+            } else {
+                my2021ClassesArr = doc.data()["y2021MyClasses"];
+                getMyOPClassArr();
             }
-        });
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     });
 }
 
@@ -89,7 +84,7 @@ function displayMyOPClasses(i) {
             
 
             parent.appendChild(newRow);
-            console.log(parent);
+            // console.log(parent);
             
 
         } else {
@@ -117,22 +112,24 @@ function confirmDelete(classId) {
 }
 
 function deleteClassFromMyClasses(classId) {
-    db.collection("account").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.data()['uid'] == uid) {
-                // クラス配列フィールドから当てはまるclassIdを削除する
-                db.collection("account").doc(doc.id).update({
-                    y2021MyClasses: firebase.firestore.FieldValue.arrayRemove(Number(classId))
-                })
-                .then(() => {
-                    console.log("Document successfully updated!");
-                    deleteUserFromClassUsers(classId);
-                })
-                .catch((error) => {
-                    console.error("Error updating document: ", error);
-                });
-            }
-        });
+    mydocRef.get().then((doc) => {
+        if (doc.exists) {
+            // クラス配列フィールドから当てはまるclassIdを削除する
+            mydocRef.update({
+                y2021MyClasses: firebase.firestore.FieldValue.arrayRemove(Number(classId))
+            })
+            .then(() => {
+                console.log("Document successfully updated!");
+                deleteUserFromClassUsers(classId);
+            })
+            .catch((error) => {
+                console.error("Error updating document: ", error);
+            });
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     });
 }
 
