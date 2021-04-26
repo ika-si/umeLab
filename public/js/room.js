@@ -111,3 +111,61 @@ $(document).on("click", ".person", function (event) {
         console.log("Error getting documents: ", error);
     });
 });
+
+// 戻るボタン押されたときの処理
+// 自分のy2021MyNumberOfChatObjectのこのクラスのところを更新してから戻る
+function clickReturnBtn() {
+    db.collection("year").doc("2021").get().then((doc) => {
+        if (doc.exists) {
+            let nocObj = doc.data()["NumberOfChatObject"];
+
+            mydocRef.set({
+                y2021MyNumberOfChatObject: {
+                    [`chat${id}`]: nocObj[`chat${id}`]
+                }
+            }, {merge: true})
+            .then(() => {
+                console.log("Document successfully written!");
+
+                history.back();
+            })
+            .catch((error) => {
+                console.error("Error writing document: ", error);
+            });
+
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+}
+
+// signOutボタンを押された時の処理
+// 自分のy2021MyNumberOfChatObjectのこのクラスのところを更新してからsignOut
+function clickSignOutBtn() {
+    db.collection("year").doc("2021").get().then((doc) => {
+        if (doc.exists) {
+            let nocObj = doc.data()["NumberOfChatObject"];
+
+            mydocRef.set({
+                y2021MyNumberOfChatObject: {
+                    [`chat${id}`]: nocObj[`chat${id}`]
+                }
+            }, {merge: true})
+            .then(() => {
+                console.log("Document successfully written!");
+
+                signOut();
+            })
+            .catch((error) => {
+                console.error("Error writing document: ", error);
+            });
+
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+}

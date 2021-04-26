@@ -100,13 +100,27 @@ p{
 
 
 .changeroom{
-  /* .addRoomをコピペしたのでいい感じに色とか大きさとか変更してねー */
   color: #3BAF75;
   background-color: #F5F5F5;
   padding: 5px 5px 5px 5px;
   width:50px;
   border-radius: 15px;
   border: solid 1px #3BAF75;
+}
+
+.newchat{
+  background: #1DA1F2;
+  color: #F5F5F5;
+  height: 20px;
+  line-height: 20px;
+  min-width: 20px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  margin-left: 10px;
 }
 
 .Bigchangeroom{

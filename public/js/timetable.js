@@ -26,6 +26,7 @@ if (value[1].indexOf("?") != -1) { // classlist.html から戻ってきた時
 const db = firebase.firestore();
 const weekArr = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 let edit = false; // 編集ステータスかどうか
+let numberOfChatObject;
 
 
 function pageOnload() { // account.js内で呼ばれる処理
@@ -58,6 +59,10 @@ function pageOnload() { // account.js内で呼ばれる処理
       changeBtn.innerText = "変更";
       changeBtn.setAttribute('onclick', `sendClasslistChange('${weekArr[i]}${j}')` );
       parent.appendChild(changeBtn);
+      let numOfNewChat = document.createElement('span');
+      numOfNewChat.setAttribute('class', 'newchat');
+      numOfNewChat.setAttribute('id', `${parent.id}newchat`);
+      parent.appendChild(numOfNewChat);
     }
   }
 
@@ -65,13 +70,13 @@ function pageOnload() { // account.js内で呼ばれる処理
   document.getElementById("btn1").addEventListener("click", function(){
     edit = true;
     document.getElementById("btn1").style.display = "none";
-    document.getElementById("btn2").style.display = "block";
+    document.getElementById("btn2").style.display = "inline-block";
     buttonShow();
   });
 
   document.getElementById("btn2").addEventListener("click", function(){
     edit = false;
-    document.getElementById("btn1").style.display = "block";
+    document.getElementById("btn1").style.display = "inline-block";
     document.getElementById("btn2").style.display = "none";
     buttonShow();
   });
@@ -99,15 +104,30 @@ function reloadTimeTable() {
       document.getElementById(`${weekArr[i]}${j}room`).style.display = "none";
       document.getElementById(`${weekArr[i]}${j}add`).style.display = "none";
       document.getElementById(`${weekArr[i]}${j}change`).style.display = "none";
+      document.getElementById(`${weekArr[i]}${j}newchat`).style.display = "none";
     }
   }
 
   // T1~T4のどれが選択されているのかを更新
   selectedTerm = document.getElementById("termSelect");
-  // console.log("now ", selectedTerm.value, " selected!");
   
-  // 履修に合わせてボタンを表示
-  buttonShow();
+  // NumberOfChatObjectを取得
+  getNocObj();
+}
+
+function getNocObj() {
+  db.collection("year").doc("2021").get().then((doc) => {
+    if (doc.exists) {
+        numberOfChatObject = doc.data()["NumberOfChatObject"];
+        
+        // 履修に合わせてボタンを表示
+        buttonShow();
+    } else {
+        console.log("No such document!");
+    }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
+  });
 }
 
 function buttonShow(){
@@ -154,23 +174,43 @@ function judgeMyClassContain(period, myClassesArr) {
               document.getElementById(`${period}add`).style.display = "none";
               
               if(edit==false){
-                document.getElementById(`${period}room`).style.display = "block";
+                document.getElementById(`${period}room`).style.display = "inline-block";
                 document.getElementById(`${period}change`).style.display = "none";
               } else {
                 document.getElementById(`${period}room`).style.display = "none";
-                document.getElementById(`${period}change`).style.display = "block";
+                document.getElementById(`${period}newchat`).style.display = "none";
+                document.getElementById(`${period}change`).style.display = "inline-block";
               }
               
               db.collection("year").doc(year).collection("classes").doc(tpContainArr[i]).get().then((doc2) => {
                 if (doc2.exists) {
                   console.log(doc2.data()["name"]);
                   document.getElementById(`${period}name`).textContent = doc2.data()["name"];
+                  document.getElementById(`${period}name`).style.display = "block";
                 } else {
                     console.log("No such document!");
                 }
               }).catch((error) => {
                   console.log("Error getting document:", error);
               });
+
+              // room ボタンが表示されている時だけchatの増加個数を表示
+              if (document.getElementById(`${period}room`).style.display == "inline-block") {
+                
+                mydocRef.get().then((doc2) => {
+                  if (doc2.exists) {
+                    let myNocObj = doc2.data()["y2021MyNumberOfChatObject"];
+                    if (numberOfChatObject[`chat${tpContainArr[i]}`] - myNocObj[`chat${tpContainArr[i]}`] > 0) {
+                      document.getElementById(`${period}newchat`).textContent = numberOfChatObject[`chat${tpContainArr[i]}`] - myNocObj[`chat${tpContainArr[i]}`];
+                      document.getElementById(`${period}newchat`).style.display = "inline-block";
+                    }
+                  } else {
+                      console.log("No such document!");
+                  }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+              }
 
               break;
             }

@@ -380,11 +380,7 @@ function deleteUserFromClassUsers(bool) {
             db.collection("year").doc(year).collection("classes").doc(classId).collection("users").doc(doc.id).delete().then(() => {
                 console.log("Document successfully deleted!");
 
-                if (bool == false) {
-                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
-                } else {
-                    addUserToClassUsers();
-                }
+                deleteClassFromMyNumOfChatObj(bool);
 
             }).catch((error) => {
                 console.error("Error removing document: ", error);
@@ -395,6 +391,43 @@ function deleteUserFromClassUsers(bool) {
         console.log("Error getting documents: ", error);
     });
 }
+
+function deleteClassFromMyNumOfChatObj(bool) {
+    
+    mydocRef.get().then((doc) => {
+        if (doc.exists) {
+            let myNocObj = doc.data()["y2021MyNumberOfChatObject"];
+            console.log(myNocObj[`chat${classId}`]);
+            delete myNocObj[`chat${classId}`];
+            console.log(myNocObj[`chat${classId}`]);
+
+            console.log(myNocObj);
+
+            mydocRef.update({
+                y2021MyNumberOfChatObject: myNocObj
+            })
+            .then(() => {
+                console.log("Document successfully updated!");
+                if (bool == false) {
+                    window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
+                } else {
+                    addUserToClassUsers();
+                }
+            })
+            .catch((error) => {
+                console.error("Error updating document: ", error);
+            });
+
+
+
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+}
+
 
 function addUserToClassUsers() {
     // year/.../users にuidフィールドを持ったドキュメントを追加  履修者一覧を表示するときに使う
@@ -433,11 +466,7 @@ function addClassToMyClasses() {
                 }, {merge: true})
                 .then(() => {
                     console.log("Document successfully written!");
-                    if (displayOtherPeriod) {
-                        window.location.href ='../otherPeriodClasses.html?name=' + encodeURIComponent(uid);
-                    } else {
-                        window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
-                    }
+                    addClassToMyNumOfChatObj();
                 })
                 .catch((error) => {
                     console.error("Error writing document: ", error);
@@ -450,11 +479,7 @@ function addClassToMyClasses() {
                 })
                 .then(() => {
                     console.log("Document successfully updated!");
-                    if (displayOtherPeriod) {
-                        window.location.href ='../otherPeriodClasses.html?name=' + encodeURIComponent(uid);
-                    } else {
-                        window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
-                    }
+                    addClassToMyNumOfChatObj();
                 })
                 .catch((error) => {
                     console.error("Error updating document: ", error);
@@ -469,6 +494,75 @@ function addClassToMyClasses() {
     });
 }
 
+function addClassToMyNumOfChatObj() {
+    mydocRef.get().then((doc) => {
+        if (doc.exists) {
+            if (typeof doc.data()["y2021MyNumberOfChatObject"] === 'undefined') { // はじめて履修登録する時ここ
+                db.collection("year").doc("2021").get().then((doc) => {
+                    if (doc.exists) {
+                        let nocObj = doc.data()["NumberOfChatObject"];
+
+                        mydocRef.set({
+                            y2021MyNumberOfChatObject: {
+                                [`chat${selectedClassdocid}`]: nocObj[`chat${selectedClassdocid}`]
+                            }
+                        }, {merge: true})
+                        .then(() => {
+                            console.log("Document successfully written!");
+                            userSendNextPage();
+                        })
+                        .catch((error) => {
+                            console.error("Error writing document: ", error);
+                        });
+
+                    } else {
+                        console.log("No such document!");
+                    }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+
+            } else {
+                let myNocObj = doc.data()["y2021MyNumberOfChatObject"];
+
+                db.collection("year").doc("2021").get().then((doc) => {
+                    if (doc.exists) {
+                        let nocObj = doc.data()["NumberOfChatObject"];
+                        myNocObj[`chat${selectedClassdocid}`] = nocObj[`chat${selectedClassdocid}`]; // 新たにkey-valueが加わる
+
+                        mydocRef.set({
+                            y2021MyNumberOfChatObject: myNocObj
+                        }, {merge: true})
+                        .then(() => {
+                            console.log("Document successfully written!");
+                            userSendNextPage();
+                        })
+                        .catch((error) => {
+                            console.error("Error writing document: ", error);
+                        });
+
+                    } else {
+                        console.log("No such document!");
+                    }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+            }
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+}
+
+function userSendNextPage() {
+    if (displayOtherPeriod) {
+        window.location.href ='../otherPeriodClasses.html?name=' + encodeURIComponent(uid);
+    } else {
+        window.location.href ='../timetable.html?name=' + encodeURIComponent(uid) + "?selectTerm=" + encodeURIComponent(year_term_period.substring(4,6));
+    }
+}
 
 //
 

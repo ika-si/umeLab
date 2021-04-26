@@ -122,6 +122,35 @@ function add(){
   .catch((error) => {
     console.error("Error writing document: ", error);
   });
+
+  // NumberOfChatObjectのこのクラスのカウントを＋１する処理
+  db.collection("year").doc("2021").get().then((doc) => {
+    if (doc.exists) {
+      
+        // 値の取得
+        let nocObj = doc.data()["NumberOfChatObject"];
+
+        // 更新
+        nocObj[`chat${id}`]++;
+
+        // Firestoreデータの上書き
+        db.collection("year").doc("2021").set({
+            NumberOfChatObject: nocObj
+        }, {merge: true})
+        .then(() => {
+            console.log("Document successfully written!");
+        })
+        .catch((error) => {
+            console.error("Error writing document: ", error);
+        });
+
+    } else {
+        console.log("No such document!");
+    }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
+  });
+
 }
 
 let msg_form = document.getElementById('msgAdd');
