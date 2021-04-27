@@ -15,7 +15,7 @@ function show() {
                 userName = doc.data()['name'];
                 $('#nameAccount').append('<button class="account" onclick="sendAccount()">' + userName + '</button>');
                 mydocRef = db.collection("account").doc(doc.id);
-                if (location.pathname != "/room.html") { // room.htmlではuid探索しないのでそのまま
+                if (location.pathname != "/room.html") { // room.htmlではページ読み込み時の処理でmydocRef使わないのでコードそのままにしている
                     pageOnload();
                 }
             }
