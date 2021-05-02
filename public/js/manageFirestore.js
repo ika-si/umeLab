@@ -128,3 +128,23 @@
 // }
 
 // -----------------------------------------------------------------------------------------------------------
+// チャットの使用数をコンソールに出力
+
+// let numOfChatResult = 0;
+// db.collection("year").doc("2021").get().then((doc) => {
+//     if (doc.exists) {
+//         let nocObjAll = doc.data()["NumberOfChatObject"];
+        
+//         for (let i=0; i<Object.keys(nocObjAll).length; i++) {
+//             numOfChatResult += Object.values(nocObjAll)[i];
+//         }
+
+//         console.log("総チャット数：", numOfChatResult);
+//     } else {
+//         console.log("No such document!");
+//     }
+// }).catch((error) => {
+//     console.log("Error getting document:", error);
+// });
+
+// -----------------------------------------------------------------------------------------------------------
