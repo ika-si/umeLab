@@ -1,0 +1,59 @@
+/* 参考 */
+/* https://web-dev.tech/front-end/javascript/autumn-leaves-falling-effect/ */
+
+/* ===== 落ち葉を表示するコンテナのスタイル ===== */
+.season {
+    position: relative;
+    /* height: 130vh; コンテナの高さ */
+    width: 100%; /* コンテナの横幅 */
+    overflow: hidden; /* コンテナからはみ出した要素を隠す */
+}
+
+/* ===== 落ち葉のスタイル ===== */
+
+/* 落ち葉の共通スタイル */
+.leaf {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    animation: animate-leaf 8s linear;
+}
+
+/* 落ち葉1 */
+.leaf-1 {
+    background-image: url('../img/leaf-1.svg'); /* 任意のパスを記入 */
+}
+
+/* 落ち葉2 */
+.leaf-2 {
+    background-image: url('../img/leaf-2.svg'); /* 任意のパスを記入 */
+}
+
+/* 落ち葉3 */
+.leaf-3 {
+    background-image: url('../img/leaf-3.svg'); /* 任意のパスを記入 */
+}
+
+/* ===== 落ち葉が降るアニメーション ===== */
+@keyframes animate-leaf {
+    0% {
+    opacity: 0;
+    top: 0;
+    transform: rotate(0);
+    }
+
+    10% {
+    opacity: 1;
+    }
+
+    90% {
+    opacity: 1;
+    }
+
+    100% {
+    opacity: 0;
+    top: 100vh;
+    transform: rotate(1080deg);
+    }
+}
